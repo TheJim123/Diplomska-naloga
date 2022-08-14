@@ -1,0 +1,245 @@
+\documentclass[t, 12pt]{beamer} % [t] pomeni poravnavo na vrh slida
+
+% \usepackage{etex} % vključi ta paket, če ti javi napako, da imaš naloženih preveč paketov.
+
+% standardni paketi
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[slovene]{babel}
+\usepackage{lmodern}
+
+\usepackage{amsfonts,url, amsthm}
+\usepackage{palatino}
+\usepackage{graphicx, tikz, array}
+
+\renewcommand\textbullet{\ensuremath{\bullet}}  % to get rid of font warnings
+
+% podatki
+\title{Linearna algebra nad polkolobarji}
+\author{Jimmy Zakeršnik}
+\institute{mentor: prof. dr. Tomaž Košir}
+
+% tvoj izbran stil predstavitve
+\usefonttheme{professionalfonts}
+\mode<presentation>
+{
+	\usetheme{Berlin}
+	\usecolortheme{default}
+	\useoutertheme{infolines}
+	\useinnertheme[shadows]{rounded}
+}
+%\setbeamertemplate{footline}{}            % pri nekaterih temah je potrebno odstraniti
+%\setbeamertemplate{navigation symbols}{}  % nogo, v tem primeru to odkomentiraj
+
+\newtheorem{trditev}{Trditev}
+\newtheorem{izr}{Izrek}
+
+\newcounter{defcount}
+\newcounter{opombe}
+\newcounter{zgledcount}
+
+\newenvironment{opomba}{\begin{flushleft}\stepcounter{opombe}\textbf{Opomba \arabic{opombe}:}}{\hfill\end{flushleft}}
+\setlength{\parindent}{0mm}
+
+\newenvironment{zgled}{\begin{flushleft}\stepcounter{zgledcount}\textbf{Zgled \arabic{zgledcount}:}}{\hfill\end{flushleft}}
+\setlength{\parindent}{0mm}
+
+\newenvironment{definicija}{\begin{flushleft}\stepcounter{defcount}\textbf{Definicija \arabic{defcount}:}}{\hfill\end{flushleft}}
+\setlength{\parindent}{0mm}
+
+\newcommand{\abs}[1]{\ensuremath{\lvert #1 \rvert}}
+\newcommand{\mth}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\R}{\mth{R}}
+\newcommand{\Pplus}[1]{\mth{#1}^{+}}
+\newcommand{\Z}{\mth{Z}}
+\newcommand{\N}{\mth{N}}
+\newcommand{\No}{\mth{N}_0}
+\newcommand{\C}{\mth{C}}
+\newcommand{\Qo}{\mth{Q}_0}
+\newcommand{\pojem}[1]{\emph{#1}}
+\newcommand{\con}{\ensuremath{\mathscr{C}}}
+\newcommand{\padex}[2]{\ensuremath{{#1}^{\underline{#2}}}}
+\newcommand{\rastx}[2]{\ensuremath{{#1}^{\bar{#2}}}}
+\newcommand{\map}[3]{\ensuremath{{#1}~: {#2} \rightarrow {#3}}}
+\newcommand{\pra}[3]{{#1}{\ast}({#2}) = {#3}}
+
+%  ukaz za počrnitev enega slida. Nariše črn pravokotnik višine #1 na dno.
+\newcommand{\fillblack}[1]{
+\begin{tikzpicture}[remember picture, overlay]
+    \node [shift={(0 cm,0cm)}]  at (current page.south west)
+        {%
+        \begin{tikzpicture}[remember picture, overlay] at (current page.south west)
+            \draw [fill=black] (0, 0) -- (0,#1 \paperheight) --
+                              (\paperwidth,#1 \paperheight) -- (\paperwidth,0) -- cycle ;
+        \end{tikzpicture}
+        };
+        \draw (current page.north west) rectangle (current page.south east);
+\end{tikzpicture}
+}
+
+% Projektor, ki sveti na tablo je zoprn, ker zavzema prostor za pisanje.
+% Praktična rešitev je, da se platno spusti samo do table, spodnji del
+% predstavitve pa naredimo popolnoma črn. Tako projektor na tablo ne projecira
+% svetlobe in je pisanje nemoteno s strani predstavitve, ki je cela nad tablo.
+
+% Za to da dobite spodaj zatemnjen slide, je potrebno na konec frame-a dodati
+% ukaz \fillblack{delež}, kjer je delež številka med 0 in 1, ki pove, kakšen
+% delež slida želite imeti zapolnjen s črnim pravokotnikom. Spodaj so 4 slidi,
+% ki imajo začrnjenih: 33%, 50%, 33% in 20%.  Za šolske table v 2.02 in 2.03 je
+% 33% ravno prav, da lahko pišete po celi tabli.
+
+% Črni pravokotnik ne zavzema prostora na slidu -- preprosto nariše se čez
+% spodnjo tretjino (ali kolikor pač želite). To pomeni, da se pokrijve tudi ves
+% tekst spodaj. Za to je na začetku dokumenta tudi nastavljena vertikalna
+% poravnava na ``zgoraj'', z razliko od običajne sredinske (to je tisti [t]).
+% Tako se ves tekst obdrži na vidnem delu slida, dokler je to možno. Tretji
+% slide spodaj demonstrira, kaj se zgodi v primeru preveč besedila.
+
+% Kod demonstrira zadnji slide, je vseeno, kjer napišemo ukaz, toda ponavadi ga
+% napišemo na dnu, da se izognemo morebitnim nevšečnostim ali neželenemu
+% spacingu. Pri nekaterih temah se izriše tudi noga, ki se izriše na koncu
+% slida, torej po tem ko je naš pravokotnik že narisan, kar zna biti moteče.
+% To se na primer zgodi tudi pri standardni temi Warsaw. Rešitev je, da nogo
+% odstranimo (saj bi bila itak prekrita). V preambuli so zakomentirani ukazi,
+% kako to naredimo.
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+%  \fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Napovednik:}
+	\begin{enumerate}
+		\item Motivacija
+		\item Uvodne definicije
+		\item Polmoduli
+		\item Linearne preslikave nad polkolobarji
+		\item Bideterminanta
+		\item Bipolinom
+		\item Cayley-Hamiltonov izrek
+	\end{enumerate}
+
+%	\fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Motivacija:}
+  Polkolobarjev je veliko - pojavljajo se v skoraj vsakem področju matematike. Nekateri primeri so:
+  \begin{itemize}
+    \item $\No$ oz. $\Pplus{Z}$, $\Pplus{Q}$, $\Pplus{R}$ za standardne operacije $+$ in $*$
+    \item \pojem{max-plus algebra}~$(\R\cup\{-\infty\}, max, +)$ in \pojem{min-plus algebra}~$(\R\cup\{\infty\}, min, +)$
+    \item Boolove algebre
+    \item Polkolobarji (pod)množic za $\cup$ in $\cap$
+  \end{itemize}
+
+%  \fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Uvodne definicije}
+	
+	\begin{block}{Definicija}
+	Za neprazno množico $R$, ki je opremljena z operacijama $\oplus$ in $\otimes$ pravimo, da je \pojem{polkolobar}, če zanjo velja naslednje:
+		\begin{enumerate}
+			\item $(R, \oplus)$ je komutativen monoid z nevtralnim elementom $0$,
+			\item $(R, \otimes)$ je monoid z enoto $1$,
+			\item $a\otimes(b \oplus c) = (a\otimes b) \oplus (a\otimes c)$ in $(b \oplus c)\otimes a = (b\otimes a) \oplus (c\otimes a);~\forall a, b, c\in R$,
+			\item $0 \otimes a = 0 = a\otimes 0; \forall a\in R$.
+		\end{enumerate}
+	Oznaka: $(R, \oplus, \otimes)$.
+	\end{block}
+
+%  \fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Polkolobar nad množicami}
+Naj bo $X$ neprazna množica in $S \subseteq P(X)$ neprazen nabor podmnožic množice $X$. Nabor $S$ je polkolobar (pod)množic za operaciji unije in preseka, če zanj velja:
+\begin{enumerate}
+	\item $\emptyset\in S$
+	\item $E, F\in S \Rightarrow E\cap F \in S$
+	\item Če sta $E, F \in S$, potem obstaja končno mnogo disjunktnih množic $C_1, C_2, \ldots, C_n \in S$, da je $E\setminus F = \bigcup_{i = 1}^{n}C_i \in S$.
+\end{enumerate}
+
+Obravnavan tip polkolobarjev se uporablja v teoriji mere. Konkreten primer takega polkolobarja je nabor polzaprtih intervalov $\left[a, b\right) \subset \R$ za unijo in presek.
+
+%\fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Polmoduli}
+	\begin{block}{Definicija}
+			Naj bo R polkolobar. \pojem{Levi~R-polmodul} je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem imamo definirano množenje s skalarjem \map{\cdot}{R\times M}{M}, ki zadošča naslednjim pogojem za vsaka $\lambda,\mu\in R$ in vsaka $a, b\in M$:
+			\begin{enumerate}
+				\item $(\lambda\mu) \cdot a = \lambda \cdot (\mu \cdot a)$,
+				\item $\lambda\cdot(a + b) = \lambda\cdot a + \lambda\cdot b$~in~$(\lambda + \mu)\cdot a = \lambda\cdot a + \mu\cdot a$,
+				\item $1\cdot a = a$~in~$\lambda\cdot\theta = \theta = 0\cdot a$
+			\end{enumerate}
+			Analogno definiramo desni R-polmodul.
+	\end{block}
+%\fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Linearne preslikave in matrike nad polkolobarji}
+	Tudi na polmodulih lahko definiramo linearne preslikave: Zahtevamo aditivnost in homogenost.
+	
+	Nad polkolobarjem $(R, +, \cdot)$ lahko definiramo $mxn$ matrike, za poljubna $m,n\in\N$. Pri tem seštevanje definiramo enako kot za matrike nad obsegi (po komponentah), množenje pa na sledeč način za $A\in M_{m\times n}(R), B\in M_{n\times l}(R)$:
+	
+	$$ 
+	A\times B = C \in M_{m\times l}(R);~ c_{ij} = \sum_{k = 1}^{n}(a_{ik}b_{kj}) \forall i \in \underline{m}~\&~\forall j \in \underline{l}
+	$$
+	
+%	\fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Bideterminante}
+	\begin{block}{Definicija:}
+			Naj bo $A$ neka $n\times n$ matrika nad komutativnim polkolobarjem $R$. \pojem{Bideterminanta matrike $A$} je urejeni par $(det^{+}(A), det^{-}(A))$, kjer sta vrednosti $det^{+}(A)$ in $det^{-}(A)$ definirani na naslednji način:
+			\begin{align*}
+				det^{+}(A) = \sum_{\pi\in Per^{+}(n)}(\prod_{i = 1}^{n}(a_{i,\pi(i)})) \\
+				det^{-}(A) = \sum_{\pi\in Per^{-}(n)}(\prod_{i = 1}^{n}(a_{i,\pi(i)}))
+			\end{align*}
+	\end{block}
+%	\fillblack{0.3}
+\end{frame}
+
+\begin{frame}{Karakteristični bipolinom}
+	\begin{block}{Definicija:}
+		Naj bo $A$ neka $n\times n$ matrika nad komutativnim polkolobarjem $R$. \pojem{Karakteristični bipolinom matrike $A$} je dvojica $(P^{+}_A(\lambda), P^{-}_A(\lambda))$, kjer sta $P^{+}_A(\lambda)$ in $P^{-}_A(\lambda)$ polinoma stopnje $n$ v spremenljivki $\lambda$, definirana na naslednji način:
+		\begin{align*}
+			P^{+}_A(\lambda) = \sum_{q = 1}^{n}\bigg(\bigg( \sum_{\substack{\sigma\in Part^{+}(n) \\ \abs{dom(\sigma)} = q}} \bigg(\prod_{i\in dom(\sigma)}^{n} (a_{i, \sigma(i)})\bigg)\bigg) *\lambda^{n-q} *\lambda^n \bigg) \\
+			P^{-}_A(\lambda) = \sum_{q = 1}^{n}\bigg(\bigg( \sum_{\substack{\sigma\in Part^{-}(n) \\ \abs{dom(\sigma)} = q}} \bigg(\prod_{i\in dom(\sigma)}^{n} (a_{i, \sigma(i)})\bigg)\bigg) *\lambda^{n-q}\bigg)
+		\end{align*}
+	\end{block}
+%	\fillblack{0.25}
+\end{frame}
+
+\begin{frame}{Cayley-Hamiltonov izrek nad polkolobarji}
+	\begin{block}{Izrek:}
+		Naj bo $A$ neka $n\times n$ matrika nad komutativnim polkolobarjem z nevtralnim elementom $0$ in enoto $1$ in naj bo $(P^{+}_A(\lambda), P^{-}_A(\lambda))$ bipolinom, ki pripada matriki $A$. Tedaj velja: \begin{align}
+			P^{+}_A(A) = P^{-}_A(A)
+		\end{align}
+		kjer sta $P^{+}_A(A)$ in $P^{-}_A(A)$ matriki, ki ju dobimo, če v $P^{+}_A(\lambda)$ in $P^{-}_A(\lambda)$ $\lambda^{n-q}$ zamenjamo z $A^{n-q}$. Pri tem razumemo $A^0$ kot multiplikativno identiteto v polkolobarju $M_n(R)$.
+	\end{block}
+%	\fillblack{0.33}
+\end{frame}
+
+\begin{frame}{Literatura:}
+	\begin{itemize}
+		\item Yi-Jia Tan {\em Invertible matrics over semirings}, \url{https://www.tandfonline.com/doi/abs/10.1080/03081087.2012.703191}
+%		
+		\item Yi-Jia Tan {\em Bases in semimodules over commutative semirings,},	\url{https://www.sciencedirect.com/science/article/pii/S0024379513007234}
+		
+		\item Yi-Jia Tan {\em Determinants of matrices over semirings}, \url{https://www.tandfonline.com/doi/abs/10.1080/03081087.2013.784285}
+		
+		\item Michel Gondran, Michel Minoux {\em Combinatorial Properties of (Pre)-Semirings}, \url{https://www.researchgate.net/publication/319772435_Combinatorial_Properties_of_Pre-Semirings}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Literatura:}
+	\begin{itemize}
+		\item Jonathan S. Golan {\em Semirings and their applications}, \url{https://books.google.si/books?id=ssDxCAAAQBAJ&lpg=PP7&lr&pg=PP1#v=onepage&q&f=false}
+%
+		\item {\em Semiring}, \url{https://en.wikipedia.org/wiki/Semiring}			
+	\end{itemize}
+\end{frame}
+
+\end{document}
