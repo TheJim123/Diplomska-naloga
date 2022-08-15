@@ -910,14 +910,29 @@ Vemo, da je za komutativen polkolobar $R$ polmodul $R^n$ prost in končno generi
 O bazah nad polmoduli se da povedati še marsikaj, a ker to ni tema te naloge bomo te rezultate, ki so sicer dostopni v \cite{bib:Tanbase}, opustili.
 
 \subsection{lastne vrednosti}
-Spodobi se, da vsaj omenimo lastne vrednosti in lastne vektorje, saj imajo ti izjemen pomen v klasični linearni algebri. V temo se ne bomo preveč poglobili, bomo pa vsaj navedli in dokazali nekaj rezultatov.
+Spodobi se, da vsaj omenimo lastne vrednosti in lastne vektorje, saj imajo ti izjemen pomen v klasični linearni algebri. V temo se ne bomo preveč poglobili, saj bi lahko tej temi posvetili lastno diplomsko nalogo. Vseeno bomo pa vsaj definirali koncepta in dokazali dva elementarna rezultata. Pri tem se bomo uprli na \cite{bib:Gondran}.
+
+Naj bo $(R, \oplus, \otimes)$ polkolobar in obravnavamo $R$-polmodul $M = R^n$ kot v zgledu \ref{zgled:Rnpolmodul}. Naj bo $\map{h}{M}{M}$ endomorfizem $R$-polmodulov. Vsak vektor $v\in M$ lahko zapišemo kot linearno kombinacijo $v = \sum_{i = 1}^{n}v_i\cdot e_i$, kjer so $e_i$ vektorji, ki imajo na $i$-tem mestu $1$, na vseh ostalih komponentah pa $0$. Vidimo, da je endomorfizem $h$ natanko določen s slikami vektorjev $e_i$, torej $h(e_1), h(e_2), \ldots, h(e_n)$, oziroma z matriko $A\in M_n(R)$, ki ima za stolpce vektorje $h(e_1), \ldots, h(e_n)$. V tem primeru za vsak $x\in M$ velja zapis $h(x) = A*x$, kjer je produkt med matriko $A$ in vektorjem $x$ definiran s predpisom $\forall i\in \{1, 2, \ldots, n\};~(A*x)_i = \sum_{j = 1}^{n} a_{ij}\otimes x_j$, kot smo navajeni.
+
 \begin{definicija}
-	Naj bo $(R, \oplus, \otimes)$ komutativen polkolobar in $A\in M_n(R)$ kvadratna $n\times n$ matrika s koeficienti iz $R$. Naj bosta $V\in R^n$ in $\lambda\in R$ takšna, da velja $A \times V = \lambda \cdot V$. Vektorju $V$ previmo lastni vektor matrike $A$ za lastno vrednost $\lambda$. Naj bo $L_\lambda$ množica lastnih vektorjev, ki pripadajo lastni vrednosti $\lambda$. Hitro se da preveriti, da je potem tudi $(L_\lambda, +)$ $R$-polmodul.
-	
-	Vzemimo torej poljubna skalarja $\alpha, \beta\in R$ in poljubna vektorja $X$ in $Y$ iz $L_\lambda$ ter poglejmo, kaj lahko povemo o vektorju $\alpha\cdot X + \beta\cdot Y$. $$A(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot A(X) + \beta\cdot A(Y) = \alpha\cdot\lambda\cdot X + \beta\cdot\lambda\cdot Y = \lambda\cdot (\alpha\cdot X + \beta\cdot Y)$$ To pomeni, da je tudi $(\alpha\cdot X + \beta\cdot Y)\in L_\lambda$. Potem je pa očitno $(L_\lambda, +, \cdot)$ t. i. lastni $R$-polmodul za lastno vrednost $\lambda$. Še več, vidimo, da smo v resnici pokazali, da je $(L_\lambda, +, \cdot)$ $R$-podpolmodul v $(R^n, +, \cdot)$ in to za vsako lastno vrednost $\lambda$ poljubne matrike $A\in M_n(R)$.
+	Naj bo $R$ polkolobar in $M = R^n$ $R$-polmodul. Naj bo $A\in M_n(R)$ matrika, ki pripade endomorfizmu $\map{h}{M}{M}$. Pravimo, da je $\lambda$ \pojem{lastna vrednost} matrike $A$, če obstaja tak vektor $v\in M\setminus\{0\}$, da velja $A * v = \lambda \cdot v$. Vektorju $v$ previmo \pojem{lastni vektor} matrike $A$ za lastno vrednost $\lambda$.
 \end{definicija}
 
 
+\begin{trditev}
+Naj bo $R$ komutativen polkolobar in naj bo $L_\lambda$ množica lastnih vektorjev, ki pripadajo lastni vrednosti $\lambda$. Potem je $(L_\lambda, +)$ $R$-podpolmodul v $M$. $L_\lambda$ pravimo lastni $R$-podpolmodul $R$-polmodula $M$.
+\end{trditev}
+
+\begin{dokaz}
+Vzemimo torej poljubna skalarja $\alpha, \beta\in R$ in poljubna vektorja $X$ in $Y$ iz $L_\lambda$ ter poglejmo, kaj lahko povemo o vektorju $\alpha\cdot X + \beta\cdot Y$. $$A(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot A(X) + \beta\cdot A(Y) = \alpha\cdot\lambda\cdot X + \beta\cdot\lambda\cdot Y = \lambda\cdot (\alpha\cdot X + \beta\cdot Y)$$ To pomeni, da je tudi $(\alpha\cdot X + \beta\cdot Y)\in L_\lambda$. Potem je pa očitno $(L_\lambda, +, \cdot)$ t. i. lastni $R$-polmodul za lastno vrednost $\lambda$. Še več, vidimo, da smo v resnici pokazali, da je $(L_\lambda, +, \cdot)$ $R$-podpolmodul v $(R^n, +, \cdot)$ in to za vsako lastno vrednost $\lambda$ poljubne matrike $A\in M_n(R)$.
+\end{dokaz}
+
+\begin{trditev}
+Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (torej $a\otimes a = a \forall a\in R$). Naj bo $M=R^n$ $R$-polmodul in $\map{A}{M}{M}$ naj bo $n\times n$ matrika, ki pripada nekemu endomorfizmu $M$. Če je tedaj $v$ lastni vektor za $1$, je $\lambda\cdot v$ lastni vektor za $A$ za lastno vrednost $\lambda$.
+\end{trditev}
+\begin{dokaz}
+	Po predpostavki je $A*v = v$. Hkrati velja $A*(\lambda\cdot v) = \lambda\cdot (A*v) = \lambda\cdot v$. Na tej točki upoštevamo idempotentnost množenja v $R$ in opazimo $\lambda = \lambda\otimes\lambda$. Potem je $\lambda\cdot v = (\lambda\otimes\lambda)\cdot v = \lambda \cdot (\lambda\cdot v)$, torej je $\lambda\cdot v$ lastni vektor matrike $A$ za lastno vrednost $\lambda$.
+\end{dokaz}
 \section*{Slovar strokovnih izrazov}
 
 \geslo{semiring}{polkolobar}
