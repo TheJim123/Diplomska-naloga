@@ -10,10 +10,10 @@
 
 %  V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga organizacije dela --
 %  v katerem poglavju/razdelku je kaj, pač pa le opis vsebine.
-\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavani bolj osnovni izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$, obrnljivost matrik nad polkolobarjem $R$ ter koncept bideterminante.}
+\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavani bolj osnovni izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$ ter lastnosti in obrnljivost matrik nad polkolobarjem $R$.}
 
 %  Prevod slovenskega povzetka v angleščino.
-\abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$  if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for a long time now and as such most of the classical questions relating to the structures from the perspective of linear algebra have already been answered. The paper will present some of these results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields, such as the existence and properties of bases of an $R$-semimodule, the invertibility of a matrix over a semiring $R$ and the concept of a bideterminant.}
+\abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$  if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for a long time now and as such most of the classical questions relating to the structures from the perspective of linear algebra have already been answered. The paper will present some of these results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields, such as the existence and properties of bases of an $R$-semimodule and the properties and invertibility of a matrix over a semiring $R$.}
 
 % navedite vsaj eno klasifikacijsko oznako --
 % dostopne so na www.ams.org/mathscinet/msc/msc2020.html
@@ -917,56 +917,6 @@ Spodobi se, da vsaj omenimo lastne vrednosti in lastne vektorje, saj imajo ti iz
 	Vzemimo torej poljubna skalarja $\alpha, \beta\in R$ in poljubna vektorja $X$ in $Y$ iz $L_\lambda$ ter poglejmo, kaj lahko povemo o vektorju $\alpha\cdot X + \beta\cdot Y$. $$A(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot A(X) + \beta\cdot A(Y) = \alpha\cdot\lambda\cdot X + \beta\cdot\lambda\cdot Y = \lambda\cdot (\alpha\cdot X + \beta\cdot Y)$$ To pomeni, da je tudi $(\alpha\cdot X + \beta\cdot Y)\in L_\lambda$. Potem je pa očitno $(L_\lambda, +, \cdot)$ t. i. lastni $R$-polmodul za lastno vrednost $\lambda$. Še več, vidimo, da smo v resnici pokazali, da je $(L_\lambda, +, \cdot)$ $R$-podpolmodul v $(R^n, +, \cdot)$ in to za vsako lastno vrednost $\lambda$ poljubne matrike $A\in M_n(R)$.
 \end{definicija}
 
-\section{Posplošitve determinante:}
-
-Tako kot imajo matrike nad polji determinante, lahko definiramo podobno preslikavo tudi za matrike nad polkolobarji. Preslikava, ki nas bo v tem primeru zanimala kot posplošitev determinante, je t.i. \pojem{bideterminanta.}
-
-\begin{definicija}
-	Naj bo $X=\{1, 2, \ldots, n\}$ neka končna množica. Pravimo, da je $\sigma$ \pojem{delna permutacija $X$}, če je permutacija neke podmnožice $S\subseteq X$. Na enak način kot za navadne permutacije tudi za delne definiramo parnost.
-	
-	Oznaka: $Per(n)$ je množica vseh permutacij množice $\{1, 2, \ldots, n\}$, $Per^{+}(n)$ množica vseh sodih permutacij na isti množici in analogno $Per^{-}(n)$ množica vseh lihih permutacij na tej množici. Na enak način označimo $Part(n)$ kot množico vseh delnih permutacij množice $\{1, 2, \ldots, n\}$ in na enak način kot prej tudi $Part^{+}(n)$ ter $Part^{-}(n)$.
-	
-	Delno permutacijo $\sigma$ lahko tudi razširimo na cel X:
-	
-	$$
-	\hat{\sigma} = \begin{cases*}
-		\hat{\sigma(i)} = \sigma(i); i\in dom(\sigma) \\
-		\hat{\sigma(i)} = i; \sigma(i) \in X\setminus dom(\sigma)
-	\end{cases*}
-	$$
-	kjer je $dom(\sigma)$ domena delne permutacije $\sigma$.
-\end{definicija}
-
-\begin{definicija}
-	Naj bo $A$ neka $n\times n$ matrika nad komutativnim polkolobarjem $R$. \pojem{Bideterminanta matrike $A$} je urejeni par $(det^{+}(A), det^{-}(A))$, kjer sta vrednosti $det^{+}(A)$ in $det^{-}(A)$ definirani na naslednji način:
-	\begin{align*}
-			det^{+}(A) = \sum_{\pi\in Per^{+}(n)}(\prod_{i = 1}^{n}(a_{i,\pi(i)})) \\
-			det^{-}(A) = \sum_{\pi\in Per^{-}(n)}(\prod_{i = 1}^{n}(a_{i,\pi(i)}))
-	\end{align*}
-\end{definicija}
-
-%\section{Karakteristični bipolinom:}
-%
-%\begin{definicija}
-%	Naj bo $A$ neka $n\times n$ matrika nad komutativnim polkolobarjem $R$. \pojem{Karakteristični bipolinom matrike $A$} je dvojica $(P^{+}_A(\lambda), P^{-}_A(\lambda))$, kjer sta $P^{+}_A(\lambda)$ in $P^{-}_A(\lambda)$ polinoma stopnje $n$ v spremenljivki $\lambda$, definirana na naslednji način:
-%	\begin{align*}
-%		P^{+}_A(\lambda) = \sum_{q = 1}^{n}\bigg(\bigg( \sum_{\substack{\sigma\in Part^{+}(n) \\ \abs{dom(\sigma)} = q}} \bigg(\prod_{i\in dom(\sigma)} (a_{i, \sigma(i)})\bigg)\bigg) *\lambda^{n-q}\bigg) + \lambda^n \\
-%		P^{-}_A(\lambda) = \sum_{q = 1}^{n}\bigg(\bigg( \sum_{\substack{\sigma\in Part^{-}(n) \\ \abs{dom(\sigma)} = q}} \bigg(\prod_{i\in dom(\sigma)} (a_{i, \sigma(i)})\bigg)\bigg) *\lambda^{n-q}\bigg)
-%	\end{align*}
-%\end{definicija}
-
-To pa nas privede do zadnje in najbolj zanimive točke:
-\newpage
-%\section{Posplošen Cayley-Hamiltonov izrek:}
-%
-%\begin{izrek}
-%
-%Naj bo $A$ neka $n\times n$ matrika nad komutativnim polkolobarjem z nevtralnim elementom $0$ in enoto $1$ in naj bo $(P^{+}_A(\lambda), P^{-}_A(\lambda))$ bipolinom, ki pripada matriki $A$. Tedaj velja: \begin{align}
-%		P^{+}_A(A) = P^{-}_A(A)
-%	\end{align}
-%	kjer sta $P^{+}_A(A)$ in $P^{-}_A(A)$ matriki, ki ju dobimo, če v $P^{+}_A(\lambda)$ in $P^{-}_A(\lambda)$ faktorje $\lambda^{n-q}$ zamenjamo z $A^{n-q}$. Pri tem razumemo $A^0$ kot multiplikativno identiteto v polkolobarju $M_n(R)$.
-%
-%\end{izrek}
 
 \section*{Slovar strokovnih izrazov}
 
@@ -974,7 +924,7 @@ To pa nas privede do zadnje in najbolj zanimive točke:
 \geslo{semimodule}{polmodul}
 \geslo{dioid}{dioid}
 \geslo{$0 \in R$ is absorbing for $\otimes$}{$0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
-%\geslo{}{}
+\geslo{free semimodule}{prost polkolobar}
 %\geslo{}{}
 %\geslo{}{}
 
