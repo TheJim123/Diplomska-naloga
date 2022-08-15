@@ -727,7 +727,7 @@ Leme \ref{lema:ABIBAI} v tem delu ne bomo dokazali, bomo jo pa privzeli kot velj
 Sedaj se lahko zapišemo naslednjo trditev in dokaz, oba povzeta po \cite{bib:Tanbase}.
 
 \begin{trditev}\label{trd:obrnljMatr}
-	Naj bo $R$ komutativen polkolobar v katerem $1$ ni aditivno obrnljiva in velja $1 = u \oplus v \Rightarrow u\in U(R) \lor v\in U(R)~\forall u, v \in R$. Naj bo $A\in M_n(R)$ in $\n = \{1, \ldots, n\}$. Če so diagonalni elementi matrike $A$ multiplikativno obrnljivi v $R$ (torej $a_{ii}\in U(R)~\forall i \in \n$) in če so vsi izvendiagonalni elementi v $A$ aditivno obrnljivi ($a_{i,j}\in V(R)~\forall i, j\in \n ~;~i\neq j$), potem je $A$ obrnljiva.
+	Naj bo $R$ komutativen polkolobar v katerem $1$ ni aditivno obrnljiva in velja $1 = u \oplus v \Rightarrow u\in U(R) \lor v\in U(R)~\forall u, v \in R$. Naj bo $A\in M_n(R)$. Če so diagonalni elementi matrike $A$ multiplikativno obrnljivi v $R$ (torej $a_{ii}\in U(R)~\forall i \in \{1, \ldots, n\}$) in če so vsi izvendiagonalni elementi v $A$ aditivno obrnljivi ($a_{i,j}\in V(R)~\forall i, j\in \{1, \ldots, n\} ~;~i\neq j$), potem je $A$ obrnljiva.
 \end{trditev}
 
 \begin{dokaz}
@@ -748,26 +748,26 @@ Sedaj se lahko zapišemo naslednjo trditev in dokaz, oba povzeta po \cite{bib:Ta
 		&= \sum_{i, j = 1}^{n}a_{ij}\cdot E_{ij} + \sum_{j = 2}^{n}(-a_{1j})\cdot E_{1j} + \sum_{i = 2}^{n}(-a_{i1})\cdot E_{i1} + \sum_{i = 2}^{n}\sum_{j=2}^{n} (-a_{i1}a_{1j}a_{11}^{-1})\cdot E_{ij} = \\
 		&= a_{11}\cdot E_{11} + \sum_{i = 2}^{n} \sum_{j = 2}^{n} a_{ij}\cdot E_{ij} + \sum_{j = 2}^{n} a_{1j}\cdot E_{1j} + \sum_{i = 2}^{n} a_{i1}\cdot E_{i1} + \\
 		&+ \sum_{j = 2}^{n} (-a_{1j})\cdot E_{1j} + \sum_{i = 2}^{n} (-a_{i1})\cdot E_{i1} + \sum_{i = 2}^{n} \sum_{j = 2}^{n} (-a_{i1}a_{1j}a_{11}^{-1})\cdot E_{ij} = \\
-		&= a_{11}\cdot E_{11} + \sum_{i = 2}^{n} \sum_{j = 2}^{n} (a_{ij} + (-a_{i1}a_{1j}a_{11}^{-1}))\cdot E_{ij}
+		&= a_{11}\cdot E_{11} + \sum_{i = 2}^{n} \sum_{j = 2}^{n} (a_{ij} \oplus (-a_{i1}a_{1j}a_{11}^{-1}))\cdot E_{ij}
 	\end{align*}
 
 	Razpišimo sedaj, kar smo dobili, v obliki matrike.
 	\begin{align*}
 		P*A*Q = \begin{bmatrix}
 			a_{11} & 0 & \cdots & 0 \\
-			0 & a_{22} + (-a_{21}a_{12}a_{11}^{-1}) & \cdots & a_{2n} + (-a_{21}a_{1n}a_{11}^{-1}) \\
+			0 & a_{22} \oplus (-a_{21}a_{12}a_{11}^{-1}) & \cdots & a_{2n} \oplus (-a_{21}a_{1n}a_{11}^{-1}) \\
 			\vdots & \vdots & \ddots & \vdots \\
-			0 & a_{n2} + (-a_{n1}a_{12}a_{11}^{-1}) & \cdots & a_{nn} + (-a_{n1}a_{1n}a_{11}^{-1})
+			0 & a_{n2} \oplus (-a_{n1}a_{12}a_{11}^{-1}) & \cdots & a_{nn} \oplus (-a_{n1}a_{1n}a_{11}^{-1})
 		\end{bmatrix}
 	\end{align*}
 	Za $A1$ označimo matriko \begin{align*}
 		\begin{bmatrix}
-			a_{22} + (-a_{21}a_{12}a_{11}^{-1}) & \cdots & a_{2n} + (-a_{21}a_{1n}a_{11}^{-1}) \\
+			a_{22} \oplus (-a_{21}a_{12}a_{11}^{-1}) & \cdots & a_{2n} \oplus (-a_{21}a_{1n}a_{11}^{-1}) \\
 			\vdots & \ddots & \vdots \\
-			a_{n2} + (-a_{n1}a_{12}a_{11}^{-1}) & \cdots & a_{nn} + (-a_{n1}a_{1n}a_{11}^{-1})
+			a_{n2} \oplus (-a_{n1}a_{12}a_{11}^{-1}) & \cdots & a_{nn} \oplus (-a_{n1}a_{1n}a_{11}^{-1})
 		\end{bmatrix}
 	\end{align*}
-Upoštevamo, da za $i\neq j$ element $a_{ij} + (-a_{i1}a_{1j}a_{11}^{-1})$ pripada $V(R)$, saj je $V(R)$ ideal v $R$. Označimo tudi $r_i = a_{ii} + (-a_{i1}a_{1i}a_{11}^{-1})$. Potem lahko izračunamo $a_{ii}$ kot $a_{ii} = a_{i1}a_{1i}a_{11}^{-1} + r_i$. Ker je, po predpostavki, $a_{ii}\in U(R)$, lahko enačbo delimo z leve z $a_{ii}^{-1}$ in dobimo $1 = a_{ii}^{-1}a_{i1}a_{1i}a_{11}^{-1} + a_{ii}^{-1}r_i$, od koder sklepamo, da je eden izmed členov na desni strani enačaja multiplikativno obrnljiv. Denimo, da je $a_{ii}^{-1}a_{i1}a_{1i}a_{11}^{-1}\in U(R)$. Potem je tudi $a_{i1}\in U(R)$, a hkrati je po predpostavki $a_{i1}\in V(R)$. Enačbo $a_{i1} + (- a_{i1}) = 0$ pomnožimo z leve z $a_{i1}^{-1}$ in dobimo $1 + a_{i1}^{-1}(-a_{i1}) = 0$, od koder sledi, da je $1\in V(R)$, kar pa je v protislovju z eno izmed predpostavk trditve. Sledi, da more biti $a_{ii}^{-1}r_i\in U(R)$ in posledično je tudi $r_i\in U(R)$. Po indukcijski predpostavki je potem $A1$ obrnljiva $(n-1)\times (n-1)$ matrika in velja tudi, da je $\begin{bmatrix}
+Upoštevamo, da za $i\neq j$ element $a_{ij} \oplus (-a_{i1}a_{1j}a_{11}^{-1})$ pripada $V(R)$, saj je $V(R)$ ideal v $R$. Označimo tudi $r_i = a_{ii} \oplus (-a_{i1}a_{1i}a_{11}^{-1})$. Potem lahko izračunamo $a_{ii}$ kot $a_{ii} = a_{i1}a_{1i}a_{11}^{-1} \oplus r_i$. Ker je, po predpostavki, $a_{ii}\in U(R)$, lahko enačbo delimo z leve z $a_{ii}^{-1}$ in dobimo $1 = a_{ii}^{-1}a_{i1}a_{1i}a_{11}^{-1} \oplus a_{ii}^{-1}r_i$, od koder sklepamo, da je eden izmed členov na desni strani enačaja multiplikativno obrnljiv. Denimo, da je $a_{ii}^{-1}a_{i1}a_{1i}a_{11}^{-1}\in U(R)$. Potem je tudi $a_{i1}\in U(R)$, a hkrati je po predpostavki $a_{i1}\in V(R)$. Enačbo $a_{i1} \oplus (- a_{i1}) = 0$ pomnožimo z leve z $a_{i1}^{-1}$ in dobimo $1 \oplus a_{i1}^{-1}(-a_{i1}) = 0$, od koder sledi, da je $1\in V(R)$, kar pa je v protislovju z eno izmed predpostavk trditve. Sledi, da more biti $a_{ii}^{-1}r_i\in U(R)$ in posledično je tudi $r_i\in U(R)$. Po indukcijski predpostavki je potem $A1$ obrnljiva $(n-1)\times (n-1)$ matrika in velja tudi, da je $\begin{bmatrix}
 	a_{11} & 0 \\
 	0 & A1
 \end{bmatrix}$ obrnljiva, saj je $a_{11}$ multiplikativno obrnljiv. Uspelo nam je pokazati, da je $P*A*Q = \begin{bmatrix}
@@ -779,6 +779,52 @@ a_{11} & 0 \\
 \end{bmatrix} * Q^{-1}$ obrnljiva matrika.
 \end{dokaz}
 \subsection{Prehodne matrike}
+Denimo, da je $M$ končno generiran $R$-polmodul in naj bo $T = \{t_1, \ldots, t_n\}$ baza $M$. Dodatno, naj bo $S\subseteq M$ neka končna podmnožica v $M$, recimo $S = \{s_1, \ldots, s_m\}$. Za vsak element v $S$ velja, da ga lahko zapišemo kot linearno kombinacijo elementov iz $T$. \begin{align*}
+	s_1 &= a_{11}t_1 \oplus a_{21}t_2 \oplus \ldots \oplus a_{n1}t_n \\
+	s_2 &= a_{12}t_1 \oplus a_{22}t_2 \oplus \ldots \oplus a_{n2}t_n \\
+	&\cdots \\
+	s_m &= a_{1m}t_1 \oplus a_{2m}t_2 \oplus \ldots \oplus a_{nm}t_n \\
+\end{align*}
+
+Zgornje linearne kombinacije lahko tudi zapišemo v matrični obliki, tako da bazne vektorje zapišemo kot stolpce v neki matriki:$$\begin{bmatrix*}
+	s_1 & s_2 & \cdots & s_m
+\end{bmatrix*} = \begin{bmatrix*}
+t_1 & t_2 & \cdots & t_n
+\end{bmatrix*} * A$$ 
+Pri tem je $A=(a_{ij})\in M:{n\times m}(R)$.
+To nas privede do naslednje definicije.
+
+\begin{definicija}\label{def:prehodmat}
+	Naj bo $M$ končno generiran $R$-polmodul in naj bosta $T$ in $S$ njegovi bazi. Matriki $A$, ki slika elemente baze $T$ v $S$, pravimo prehodna matrika iz baze $T$ v $S$. Med dvema bazama lahko obstaja več različnih prehodnih matrik.
+\end{definicija}
+
+Za prehodne matrike med bazami končno generiranega $R$-polmodula $M$ bomo sedaj pokazali, da so njihovi faktorski rangi povezani z $r(M)$.
+
+\begin{trditev}\label{trd:transmatfakrang}
+	Naj bo $M$ $R$-polmodul ranga $r$, kjer je $R$ komutativen polkolobar, in naj bosta $S$ in $T$ njegovi bazi. Potem za vsako prehodno matriko $A$ iz $T$ v $S$ velja, da je njen faktorski rang najmanj $r$, torej $r \leq \rho_S(A)$. Poleg tega med bazama obstaja prehodna matrika $\widehat{A}$, za katero je $r = \rho_S(\widehat{A})$.
+\end{trditev}
+
+\begin{dokaz}
+		Naj bo $A$ poljubna $n\times m$ prehodna matrika iz $T = \{t_1, \ldots, t_n\}$ v $S = \{s_1, \ldots, s_m\}$ in naj bo $\rho_S(A) = k$. Potem je, po definiciji faktorskega ranga, $A = B*C$ za neki matriki $B\in M_{n\times k}(R)$ in $C\in M_{k\times m}(R)$. Označimo $\gamma_l =\sum_{j = 1}^{n}b_{jl}\cdot t_j$ za vsak $l\in \{1, \ldots, k\}$. Sestavimo množico $\Gamma$, ki vsebuje vse $\gamma_l$, torej $\Gamma = \{\gamma_1, \ldots, \gamma_k\}$. Očitno je $\Gamma$ podmnožica v $M$.
+		
+		Sedaj zapišemo elemente v $S$ kot linearne kombinacije elementov iz $T$. Za vsak indeks $i\in\{1, \ldots m\}$ je $s_i = \sum_{j = 1}^{n} a_{ji}\cdot t_j$. Sedaj upoštevamo, da lahko $A$ zapišemo kot produkt $B$ in $C$ in dobimo:  $$s_i = \sum_{j=1}^{n} \left(\sum_{l = 1}^{k}b_{jl}c_{li}\right)\cdot t_j = \sum_{j=1}^{n}\sum_{l = 1}^{k}b_{jl}c_{li}\cdot t_j = \sum_{l=1}^{k}\sum_{j = 1}^{n}b_{jl}c_{li}\cdot t_j = \sum_{l=1}^{k}c_{li}\left(\sum_{j = 1}^{n}b_{jl}\cdot t_j\right)$$
+		
+		V oklepaju prepoznamo $\gamma_l$, torej nam je uspelo zapisati $s_i = \sum_{l = 1}^{k} c_{li}\gamma_l$ za vsak $i\in \{1, \ldots, m\}$. Od tod sledi, da $\Gamma$ generira $M$, saj $S$ generira $M$. Potem pa je $r = r(M) \leq k = \rho_S(A).$ in s tem smo pokazali prvi del trditve.
+		
+		Da dokažemo drugi del trditve, najprej upoštevamo definicijo ranga polmodula. Ker je $r(M) = r$, obstaja neka baza $\Gamma$ od $M$, da velja $\abs{\Gamma} = r$. Naj bo $\Gamma = \{\gamma_1, \ldots, \gamma_r\}$ ter naj bo $B \in M_{n\times r}(R)$ prehodna matrika iz $T$ v $\Gamma$. Poleg tega naj bo $C\in M_{r\times m}$ prehodna matrika iz $\Gamma$ v $S$. Zapis $\begin{bmatrix*}
+			\gamma_1 & \gamma_2 & \ldots & \gamma_r
+		\end{bmatrix*} = \begin{bmatrix*}
+		t_1 & t_2 & \ldots & t_n
+	\end{bmatrix*}*B$ vstavimo v $\begin{bmatrix*}
+		s_1 & s_2 & \ldots & s_m
+\end{bmatrix*} = \begin{bmatrix*}
+\gamma_1 & \gamma_2 & \ldots & \gamma_r
+\end{bmatrix*}*C$ in s tem pridobimo zapis $\begin{bmatrix*}
+s_1 & s_2 & \ldots & s_m
+\end{bmatrix*} = \begin{bmatrix*}
+t_1 & t_2 & \ldots & t_n
+\end{bmatrix*}*B*C$. Produkt $B*C$ zapišemo kot $\widehat{A}$ in takoj vidimo, da je $\widehat{A}$ prehodna matrika med $T$ in $S$ za katero je $\rho_S(\widehat{A}) \leq r$. Po drugi strani pa nam prvi del trditve pove, da je $r \leq \rho_S(\widehat{A})$. Sledi, da je $\rho_S(\widehat{A}) = r$ in s tem je drug del trditve dokazan.
+\end{dokaz}
 
 \subsection{lastne vrednosti}
 V naslednjem zgledu se bomo srečali s konceptoma lastnih vektorjev in lastnih vrednosti kvadratnih matrik nad komutativnimi polkolobarji. Oba koncepta bomo bolj podrobno obravnavali v naslednjem poglavju, o matrikah.
