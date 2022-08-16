@@ -78,28 +78,25 @@
 %===============================================================================
 \begin{document}
 %\maketitle je že vključen v class fmfdelo, ki avtomatsko sestavi naslovno stran!
-\newpage
+
 \tableofcontents
-\newpage
+
 \section{Uvod}
 Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obravnavati številske množice. Med primere spadajo množica nenegativnih celih števil, množica nenegativnih racionalnih števil, množica nenegativnih realnih števil, razne strukture nad množicami, ki se izkažejo kot uporabne v topologiji, t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti zaposlenih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
 
 Kljub njihovi uporabnosti in pogostem pojavljanju, tako polkolobarji kot strukture nad njimi v sklopu standardne matematične izobrazbe eksplicitno ne prejmejo kaj dosti pozornosti. Poleg popolnoma praktičnih motivacij za obravnavo teh struktur se izkaže, da nas obravnava polkolobarjev oz. linearne algebre nad njimi privede tudi do bistva definicij določenih lastnosti in konceptov v klasični linearni algebri nad vektorskimi prostori. 
 
-V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmodule kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku. Na koncu bomo pozornost posvetil eni izmed posplošitev determinante v petem razdelku.
+V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmodule kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku.
 
-
-Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(E, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Primer je povzet iz \cite{bib:Gondran}.
+Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(E, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Zgled in besedilo za njim sta povzeta iz \cite[str. 1--2]{bib:Gondran} .
 
 \begin{zgled}
 	Množico nenegativnih realnih števil $\Pplus{R}$ opremimo s standardnima operacijiama seštevanja in množenja in to strukturo označimo z oznako $(\Pplus{R}, +, \cdot)$. Na tej strukturi ima enačba $a + x = b$ rešitev samo, če za $a, b\in\Pplus{R}$ velja $a\leq b$. Po drugi strani ima pa enačba $x = a\cdot x + b$ na $\Pplus{R}$ rešitev za vsak $b$ čim je $a < 1$: $$ x = \frac{1}{1 - a} \cdot b = (1 + a + a^2 + \ldots)\cdot b$$
 \end{zgled}
 Izkaže se, da lahko nad polkolobarji počnemo več kot le reševanje preprostih enačb. Da to vidimo je dovolj, da obravnavamo kvadratne matrike nad $\Pplus{R}$. Perron-Frobeniusov izrek nam namreč zagotovi, da bo vsaka kvadratna matrika $A \in\Pplus{R}^{n\times n}$ imela pozitivno realno lastno vrednost, torej $\lambda\in\Pplus{R}\setminus\{0\}$ in da bo pripadajoč lasten vektor imel vse koeficiente iz $\Pplus{R}\setminus\{0\}$. Torej lahko govorimo ne samo o rešitvah enačb, ampak tudi o matrikah in lastnih vrednostih, čeprav niti $(\Pplus{R}, +, \cdot)$ niti $(\Pplus{R}\setminus\{0\}, +, \cdot)$ nista polji. Ta tip matrik (in prej omenjen izrek) je relevanten v verjetnosti, predvsem v teoriji dinamičnih sistemov. Struktura $(\Pplus{R}, +, \cdot)$ tudi igra fundamentalno vlogo v teoriji mere in v verjetnosti.
 
-\newpage
-
 \section{Monoidi, polkolobarji in dioidi:}
-V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi celo nalogo. Za začetek bomo osvežili znanje o že znanih monoidih, preden se lotimo novih konceptov kot so polkolobarji in dioidi.
+V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[Poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. Za začetek bomo osvežili znanje o že znanih monoidih, preden se lotimo novih konceptov kot so polkolobarji in dioidi. 
 \subsection{Monoidi:}
 \begin{definicija}
 	Neprazna množica $M$, opremljena z operacijo $\ast$, je \pojem{monoid}, če za operacijo $\ast$ na $M$ velja:
@@ -194,14 +191,13 @@ Sedaj, ko smo osvežili in dopolnili znanje o monoidih, se lahko lotimo polkolob
 	Dodatno lahko definirano \pojem{levi polkolobar} na enak način kot polkolobar, le da zahtevamo samo levo distributivnost in analogno lahko definiramo tudi \pojem{desni polkolobar}. $(R,\oplus, \otimes)$ je potem polkolobar če je hkrati levi in desni polkolobar.
 \end{opomba}
 \begin{opomba}
-	V resnici bi lahko gledali še malo manj opremljene strukture, t.~i.~pred-polkolobarje (>>pre-semirings<< v angleščini). Definicija zanje je identična kot za polkolobar, le da ne zahtevamo obstoja enot ($0$ in $1$) za operaciji in tudi ne lastnosti \ref{def:izniči} iz definicije polkolobarja.
+	V resnici bi lahko gledali še malo manj opremljene strukture, t.~i.~pred-polkolobarje (">pre-semirings"< v angleščini). Definicija zanje je identična kot za polkolobar, le da ne zahtevamo obstoja enot ($0$ in $1$) za operaciji in tudi ne lastnosti \ref{def:izniči} iz definicije polkolobarja.
 \end{opomba}
 \begin{zgled}
 	Nenegativna cela števila $\No$ s standardnim seštevanjem in množenjem tvorijo polkolobar. Enako velja za nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$ za standardno seštevanje in množenje.
 \end{zgled}
-
+V tem zgledu, ki smo za povzeli iz \cite{bib:Wiki}, bomo obravnavali poseben tip polkolobarja, ki se definira na (pod)množicah:
 \begin{zgled}
-	V tem zgledu bomo obravnavali poseben tip polkolobarja, ki se definira na (pod)množicah:
 	Naj bo $X$ neprazna množica in $S \subseteq P(X)$ neprazen nabor podmnožic množice $X$. Nabor $S$ je polkolobar (pod)množic za operaciji unije in preseka, če zanj velja:
 	\begin{enumerate}
 		\item $\emptyset\in S$
@@ -209,14 +205,18 @@ Sedaj, ko smo osvežili in dopolnili znanje o monoidih, se lahko lotimo polkolob
 		\item Če sta $E, F \in S$, potem obstaja končno mnogo disjunktnih množic \\ $C_{1}, C_{2}, \ldots, C_{n} \in S$, da je $E\setminus F = \bigcup_{i = 1}^{n}C_i \in S$.
 	\end{enumerate}
 
-	Opazimo, da iz $2.$ in $3.$ ter predpostavke $S\neq\emptyset$ sledi $1.$ Obravnavan tip polkolobarjev se uporablja v teoriji mere. Primer takega polkolobarja je nabor polzaprtih intervalov $\left[a, b\right) \subset \R$ za unijo in presek.
+	Opazimo, da iz $2.$ in $3.$ ter predpostavke $S\neq\emptyset$ sledi $1.$ 
 \end{zgled}
+
+Zgoraj obravnavan tip polkolobarjev se uporablja v teoriji mere. Primer takega polkolobarja je nabor polzaprtih intervalov $\left[a, b\right) \subset \R$ za unijo in presek.
+
+Občasno nam bo prišlo prav, če bomo imeli oznake za množico aditivno obrnljivih elementov in za množico multiplikativno obrnljivih elementov v polkolobarju. Nasledno definicijo pozemamo iz \cite[str. 3]{bib:Tanbase}.
 
 \begin{definicija}
 	Naj bo $(R, \oplus, \otimes)$ polkolobar. Z $V(R)$ označimo množico vseh aditivno obrnljivih elementov v $R$ in z $U(R)$ označimo množico vseh multiplikativno obrnljivih elementov iz $R$.
 \end{definicija}
 
-Hitro se da videti, da če je $(R, \oplus, \otimes)$ polkolobar, je $(V(R), \oplus, \otimes)$ kolobar. Če je $R$ komutativen polkolobar, je $V(R)$ komutativen kolobar.
+Hitro se da videti, da če je $(R, \oplus, \otimes)$ polkolobar, je $(V(R), \oplus, \otimes)$ kolobar. Če je $R$ komutativen polkolobar, je $V(R)$ obseg. V nadaljevanju nam bo prišla prav tudi naslednja lema iz \cite[Lema 2\,1]{bib:Tanbase}.
 
 \begin{lema} \label{lema:invvpolkolob}
 	Naj bo $(R, \oplus, \otimes)$ komutativen polkolobar. 
@@ -382,8 +382,8 @@ Predpostavimo sedaj, da za neka elementa $a, b\in R$ velja $a\leq_R b$. Potem ob
 
 Da se dodatno prepričamo, lahko preverimo, da je $(Im(\phi), \boxplus, \boxtimes)$ dioid. To lahko naredimo tako, da pokažemo, da je kanonična šibka urejenost na $Im(\phi)$ antisimetrična, ali pa tako, da upoštevamo, da je $(Im(\phi), \boxplus, \boxtimes)$ podpolkolobar v dioidu $(P, \boxplus, \boxtimes)$ in potem po trditvi \ref{trd:poddioid} sledi da je poddioid v $P$, torej tudi sam dioid.
 \newline \\
-To, da imamo v dioidih (kanonično) relacijo delne urejenosti, nas motivira, da dioide dodatno ločimo glede na lastnosti pripadajoče ureditve. Kot je navedeno v \cite{bib:Gondran}, je delna urejena množica $(R, \leq)$ polna (>>complete<<), ko ima vsaka podmnožica $P \subseteq R$ t.~i.~\pojem{supremum}. 
-Velja, da je $r\in R$ supremum $P\subseteq R$, ko je zgornja meja $P$ ($\forall p \in P$ velja $ p \leq r$) in $\forall q \in R$ velja sklep ($q$ je zgornja meja $P \Rightarrow r \leq q$). Polnost urejenosti nas privede do naslednje definicije, povzete iz \cite{bib:Gondran}.
+To, da imamo v dioidih (kanonično) relacijo delne urejenosti, nas motivira, da dioide dodatno ločimo glede na lastnosti pripadajoče ureditve. Kot je navedeno v \cite[str. 10]{bib:Gondran}, je delna urejena množica $(R, \leq)$ polna (">complete"<), ko ima vsaka podmnožica $P \subseteq R$ t.~i.~\pojem{supremum}. 
+Velja, da je $r\in R$ supremum $P\subseteq R$, ko je zgornja meja $P$ ($\forall p \in P$ velja $ p \leq r$) in $\forall q \in R$ velja sklep ($q$ je zgornja meja $P \Rightarrow r \leq q$). Polnost urejenosti nas privede do naslednje definicije, povzete iz \cite[definicija 6.\,1.\,8.\,]{bib:Gondran}.
 
 \begin{definicija}
 	Dioid $(R, \oplus,\otimes)$ je \pojem{poln} oz. \pojem{kompleten}, če je za kanonično delno urejenost $\leq$ urejena množica $(R, \leq)$ polna in če poleg tega ustreza še t.i. posplošeni distributivnosti: \begin{align*}
@@ -404,19 +404,19 @@ V polnem dioidu označimo kot zadnji element kar vsoto vseh elementov dioida $T 
 \end{zgled}
 
 \begin{opomba}
-	Omenimo še dualni pojem \pojem{infimuma} množice:\\
+	Omenimo še dualni pojem \pojem{infimuma} množice, kot je definiran v \cite[str. 10]{bib:Gondran}.
 	Element $r\in R$ je infimum $P\subseteq R$ ko je spodnja meja $P$ ($\forall p \in P$ velja $ r \leq p$) in $\forall q \in R$ velja sklep ($q$ je spodnja meja $P \Rightarrow q \leq r$). Če ima v $(R, \leq)$ vsaka podmnožica infimum, pravimo, da je $(R, \leq)$ dualno polna. Urejeni množici $(R, \leq)$, ki je hkrati polna in dualno polna, pravimo \pojem{polna mreža}.
 \end{opomba}
 
-Lastnosti dioidov glede na lastnosti kanonične delne urejenosti se da obravnavati v večjem obsegu, a to ni ključnega pomena za to nalogo. Zgoraj navedene definicije in zgledi, ki spadajo pod to temo, so navedeni primarno kot zanimivost in zavoljo malo širše obravnave. Preden se posvetimo primeru praktične aplikacije dioidov, navedimo še en zgled, ki ni vezan na znane številske množice.
+Lastnosti dioidov glede na lastnosti kanonične delne urejenosti se da obravnavati v večjem obsegu, a to ni ključnega pomena za to nalogo. Zgoraj navedene definicije in zgledi, ki spadajo pod to temo, so navedeni primarno kot zanimivost in zavoljo malo širše obravnave. Preden se posvetimo primeru praktične aplikacije dioidov, navedimo še en zgled, ki ni vezan na znane številske množice. Zgleda \ref{zgled:endomorfdioid} in \ref{zgled:shortpathdioid} v nadaljevanju sta povzeta iz \cite[poglavje 6.\,2.\,]{bib:Gondran}.
 
 \begin{zgled} \label{zgled:endomorfdioid}
 	Naj bo $(R, +)$ kanonično urejen komutativen monoid z enoto $0$. Na množici $E$ endomorfizmov $R$ potem uvedemo operaciji $\oplus$ in $\otimes$ na sledeč način: $$\forall f, g \in E: (f\oplus g)(r) = f(r) + g(r) \text{~in~} (f\otimes g)(r) = f(r) \circ g(r) ~\forall r\in R,$$ kjer je $\circ$ navadno komponiranje preslikav. Hitro vidimo, da je $(E, \oplus, \otimes)$ dioid. 
 \end{zgled}
 
-\noindent Naslednji zgled, povzet iz \cite{bib:Gondran}, nam demonstrira praktično aplikacijo obravnavane teorije.
+Naslednji zgled, nam demonstrira praktično aplikacijo zgleda \ref{zgled:endomorfdioid}.
 
-\begin{zgled}
+\begin{zgled}\label{zgled:shortpathdioid}
 	Vsebino zgleda \ref{zgled:endomorfdioid} lahko uporabimo v teoriji grafov v iskanju časovno najkrajše poti. Denimo, da imamo graf $G = (V, E)$ in da vsaki povezavi $(i, j)$ pripada preslikava $h_{ij}$, ki nam poda čas prihoda $t_j$ v vozlišče $j$, če zapustimo vozlišče $i$ ob času $t_i$. Torej $ t_j = h_{ij}(t_i)$. Iščemo najkrajši čas, da prispemo iz vozlišča $t_1$ v izbrano vozlišče $t_i$.
 	
 	Za ta problem vzamemo $R = \R\cup\{+\infty\}, \oplus = \min, 0 = +\infty$. Za množico E vzamemo množico nepadajočih funkcij $f: R \mapsto R$, za katere gre $f(t) \to +\infty$ ko se $t$ bliža $+\infty$. Te funkcije so endomorfizmi nad $(\R\cup\{+\infty\}, \min)$, saj $f(\min\{t, \acute{t}\}) = \min\{f(t),f(\acute{t})\}$ in $f(+\infty) = +\infty$. Na enak način kot v prejšnjem zgledu sestavimo dioid $(E, \oplus, \otimes)$.
@@ -424,23 +424,23 @@ Lastnosti dioidov glede na lastnosti kanonične delne urejenosti se da obravnava
 	Problem najkrajše poti lahko torej obravnavamo s pomočjo dioida endomorfizmov iz prejšnjega zgleda. Rešitve tega problema skupaj z algoritmi so, med drugimi, obravnavali Cooke in Halsey ($1966$) ter Minoux ($1976$).
 \end{zgled}
 
-Na koncu izpostavimo še eno povezavo med polkolobarji in dioidi: Vsakemu polkolobarju pripada nek dioid. Pri določanju tega dioida bo seveda ključno to, da kanonični šibki urejenosti na izbranem polkolobarju dodamo antisimetričnost. Kako to naredimo, nam pove naslednji izrek.
+Na koncu izpostavimo še eno povezavo med polkolobarji in dioidi: Kot lahko vidimo v \cite[poglavje 6.\,9.\,]{bib:Gondran}, vsakemu polkolobarju pripada nek dioid. Pri določanju tega dioida bo seveda ključno to, da kanonični šibki urejenosti na izbranem polkolobarju dodamo antisimetričnost. Kako to naredimo, nam pove trditev \cite[trditev 6.\,9.\,1.\,]{bib:Gondran}, ki je navedena spodaj.
 
-\begin{izrek}
+\begin{trditev}
 	Naj bo $(R, \oplus, \otimes)$ polkolobar v katerem kanonična relacija šibke urejenosti  $\leq$ ni antisimetrična (torej ni delna ureditev). Naj bo $\mathcal{E}$ ekvivalenčna relacija definirana na $R$:
 $$\forall r, s\in R: r\mathcal{E}s \iff r\leq s ~\&~ s \leq r$$
 	Potem je množica $\widehat{R} = R / \mathcal{E}$, opremljena z operacijama, ki ju inducirata $\oplus$ in $\otimes$, dioid. Temu dioidu pravimo dioid, ki je kanonično asociiran s polkolobarjem $(R, \oplus, \otimes)$.
-\end{izrek}
+\end{trditev}
 \begin{dokaz}
 	Relacija $\mathcal{E}$, definirana zgoraj v izreku, je očitno refleksivna, tranzitivna in simetrična, torej je ekvivalenčna relacija. Potem so elementi $\widehat{R}$ ravno ekvivalenčni razredi relacije $\mathcal{E}$ na $R$ in ohranimo oznaki $\oplus$ in $\otimes$ za operacije, ki jih operaciji na $R$ inducirata na $\widehat{R}$. Nevtralna elementa v $\widehat{R}$ sta ekvivalenčna razreda, ki pripadata nevtralnima elementoma iz $R$. Ker aditivna enota $0$ v $(R, \oplus, \otimes)$ izniči $\otimes$, sledi da v $(\widehat{R}, \oplus, \otimes)$ razred kateremu pripada $0$ izniči operacijo, ki jo inducira $\otimes$. Hitro vidimo, da je $(\widehat{R}, \oplus, \otimes)$ polkolobar. Poleg tega kanonična relacija šibke urejenosti $\leq$ inducira antisimetrično relacijo šibke urejenosti, torej delno urejenost. Torej je $(\widehat{R}, \oplus, \otimes)$ dioid.
 \end{dokaz}
 \begin{opomba}
-	Dodatno lahko definiramo še eno strukturo, t.~i.~polpolje, kot polkolobar v katerem je vsak od $0$ različen element obrnljiv glede na $\otimes$. Izkaže se, da so mnogi dioidi polpolja. Takšna sta na primer $(\R, \min, +)$ in $(\R, \max, +)$. To omenimo zgolj kot zanimivost, saj nas v nadaljevanju polpolja ne bodo kaj preveč zanimala.
+	Dodatno lahko definiramo še eno strukturo, t.~i.~polpolje, kot polkolobar v katerem je vsak od $0$ različen element obrnljiv glede na $\otimes$ (\cite[poglavje 1, definicija 5.\,2.\,3.\,]{bib:Gondran}). Izkaže se, da so mnogi dioidi polpolja. Takšna sta na primer $(\R, \min, +)$ in $(\R, \max, +)$. To omenimo zgolj kot zanimivost, saj nas v nadaljevanju polpolja ne bodo kaj preveč zanimala.
 \end{opomba}
 
 \section{Polmoduli in moduloidi:}
 \subsection{Definicije in elementarni primeri:}
-Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Nekoliko bolj presenetljive rezultate bomo obravnavali pri strukturah nad dioidi.
+Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Definirali bomo tudi strukture nad dioidi, za katere bomo pokazali nekaj rezultatov. V večji meri se bomo pri tem držali \cite[poglavje 5.\,2.\,]{bib:Gondran}.
 
 \begin{definicija}\label{def:polmodul}
 	Naj bo $(R, \oplus, \otimes)$ polkolobar z nevtralnima elementoma $0$ in $1$.\newline\pojem{Levi $R$-polmodul} je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem je definirana zunanja operacija \map{\cdot}{R\times M}{M}, ki jo imenujemo množenje s skalarjem. Množenje s skalarjem zadošča naslednjim pogojem za vsaka $\lambda,\mu\in R$ in vsaka $m, n\in M$:
@@ -518,13 +518,15 @@ V tem podpoglavju bomo definirali generatorje, linearno (ne)odvisnost ter baze v
 	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in naj bo $X = (x_i)_{i\in I}$ poljubna neprazna družina elementov iz $M$. Najmanjši (levi) $R$-podpolmodul, ki vsebuje $X$, imenujemo (levi) $R$-podpolmodul generiran z $X$ in ga označimo z \Gen{X}. Če je $\Gen{X} = M$ pravimo, da $X$ generira $M$.
 \end{definicija}
 
-\begin{opomba}
-	V definiciji dopuščamo, da je X končna ali pa neskončna družina. Če je $X$ končna, pravimo, da je $M$ končno generiran.
-\end{opomba}
+	V definiciji dopuščamo, da je X končna ali pa neskončna družina. Če je $X$ končna, pravimo, da je $M$ \pojem{končno generiran}. Tudi v primeru polmodulov bi želeli definirati t.~i.\ dimenzijo polmodula. Pojem dimenzije, kot jo poznamo iz linearne algebre nad polji, ni ustrezen za polkolobarje, saj kardinalnost baze, kot bomo kasneje videli, ni enolično določena. Zato definiramo rang polmodula po \cite[str. 3--4]{bib:Tanbase}.
 
 \begin{definicija}
-	Rang $R$-polmodula $M$, označen z $r(M)$, je enak najmanjšemu številu $n$, za katerega obstaja množica $X$ velikosti $n$, ki generira $M$. Rang vedno obstaja za končno generirane polmodule.
+	\pojem{Rang} $R$-polmodula $M$, označen z $r(M)$, je enak najmanjšemu številu $n$, za katerega obstaja množica $X$ velikosti $n$, ki generira $M$. Rang vedno obstaja za končno generirane polmodule. 
 \end{definicija}
+
+Rang polmodula bo postal pomemben kasneje v podpoglavju \ref{subsect:prehodmat} o prehodnih matrikah.
+
+V nadaljevanju nam bo prišlo prav, če karakteriziramo podpolmodule generirane z $X\subseteq M$. Ravno to nam da naslednja trditev.
 
 \begin{trditev}
 	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i\in I}$ neka poljubna neprazna družina elementov iz M. Potem je $\Gen{X} = Y$, kjer je $Y$  množica tistih $y\in M$, ki so oblike: $$ y = \sum_{j\in J} \lambda_j \cdot x_j$$ Pri tem je $J\subset I$ končna podmnožica indeksov in za vsak $j\in J$ je $\lambda_j \in R$.
@@ -541,7 +543,7 @@ V tem podpoglavju bomo definirali generatorje, linearno (ne)odvisnost ter baze v
 
 Ta rezultat seveda ni presenetljiv, saj velja tudi za module in pa vektorske prostore. V slednjem nam je \Gen{X} znan pod imenom linearne ogrinjače množice vektorjev $X$.
 
-Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite{bib:Gondran}. Ta se glasi:
+Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite[2.\,5.\,1.\,]{bib:Gondran}. Ta se glasi:
 
 \begin{definicija}
 	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i \in I}$ neprazna (končna ali neskončna) družina elementov iz $M$. Za vsako podmnožico indeksov $J \subset I$ označimo z $X_J$ poddružino $X$, ki jo določajo indeksi $j\in J$. Z $\Gen{X_J}$ označimo $R$-podpolmodul, ki ga generira $X_J$.
@@ -550,16 +552,16 @@ Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v p
 		\sum_{i \in I_1}\lambda_i\cdot x_i = \sum_{i \in I_2}\lambda_i\cdot x_i 
 	\end{align*}
 
-	Če $X$ ni linearno odvisna, pravimo, da je \pojem{linearno neodvisna}. Linearna neodvisnost je karakterizirana s pogojem: \begin{align}
+	Če $X$ ni linearno odvisna, pravimo, da je \pojem{linearno neodvisna}. Naj bo $\theta$ enota v $M$. Linearna neodvisnost je karakterizirana s pogojem: \begin{align}
 		\forall I_1, I_2 \subset I; I_1\cap I_2 =\emptyset: \Gen{X_{I_1}}\cap\Gen{X_{I_2}} = \{\theta\}
 	\end{align}
-oziroma ekvivalentno: \begin{align}\label{def:linneodv2}
+\end{definicija}
+
+Linearno neodvisnost lahko ekvivalentno karakteriziramo s pogojem, ki je naveden v \cite[definicija 2.\,3.\,]{bib:Tanbase}. \begin{align}\label{def:linneodv2}
 	\forall x_i\in X: x_i \notin \Gen{X\setminus\{x_i\}}
 \end{align}
-
+Hitro premislimo, da je to res. Vidimo, da je druga karakterizacija poseben primer prve, v katerem je $I_1 = \{i\}$ in $I_2 = I\setminus\{i\}$, saj če $x\notin \Gen{X\setminus\{x\}}$, potem $\Gen{\{x\}}\cap \Gen{X\setminus\{x\}} = \{\theta\}$. Po drugi strani, če velja druga karakterizacija, potem za vsak indeks $i\in I$ 
 Pravimo, da je neprazna podmnožica $X$ v $R$-polmodulu $M$ \pojem{prosta množica} v $M$, če za vsak element v $M$ velja, da če ga lahko zapišemo kot linearno kombinacijo elementov v $X$, je ta zapis enoličen. 
-
-\end{definicija}
 
 Kratek premislek nam pove, da je vsaka prosta množica v $M$ hkrati tudi linearno neodvisna. Da to vidimo, se skličemo na ekvivalentno definicijo \ref{def:linneodv2} linearne neodvisnosti, ki smo jo pravkar navedli.
 
@@ -669,15 +671,11 @@ Sedaj lahko s pomočjo dokazane trditve povemo, kdaj bo polmodul imel enolično 
 	Torej za vsak $x_i\in X$ lahko najdemo $y_j\in Y$, da je $x_i = y_j$, od koder pa sledi $X = Y$.
 \end{dokaz}
 
-
-
-\newpage
-
 \section{Matrike:}
 
 \subsection{Definicije in osnove obrnljivosti}
 
-Kot smo že videli lahko, podobno kot za vektorske prostore in module, tudi za polmodule pod določenimi pogoji definiramo baze in jim tudi določimo >>dimenzije<< (rang polmodula) preko kardinalnosti najmanjše baze. Na njih lahko tudi izvajamo linearne preslikave, ki so definirane na enak način, kot na vektorskih prostorih - $\mathbb{L}: M \mapsto \grave{M}$ more biti aditivna in homogena.
+Kot smo že videli lahko, podobno kot za vektorske prostore in module, tudi za polmodule pod določenimi pogoji definiramo baze in jim tudi določimo ">dimenzije"< (rang polmodula) preko kardinalnosti najmanjše baze. Na njih lahko tudi izvajamo linearne preslikave, ki so definirane na enak način, kot na vektorskih prostorih - $\mathbb{L}: M \mapsto \grave{M}$ more biti aditivna in homogena.
 
 Sedaj bomo nad polkolobarjem $(R, +, \cdot)$ definirali tudi $m\times n$ matrike, za poljubna $m,n\in\N$. Pri tem seštevanje definiramo enako kot za matrike nad obsegi (po komponentah), množenje pa na sledeč način za $A\in M_{m\times n}(R), B\in M_{n\times l}(R)$:
 
@@ -763,7 +761,7 @@ a_{11} & 0 \\
 0 & A1
 \end{bmatrix} * Q^{-1}$ obrnljiva matrika.
 \end{dokaz}
-\subsection{Prehodne matrike}
+\subsection{Prehodne matrike}\label{subsect:prehodmat}
 Denimo, da je $M$ končno generiran (levi) $R$-polmodul in naj bo $T = \{t_1, \ldots, t_n\}$ baza $M$. Dodatno, naj bo $S\subseteq M$ neka končna podmnožica v $M$, recimo $S = \{s_1, \ldots, s_m\}$. Za vsak element v $S$ velja, da ga lahko zapišemo kot linearno kombinacijo elementov iz $T$. \begin{align*}
 	s_1 &= a_{11}t_1 \oplus a_{21}t_2 \oplus \ldots \oplus a_{n1}t_n \\
 	s_2 &= a_{12}t_1 \oplus a_{22}t_2 \oplus \ldots \oplus a_{n2}t_n \\
@@ -933,6 +931,26 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 \begin{dokaz}
 	Po predpostavki je $A*v = v$. Hkrati velja $A*(\lambda\cdot v) = \lambda\cdot (A*v) = \lambda\cdot v$. Na tej točki upoštevamo idempotentnost množenja v $R$ in opazimo $\lambda = \lambda\otimes\lambda$. Potem je $\lambda\cdot v = (\lambda\otimes\lambda)\cdot v = \lambda \cdot (\lambda\cdot v)$, torej je $\lambda\cdot v$ lastni vektor matrike $A$ za lastno vrednost $\lambda$.
 \end{dokaz}
+
+%\section{Posplošeni Cayley-Hamiltonov izrek}
+%Eden izmed pomembnih rezultatov linearne algebre nad polji je Cayley-Hamiltonov izrek. Izkaže se, da ta rezultat ni omejen samo na linearne strukture nad polji, temveč ga lahko dokažemo v posplošeni obliki tudi za module ter polmodule. V tem odseku bodo predstavljene definicije in pojmi, ki so potrebni za navedbo posplošenega Cayley-Hamiltonovega izreka nad polkolobarji. Pri tem bomo snov črpali iz poglavij $3$--$6$ v \cite{bib:Grosu}.
+%
+%\begin{definicija}
+%	Naj bo $X=\{1, 2, \ldots, n\}$ neka končna množica. Pravimo, da je $\sigma$ \pojem{delna permutacija $X$}, če je permutacija neke podmnožice $S\subseteq X$. Na enak način kot za navadne permutacije tudi za delne definiramo parnost.
+%	
+%	Oznaka: $Per(n)$ je množica vseh permutacij množice $\{1, 2, \ldots, n\}$, $Per^{+}(n)$ množica vseh sodih permutacij na isti množici in analogno $Per^{-}(n)$ množica vseh lihih permutacij na tej množici. Na enak način označimo $Part(n)$ kot množico vseh delnih permutacij množice $\{1, 2, \ldots, n\}$ in na enak način kot prej tudi $Part^{+}(n)$ ter $Part^{-}(n)$.
+%	
+%	Delno permutacijo $\sigma$ lahko tudi razširimo na cel X:
+%	
+%	$$
+%	\hat{\sigma} = \begin{cases*}
+%		\hat{\sigma(i)} = \sigma(i); i\in dom(\sigma) \\
+%		\hat{\sigma(i)} = i; \sigma(i) \in X\setminus dom(\sigma)
+%	\end{cases*}
+%	$$
+%	kjer je $dom(\sigma)$ domena delne permutacije $\sigma$.
+%\end{definicija}
+
 \section*{Slovar strokovnih izrazov}
 
 \geslo{semiring}{polkolobar}
@@ -946,17 +964,19 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 % seznam uporabljene literature
 \begin{thebibliography}{99}
 	
-	\bibitem{bib:Golan} J. Golan, \emph{Semirings and their applications}, Springer, Dordrecht, 1999; dostopno tudi na \url{https://link.springer.com/book/10.1007/978-94-015-9333-5}. 
+%	\bibitem{bib:Golan} J. Golan, \emph{Semirings and their applications}, Springer, Dordrecht, 1999; dostopno tudi na \url{https://link.springer.com/book/10.1007/978-94-015-9333-5}. 
 	
 	\bibitem{bib:Gondran} Gondran in M.~Minoux, \emph{Graphs, dioids and semirings: New models and algorithms}, Operations Research/Computer Science Interfaces \textbf{41}, Springer, Boston, 2008; dostopno tudi na \url{https://www.researchgate.net/publication/266193429_Graphs_Dioids_and_Semirings_New_Models_and_Algorithms}.
 	
-	\bibitem{bib:Tanbase} Y.J.~Tan,~\emph{Bases in semimodules over commutative semirings}, Linear Algebra Appl.~\textbf{443},~($2014$),~$139$–$152$.
+%	\bibitem{bib:Grosu} R. Grosu, \emph{The Cayley-Hamilton theorem for noncommutative semirings}, v: Domaratzki, M., Salomaa, K. (eds) Implementation and Application of Automata. CIAA 2010. Lecture Notes in Computer Science, vol 6482. Springer, Berlin. %??? 
 	
-	\bibitem{bib:Tandet} Y.J. Tan, \emph{Determinants of matrices over semirings}, Linear Multilinear Algebra~\textbf{62} ($2013$) $498$–$517$.
+	\bibitem{bib:Tanbase} Y.J.~Tan,~\emph{Bases in semimodules over commutative semirings}, v: Linear Algebra Appl.~\textbf{443},~($2014$),~$139$–-$152$.
 	
-	\bibitem{bib:Tanmatri} Y.J. Tan, \emph{On invertible matrices over commutative semirings}, Linear Multilinear Algebra~\textbf{61} ($2013$) $710$–$714$.
+	\bibitem{bib:Tandet} Y.J. Tan, \emph{Determinants of matrices over semirings}, Linear Multilinear Algebra~\textbf{62} ($2013$) $498$--$517$.
 	
-	\bibitem{bib:Reutenauer} Reutenauer in H.~Straubing, \emph{Inversion of matrices over a commutative semiring},~Journal of Algebra~\textbf{88}~($1984$)~$350$–$360$.
+	\bibitem{bib:Tanmatri} Y.J. Tan, \emph{On invertible matrices over commutative semirings}, Linear Multilinear Algebra~\textbf{61} ($2013$) $710$-–$714$.
+	
+	\bibitem{bib:Reutenauer} Reutenauer in H.~Straubing, \emph{Inversion of matrices over a commutative semiring},~Journal of Algebra~\textbf{88}~($1984$)~$350$--$360$.
 	
 	\bibitem{bib:Wiki} \emph{Semiring}, v: Wikipedia, The Free Encyclopedia, [ogled $15.~2.~2022$], dostopno na \url{https://en.wikipedia.org/wiki/Semiring}.
 	
