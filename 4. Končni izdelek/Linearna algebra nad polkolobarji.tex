@@ -546,7 +546,7 @@ Ta rezultat seveda ni presenetljiv, saj velja tudi za module in pa vektorske pro
 Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite[2.\,5.\,1.\,]{bib:Gondran}. Ta se glasi:
 
 \begin{definicija}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i \in I}$ neprazna (končna ali neskončna) družina elementov iz $M$. Za vsako podmnožico indeksov $J \subset I$ označimo z $X_J$ poddružino $X$, ki jo določajo indeksi $j\in J$. Z $\Gen{X_J}$ označimo $R$-podpolmodul, ki ga generira $X_J$.
+	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i \in I}$ neprazna (končna ali števno neskončna) družina elementov iz $M$. Za vsako podmnožico indeksov $J \subset I$ označimo z $X_J$ poddružino $X$, ki jo določajo indeksi $j\in J$. Z $\Gen{X_J}$ označimo $R$-podpolmodul, ki ga generira $X_J$.
 	
 	Pravimo, da je družina $X$ \pojem{linearno odvisna} natanko tedaj, ko obstajata dve končni disjunktni podmnožici indeksov $I_1\subset I$ in $I_2\subset I$, skupaj s skalarji $\lambda_i \in R\setminus\{0\}; i\in I_1\cup I_2$, da velja: \begin{align*}
 		\sum_{i \in I_1}\lambda_i\cdot x_i = \sum_{i \in I_2}\lambda_i\cdot x_i 
@@ -557,13 +557,22 @@ Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v p
 	\end{align}
 \end{definicija}
 
-Linearno neodvisnost lahko ekvivalentno karakteriziramo s pogojem, ki je naveden v \cite[definicija 2.\,3.\,]{bib:Tanbase}. \begin{align}\label{def:linneodv2}
+Linearno neodvisnost lahko v polmodulih nad komutativnimi polkolobarji ekvivalentno karakteriziramo s pogojem, ki je naveden v \cite[definicija 2.\,3.\,]{bib:Tanbase}.
+\begin{definicija}\label{def:linneodv2}
+	Naj bo $R$ komutativen polkolobar in $M$ polmodul nad $R$. Množica $X\subseteq M$ je linearno neodvisna v $M$, če za njo velja naslednji pogoj.
+\begin{align}
 	\forall x_i\in X: x_i \notin \Gen{X\setminus\{x_i\}}
 \end{align}
-Hitro premislimo, da je to res. Vidimo, da je druga karakterizacija poseben primer prve, v katerem je $I_1 = \{i\}$ in $I_2 = I\setminus\{i\}$, saj če $x\notin \Gen{X\setminus\{x\}}$, potem $\Gen{\{x\}}\cap \Gen{X\setminus\{x\}} = \{\theta\}$. Po drugi strani, če velja druga karakterizacija, potem za vsak indeks $i\in I$ 
-Pravimo, da je neprazna podmnožica $X$ v $R$-polmodulu $M$ \pojem{prosta množica} v $M$, če za vsak element v $M$ velja, da če ga lahko zapišemo kot linearno kombinacijo elementov v $X$, je ta zapis enoličen. 
+\end{definicija}
 
-Kratek premislek nam pove, da je vsaka prosta množica v $M$ hkrati tudi linearno neodvisna. Da to vidimo, se skličemo na ekvivalentno definicijo \ref{def:linneodv2} linearne neodvisnosti, ki smo jo pravkar navedli.
+Hitro premislimo, da je to nad komutativnimi polkolobarji res ekvivalentno definiciji iz \cite[2.\,5.\,1.\,]{bib:Gondran}. Naj bo $M$ polmodul nad komutativnim polkolobarjem $R$ in naj bo $X$ podmnožica v $M$. Vidimo, da je druga karakterizacija poseben primer prve, v katerem je $I_1 = \{i\}$ in $I_2 = I\setminus\{i\}$, saj če $x\notin \Gen{X\setminus\{x\}}$, potem $\Gen{\{x\}}\cap \Gen{X\setminus\{x\}} = \{\theta\}$. Torej ,če za $X$ velja pogoj iz prve karakterizacije, velja tudi pogoj iz druge. Po drugi strani, če za $X$ velja pogoj iz druge karakterizacije, upoštevamo, da velja $\forall i_1\in I: \{i_1\} \cap I\setminus\{i_1\} =\emptyset$ in od tod za vsak indeks $i_1$ sledi $\Gen{\{x_{i_1}\}}\cap \Gen{X\setminus \{x_{i_1}\}} = \{\theta\}$. Potem za vsaka indeksa $i_1, i_2\in I$ velja $\{i_1, i_2\}\cap I\setminus \{i_1, i_2\} = \emptyset$ in $\Gen{\{x_{i_1}, x_{i_2}\}}\cap\Gen{X\setminus\{x_{i_1}, x_{i_2}\}} = \{\theta\}$. Na ta načinlahko sestavimo poljubno (števno) indeksno podmnožico $I_1$ v $I$. Ker sklep velja za $I_2 = I\setminus I_1$, bo veljal tudi, če za $I_2$ vzamemo kako podmnožico od $I\setminus I_1$.
+
+V \cite[definicija 2.\,3.\,]{bib:Tanbase} je definiran tudi pojem proste množice in proste baze. V spodnji definicij povzamemo oboje.
+\begin{definicija}
+Naj bo $R$ komutativen polkolobar. Pravimo, da je neprazna podmnožica $X$ v $R$-polmodulu $M$ \pojem{prosta množica} v $M$, če za vsak element v $M$ velja, da če ga lahko zapišemo kot linearno kombinacijo elementov v $X$, je ta zapis enoličen. 
+\end{definicija}
+
+Kratek premislek nam pove, da je vsaka prosta množica v $M$ hkrati tudi linearno neodvisna. Da to vidimo, se skličemo na definicijo linearne neodvisnosti \ref{def:linneodv2}, ki smo jo pravkar navedli.
 
 Denimo, da je $X$ prosta množica v $R$-polmodulu $M$. Vsak element $x\in X$ lahko zapišemo kot linearno kombinacijo elementov iz $X$ kot $x = 1\cdot x$. Ker je $X$ prosta, je ta zapis enoličen. Če bi bil $x \in\Gen{X\setminus\{x\}}$ bi to pomenilo, da obstaja neka linearna kombinacija elementov iz $X\setminus\{x\}$, ki je enaka $x$ in v sebi ne vsebuje nobenega člena oblike $\lambda\cdot x$ za nek $\lambda\in R\setminus\{0\}$ (posebej ne vsebuje $1\cdot x$). Drugače povedano, v $M$ bi lahko $x$ zapisali kot linearno kombinacijo elementov iz $X$ na dva različna načina, kar pa je v protislovju s predpostavko, da je $X$ prosta množica. Sledi torej, da če je $X$ prosta množica v $R$-polmodulu $M$, je v $M$ tudi linearno neodvisna.
 
@@ -573,25 +582,21 @@ To pa ravno ustreza definiciji linearne odvisnosti v polmodulih.
 
 Torej, če je $(v_k)_{k\in K} \subset M$ linearno odvisna v smislu vektorskega prostora $M$ nad poljem $F$, je tudi linearno odvisna v smislu polmodula $M$ nad polkolobarjem $F$.
 
-Sedaj lahko končno definiramo bazo polmodula.
+Sedaj s sklicem na \cite[Definicija 2.\,4.\,]{bib:Tanbase}končno definiramo bazo polmodula.
 
 \begin{definicija}\label{def:polmodbaza}
 	Pravimo, da je družina $X$ v (levem) $R$-polmodulu $(M, +, \cdot)$ \pojem{baza} $M$, če je linearno neodvisna in generira cel $M$ ($\Gen{X} = M$). Družina $X$ je \pojem{prosta baza} (levega) $R$-polmodula $M$, če je prosta množica v $M$ in generira cel $M$. Polmodulu, ki premore kako prosto množico, pravimo \pojem{prosti polmodul}.
 \end{definicija}
 
 \begin{opomba}
-	Vsaka prosta baza je hkrati tudi baza. Poleg tega ima vsak končno generiran levi polmodul kako bazo.
+	Vsaka prosta baza je hkrati tudi baza. Poleg tega ima vsak končno generiran levi polmodul kako končno bazo.
 \end{opomba}
-
-\begin{definicija}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul. Z $r(M)$ označimo najmanjše tako naravno število $n$, za katerega obstaja množica $X$ v $M$, kardinalnosti $n$, ki generira $M$. To število očitno obstaja za vsak končno generiran $M$.
-\end{definicija}
 
 \begin{zgled}
 	Vrnimo se k zgledu \ref{zgled:Rnpolmodul}. $R$-polmodul $(R^n, \oplus, \otimes)$ prepoznamo kot končno generiran prosti $R$-polmodul. Množica $E = \{e1, e2, \ldots, e_n\}$ tvori prosto bazo za $R^n$, kjer so $e_1 = (1, 0, 0, \ldots, 0)^\top, e_2 = (0, 1, 0, \ldots, 0)^\top, \ldots, e_n = (0, \ldots, 0, 1)^\top$. Razvidno je tudi, da je $r(R^n) = n$.
 \end{zgled}
 
-Sedaj se lahko lotimo klasifikacije baz levih polmodulov, pri čemer se bomo naslonili na Tanov članek \cite{bib:Tanbase}.
+Sedaj se lahko lotimo klasifikacije baz polmodulov nad komutativnimi polkolobarji, pri čemer se bomo naslonili na izrek iz Tanovega članka \cite[izrek 3.\,1.\,]{bib:Tanbase}.
 
 \begin{izrek}
 	Naj bo $R$ komutativen polkolobar in $M$ $R$-polmodul. Če premore $M$ kako neskončno bazo, so vse njegove baze neskončne.
@@ -600,37 +605,32 @@ Sedaj se lahko lotimo klasifikacije baz levih polmodulov, pri čemer se bomo nas
 	Naj bo $X$ neskončna baza za $M$. Če je $Y$ končna baza za $M$, lahko vsak element iz $Y$ zapišemo kot linearno kombinacijo nekih elementov iz $X$. Za vsak $y\in Y$ izberemo reprezentacijo $y = \alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n$, kjer so $x_1, x_2, \ldots x_n \in X$ in $\alpha_1, \alpha_2, \ldots, \alpha_n \in R$. Z $y(X)$ označimo množico elementov iz $X$, s katerimi reprezentiramo $y$. Torej $y(X) = \{x_1, x_2, \ldots, x_n\}$. Z unijo po $y\in Y$ sestavimo novo bazo: $\acute{Y} = \bigcup_{y\in Y}y(X)$. Velja $\acute{Y} \subseteq X$ in $\acute{Y}$ je končna, torej velja $X\setminus\acute{Y}\neq\emptyset$. Očitno lahko vsak element iz $Y$ izrazimo kot linearno kombinacijo elementov iz $\acute{Y}$. Ker lahko vsak element iz $X$ zapišemo kot linearno kombinacijo elementov iz $Y$ (saj je $Y$ tudi baza), lahko vsak element iz $X$ zapišemo kot linearno kombinacijo elementov iz $\acute{Y}$. Potem pa obstaja $x\in X\setminus\acute{Y} \subseteq S$, da je $x\in \Gen{\acute{Y}}\subseteq\Gen{X\setminus\{x\}}$. Ta zadnji sklep je pa v protislovju s tem, da je $X$ linearno neodvisna. Torej je vsaka druga baza $M$ neskončna.
 \end{dokaz}
 
-\begin{opomba}\label{opomb:končgenbaz}
 	Prejšnji izrek nam pove še to, da če ima $M$ končno bazo, so vse njegove baze končne. Ker vsi končno generirani $R$-polmoduli premorejo vsaj eno končno bazo velja, da je vsaka baza končno generiranega levega $R$-polmodula končna.
-\end{opomba}
 
-
-
+V nadaljevanju tega podpoglavja se bomo posvetili bazam nad dioidi, kot sta to obravnavala Gondran in Minoux v \cite[poglavje 5.\,2.\,5.\,]{bib:Gondran}. Za to moramo najprej definirati t.~i.\ ">razcepnost"< vektorja.
 \begin{definicija}
 	Naj bo $(M, +,\cdot)$ levi polmodul nad polkolobarjem $(R, \oplus, \otimes)$ in denimo, da imamo dano neko množico vektorjev $V = (V_k)_{k\in K}$, kjer je $V_k\in M$ za vsak $k\in K$. Vektor $x$ je \pojem{razcepen} na \Gen{V} natanko tedaj, ko obstajata taka vektorja $y, z\in \Gen{V}$, ki sta oba različna od $x$, da velja $x = y + z$. V primeru ko $x$ ni razcepen, pravimo da je \pojem{nerazcepen}.
 \end{definicija}
 
-\begin{opomba}
-	Takoj se da videti, da razcepnost implicira vsebovanost v \Gen{V}: $x~\text{razcepen na}~ \Gen{V}\Rightarrow x\in \Gen{V}$
-\end{opomba}
-
-Iz zgornje opombe takoj sledi naslednja posledica:
-\begin{posledica}
-	\label{pos:nerazcep}
+	Takoj se da videti, da razcepnost implicira vsebovanost v \Gen{V}: $x~\text{razcepen na}~ \Gen{V}\Rightarrow x\in \Gen{V}$, od tod pa takoj sledi naslednja trditev.
+	
+\begin{trditev}
+	\label{trd:nerazcep}
 	Če je $x$ nerazcepen na \Gen{V}, potem zanj velja natanko ena od naslednjih lastnosti:
 	\begin{enumerate}[(i)] 
 		\item $x \notin \Gen{V}$
 		\item $x = y + z \text{~za~} y, z\in\Gen{V}\Rightarrow x = y \text{~ali~} x = z$
 	\end{enumerate}
-\end{posledica}
+\end{trditev}
 
-Sedaj lahko zapišemo in dokažemo naslednjo trditev:
+S pomočjo trditve \ref{trd:nerazcep} lahko zapišemo in dokažemo naslednjo trditev.
+
 \begin{trditev}
 	\label{trd:potrebzanerazcep}
 	Naj no $(R, \oplus, \otimes)$ dioid in označimo z $0$ nevtralni element za $\oplus$ ter z $1$ nevtralni element za $\otimes$. Denimo dodatno, da velja: $r\oplus p = 1 \Rightarrow r = 1 \text{~ali~} p=1$. 
 	Naj bo $(M, +, \cdot)$ $R$-moduloid, ki je kanonično urejen glede na $+$. Z $\varpropto$ označimo kanonično delno urejenost na $M$. Dodatno predpostavimo, da za $x, y\in M$, ki zadoščata pogojem $x \neq y ~\&~ y\neq\theta$ in $\lambda\in R$ velja: $$y = \lambda\cdot y + x \Rightarrow \lambda = 1$$
 	
-	Trdimo, da če veljajo omenjene predpostavke, za linearno neodvisno družino \newline $X = (x_i)_{i\in I}$ elementov iz $M$ (kjer velja $x_i \neq \theta \forall i\in I$) velja, da je za vsak indeks $j\in I$ element $x_j$ nerazcepen nad \Gen{X}.
+	Trdimo, da če veljajo omenjene predpostavke, za linearno neodvisno družino $X = (x_i)_{i\in I}$ elementov iz $M$ (kjer velja $x_i \neq \theta \forall i\in I$) velja, da je za vsak indeks $j\in I$ element $x_j$ nerazcepen nad \Gen{X}.
 \end{trditev}
 
 \begin{dokaz}
@@ -648,7 +648,7 @@ Sedaj lahko zapišemo in dokažemo naslednjo trditev:
 	
 	Denimo, da je $\mu_j = 1$. Potem lahko $z$ zapišemo kot $z = x_j + \sum_{i\in I_2\setminus\{j\}}\mu_i\cdot x_i$. Od tod sledi $x_j\varpropto z$ in ker je $\varpropto$ relacija delne urejenosti, sledi, da je $z = x_j$. Podobno, če je $\lambda_i = 1$ pridemo do razultata $y = x_j$.
 	
-	Po drugi točki posledice \ref{pos:nerazcep} je potem $x_j$ nerazcepen.
+	Po drugi točki posledice \ref{trd:nerazcep} je potem $x_j$ nerazcepen.
 \end{dokaz}
 
 Sedaj lahko s pomočjo dokazane trditve povemo, kdaj bo polmodul imel enolično določeno bazo.
@@ -808,7 +808,7 @@ Za naslednjo trditev se spomnimo definicije prostega (levega) $R$-polmodula v \r
 \end{trditev}
 
 \begin{dokaz}
-	Opomba \ref{opomb:končgenbaz} nam pove, da sta tako $T$ kot $S$ končni. Naj bo $S = \{s_1,\ldots, s_m\}$ in $T =\{t_1, \ldots, t_n\}$ ter naj bo $A \in M_{n\times m}(R)$ prehodna matrika iz $T$ v $S$ ter $B\in M_{m\times n}(R)$ prehodna matrika iz $S$ v $T$. Potem je $$(s_1, s_2, \ldots, s_m) = (t_1, t_2, \ldots, t_n)*A$$ in $$(t_1, t_2, \ldots, t_n) = (s_1, s_2, \ldots, s_m)*B$$ Ko to dvoje združimo dobimo, da je $(t_1, t_2, \ldots, t_n) = (t_1, t_2, \ldots, t_n)*A*B$ in ker je $T$ prosta baza sledi, da je $A*B = I_n$. Denimo sedaj, da je $m < n$ in naj bosta $O_1\in M_{n\times (n-m)}(R)$ in $O_2\in M_{(n-m)\times m}(R)$ ničelni matriki. Sedaj sestavimo matriki $A_1 = \begin{bmatrix}
+	Ker je $M$ končno generiran, ima neko končno bazo, torej sta tako $T$ kot $S$ končni. Naj bo $S = \{s_1,\ldots, s_m\}$ in $T =\{t_1, \ldots, t_n\}$ ter naj bo $A \in M_{n\times m}(R)$ prehodna matrika iz $T$ v $S$ ter $B\in M_{m\times n}(R)$ prehodna matrika iz $S$ v $T$. Potem je $$(s_1, s_2, \ldots, s_m) = (t_1, t_2, \ldots, t_n)*A$$ in $$(t_1, t_2, \ldots, t_n) = (s_1, s_2, \ldots, s_m)*B$$ Ko to dvoje združimo dobimo, da je $(t_1, t_2, \ldots, t_n) = (t_1, t_2, \ldots, t_n)*A*B$ in ker je $T$ prosta baza sledi, da je $A*B = I_n$. Denimo sedaj, da je $m < n$ in naj bosta $O_1\in M_{n\times (n-m)}(R)$ in $O_2\in M_{(n-m)\times m}(R)$ ničelni matriki. Sedaj sestavimo matriki $A_1 = \begin{bmatrix}
 A & O_1
 \end{bmatrix}$ in $B_1 = \begin{bmatrix}
 B \\
@@ -955,9 +955,12 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 
 \geslo{semiring}{polkolobar}
 \geslo{semimodule}{polmodul}
+\geslo{free semimodule}{prosti polmodul} polmodul, ki premore kako prosto bazo.
+\geslo{base (of a semimodule)}{baza (polmodula)} linearno neodvisna podmnožica v polmodulu, ki ga generira.
 \geslo{dioid}{dioid}
 \geslo{$0 \in R$ is absorbing for $\otimes$}{$0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
-\geslo{free semimodule}{prost polkolobar}
+\geslo{free set in a semimodule}{prosta množica v polmodulu} Podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način. 
+\geslo{free base (of a semimodule)}{prosta baza polmodula} Prosta podmnožica v polmodulu, ki generira polmodul.
 %\geslo{}{}
 %\geslo{}{}
 
