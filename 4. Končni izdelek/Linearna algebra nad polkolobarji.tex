@@ -2,7 +2,7 @@
 
 \avtor{Jimmy Zakeršnik}
 \naslov{Linearna algebra nad polkolobarji}
-\title{Linearn algebra over semirings}
+\title{Linear algebra over semirings}
 
 \mentor{prof.~dr.~Tomaž~Košir}
 
@@ -10,7 +10,7 @@
 
 %  V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga organizacije dela --
 %  v katerem poglavju/razdelku je kaj, pač pa le opis vsebine.
-\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavani bolj osnovni izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$ ter lastnosti in obrnljivost matrik nad polkolobarjem $R$.}
+\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavana zgolj osnovna izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$ ter lastnosti in obrnljivost matrik nad polkolobarjem $R$.}
 
 %  Prevod slovenskega povzetka v angleščino.
 \abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$  if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for a long time now and as such most of the classical questions relating to the structures from the perspective of linear algebra have already been answered. The paper will present some of these results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields, such as the existence and properties of bases of an $R$-semimodule and the properties and invertibility of a matrix over a semiring $R$.}
@@ -82,22 +82,25 @@
 \tableofcontents
 
 \section{Uvod}
-Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obravnavati številske množice. Med primere spadajo množica nenegativnih celih števil, množica nenegativnih racionalnih števil, množica nenegativnih realnih števil, razne strukture nad množicami, ki se izkažejo kot uporabne v topologiji, t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti zaposlenih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
+Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obravnavati številske množice. Med primere spadajo nenegativni odseki celih, racionalnih ter realnih števil (opremljeni s standardnim seštevanjem in množenjem), razne strukture nad množicami, ki so uporabne v topologiji, t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti v podjetjih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
 
 Kljub njihovi uporabnosti in pogostem pojavljanju, tako polkolobarji kot strukture nad njimi v sklopu standardne matematične izobrazbe eksplicitno ne prejmejo kaj dosti pozornosti. Poleg popolnoma praktičnih motivacij za obravnavo teh struktur se izkaže, da nas obravnava polkolobarjev oz. linearne algebre nad njimi privede tudi do bistva definicij določenih lastnosti in konceptov v klasični linearni algebri nad vektorskimi prostori. 
 
-V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmodule kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku.
+V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmoduli kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku.
 
-Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(E, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Zgled in besedilo za njim sta povzeta iz \cite[str. 1--2]{bib:Gondran} .
+Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(E, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Osnovni primer so enačbe, s katerimi se spoznamo že v osnovni šoli. Vzemimo za primer množico naravnih števil skupaj z $0$, torej $\No$, opremljeno s standardnim seštevanjem ter množenjem. Naj bosta $a, b\in \No$ parametra v enačbi $a + x = b$. Ta enačba ima na $(\No, +, \cdot)$ rešitev, čim je $a \leq b$. Naslednji zgled je povzet iz \cite[str. 1 -- 2]{bib:Gondran}.
 
 \begin{zgled}
-	Množico nenegativnih realnih števil $\Pplus{R}$ opremimo s standardnima operacijiama seštevanja in množenja in to strukturo označimo z oznako $(\Pplus{R}, +, \cdot)$. Na tej strukturi ima enačba $a + x = b$ rešitev samo, če za $a, b\in\Pplus{R}$ velja $a\leq b$. Po drugi strani ima pa enačba $x = a\cdot x + b$ na $\Pplus{R}$ rešitev za vsak $b$ čim je $a < 1$: $$ x = \frac{1}{1 - a} \cdot b = (1 + a + a^2 + \ldots)\cdot b$$
+	Množico nenegativnih realnih števil $\Pplus{R}$ opremimo s standardnima operacijiama seštevanja in množenja in to strukturo označimo z oznako $(\Pplus{R}, +, \cdot)$. Na tej strukturi ima enačba $x = a\cdot x + b$ rešitev za vsak $b$ čim je $a < 1$: $$ x = \frac{1}{1 - a} \cdot b = \sum_{i = 0}^{\infty}a^i \cdot b = (1 + a + a^2 + \ldots)\cdot b$$
 \end{zgled}
-Izkaže se, da lahko nad polkolobarji počnemo več kot le reševanje preprostih enačb. Da to vidimo je dovolj, da obravnavamo kvadratne matrike nad $\Pplus{R}$. Perron-Frobeniusov izrek nam namreč zagotovi, da bo vsaka kvadratna matrika $A \in\Pplus{R}^{n\times n}$ imela pozitivno realno lastno vrednost, torej $\lambda\in\Pplus{R}\setminus\{0\}$ in da bo pripadajoč lasten vektor imel vse koeficiente iz $\Pplus{R}\setminus\{0\}$. Torej lahko govorimo ne samo o rešitvah enačb, ampak tudi o matrikah in lastnih vrednostih, čeprav niti $(\Pplus{R}, +, \cdot)$ niti $(\Pplus{R}\setminus\{0\}, +, \cdot)$ nista polji. Ta tip matrik (in prej omenjen izrek) je relevanten v verjetnosti, predvsem v teoriji dinamičnih sistemov. Struktura $(\Pplus{R}, +, \cdot)$ tudi igra fundamentalno vlogo v teoriji mere in v verjetnosti.
+
+Izkaže se, da lahko nad polkolobarji počnemo več kot le reševanje preprostih enačb. Da to vidimo je dovolj, da obravnavamo kvadratne matrike nad $\Pplus{R}$. Naj bo $A \in\R^{n\times n}$ realna kvadratna matrika za katero velja, da so vse vrednosti v njej nenegativne, torej $a_{ij} \geq 0, \forall i, j \in \{1, 2, \ldots, n\}$. Perron-Frobeniusov izrek nam potem zagotovi, da bo $A$ imela nenegativno realno lastno vrednost $\lambda$, enako njenemu spektralnemu radiju $\rho(A)$, ter da bo pripadajoč lasten vektor $w$ imel same nenegativne realne koeficiente, torej $w_i \geq 0; \forall i\in \{1, 2, \ldots, n\}$. 
+Za matriko $A$, za katero veljalo pogoji iz prej omenjenega izreka, lahko rečemo, da v resnici spada v množico $\Pplus{R}^{n\times n}$. Ker je ta množica polkolobar, kot bomo premislili kasneje, lahko torej govorimo, ne samo o rešitvah enačb nad polkolobarji, ampak tudi o matrikah in lastnih vrednostih nad temi strukturami, čeprav niti $(\Pplus{R}, +, \cdot)$ niti $(\Pplus{R}\setminus\{0\}, +, \cdot)$ nista polji. Ta tip matrik (in prej omenjen izrek) se pojavlja na področju verjetnosti, predvsem v teoriji dinamičnih sistemov. Nepresenetljivo, struktura $(\Pplus{R}, +, \cdot)$ tudi igra pomembno vlogo v teoriji mere.
 
 \section{Monoidi, polkolobarji in dioidi:}
-V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[Poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. Za začetek bomo osvežili znanje o že znanih monoidih, preden se lotimo novih konceptov kot so polkolobarji in dioidi. 
+V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[Poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. 
 \subsection{Monoidi:}
+Za začetek bomo osvežili znanje o monoidih in dokazali nekaj relevantnih rezultatov, preden se lotimo obravnave novih konceptov. 
 \begin{definicija}
 	Neprazna množica $M$, opremljena z operacijo $\ast$, je \pojem{monoid}, če za operacijo $\ast$ na $M$ velja:
 	\begin{enumerate}
@@ -106,7 +109,7 @@ V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi
 	\end{enumerate}
 	Prva lastnost se imenuje \pojem{asociativnost}, druga pa \pojem{obstoj enote}. 
 \end{definicija}
-
+Dodatno navedimo še definicijo relacije urejenosti, saj bodo tudi te igrale pomembno vlogo v tej nalogi.
 \begin{definicija}
 	\pojem{Relacija delne urejenosti} $\leq$ na množici X je binarna relacija, ki je refleksivna, tranzitivna in antisimetrična. Zanjo torej velja:
 	\begin{enumerate}
@@ -116,59 +119,58 @@ V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi
 	\end{enumerate}
 Če je poleg tega še sovisna, torej če velja $\forall a, b \in X: a \leq b \lor b \leq a$, pravimo, da je relacija \pojem{linearna urejenost}.
 \end{definicija}
-%Preskoči definicije do sem - bi mogle itak biti očitne!
+Tudi monoidi, kot množice, lahko premorejo kako relacijo urejenosti, ki je lahko v neki zvezi z operacijo na monoidu, ali pa ne. Iz tega razloga uvedemo nov pojem za tiste monoide, v katerih velja določena zveza.
 \begin{definicija}
-	Monoid $(R, \ast)$ je \pojem{urejen}, če je na njem definirana relacija urejenosti $\leq$, ki zadošča pogoju: \begin{align*} 
-	a \leq \acute{a} \Rightarrow ((a \ast \hat{a} \leq \acute{a} \ast \hat{a})~\&~(\hat{a} \ast a \leq \hat{a}\ast \acute{a})) ~\text{za vse}~a, \acute{a},\hat{a}\in R.
+	Monoid $(M, \ast)$ je \pojem{urejen}, če je na njem definirana relacija urejenosti $\leq$, ki zadošča pogoju: \begin{align*} 
+	a \leq \acute{a} \Rightarrow ((a \ast \hat{a} \leq \acute{a} \ast \hat{a})~\&~(\hat{a} \ast a \leq \hat{a}\ast \acute{a})) ~\text{za vse}~a, \acute{a},\hat{a}\in M.
 \end{align*}
-	Pravimo tudi, da je na $(R, \ast)$ relacija $\leq$ \pojem{usklajena} z operacijo $\ast$.
+	Pravimo tudi, da je na $(M, \ast)$ relacija $\leq$ \pojem{usklajena} z operacijo $\ast$.
 \end{definicija}
-
-\begin{opomba}
-	\label{opomb:kanonšibrel}
-	Če je $(R, \oplus)$ komutativen monoid, mu lahko priredimo t.~i.~kanonično šibko urejenost na sledeč način: $$a \leq b \Rightarrow \exists c\in R: b = a \oplus c$$ Ta relacija je zaradi obstoja nevtralnega elementa refleksivna, poleg tega je pa tudi tranzitivna: \begin{align*}
-		a\leq b~\text{in}~b\leq c \Rightarrow \exists d, e\in R: b = a \oplus d~\text{in}~ c = b \oplus e \\
-		\text{torej je}~ c = a \oplus d \oplus e = a \oplus (d \oplus e) \text{torej}~ a \leq c.
-	\end{align*}
-	Kanonična šibka urejenost že zadošča pogoju usklajenosti s komutativno notranjo operacijo $\oplus$, ki je zapisana v definiciji urejenega (komutativnega) monoida: \begin{align*}
-		a \leq b \Rightarrow \exists c\in R: b = a \oplus c \\
-		\forall d \in R: b \oplus d = a \oplus c \oplus d = a \oplus d \oplus c \\
-		\text{torej velja}~ a \oplus d \leq b \oplus d.
-	\end{align*}
+Od tod naprej bomo za operacijo v monoidu $M$ namesto $\ast$ uporabili $\oplus$.
+Če je $(M, \oplus)$ komutativen monoid, mu lahko priredimo t.~i.~kanonično šibko urejenost na sledeč način: $$a \leq b \Rightarrow \exists c\in M: b = a \oplus c$$ Ta relacija je zaradi obstoja nevtralnega elementa refleksivna, poleg tega je pa tudi tranzitivna, kar tukaj na hitro premislimo: Če za neke elemente $a, b, c\in M$ velja $a\leq b~\text{in}~b\leq c$, potem obstajata $d, e\in M;~b = a \oplus d$ in $c = b\oplus e$ torej je $c = a\oplus d\oplus e = a\oplus (d \oplus e)~\text{in od tod pa sledi}~ a \leq c$.
 	
-	Ključna lastnost, ki loči kanonično relacijo šibke urejenosti od tega, da bi bila delna urejenost, je torej antisimetričnost. Antisimetrični kanonični relaciji šibke urejenosti pravimo kanonična relacija delne urejenosti oz. kanonična delna urejenost.
-\end{opomba}
+Ključna lastnost, ki loči kanonično relacijo šibke urejenosti od tega, da bi bila delna urejenost, je torej antisimetričnost. Antisimetrični kanonični relaciji šibke urejenosti pravimo kanonična relacija delne urejenosti oz. kanonična delna urejenost.
+
+Dodatno premislimo, da kanonična šibka urejenost zadošča pogoju usklajenosti s komutativno notranjo operacijo $\oplus$, ki je zapisana v definiciji urejenega (komutativnega) monoida: Denimo, da za neka $a, b\in M$ velja $a \leq b$ potem $\exists c\in M: b = a \oplus c$ in za vsak element $d\in M$ velja $b \oplus d = a \oplus c \oplus d = a \oplus d \oplus c$ zaradi komutativnosti $\oplus$. Od tod sklepamo: $a \oplus d \leq b \oplus d$.
+	
 \begin{definicija}
-		Za komutativen monoid $(R, \oplus)$, ki je kanonično šibko urejen z $\leq$, pravimo, da je \pojem{kanonično} urejen, če je $\leq$ delna urejenost (torej, če je antisimetrična).
+		Za komutativen monoid $(R, \oplus)$, ki je urejen s kanonično šibko urejenostjo $\leq$, pravimo, da je \pojem{kanonično} urejen, če je $\leq$ delna urejenost (torej, če je $\leq$ antisimetrična).
 \end{definicija}
-Sedaj se lahko lotimo prvega zanimivega rezultata, ki nam bo pomagal s klasifikacijo monoidov.
+S pomočjo navedenih definicij bomo sedaj izrazili in dokazali prvi izrek te naloge.
 
 \begin{izrek}
 	\label{izr:kdunegrp}
 	Monoid ne more hkrati biti grupa in kanonično urejen.
 \end{izrek}
 \begin{dokaz}
-	Naj bo $(E, \oplus)$ grupa in za vsak element $a\in E$ označimo njegov inverz kot $a^{-1}$. Denimo, da je ta grupa tudi kanonično urejena in naj bosta $a$ ter $b$ dva poljubna različna elementa iz $E$ (torej $a\neq b$). \\
-	Ker je $(E, \oplus)$ grupa obstaja tak $c\in E$, da je $a = b \oplus c$, torej je $b \leq a$ (zadošča, da vzamemo $c = b^{-1}\oplus a$). Poleg tega obstaja tak $d\in E$, da je $b = a \oplus d$ (vzamemo kar $d = a^{-1}\oplus b$), torej je $a \leq b$. Potem po antisimetričnosti sledi $a = b$, torej smo prišli v protislovje.
+	Naj bo $(G, \oplus)$ grupa in za vsak element $a\in G$ označimo njegov inverz kot $a^{-1}$. Denimo, da je ta grupa tudi kanonično urejena in naj bosta $x$ ter $y$ dva poljubna različna elementa iz $G$ (torej $x\neq y$).
+	Ker je $(G, \oplus)$ grupa obstaja tak $z\in G$, da je $x = y \oplus z$, torej je $y \leq x$. Konkretno: vzamemo $z = y^{-1}\oplus x$. Poleg tega obstaja tak $w\in G$, da je $y = x \oplus w$ (vzamemo kar $w = x^{-1}\oplus y$), torej je $x \leq y$. Potem po antisimetričnosti $\leq$ sledi $a = b$, kar nas privede v protislovje.
 \end{dokaz}
 
 \begin{opomba}
-	Izrek \ref{izr:kdunegrp} nas, kot je bilo že prej omenjeno, privede do klasifikacije monoidov. Razred vseh monoidov lahko razdelimo na tri disjunktne razrede: grupe, kanonično urejene monoide in ostale monoide (to so tisti, ki niso niti grupe, niti kanonično urejeni).
+	Izrek \ref{izr:kdunegrp} motivira klasifikacijo monoidov. Razred vseh monoidov razdelimo na tri disjunktne razrede: grupe, kanonično urejene monoide in ostale monoide (to so tisti, ki niso niti grupe, niti kanonično urejeni).
 \end{opomba}
 
-Kanonično urejeni monoidi pa imajo še eno zanimivo lastnost, ki nam je znana iz aritmetike nad nenegativnimi celimi števili $\No$.
+Kanonično urejeni monoidi imajo še eno zanimivo lastnost, ki nam je znana iz računanja nad nenegativnimi celimi števili $\No$ -- to, da se noben par neničelnih števil ne more sešteti v $0$.
 
-\begin{trditev}
-	V kanonično urejenem monoidu $(E, \oplus)$ velja naslednje: $$\forall a, b \in E: a\oplus b = 0 \Rightarrow a = 0 ~\& ~ b = 0$$
+\begin{trditev}\label{trd:poz}
+	V kanonično urejenem monoidu $(M, \oplus)$ velja naslednje: $$x, y \in M ~\&~ x\oplus y = 0 \Rightarrow x = 0 ~\& ~ y = 0$$
 \end{trditev}
 \begin{dokaz}
-	Denimo, da velja $a \oplus b = 0$. Od tod sledi $a\leq 0$ in $b \leq 0$. Hkrati pa velja $a = 0 \oplus a$ in $b = 0 \oplus b$, torej velja tudi $0 \leq a$ in $0 \leq b$. Po antisimetričnosti potem sledi $a = 0$ in $b = 0$.
+	Denimo, da za neka $x, y\in M$ velja $x \oplus y = 0$. Od tod sledi $x\leq 0$ in $y \leq 0$. Velja pa tudi $x = 0 \oplus x$ in $y = 0 \oplus y$, od koder sklepamo, da velja $0 \leq x$ in $0 \leq y$. Po antisimetričnosti $\leq$ potem sledi $x = 0$ in $y = 0$.
 \end{dokaz}
 
 \begin{opomba}
-	\label{opomb:vsotnic}
-	Če v strukturi $(E, \oplus)$ velja $\forall a, b \in E: a\oplus b \Rightarrow a = 0 = b$ pravimo, da je brez vsote nič. Tipičen primer, ki zadošča tej lastnosti, je $(\No, +)$. Opazimo lahko tudi, da v komutativnem monoidu ta lastnost implicira antisimetričnost kanonične šibke urejenosti. Res, denimo $a\leq b$ in $b\leq a$. Potem $\exists c, d\in E$, da velja $b = a \oplus c$ in $a = b \oplus d$. Ko prvo enakost vstavimo v drugo, dobimo $a = (a \oplus c) \oplus d = a \oplus (c\oplus d)$, od tod pa sklepamo $d\oplus d = 0$. Po predpostavki sledi $c = 0$ in $d = 0$, torej $a = b$.
+	\label{opomb:poz}
+	Lastnosti iz trditve \ref{trd:poz} pravimo \pojem{pozitivnost}, za strukturo, ki ima to lastnost, pa pravimo, da zadošča pogoju pozitivnosti. Tipičen primer, ki zadošča tej lastnosti, je $(\No, +)$. 
 \end{opomba}
+
+Za konec tega odseka uporabimo lastnost pozitivnosti v naslednjem izreku.
+\begin{izrek}
+Naj bo vsak element $x$ komutativnega monoida $(M, \oplus)$ okrajšljiv, torej $\forall a, b\in M:$ $$a\oplus x = b\oplus x \Rightarrow a = b$$ in $$x\oplus a = x\oplus b \Rightarrow x = y$$ Dodatno, naj $M$ zadošča pogoju pozitivnosti. Potem je kanonična šibka urejenost definirana na $M$ antisimetrična in $M$ je kanonično urejen.
+\end{izrek}
+\begin{dokaz} Denimo, da za neka elementa $x, y\in M$ velja $x\leq y$ in $y\leq x$. Potem obstajata $z, w\in M$, da velja $y = x \oplus z$ in $x = y \oplus w$. Ko prvo enakost vstavimo v drugo, dobimo $x \oplus 0 = x = (x \oplus z) \oplus w = x \oplus (z\oplus w)$, od tod pa, zaradi okrajšljivosti elementa $x$, sklepamo $z\oplus w = 0$. Zaradi pozitivnosti sledi $z = 0$ in $w = 0$, od tod pa $a = b$.
+\end{dokaz}
 
 \subsection{Polkolobarji}
 Sedaj, ko smo osvežili in dopolnili znanje o monoidih, se lahko lotimo polkolobarjev.
@@ -210,7 +212,7 @@ V tem zgledu, ki smo za povzeli iz \cite{bib:Wiki}, bomo obravnavali poseben tip
 
 Zgoraj obravnavan tip polkolobarjev se uporablja v teoriji mere. Primer takega polkolobarja je nabor polzaprtih intervalov $\left[a, b\right) \subset \R$ za unijo in presek.
 
-Občasno nam bo prišlo prav, če bomo imeli oznake za množico aditivno obrnljivih elementov in za množico multiplikativno obrnljivih elementov v polkolobarju. Nasledno definicijo pozemamo iz \cite[str. 3]{bib:Tanbase}.
+Občasno nam bo prišlo prav, če bomo imeli oznake za množico aditivno obrnljivih elementov in za množico multiplikativno obrnljivih elementov v polkolobarju. Nasledno definicijo pozemamo iz \cite[str. $3$]{bib:Tanbase}.
 
 \begin{definicija}
 	Naj bo $(R, \oplus, \otimes)$ polkolobar. Z $V(R)$ označimo množico vseh aditivno obrnljivih elementov v $R$ in z $U(R)$ označimo množico vseh multiplikativno obrnljivih elementov iz $R$.
@@ -304,7 +306,7 @@ Kot smo že napovedali v prejšnjem podpoglavju, zahvaljujoč se izreku \ref{izr
 	Polkolobarju $(R, \oplus, \otimes)$, na katerem je kanonična relacija šibke urejenosti (definirana preko $\oplus$) delna urejenost, pravimo \pojem{dioid}.
 \end{definicija}
 \begin{opomba}
-	Upoštevajoč opombo \ref{opomb:vsotnic} lahko klasificiramo dioide kot polkolobarje brez vsote nič.
+	Upoštevajoč opombo \ref{opomb:poz} lahko klasificiramo dioide kot polkolobarje brez vsote nič.
 \end{opomba}
 \begin{opomba}
 	Če namesto (obojestranskega) polkolobarja vzamemo levi ali desni polkolobar in v njem opremimo $(R, \oplus)$ s kanonično delno urejenostjo, dobljeni strukturi pravimo levi oz. desni dioid.
@@ -328,7 +330,7 @@ V zgledu omenjene množice, opremljene s standardnim seštevanjem in množenjem,
 	Naj bo $(R, \oplus, \otimes)$ dioid. Potem je kanonična delna urejenost $\leq$ usklajena z operacijama $\oplus$ in $\otimes$.
 \end{trditev}
 \begin{dokaz}
-	To, da je $\leq$ usklajena z operacijo $\oplus$ vemo že iz opombe \ref{opomb:kanonšibrel}. Pokažimo torej enako še za $\otimes$.
+	To, da je $\leq$ usklajena z operacijo $\oplus$ vemo že od prej. Pokažimo torej enako še za $\otimes$.
 	Vemo, da velja $a\leq b \iff \exists c\in R: b = a \oplus c$. Potem iz $a \leq b$ za $\forall x\in R$ sledi $(a \oplus c) \otimes x = b \otimes x$.
 	Po distributivnosti potem sledi $(a\otimes x) \oplus (c \otimes x) = b\otimes x$. Potem je pa $a\otimes x \leq b\otimes x ~\forall x\in R$. Torej je $\leq$ usklajena z $\otimes$. Podobno pokažemo tudi $x \otimes a \leq x \otimes b$.
 \end{dokaz}
@@ -955,12 +957,17 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 
 \geslo{semiring}{polkolobar}
 \geslo{semimodule}{polmodul}
-\geslo{free semimodule}{prosti polmodul} polmodul, ki premore kako prosto bazo.
-\geslo{base (of a semimodule)}{baza (polmodula)} linearno neodvisna podmnožica v polmodulu, ki ga generira.
+\geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo.}
+\geslo{base (of a semimodule)}{baza (polmodula) -- linearno neodvisna podmnožica v polmodulu, ki ga generira.}
 \geslo{dioid}{dioid}
 \geslo{$0 \in R$ is absorbing for $\otimes$}{$0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
-\geslo{free set in a semimodule}{prosta množica v polmodulu} Podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način. 
-\geslo{free base (of a semimodule)}{prosta baza polmodula} Prosta podmnožica v polmodulu, ki generira polmodul.
+\geslo{free set in a semimodule}{prosta množica v polmodulu -- podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način.}  
+\geslo{free base (of a semimodule)}{prosta baza polmodula -- prosta podmnožica v polmodulu, ki generira polmodul.} 
+\geslo{Perron-Frobenius Theorem}{Perron-Frobeniusov izrek -- Pod to ime spada več rezultatov o realnih matrikah s samimi pozitivnimi ali nenegativnimi vrednostmi (pozitivne oz. nenegativne realne matrike), ki sta jih dokazala Oskar Perron (za pozitivne matrike), in Georg Frobenius (za nenegativne matrike).}
+\geslo{positivity condition}{pogoj pozitivnosti -- struktura v kateri velja sklep, da če je t.i. vsota dveh elementov enaka nevtralnemu elementu oz. >>ničli<<, sta potem oba elemeneta enaka nevtralnemu elementu, zadošča pogoju pozitivnosti.}
+%\geslo{}{}
+%\geslo{}{}
+%\geslo{}{}
 %\geslo{}{}
 %\geslo{}{}
 
