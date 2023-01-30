@@ -143,8 +143,8 @@ S pomočjo navedenih definicij bomo sedaj izrazili in dokazali prvi izrek te nal
 	Monoid ne more hkrati biti grupa in kanonično urejen.
 \end{izrek}
 \begin{dokaz}
-	Naj bo $(G, \oplus)$ grupa in za vsak element $a\in G$ označimo njegov inverz kot $a^{-1}$. Denimo, da je ta grupa tudi kanonično urejena in naj bosta $x$ ter $y$ dva poljubna različna elementa iz $G$ (torej $x\neq y$).
-	Ker je $(G, \oplus)$ grupa obstaja tak $z\in G$, da je $x = y \oplus z$, torej je $y \leq x$. Konkretno: vzamemo $z = y^{-1}\oplus x$. Poleg tega obstaja tak $w\in G$, da je $y = x \oplus w$ (vzamemo kar $w = x^{-1}\oplus y$), torej je $x \leq y$. Potem po antisimetričnosti $\leq$ sledi $a = b$, kar nas privede v protislovje.
+	Naj bo $(G, \oplus)$ grupa in za vsak element $a\in G$ označimo njegov inverz kot $-a$. Denimo, da je ta grupa tudi kanonično urejena in naj bosta $x$ ter $y$ dva poljubna različna elementa iz $G$ (torej $x\neq y$).
+	Ker je $(G, \oplus)$ grupa obstaja tak $z\in G$, da je $x = y \oplus z$, torej je $y \leq x$. Konkretno: vzamemo $z = (-y)\oplus x$. Poleg tega obstaja tak $w\in G$, da je $y = x \oplus w$ (vzamemo kar $w = (-x)\oplus y$), torej je $x \leq y$. Potem po antisimetričnosti $\leq$ sledi $a = b$, kar nas privede v protislovje.
 \end{dokaz}
 
 \begin{opomba}
@@ -169,7 +169,7 @@ Za konec tega odseka uporabimo lastnost pozitivnosti v naslednjem izreku.
 \begin{izrek}
 Naj bo vsak element $x$ komutativnega monoida $(M, \oplus)$ okrajšljiv, torej $\forall a, b\in M:$ $$a\oplus x = b\oplus x \Rightarrow a = b$$ in $$x\oplus a = x\oplus b \Rightarrow x = y$$ Dodatno, naj $M$ zadošča pogoju pozitivnosti. Potem je kanonična šibka urejenost definirana na $M$ antisimetrična in $M$ je kanonično urejen.
 \end{izrek}
-\begin{dokaz} Denimo, da za neka elementa $x, y\in M$ velja $x\leq y$ in $y\leq x$. Potem obstajata $z, w\in M$, da velja $y = x \oplus z$ in $x = y \oplus w$. Ko prvo enakost vstavimo v drugo, dobimo $x \oplus 0 = x = (x \oplus z) \oplus w = x \oplus (z\oplus w)$, od tod pa, zaradi okrajšljivosti elementa $x$, sklepamo $z\oplus w = 0$. Zaradi pozitivnosti sledi $z = 0$ in $w = 0$, od tod pa $a = b$.
+\begin{dokaz} Denimo, da za neka elementa $x, y\in M$ velja $x\leq y$ in $y\leq x$. Potem obstajata $z, w\in M$, da velja $y = x \oplus z$ in $x = y \oplus w$. Ko prvo enakost vstavimo v drugo, dobimo $x \oplus 0 = x = (x \oplus z) \oplus w = x \oplus (z\oplus w)$, od tod pa, zaradi okrajšljivosti elementa $x$, sklepamo $z\oplus w = 0$. Zaradi pozitivnosti sledi $z = 0$ in $w = 0$, od tod pa $x = y$.
 \end{dokaz}
 
 \subsection{Polkolobarji}
@@ -184,33 +184,22 @@ Sedaj, ko smo osvežili in dopolnili znanje o monoidih, se lahko lotimo polkolob
 	\end{enumerate}
 	Oznaka: $(R, \oplus, \otimes)$. \\ Polkolobar $(R, \oplus, \otimes)$ je \textit{komutativen}, če je multiplikativna operacija $\otimes$ na njem komutativna.
 \end{definicija}
-
-\begin{opomba}
-	Če je $1 = 0$, potem je avtomatsko $R = \{0\}$. Ker nas ta trivialen primer ne zanima, predpostavimo $1 \neq 0$ od zdaj naprej.
-\end{opomba}
-
+V posebnem primeru, ko je $1 = 0$, za polkolobar $R$ velja $R = \{0\}$. Ker nas ta trivialen primer ne zanima, od zdaj naprej predpostavimo $1 \neq 0$.
 \begin{opomba}
 	Dodatno lahko definirano \pojem{levi polkolobar} na enak način kot polkolobar, le da zahtevamo samo levo distributivnost in analogno lahko definiramo tudi \pojem{desni polkolobar}. $(R,\oplus, \otimes)$ je potem polkolobar če je hkrati levi in desni polkolobar.
 \end{opomba}
 \begin{opomba}
-	V resnici bi lahko gledali še malo manj opremljene strukture, t.~i.~pred-polkolobarje (">pre-semirings"< v angleščini). Definicija zanje je identična kot za polkolobar, le da ne zahtevamo obstoja enot ($0$ in $1$) za operaciji in tudi ne lastnosti \ref{def:izniči} iz definicije polkolobarja.
+	V resnici bi lahko gledali še malo manj opremljene strukture, t.~i.~pred-polkolobarje (">pre-semirings"< v angleščini). Definicija zanje je identična kot za polkolobar, le da ne zahtevamo obstoja enot ($0$ in $1$) za operaciji in tudi ne lastnosti \ref{def:izniči} iz definicije polkolobarja. V nekateri literaturi pod imenom polkolobarja obravnavajo pred-polkolobar, ki ima aditivno enoto (ne pa multiplikativne).
 \end{opomba}
 \begin{zgled}
 	Nenegativna cela števila $\No$ s standardnim seštevanjem in množenjem tvorijo polkolobar. Enako velja za nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$ za standardno seštevanje in množenje.
 \end{zgled}
-V tem zgledu, ki smo za povzeli iz \cite{bib:Wiki}, bomo obravnavali poseben tip polkolobarja, ki se definira na (pod)množicah:
-\begin{zgled}
-	Naj bo $X$ neprazna množica in $S \subseteq P(X)$ neprazen nabor podmnožic množice $X$. Nabor $S$ je polkolobar (pod)množic za operaciji unije in preseka, če zanj velja:
-	\begin{enumerate}
-		\item $\emptyset\in S$
-		\item $E, F\in S \Rightarrow E\cap F \in S$
-		\item Če sta $E, F \in S$, potem obstaja končno mnogo disjunktnih množic \\ $C_{1}, C_{2}, \ldots, C_{n} \in S$, da je $E\setminus F = \bigcup_{i = 1}^{n}C_i \in S$.
-	\end{enumerate}
-
-	Opazimo, da iz $2.$ in $3.$ ter predpostavke $S\neq\emptyset$ sledi $1.$ 
+Polkolobarji pa seveda niso omejeni samo na številske množice. V naslednjem zgledu navedemo primer polkolobarja nad množicami:
+\begin{zgled} \label{zgled:Potset}
+	Naj bo $X$ neprazna množica in $P(X)$ potenčna množica množice $X$. Potem je $(P(X), \cup, \cap)$ polkolobar. To bomo tudi utemeljili.
+	
+	$P(X)$ je očitno zaprta za $\cup$ in za $\cap$. Enota za $\cup$ je $\emptyset$, enota za $\cap$ pa kar $X$. Obe operaciji sta nad $P(X)$ asociativni ter komutativni, med njima pa velja tudi obojestranska distributivnost. Ne samo, da je $(P(X), \cup, \cap)$ polkolobar, je tudi komutativen polkolobar.
 \end{zgled}
-
-Zgoraj obravnavan tip polkolobarjev se uporablja v teoriji mere. Primer takega polkolobarja je nabor polzaprtih intervalov $\left[a, b\right) \subset \R$ za unijo in presek.
 
 Občasno nam bo prišlo prav, če bomo imeli oznake za množico aditivno obrnljivih elementov in za množico multiplikativno obrnljivih elementov v polkolobarju. Nasledno definicijo pozemamo iz \cite[str. $3$]{bib:Tanbase}.
 
@@ -218,7 +207,9 @@ Občasno nam bo prišlo prav, če bomo imeli oznake za množico aditivno obrnlji
 	Naj bo $(R, \oplus, \otimes)$ polkolobar. Z $V(R)$ označimo množico vseh aditivno obrnljivih elementov v $R$ in z $U(R)$ označimo množico vseh multiplikativno obrnljivih elementov iz $R$.
 \end{definicija}
 
-Hitro se da videti, da če je $(R, \oplus, \otimes)$ polkolobar, je $(V(R), \oplus, \otimes)$ kolobar. Če je $R$ komutativen polkolobar, je $V(R)$ obseg. V nadaljevanju nam bo prišla prav tudi naslednja lema iz \cite[Lema 2\,1]{bib:Tanbase}.
+Opazimo lahko, da multiplikativna enota ni nujno vsebovana v $V(R)$. Da to vidimo, je dovolj vzeti polkolobar iz zgleda \ref{zgled:Potset}, kjer ne obstaja taka množica $Y$, da bi veljalo $Y \cup X = \emptyset$.
+
+V nadaljevanju nam bo prišla prav tudi naslednja lema iz \cite[Lema 2\,1]{bib:Tanbase}.
 
 \begin{lema} \label{lema:invvpolkolob}
 	Naj bo $(R, \oplus, \otimes)$ komutativen polkolobar. 
@@ -230,9 +221,7 @@ Hitro se da videti, da če je $(R, \oplus, \otimes)$ polkolobar, je $(V(R), \opl
 	Očitno velja $-p\in V(R)$ in $-(-p) = p~\forall p\in V(R)$. Poleg tega za vse $p, q\in V(R)$ in vse $r\in R$ velja $(-p)\otimes r \oplus p \otimes r = ((-p) \oplus p)\otimes r = 0\otimes r = 0$, torej $(-p)\otimes r = -(p\otimes r)$. Potem je pa tudi $(-p)\otimes(-q) = -(p\otimes(-q)) = -(-(p\otimes q)) = p\otimes q$.
 \end{dokaz}
 
-	Razred polkolobarjev lahko s pomočjo izreka \ref{izr:kdunegrp} naravno razdelimo na disjunktne podrazrede, glede na to, ali $\oplus$ opremi množico $R$ s strukturo abelove grupe ali s strukturo kanonično urejenega monoida ali pa z nobeno od prej navedenih struktur. Prej omenjen izrek \ref{izr:kdunegrp} nam namreč pove, da $(R, \oplus, \otimes)$ (oziroma $(R, \oplus)$) ne more hkrati zadostiti prvi in drugi lastnosti. V prvem primeru ima $(R, \oplus, \otimes)$ v resnici kar strukturo kolobarja, v drugem pa strukturo dioida, ki ga bomo definirali v naslednjem podpoglavju.
-	
-	Na ta način klasificiramo vse polkolobarje -- njihov razred razdelimo na razred kolobarjev, razred dioidov in še razred ostalih polkolobarjev, torej tistih, za katere $(R, \oplus)$ ni niti abelova grupa, niti kanonično urejen monoid. Ti razredi so očitno paroma disjunktni.
+Pri spoznavanju grup, kolobarjev in ostalih algebraičnih struktur se neizogibno pojavi obravnava njihovih produktov. Tako kot pri kartezičnih produktih prej omenjenih struktur, tudi za polkolobarje v naslednjem zgledu obravnavamo, ali je produkt polkolobarjev, opremljen z induciranima operacijama, spet polkolobar. 
 
 \begin{zgled}
 	\label{zgled:prodpolkolobar}
@@ -256,23 +245,26 @@ Denimo, da imamo $m$ polkolobarjev $(R_{i}, \oplus_{i}, \otimes_{i})$; $i\in \{1
 Brez težav lahko preverimo, da operaciji $\oplus$ in $\otimes$ podedujeta lastnosti operacij $\oplus_{i}$ in $\otimes_{i}$, torej je tudi $(R, \oplus. \otimes)$ polkolobar.
 \end{zgled}
 
-Tako kot pri ostalih algebraičnih strukturah, lahko tudi tukaj definiramo podstrukture, torej podpolkolobarje.
+Preden preidemo na obravnavo podstruktur se spomnimo izreka \ref{izr:kdunegrp}, s pomočjo katerega lahko naravno razdelimo razred polkolobarjev na disjunktne podrazrede, glede na to, ali $\oplus$ opremi množico $R$ s strukturo abelove grupe ali s strukturo kanonično urejenega monoida ali pa z nobeno od prej navedenih struktur. Prej omenjen izrek \ref{izr:kdunegrp} nam namreč pove, da $(R, \oplus)$ ne more hkrati biti abelova grupa in kanonično urejen. V prvem primeru ima $(R, \oplus, \otimes)$ v resnici kar strukturo kolobarja, v drugem pa strukturo dioida, ki ga bomo definirali v naslednjem podpoglavju.
+Na ta način klasificiramo vse polkolobarje -- njihov razred razdelimo na razred kolobarjev, razred dioidov in še razred ostalih polkolobarjev, torej tistih, za katere $(R, \oplus)$ ni niti abelova grupa, niti kanonično urejen monoid. Ti razredi so očitno paroma disjunktni.
+
+Sedaj definirajmo in obravnavajmo še podstrukture polkolobarjev, torej podpolkolobarje.
 
 \begin{definicija}
-	Naj bo $(R, \oplus, \otimes)$ levi polkolobar. Neprazna množica $P$ je podpolkolobar v $R$, če je podmnožica v $R$ in če je tudi sama polkolobar za operaciji $\oplus_{|P}$ in $\otimes_{|P}$, ki jih podeduje od $R$. Operaciji $\oplus_{|P}$ in $\otimes_{|P}$ sta torej zožitvi $\oplus$ in $\otimes$ na $P$.
+	Naj bo $(R, \oplus, \otimes)$ (levi) polkolobar. Neprazna množica $P$ je (levi) podpolkolobar v $R$, če je podmnožica v $R$ in če je tudi sama (levi) polkolobar za operaciji $\oplus_{|P}$ in $\otimes_{|P}$, ki ju podeduje od $R$. Operaciji $\oplus_{|P}$ in $\otimes_{|P}$ sta torej zožitvi $\oplus$ in $\otimes$ na $P$.
 \end{definicija}
 
 \begin{trditev}
-	Naj bo $(R, \oplus, \otimes)$ levi polkolobar in $P\subseteq R$ neprazna podmnožica v $R$. Tedaj je $P$ podpolkolobar v $R$, čim je zaprt za zoženi operaciji in vsebuje obe enoti.
+	Naj bo $(R, \oplus, \otimes)$ (levi) polkolobar in $P\subseteq R$ neprazna podmnožica v $R$. Tedaj je $P$ (levi) podpolkolobar v $R$, čim je zaprt za zoženi operaciji in vsebuje obe enoti.
 \end{trditev}
 \begin{dokaz}
 	Denimo, da velja pogoj iz trditve. Operacija $\oplus_{|P}$ potem ima enoto v $P$ in od $\oplus$ podeduje asociativnost in komutativnost. Torej je $(P, \oplus_{|P})$ komutativen monoid. Podobno $\otimes_{|P}$ podeduje asociativnost in ima v $P$ enoto, torej je $(P, \otimes_{|P})$ monoid.
-	Tudi leva distributivnost se podeduje od operacij v $R$ in enako velja za lastnost, da aditivna enota izniči $\otimes_{|P}$ in s tem vidimo, da je $(P, \oplus_{|P}, \otimes_{|P})$ res podpolkolobar.
+	Tudi (leva) distributivnost se podeduje od operacij v $R$ in enako velja za lastnost, da aditivna enota izniči $\otimes_{|P}$ in s tem vidimo, da je $(P, \oplus_{|P}, \otimes_{|P})$ res podpolkolobar.
 \end{dokaz}
 
 Zgornji dokaz je dovolj preprost, da bi se ga dalo brez težav opustiti. Kljub temu ga navedemo, da dodatno poudarimo, da relativna preprostost struktur, s katerimi imamo trenutno opravka, v resnici ne oteži naše obravnave osnovnih konceptov. Zgoraj navedena trditev in dokaz sta izjemno podobna analogni trditvi in pripadajoćemu dokazu za kolobarje.
 	
-Za konec omenimo še preslikave med polkolobarji, specifično homomorfizme, ki so definirani na skoraj enak način kot homomorfizmi kolobarjev.
+Sedaj preidemo na preslikave med polkolobarji, specifično homomorfizme, ki so definirani na skoraj enak način kot homomorfizmi kolobarjev.
 	
 \begin{definicija}
 	Naj bosta $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$ leva polkolobarja. Naj bosta $0$ in $1$ enoti v $R$ ter $e$ in $\varepsilon$ enoti v $P$. Preslikava $\map{\phi}{R}{P}$ je homomorfizem polkolobarjev, če zadošča naslednjim pogojem:
@@ -286,7 +278,7 @@ Za konec omenimo še preslikave med polkolobarji, specifično homomorfizme, ki s
 
 Tudi tukaj lahko uvedemo klasične izraze kot so monomorfizem (za injektivne homomorfizme), epimorfizem (surjektivni homomorfizem), izomorfizem (bijektivni homomorfizem), endomorfizem (homomorfizem iz polkolobarja nazaj vase) in avtomorfizem (bijektivni endomorfizem).
 
-Tako kot za kolobarje lahko tudi za polkolobarje definiramo ideale, brez da bi samo definicijo bistveno spremenili.
+Preden premaknemo pozornost na dioide, omenimo še, da lahko, tako kot za kolobarje, tudi za polkolobarje definiramo ideale, brez da bi samo definicijo bistveno spremenili.
 
 \begin{definicija}
 	Neprazni podmnožici $I$ polkolobarja $(R, \oplus, \otimes)$ pravimo \pojem{levi ideal}, če za njo velja \begin{itemize}
@@ -296,10 +288,10 @@ Tako kot za kolobarje lahko tudi za polkolobarje definiramo ideale, brez da bi s
 	Podobno definiramo desne ideale. Pravimo, da je $I$ ideal $R$, če je hkrati levi in desni ideal $R$.
 	Idealu (levemu, desnemu ali obojestranskemu) $I$ polkolobarja $R$ pravimo \pojem{maksimalen ideal}, če zanj velja naslednje: \begin{itemize}
 		\item $I \neq R$
-		\item $I \subseteq J \subseteq R \Rightarrow I = J \lor J = R$ za vse ideale $J$ polkolobarja $R$
+		\item $I \subseteq J \subseteq R \Rightarrow I = J$ ali $J = R$ za vse ideale $J$ polkolobarja $R$.
 	\end{itemize}
 \end{definicija}
-
+Preprost primer ideala polkolobarja najdemo v množici sodih naravnih števil (označeno z $2\N$) v $(\No, +, \cdot)$. Vsota dveh sodih števil je spet sodo število, poleg tega pa je vsak produkt poljubnega števila iz $\No$ spet sodo število.
 \subsection{Dioidi}
 Kot smo že napovedali v prejšnjem podpoglavju, zahvaljujoč se izreku \ref{izr:kdunegrp}, lahko obravnavamo podkolobarje, ki so opremljeni s kanonično delno ureditvijo. Tem strukturam pravimo dioidi. Vseeno zapišimo definicijo bolj formalno preden se lotimo obravnave.
 \begin{definicija}
@@ -956,10 +948,12 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 \section*{Slovar strokovnih izrazov}
 
 \geslo{semiring}{polkolobar}
+\geslo{pre-semiring}{pred-polkolobar}
 \geslo{semimodule}{polmodul}
 \geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo.}
 \geslo{base (of a semimodule)}{baza (polmodula) -- linearno neodvisna podmnožica v polmodulu, ki ga generira.}
 \geslo{dioid}{dioid}
+\geslo{ideal of a semiring}{ideal polkolobarja}
 \geslo{$0 \in R$ is absorbing for $\otimes$}{$0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
 \geslo{free set in a semimodule}{prosta množica v polmodulu -- podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način.}  
 \geslo{free base (of a semimodule)}{prosta baza polmodula -- prosta podmnožica v polmodulu, ki generira polmodul.} 
