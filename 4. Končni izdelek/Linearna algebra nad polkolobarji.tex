@@ -267,7 +267,7 @@ Zgornji dokaz je dovolj preprost, da bi se ga dalo brez težav opustiti. Kljub t
 Sedaj preidemo na preslikave med polkolobarji, specifično homomorfizme, ki so definirani na skoraj enak način kot homomorfizmi kolobarjev.
 	
 \begin{definicija}
-	Naj bosta $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$ leva polkolobarja. Naj bosta $0$ in $1$ enoti v $R$ ter $e$ in $\varepsilon$ enoti v $P$. Preslikava $\map{\phi}{R}{P}$ je homomorfizem polkolobarjev, če zadošča naslednjim pogojem:
+	Naj bosta $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$ (leva) polkolobarja. Naj bosta $0$ in $1$ enoti v $R$ ter $e$ in $\varepsilon$ enoti v $P$. Preslikava $\map{\phi}{R}{P}$ je homomorfizem polkolobarjev, če zadošča naslednjim pogojem:
 	\begin{itemize}
 		\item $\phi(0) = e$
 		\item $\phi(1) = \varepsilon$
@@ -291,27 +291,24 @@ Preden premaknemo pozornost na dioide, omenimo še, da lahko, tako kot za koloba
 		\item $I \subseteq J \subseteq R \Rightarrow I = J$ ali $J = R$ za vse ideale $J$ polkolobarja $R$.
 	\end{itemize}
 \end{definicija}
-Preprost primer ideala polkolobarja najdemo v množici sodih naravnih števil (označeno z $2\N$) v $(\No, +, \cdot)$. Vsota dveh sodih števil je spet sodo število, poleg tega pa je vsak produkt poljubnega števila iz $\No$ spet sodo število.
+Preprost primer ideala polkolobarja najdemo v množici sodih naravnih števil (označeno z $2\N$) v $(\No, +, \cdot)$. Vsota dveh sodih števil je spet sodo število, poleg tega pa je vsak produkt poljubnega števila iz $\No$ in sodega števila spet sodo število.
 \subsection{Dioidi}
-Kot smo že napovedali v prejšnjem podpoglavju, zahvaljujoč se izreku \ref{izr:kdunegrp}, lahko obravnavamo podkolobarje, ki so opremljeni s kanonično delno ureditvijo. Tem strukturam pravimo dioidi. Vseeno zapišimo definicijo bolj formalno preden se lotimo obravnave.
+Kot smo že napovedali v prejšnjem podpoglavju, zahvaljujoč se izreku \ref{izr:kdunegrp}, lahko obravnavamo podkolobarje, ki so opremljeni s kanonično delno ureditvijo in se posledično ne obnašajo kot nam že znani kolobarji. Tem strukturam pravimo dioidi. Vseeno zapišimo formalno definicijo preden se lotimo obravnave.
 \begin{definicija}
 	Polkolobarju $(R, \oplus, \otimes)$, na katerem je kanonična relacija šibke urejenosti (definirana preko $\oplus$) delna urejenost, pravimo \pojem{dioid}.
 \end{definicija}
-\begin{opomba}
-	Upoštevajoč opombo \ref{opomb:poz} lahko klasificiramo dioide kot polkolobarje brez vsote nič.
-\end{opomba}
+	
+	Upoštevajoč opombo \ref{opomb:poz} lahko klasificiramo dioide kot polkolobarje, ki zadoščajo pogoju pozitivnosti.
 \begin{opomba}
 	Če namesto (obojestranskega) polkolobarja vzamemo levi ali desni polkolobar in v njem opremimo $(R, \oplus)$ s kanonično delno urejenostjo, dobljeni strukturi pravimo levi oz. desni dioid.
 \end{opomba}
 
-\begin{zgled}
-	Množica nenegativnih celih števil $\No$, opremljena z navadnim seštevanjem in množenjem ter kanonično delno (celo linearno) urejenostjo, je dioid. Enako velja za nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$.
-\end{zgled}
+Preprosti primer dioida je množica nenegativnih celih števil $\No$, opremljena z navadnim seštevanjem in množenjem ter kanonično delno (celo linearno) urejenostjo. Dodatno navedemo še nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$.
 
-V zgledu omenjene množice, opremljene s standardnim seštevanjem in množenjem, nam služijo kot prototip dioidov, na podoben način kot je množica celih števil $\Z$ s standardnim seštevanjem $+$ prototip za abelove grupe. Seveda dioidi niso omejeni zgolj na osnovne operacije. Znane množice lahko opremimo tudi z manj pogostimi operacijami in tako pridobimo dioide, kot bo pokazal naslednji zgled.
+Podobno, kot se množica celih števil $\Z$ s standardnim seštevanjem $+$ smatra za ">prototip"< abelovih grup, nam $(\No, +, \cdot)$ služij kot ">prototip"< dioidov. Seveda dioidi niso omejeni zgolj na nenegativne odseke številskih množic opremljene s $+$ in $\cdot$. Znane množice lahko opremimo tudi z manj standardnimi operacijami in tako pridobimo dioide, kot bo pokazal naslednji zgled.
 
 \begin{zgled}\label{zgled:tropdioid}
-	Z $\bar{\R}$ označimo množico $\R \cup \{-\infty, +\infty\}$. Potem sta $(\bar{\R}, \min, +)$ in $(\bar{\R}, \max, +)$ dioida. V primeru prvega dioida je nevtralni element $+\infty$, enota pa je $0$, v primeru drugega pa sta enoti $-\infty$ in $0$. V obeh primerih sta obe operaciji komutativni in asociativni, med njima tudi očitno velja distributivnost in aditivna enota izniči $+$. Obravnavani strukturi sta torej komutativna polkolobarja.\\
+	Z $\bar{\R}$ označimo množico $\R \cup \{-\infty, +\infty\}$. Potem sta $(\bar{\R}, \min, +)$ in $(\bar{\R}, \max, +)$ dioida. V primeru prvega dioida je nevtralni element $+\infty$, enota pa je $0$, v primeru drugega pa sta enoti $-\infty$ in $0$. V obeh primerih sta obe operaciji komutativni in asociativni, med njima tudi očitno velja distributivnost in nevtralni element prve operacije izniči $+$. Obravnavani strukturi sta torej komutativna polkolobarja.\\
 	\\
 	 Dodatno vidimo da je kanonična šibka urejenost, definirana preko $\min$, tudi antisimetrična: $a\leq b \Rightarrow \exists c\in \bar{\R};~b = \min\{a, c\}$ in $b\leq a \Rightarrow \exists d\in \bar{\R};~a = \min\{b, d\}$, torej je $b = \min\{\min\{b, d\}, c\}$ oz. $b = \min\{b, d, c\} = \min\{b, \min\{d, c\}\}$. Sledi, da je $\min\{c, d\} = +\infty$, kar je možno edino ko $c = +\infty = d$, torej je $a = b$. Na enak način pokažemo antisimetričnost kanonične urejenosti definirane preko $\max$. \\
 	\\
@@ -322,12 +319,12 @@ V zgledu omenjene množice, opremljene s standardnim seštevanjem in množenjem,
 	Naj bo $(R, \oplus, \otimes)$ dioid. Potem je kanonična delna urejenost $\leq$ usklajena z operacijama $\oplus$ in $\otimes$.
 \end{trditev}
 \begin{dokaz}
-	To, da je $\leq$ usklajena z operacijo $\oplus$ vemo že od prej. Pokažimo torej enako še za $\otimes$.
+	To, da je $\leq$ usklajena z operacijo $\oplus$ vemo že iz definicije dioida. Pokažimo torej enako še za $\otimes$.
 	Vemo, da velja $a\leq b \iff \exists c\in R: b = a \oplus c$. Potem iz $a \leq b$ za $\forall x\in R$ sledi $(a \oplus c) \otimes x = b \otimes x$.
-	Po distributivnosti potem sledi $(a\otimes x) \oplus (c \otimes x) = b\otimes x$. Potem je pa $a\otimes x \leq b\otimes x ~\forall x\in R$. Torej je $\leq$ usklajena z $\otimes$. Podobno pokažemo tudi $x \otimes a \leq x \otimes b$.
+	Po distributivnosti potem sledi $(a\otimes x) \oplus (c \otimes x) = b\otimes x$. Potem je pa $a\otimes x \leq b\otimes x ~\forall x\in R$. Podobno pokažemo tudi $x \otimes a \leq x \otimes b$. Sledi, da je $\leq$ usklajena z $\otimes$.
 \end{dokaz}
 
-Tako kot prej s polkolobarji, lahko tudi z dioidi sestavimo produkte, ki imajo tudi strukturo dioida. Torej če imamo $m$ dioidov $(R_{i}, \oplus_{i}, \otimes_{i})$, jih sestavimo v $R = R_1 \times \ldots \times R_m$ in na to množico vpeljemo operaciji $\oplus$ in $\otimes$ na naslednji način: \begin{align*}
+Tudi pri dioidih lahko obravnavamo strukturo njihovih produktov. Denimo, da imamo $m$ dioidov $(R_{i}, \oplus_{i}, \otimes_{i})$, jih zmnožimo v $R = R_1 \times \ldots \times R_m$ in na to množico vpeljemo operaciji $\oplus$ in $\otimes$ na naslednji način: \begin{align*}
 	\forall x, y\in R: x \oplus y = \begin{bmatrix}
 		x_1 \\
 		\vdots \\
@@ -351,33 +348,33 @@ in \begin{align*}
 	\end{bmatrix}
 \end{align*}
 
-V zgledu \ref{zgled:prodpolkolobar} smo že premislili, da je $(R, \oplus, \otimes)$ polkolobar. Poleg tega hitro vidimo, da je $\oplus$ usklajena s kanonično delno ureditvijo na $R$.
+V zgledu \ref{zgled:prodpolkolobar} smo že premislili, da je $(R, \oplus, \otimes)$ polkolobar. Poleg tega hitro vidimo, da je $\oplus$ usklajena s kanonično delno ureditvijo na $R$, saj za vsaka $x = \begin{bmatrix} x_1 \\ \vdots \\ x_m \end{bmatrix}$ in $y = \begin{bmatrix} y_1 \\ \vdots \\ y_m \end{bmatrix}$ iz $R$ velja $x \leq y \iff x_1 \leq_1 y_1 ~\&~ \ldots ~\&~ x_m \leq_m y_m$.
 
-Seveda lahko tudi v primeru dioidov obravnavamo podstrukture, t.~i.~poddioide. Njihov obstoj nam namigujejo prototipni dioidi $\No\subseteq\Pplus{Q}\subseteq\Pplus{R}$. 
+Tudi vprašanje podstruktur pri dioidih se splača obravnavati. Tem podstrukturam bomo pravili \pojem{poddioidi}. Njihov obstoj nam namigujejo ">prototipni"< dioidi - nenegativni odseki številskih množic opremljeni s standardnim seštevanjem in množenjem: $\No\subseteq\Pplus{Q}\subseteq\Pplus{R}$.
 
 \begin{definicija}
 	Neprazna množica $P$ je poddioid dioida $(R, \oplus, \otimes)$, če je podmnožica v $R$, ki vsebuje obe enoti, in če je tudi sama dioid za operaciji, ki ju podeduje od $(R, \oplus, \otimes)$.
 \end{definicija}
 
-Hitro se da opaziti, da v preverjanju, ali je $P$ poddioid, ni treba direktno obravnavati urejenosti. Razlog za to je, da se kanonična urejenost (v resnici antisimetričnost kanonične relacije urejenosti) prenese na podmnožico skupaj z operacijama. Iz tega razloga je dovolj, da za podmnožico $P$ v dioidu $R$ preverimo, ali je polkolobar.
+Hitro se da opaziti, da v preverjanju, ali je $P$ poddioid, ni treba direktno obravnavati urejenosti. Izkaže se, da je dovolj, da za podmnožico $P$ v dioidu $R$ preverimo, če je polkolobar.
 
 \begin{trditev}
 	\label{trd:poddioid}
-	Naj bo $(R, \oplus, \otimes)$ levi dioid in naj bo $P\subseteq R$ neprazna podmnožica v $R$. Potem je $P$ poddioid v $R$ $\iff$ $P$ je podpolkolobar v $R$.
+	Naj bo $(R, \oplus, \otimes)$ (levi) dioid in naj bo $P\subseteq R$ neprazna podmnožica v $R$. Potem je $P$ poddioid v $R$ $\iff$ $P$ je podpolkolobar v $R$.
 \end{trditev}
 
 \begin{dokaz}
-	Če je $P$ poddioid je očitno tudi podpolkolobar. Denimo torej da za $P$ vemo zgolj, da je podpolkolobar v dioidu $R$ in si poglejmo kanonično šibko urejenost $\leq$ na njem: $a\leq b\iff\exists c\in P;~b = a\oplus c$. Ker je kanonična šibka urejenost na $R$ antisimetrična, ima to lastnost tudi na $P$, torej je $\leq$ na $P$ v resnici kanonična delna urejenost. Sledi, da je $P$ dioid, torej je poddioid v $R$.
+	Če je $P$ poddioid je očitno tudi podpolkolobar. Denimo torej da za $P$ vemo zgolj, da je podpolkolobar v dioidu $R$ in si poglejmo kanonično šibko urejenost $\leq$ na njem. Ker je kanonična šibka urejenost na $R$ antisimetrična, ima to lastnost tudi na $P$, torej je $\leq$ na $P$ v resnici kanonična delna urejenost. Sledi, da je $P$ dioid, torej je poddioid v $R$.
 \end{dokaz}
 
-Pri obravnavi dioidov se težko izognemo vprašanju preslikav. Izkaže se, da v resnici ni treba uvesti ničesar novega - homomorfizmi polkolobarjev ohranjajo strukturo dioidov. Da to vidimo, si oglejmo poljubna dva dioida, $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$, ter preslikavo med njima, $\map{\phi}{R}{P}$, ki zadošča pogojem za homomorfizem polkolobarjev. Slednja zahteva je minimalna, saj mora homomorfizem dioidov hkrati biti tudi homomorfizem polkolobarjev. 
+Pri obravnavi dioidov se omenimo še preslikave med njimi. Izkaže se, da v resnici ni treba uvesti nobenih novih pojmov, saj homomorfizmi polkolobarjev ohranjajo strukturo dioidov. Da to vidimo, si oglejmo poljubna dva dioida, $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$, ter preslikavo med njima, $\map{\phi}{R}{P}$, ki zadošča pogojem za homomorfizem polkolobarjev. Slednja zahteva je minimalna, saj mora homomorfizem dioidov hkrati biti tudi homomorfizem polkolobarjev. 
 
-Predpostavimo sedaj, da za neka elementa $a, b\in R$ velja $a\leq_R b$. Potem obstaja tak $c\in R$, da je $\phi(b) = \phi(a\oplus c) = \phi(a) \boxplus\phi(c)$, torej je $\phi(a) \leq_P\phi(b)$. Homomorfizmi polkolobarjev torej ohranjajo urejenost.
+Predpostavimo sedaj, da za neka elementa $a, b\in R$ velja $a\leq_R b$. Potem obstaja tak $c\in R$, da je $\phi(b) = \phi(a\oplus c) = \phi(a) \boxplus\phi(c)$, torej je $\phi(a) \leq_P\phi(b)$. Lahko se sicer zgodi, da za neprimerljiva elementa $x$ in $y$ iz $R$ velja, da sta $\phi(x)$ in $\phi(y)$ primerljiva, torej $\phi(x) \leq \phi(y)$ ali $\phi(x) \geq \phi(y)$. V prvem primeru obstaja nek element $z\in P$, da je $\phi(y) = \phi(x) \boxplus z$, a v tem primeru ne obstaja noben element $w\in R$, ki se preslika v $z$. Drugače povedano, $z\notin Im(\phi)$, kar pa nas ne moti. Simetričen premislek velja za primer $\phi(x) \geq \phi(y)$. Homomorfizmi polkolobarjev torej ohranjajo urejenost.
 
 Da se dodatno prepričamo, lahko preverimo, da je $(Im(\phi), \boxplus, \boxtimes)$ dioid. To lahko naredimo tako, da pokažemo, da je kanonična šibka urejenost na $Im(\phi)$ antisimetrična, ali pa tako, da upoštevamo, da je $(Im(\phi), \boxplus, \boxtimes)$ podpolkolobar v dioidu $(P, \boxplus, \boxtimes)$ in potem po trditvi \ref{trd:poddioid} sledi da je poddioid v $P$, torej tudi sam dioid.
 \newline \\
-To, da imamo v dioidih (kanonično) relacijo delne urejenosti, nas motivira, da dioide dodatno ločimo glede na lastnosti pripadajoče ureditve. Kot je navedeno v \cite[str. 10]{bib:Gondran}, je delna urejena množica $(R, \leq)$ polna (">complete"<), ko ima vsaka podmnožica $P \subseteq R$ t.~i.~\pojem{supremum}. 
-Velja, da je $r\in R$ supremum $P\subseteq R$, ko je zgornja meja $P$ ($\forall p \in P$ velja $ p \leq r$) in $\forall q \in R$ velja sklep ($q$ je zgornja meja $P \Rightarrow r \leq q$). Polnost urejenosti nas privede do naslednje definicije, povzete iz \cite[definicija 6.\,1.\,8.\,]{bib:Gondran}.
+To, da imamo v dioidih (kanonično) relacijo delne urejenosti, nas motivira, da dioide dodatno ločimo glede na lastnosti pripadajoče ureditve. Kot je navedeno v \cite[str. 10]{bib:Gondran}, je delno urejena množica $(R, \leq)$ \pojem{polna }(">complete"<), ko ima vsaka podmnožica $P \subseteq R$ t.~i.~\pojem{supremum}. 
+Velja, da je $r\in R$ supremum $P\subseteq R$, ko je zgornja meja $P$ ($\forall p \in P$ velja $ p \leq r$) in $\forall q \in R$ velja sklep: $q$ je zgornja meja $P \Rightarrow r \leq q$. Polnost urejenosti nas privede do naslednje definicije, povzete iz \cite[definicija 6.\,1.\,8.\,]{bib:Gondran}.
 
 \begin{definicija}
 	Dioid $(R, \oplus,\otimes)$ je \pojem{poln} oz. \pojem{kompleten}, če je za kanonično delno urejenost $\leq$ urejena množica $(R, \leq)$ polna in če poleg tega ustreza še t.i. posplošeni distributivnosti: \begin{align*}
@@ -411,12 +408,12 @@ Lastnosti dioidov glede na lastnosti kanonične delne urejenosti se da obravnava
 Naslednji zgled, nam demonstrira praktično aplikacijo zgleda \ref{zgled:endomorfdioid}.
 
 \begin{zgled}\label{zgled:shortpathdioid}
-	Vsebino zgleda \ref{zgled:endomorfdioid} lahko uporabimo v teoriji grafov v iskanju časovno najkrajše poti. Denimo, da imamo graf $G = (V, E)$ in da vsaki povezavi $(i, j)$ pripada preslikava $h_{ij}$, ki nam poda čas prihoda $t_j$ v vozlišče $j$, če zapustimo vozlišče $i$ ob času $t_i$. Torej $ t_j = h_{ij}(t_i)$. Iščemo najkrajši čas, da prispemo iz vozlišča $t_1$ v izbrano vozlišče $t_i$.
+	Vsebino zgleda \ref{zgled:endomorfdioid} lahko uporabimo v teoriji grafov v iskanju časovno najkrajše poti. Denimo, da imamo graf~$G = (V, E)$ in da vsaki povezavi $(i, j)$ pripada preslikava $h_{ij}$, ki nam poda čas prihoda $t_j$ v vozlišče $j$, če zapustimo vozlišče $i$ ob času $t_i$. Torej $ t_j = h_{ij}(t_i)$. Iščemo najkrajši čas, da prispemo iz vozlišča $t_1$ v izbrano vozlišče $t_i$.
 	
 	Za ta problem vzamemo $R = \R\cup\{+\infty\}, \oplus = \min, 0 = +\infty$. Za množico E vzamemo množico nepadajočih funkcij $f: R \mapsto R$, za katere gre $f(t) \to +\infty$ ko se $t$ bliža $+\infty$. Te funkcije so endomorfizmi nad $(\R\cup\{+\infty\}, \min)$, saj $f(\min\{t, \acute{t}\}) = \min\{f(t),f(\acute{t})\}$ in $f(+\infty) = +\infty$. Na enak način kot v prejšnjem zgledu sestavimo dioid $(E, \oplus, \otimes)$.
-	
-	Problem najkrajše poti lahko torej obravnavamo s pomočjo dioida endomorfizmov iz prejšnjega zgleda. Rešitve tega problema skupaj z algoritmi so, med drugimi, obravnavali Cooke in Halsey ($1966$) ter Minoux ($1976$).
 \end{zgled}
+
+Problem najkrajše poti lahko torej obravnavamo s pomočjo dioida endomorfizmov iz prejšnjega zgleda \ref{zgled:shortpathdioid}. Rešitve tega problema skupaj z algoritmi so, med drugimi, obravnavali Cooke in Halsey ($1966$) ter Minoux ($1976$).
 
 Na koncu izpostavimo še eno povezavo med polkolobarji in dioidi: Kot lahko vidimo v \cite[poglavje 6.\,9.\,]{bib:Gondran}, vsakemu polkolobarju pripada nek dioid. Pri določanju tega dioida bo seveda ključno to, da kanonični šibki urejenosti na izbranem polkolobarju dodamo antisimetričnost. Kako to naredimo, nam pove trditev \cite[trditev 6.\,9.\,1.\,]{bib:Gondran}, ki je navedena spodaj.
 
@@ -947,19 +944,25 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 
 \section*{Slovar strokovnih izrazov}
 
-\geslo{semiring}{polkolobar}
-\geslo{pre-semiring}{pred-polkolobar}
-\geslo{semimodule}{polmodul}
-\geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo.}
 \geslo{base (of a semimodule)}{baza (polmodula) -- linearno neodvisna podmnožica v polmodulu, ki ga generira.}
+\geslo{complete set}{polna množica}
 \geslo{dioid}{dioid}
-\geslo{ideal of a semiring}{ideal polkolobarja}
-\geslo{$0 \in R$ is absorbing for $\otimes$}{$0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
+\geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo.}
 \geslo{free set in a semimodule}{prosta množica v polmodulu -- podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način.}  
 \geslo{free base (of a semimodule)}{prosta baza polmodula -- prosta podmnožica v polmodulu, ki generira polmodul.} 
+\geslo{ideal of a semiring}{ideal polkolobarja}
+\geslo{infimum}{infimum}
+\geslo{lower bound}{spodnja meja}
 \geslo{Perron-Frobenius Theorem}{Perron-Frobeniusov izrek -- Pod to ime spada več rezultatov o realnih matrikah s samimi pozitivnimi ali nenegativnimi vrednostmi (pozitivne oz. nenegativne realne matrike), ki sta jih dokazala Oskar Perron (za pozitivne matrike), in Georg Frobenius (za nenegativne matrike).}
 \geslo{positivity condition}{pogoj pozitivnosti -- struktura v kateri velja sklep, da če je t.i. vsota dveh elementov enaka nevtralnemu elementu oz. >>ničli<<, sta potem oba elemeneta enaka nevtralnemu elementu, zadošča pogoju pozitivnosti.}
-%\geslo{}{}
+\geslo{pre-semiring}{pred-polkolobar}
+\geslo{semimodule}{polmodul}
+\geslo{semiring}{polkolobar}
+\geslo{supremum}{supremum}
+\geslo{the element $0 \in R$ is absorbing for $\otimes$}{element $0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
+\geslo{the greatest element}{zadnji element}
+\geslo{the least element}{prvi element}
+\geslo{upper bound}{zgornja meja}
 %\geslo{}{}
 %\geslo{}{}
 %\geslo{}{}
