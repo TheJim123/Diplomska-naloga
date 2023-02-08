@@ -98,7 +98,7 @@ Izkaže se, da lahko nad polkolobarji počnemo več kot le reševanje preprostih
 Za matriko $A$, za katero veljalo pogoji iz prej omenjenega izreka, lahko rečemo, da v resnici spada v množico $\Pplus{R}^{n\times n}$. Ker je ta množica polkolobar, kot bomo premislili kasneje, lahko torej govorimo, ne samo o rešitvah enačb nad polkolobarji, ampak tudi o matrikah in lastnih vrednostih nad temi strukturami, čeprav niti $(\Pplus{R}, +, \cdot)$ niti $(\Pplus{R}\setminus\{0\}, +, \cdot)$ nista polji. Ta tip matrik (in prej omenjen izrek) se pojavlja na področju verjetnosti, predvsem v teoriji dinamičnih sistemov. Nepresenetljivo, struktura $(\Pplus{R}, +, \cdot)$ tudi igra pomembno vlogo v teoriji mere.
 
 \section{Monoidi, polkolobarji in dioidi:}
-V tem razdelku bomo obravnavali definicije pojmov, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[Poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. 
+V tem razdelku se bomo prvič srečali s pojmi, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[Poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. 
 \subsection{Monoidi:}
 Za začetek bomo osvežili znanje o monoidih in dokazali nekaj relevantnih rezultatov, preden se lotimo obravnave novih konceptov. 
 \begin{definicija}
@@ -251,7 +251,7 @@ Na ta način klasificiramo vse polkolobarje -- njihov razred razdelimo na razred
 Sedaj definirajmo in obravnavajmo še podstrukture polkolobarjev, torej podpolkolobarje.
 
 \begin{definicija}
-	Naj bo $(R, \oplus, \otimes)$ (levi) polkolobar. Neprazna množica $P$ je (levi) podpolkolobar v $R$, če je podmnožica v $R$ in če je tudi sama (levi) polkolobar za operaciji $\oplus_{|P}$ in $\otimes_{|P}$, ki ju podeduje od $R$. Operaciji $\oplus_{|P}$ in $\otimes_{|P}$ sta torej zožitvi $\oplus$ in $\otimes$ na $P$.
+	Naj bo $(R, \oplus, \otimes)$ (levi) polkolobar. Neprazna množica $P$ je (levi) podpolkolobar v $R$, če je podmnožica v $R$ in če je zaprta za operaciji $\oplus_{|P}$ in $\otimes_{|P}$, ki ju podeduje od $R$. Operaciji $\oplus_{|P}$ in $\otimes_{|P}$ sta torej zožitvi $\oplus$ in $\otimes$ na $P$.
 \end{definicija}
 
 \begin{trditev}
@@ -426,15 +426,15 @@ $$\forall r, s\in R: r\mathcal{E}s \iff r\leq s ~\&~ s \leq r$$
 	Relacija $\mathcal{E}$, definirana zgoraj v izreku, je očitno refleksivna, tranzitivna in simetrična, torej je ekvivalenčna relacija. Potem so elementi $\widehat{R}$ ravno ekvivalenčni razredi relacije $\mathcal{E}$ na $R$ in ohranimo oznaki $\oplus$ in $\otimes$ za operacije, ki jih operaciji na $R$ inducirata na $\widehat{R}$. Nevtralna elementa v $\widehat{R}$ sta ekvivalenčna razreda, ki pripadata nevtralnima elementoma iz $R$. Ker aditivna enota $0$ v $(R, \oplus, \otimes)$ izniči $\otimes$, sledi da v $(\widehat{R}, \oplus, \otimes)$ razred kateremu pripada $0$ izniči operacijo, ki jo inducira $\otimes$. Hitro vidimo, da je $(\widehat{R}, \oplus, \otimes)$ polkolobar. Poleg tega kanonična relacija šibke urejenosti $\leq$ inducira antisimetrično relacijo šibke urejenosti, torej delno urejenost. Torej je $(\widehat{R}, \oplus, \otimes)$ dioid.
 \end{dokaz}
 \begin{opomba}
-	Dodatno lahko definiramo še eno strukturo, t.~i.~polpolje, kot polkolobar v katerem je vsak od $0$ različen element obrnljiv glede na $\otimes$ (\cite[poglavje 1, definicija 5.\,2.\,3.\,]{bib:Gondran}). Izkaže se, da so mnogi dioidi polpolja. Takšna sta na primer $(\R, \min, +)$ in $(\R, \max, +)$. To omenimo zgolj kot zanimivost, saj nas v nadaljevanju polpolja ne bodo kaj preveč zanimala.
+	Dodatno lahko definiramo še eno strukturo, t.~i.~\pojem{polpolje}, kot polkolobar v katerem je vsak od $0$ različen element obrnljiv glede na $\otimes$ (\cite[poglavje 1, definicija 5.\,2.\,3.\,]{bib:Gondran}). Izkaže se, da so mnogi dioidi polpolja. Takšna sta na primer $(\R, \min, +)$ in $(\R, \max, +)$. To omenimo zgolj kot zanimivost, saj nas v nadaljevanju polpolja ne bodo kaj preveč zanimala.
 \end{opomba}
 
 \section{Polmoduli in moduloidi:}
 \subsection{Definicije in elementarni primeri:}
-Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Definirali bomo tudi strukture nad dioidi, za katere bomo pokazali nekaj rezultatov. V večji meri se bomo pri tem držali \cite[poglavje 5.\,2.\,]{bib:Gondran}.
+Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Definirali bomo tudi strukture nad dioidi, za katere bomo pokazali nekaj rezultatov. V večji meri se bomo pri tem sklicevali na vir \cite[poglavje 5.\,2.\,]{bib:Gondran}.
 
 \begin{definicija}\label{def:polmodul}
-	Naj bo $(R, \oplus, \otimes)$ polkolobar z nevtralnima elementoma $0$ in $1$.\newline\pojem{Levi $R$-polmodul} je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem je definirana zunanja operacija \map{\cdot}{R\times M}{M}, ki jo imenujemo množenje s skalarjem. Množenje s skalarjem zadošča naslednjim pogojem za vsaka $\lambda,\mu\in R$ in vsaka $m, n\in M$:
+	Naj bo $(R, \oplus, \otimes)$ polkolobar z nevtralnima elementoma $0$ in $1$.\newline\pojem{Levi $R$-polmodul}~ je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem je definirana zunanja operacija \map{\cdot}{R\times M}{M}, ki jo imenujemo množenje s skalarjem. Množenje s skalarjem zadošča naslednjim pogojem za vsaka $\lambda,\mu\in R$ in vsaka $m, n\in M$:
 	\begin{enumerate}
 		\item[A1] $\lambda\cdot(m + n) = \lambda\cdot m + \lambda\cdot n$
 		\item[A2] $(\lambda \oplus \mu)\cdot m = \lambda\cdot m + \mu\cdot m$
@@ -443,10 +443,10 @@ Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, 
 		\item[A5] $\lambda\cdot\theta = \theta = 0\cdot m$
 	\end{enumerate}
 
-Analogno definiramo desni R-polmodul.
+Analogno definiramo desni R-polmodul. Elementom polmodula pravimo vektorji. Polmodule (leve, desne in obojestranske) bomo na kratko označevali z $(M, +, \cdot)$.
 \end{definicija}
 
-	 Kadar je operacija $\otimes$ na polkolobarju $(R,\oplus, \otimes)$ komutativna, koncepta levega in desnega $R$-polmodula sovpadata. Drugače povedano, $(M, +)$ nad $(R, \oplus, \otimes)$ je obojestranski $R$-polmodul, če je hkrati levi in desni $R$-polmodul. Analogi rezultatov, ki jih bomo dokazali za leve $R$-polmodule seveda veljajo  tudi za desne in obojestranske $R$-polmodule. Od zdaj naprej bomo pod imenom $R$-polmodul obravnavali leve $R$-polmodule nad polkolobarjem $R$.
+	 Kadar je operacija $\otimes$ na polkolobarju $(R,\oplus, \otimes)$ komutativna, koncepta levega in desnega $R$-polmodula sovpadata. Drugače povedano, $(M, +, \cdot)$ nad $(R, \oplus, \otimes)$ je obojestranski $R$-polmodul, če je hkrati levi in desni $R$-polmodul. Analogi rezultatov, ki jih bomo dokazali za leve $R$-polmodule seveda veljajo  tudi za desne in obojestranske $R$-polmodule. Od zdaj naprej bomo pod imenom $R$-polmodul obravnavali leve $R$-polmodule nad polkolobarjem $R$.
 
 \begin{zgled}
 	\label{zgled:Rnpolmodul}
@@ -462,46 +462,47 @@ Analogno definiramo desni R-polmodul.
 \end{zgled}
 
 \begin{definicija}
-	Levemu oz. desnemu polmodulu nad $R$ pravimo \pojem{levi~moduloid} (oz. desni moduloid), če je $(R, \oplus, \otimes)$ dioid in $(M, +)$ kanonično urejen komutativen monoid. Če je $(R, \oplus, \otimes)$ komutativen, opustimo pridevnika levi in desni, saj koncepta sovpadata.
+	Levemu (oz. desnemu) polmodulu nad $R$ pravimo \pojem{levi~moduloid} (oz. desni moduloid), če je $(R, \oplus, \otimes)$ dioid in $(M, +)$ kanonično urejen. Če je $(R, \oplus, \otimes)$ komutativen, opustimo pridevnika levi in desni, saj koncepta sovpadata.
 \end{definicija}
 
 \begin{zgled}
 	Vrnimo se k zgledu \ref{zgled:Rnpolmodul} in dodatno predpostavimo, da je $(R, \oplus, \otimes)$ dioid. Potem je $(R^n, +)$ kanonično urejen, torej je (levi) moduloid.
+	Da se o tem prepričamo je dovolj, da preverimo lastnosti kanonične urejenosti $\leq_+$ na $(R^n, +)$. Naj bosta $a, b \in R^n$ in denimo, da je $a \leq_+ b$. To bo res natanko tedaj, ko bo obstajal tak $c\in R^n$, da je $b = a + c$~ oz. ko bo za vsak $i\in \{1, 2, \ldots, n\}$ veljalo $b_i = a_i \oplus c_i$ oziroma $a_i \leq_\oplus b_i$. Relacija $\leq_+$ podeduje antisimetričnost od $\leq_\oplus$.
 \end{zgled}
 
-\subsection{Homomorfizmi in kvocientne strukture:} Tako kot pri vektorskih prostorih, nas tudi pri polmodulih zanimajo preslikave, ki ohranjajo algebraično strukturo. Pojavi se tudi vprašanje, ali lahko nad polmodulih tvorimo kvocientne strukture. Oboje bomo obravnavali v tem podpoglavju.
+\subsection{Homomorfizmi in kvocientne strukture:} Tudi pri polmodulih nas bodo zanimale preslikave, ki ohranjajo algebraično strukturo. Pojavi se tudi vprašanje, ali lahko nad polmoduli tvorimo kvocientne strukture. Oboje bomo obravnavali v tem podpoglavju.
 
 \begin{definicija}
-	Naj bosta $M$ in $N$ dva (leva) polmodula, oba nad istim polkolobarjem $(R, \oplus, \otimes)$. Z $+$ in $\boxplus$ označimo notranji operaciji, z $\cdot$ in $\boxdot$ pa množenji s skalarjem. Preslikavi \map{\phi}{M}{N} pravimo \pojem{homomorfizem} levih polmodulov $M$ in $N$, če zadošča naslednjim pogojem: \begin{enumerate}
+	Naj bosta $M$ in $N$ dva (leva) polmodula, oba nad istim (levim) polkolobarjem $(R, \oplus, \otimes)$. Z $+$ in $\boxplus$ označimo notranji operaciji, z $\cdot$ in $\boxdot$ pa množenji s skalarjem. Preslikavi \map{\phi}{M}{N} pravimo \pojem{homomorfizem} levih polmodulov $M$ in $N$, če zadošča naslednjim pogojem: \begin{enumerate}
 		\item[(i)] $\phi(x + y) = \phi(x)\boxplus\phi(y), \forall x, y\in M$
 		\item[(ii)] $\phi(\lambda\cdot x) = \lambda \boxdot \phi(x), \forall x\in M, \forall \lambda\in R$
 	\end{enumerate}
-Homomorfizmom iz $M$ nazaj vase pravimo \pojem{endomorfizmi}.
+Homomorfizmom, ki slikajo iz $M$ nazaj v $M$ pravimo \pojem{endomorfizmi}.
 
-Kadar je $(R, \oplus, \otimes)$ dioid, govorimo o homomorfizmih in endomorfizmih levih moduloidov.
+Kadar je $(R, \oplus, \otimes)$ dioid in sta $M$ ter $N$ kanonično delno urejena, govorimo o homomorfizmih in endomorfizmih levih moduloidov.
 \end{definicija}
 
 \begin{opomba}
 	Tako kot elementom $x$ $R$-polmodula $(R^n, +, \cdot)$, pravimo vektorji, pravimo homomorfizmom med polmoduli kar \pojem{linearne preslikave}.
 \end{opomba}
 
-Tako v linearni algebri vektorskih prostorov in modulov kot v splošni abstraktni algebri igrajo pomembno vlogo podstrukture in kvocientne strukture. Oboje lahko definiramo tudi za polmodule. Spodnji definiciji sta povzeti iz \cite{bib:Gondran}.
+Ker v algebri (tako linearni kot abstraktni) igrajo pomembno vlogo podstrukture in kvocientne strukture, bomo te definirali tudi za polmodule. Spodnji definiciji sta povzeti iz \cite{bib:Gondran}.
 
 \begin{definicija}
 	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $\widehat{M}$ neprazna podmnožica v $M$. Pravimo, da je množica $\widehat{M}$ podpolmodul v $M$, če vsebuje enoto $\theta$ in je zaprta za podedovani operaciji.
 \end{definicija}
 
-Na enak način kot za podstrukture ostalih algebraičnih struktur, kot so grupe, kolobarji, vektorski prostori in moduli, lahko vidimo, da je presek družine $(N_i)_{i\in I}$ $R$-podpolmodulov $R$-polmodula $M$, torej $\cap_{i\in I}N_i$, tudi sam $R$-podpolmodul v $R$-polmodulu $M$. Če definiramo vsoto $R$-podpolmodulov $N_1,N_2\subseteq M$ s predpisom $N_1 + N_2 =\{n_1 + n_2~|~n_1\in N_1~\land~n_2\in N_2\}$, je tudi ta $R$-podpolmodul v $R$-polmodulu $M$.
+Na enak način kot za podstrukture ostalih algebraičnih struktur, kot so grupe, kolobarji, vektorski prostori in moduli, lahko vidimo, da je presek družine $(N_i)_{i\in I}$ $R$-podpolmodulov $R$-polmodula $M$, torej $\cap_{i\in I}N_i$, tudi sam $R$-podpolmodul v $M$. Če definiramo vsoto $R$-podpolmodulov $N_1,N_2\subseteq M$ s predpisom $N_1 + N_2 =\{n_1 + n_2~|~n_1\in N_1~\land~n_2\in N_2\}$, je tudi ta $R$-podpolmodul v $R$-polmodulu $M$.
 
 \begin{definicija}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $(\widehat{M}, +, \cdot)$ (levi) podpolmodul v $M$. Z $M/ \widehat{M}$ označimo kvocientno množico $M$ glede na ekvivalenčno relacijo $\mathcal{E}$: $$x\mathcal{E}y \iff \exists u, v\in\widehat{M}: x + u = y + v$$ Množici $M/\widehat{M}$ pravimo kvocientni polmodul polmodula $M$ nad $\widehat{M}$.
+	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $(\widehat{M}, +, \cdot)$ (levi) podpolmodul v $M$. Z $M/ \widehat{M}$ označimo kvocientno množico $M$ glede na ekvivalenčno relacijo $\mathcal{E}$: $$x\mathcal{E}y \iff \exists u, v\in\widehat{M}: x + u = y + v$$ Množici $M/\widehat{M}$ pravimo kvocientni polmodul $R$-polmodula $M$ nad $\widehat{M}$.
 \end{definicija}
 
 Da se preveriti, da je $\mathcal{E}$ usklajena s $+$ in $\cdot$. Za poljubne elemente $x_1, x_2, y_1, y_2 \in M$ velja $x_1\mathcal{E}y_1$ in $x_2\mathcal{E}y_2$ natanko tedaj, ko obstajajo $u_1, u_2, v_1, v_2 \in \widehat{M}$, da je $x_1 + u_1 = y_1 + v_1$ in $ x_2 + u_2 = y_2 + v_2$. \\
 
-Potem pa velja tudi $(x_1 + x_2)\mathcal{E}(y_1 + y_2)$, saj je $x_1 + x_2 + u_1 + u_2 = y_1 + y_2 + v_1 + v_2$ in $(u_1 + u_2), (v_1 + v_2)\in \widehat{M}$. Dodatno, iz $x\mathcal{E}y \iff \exists u, v\in\widehat{M}: x + u = y + v$ sledi tudi $\lambda\cdot (x + u) = \lambda\cdot (y + v)$ za vsak $\lambda\in R$. Od tod pa vidimo: $$\lambda\cdot x + \lambda\cdot u = \lambda\cdot y + \lambda\cdot v$$ Ker $(\lambda\cdot u), (\lambda\cdot v)\in \widehat{M}$, potem velja $(\lambda\cdot x) \mathcal{E} (\lambda\cdot y)$.
+Potem pa velja tudi $(x_1 + x_2)\mathcal{E}(y_1 + y_2)$, saj je $x_1 + x_2 + u_1 + u_2 = y_1 + y_2 + v_1 + v_2$ in $(u_1 + u_2), (v_1 + v_2)\in \widehat{M}$. Dodatno, če je $x + u = y + v$ je tudi $\lambda\cdot (x + u) = \lambda\cdot (y + v)$ za vsak $\lambda\in R$ oz. $\lambda\cdot x + \lambda\cdot u = \lambda\cdot y + \lambda\cdot v$. Ker sta $(\lambda\cdot u), (\lambda\cdot v)\in \widehat{M}$, potem po definiciji $\mathcal{E}$ sledi $(\lambda\cdot x) \mathcal{E} (\lambda\cdot y)$.
 
-Od tod sledi, da je kanonični epimorfizem $\varphi$, ki vsakemu elementu $x\in M$ priredi njegov ekvivalenčni razred v $M/\widehat{M}$, homomorfizem levih $R$- polmodulov.
+Posledično je kanonični epimorfizem $\varphi$, ki vsakemu elementu $x\in M$ priredi njegov ekvivalenčni razred v $M/\widehat{M}$, homomorfizem levih $R$- polmodulov.
 
 \subsection{Generatorji polmodulov in linearna neodvisnost:}
 V tem podpoglavju bomo definirali generatorje, linearno (ne)odvisnost ter baze v kontekstu (levih) polmodulov. Poleg tega bomo pokazali tudi nekaj zanimivih rezultatov. Več rezultatov na temo baz (levih) polmodulov bomo obravnavali v poglavju o matrikah.
@@ -525,9 +526,7 @@ V nadaljevanju nam bo prišlo prav, če karakteriziramo podpolmodule generirane 
 
 \begin{dokaz}
 	
-	Takoj vidimo, da je množica $Y$, kot je definirana zgoraj, levi $R$-polmodul. To je zato, ker je $(Y, +)$ komutativen monoid z enoto $\theta$ in $(M, +, \cdot)$ zadošča vsem aksiomom $A1$--$A5$ iz definicije \ref{def:polmodul}.
-	
-	Dodatno vidimo, da velja $X \subseteq Y$, saj lahko vsak $x_i\in X$ zapišemo kot $\sum_{j\in J}\lambda_j\cdot x_j$ za $J = \{i\}$ in $\lambda_i = 1$. Vidimo tudi, da je $\theta$ element $Y$ (vzamemo $J = {i}$ in $\lambda_i = 0$). Sledi torej, da je $Y$ levi $R$-podpolmodul v $M$, ki vsebuje $X$, od tod pa sklepamo $\Gen{X} \subseteq Y$. 
+	Hitro vidimo, da je $X \subseteq Y$, saj lahko vsak $x_i\in X$ zapišemo kot $\sum_{j\in J}\lambda_j\cdot x_j$ za $J = \{i\}$ in $\lambda_i = 1$. Vidimo tudi, da je $\theta$ element $Y$ (vzamemo $J = {i}$ in $\lambda_i = 0$) ter da je $Y$ zaprt za $+$. Sledi torej, da je $Y$ levi $R$-podpolmodul v $M$, ki vsebuje $X$. Po definiciji je $\Gen{X}$ najmanjši podpolmodul, ki vsebuje $X$, torej sledi $\Gen{X} \subseteq Y$. 
 	
 	Po drugi strani pa vidimo še, da vsak levi $R$-podpolmodul v $M$, ki vsebuje $X$, vsebuje tudi vse linearne kombinacije elementov $x_i\in X$, torej vsebuje $Y$. V posebnem primeru velja to tudi za \Gen{X}, torej sledi $Y \subseteq \Gen{X}$. Od tod pa sledi $Y = \Gen{X}$. $Y$ je torej najmanjši levi $R$-podpolmodul, ki vsebuje $X$.
 \end{dokaz}
@@ -944,18 +943,23 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 
 \section*{Slovar strokovnih izrazov}
 
-\geslo{base (of a semimodule)}{baza (polmodula) -- linearno neodvisna podmnožica v polmodulu, ki ga generira.}
+\geslo{base (of a semimodule)}{baza (polmodula) -- linearno neodvisna podmnožica v polmodulu, ki ga generira}
 \geslo{complete set}{polna množica}
 \geslo{dioid}{dioid}
-\geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo.}
-\geslo{free set in a semimodule}{prosta množica v polmodulu -- podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način.}  
-\geslo{free base (of a semimodule)}{prosta baza polmodula -- prosta podmnožica v polmodulu, ki generira polmodul.} 
+\geslo{endomorphism}{endomorfizem -- homomorfizem, ki ima isto domeno in kodomeno}
+\geslo{finitely generated semimodule}{končno generiran polmodul -- polmodul, za katerega obstaja končna množica, ki ga generira}
+\geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo}
+\geslo{free set in a semimodule}{prosta množica v polmodulu -- podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način}  
+\geslo{free base (of a semimodule)}{prosta baza polmodula -- prosta podmnožica v polmodulu, ki generira polmodul} 
+\geslo{homomorphism (of semirings, dioids, semimodules, moduloids, ...)}{homomorfizem (polkolobarjev, dioidov, polmodulov, moduloidov, ...)}
 \geslo{ideal of a semiring}{ideal polkolobarja}
 \geslo{infimum}{infimum}
 \geslo{lower bound}{spodnja meja}
-\geslo{Perron-Frobenius Theorem}{Perron-Frobeniusov izrek -- Pod to ime spada več rezultatov o realnih matrikah s samimi pozitivnimi ali nenegativnimi vrednostmi (pozitivne oz. nenegativne realne matrike), ki sta jih dokazala Oskar Perron (za pozitivne matrike), in Georg Frobenius (za nenegativne matrike).}
-\geslo{positivity condition}{pogoj pozitivnosti -- struktura v kateri velja sklep, da če je t.i. vsota dveh elementov enaka nevtralnemu elementu oz. >>ničli<<, sta potem oba elemeneta enaka nevtralnemu elementu, zadošča pogoju pozitivnosti.}
+\geslo{moduloid}{moduloid}
+\geslo{Perron-Frobenius Theorem}{Perron-Frobeniusov izrek -- Pod to ime spada več rezultatov o realnih matrikah s samimi pozitivnimi ali nenegativnimi vrednostmi (pozitivne oz. nenegativne realne matrike), ki sta jih dokazala Oskar Perron (za pozitivne matrike), in Georg Frobenius (za nenegativne matrike)}
+\geslo{positivity condition}{pogoj pozitivnosti -- struktura v kateri velja sklep, da če je t.i. vsota dveh elementov enaka nevtralnemu elementu oz. >>ničli<<, sta potem oba elemeneta enaka nevtralnemu elementu, zadošča pogoju pozitivnosti}
 \geslo{pre-semiring}{pred-polkolobar}
+\geslo{semifield}{polpolje}
 \geslo{semimodule}{polmodul}
 \geslo{semiring}{polkolobar}
 \geslo{supremum}{supremum}
