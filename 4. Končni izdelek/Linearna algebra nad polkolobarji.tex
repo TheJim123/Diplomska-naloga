@@ -533,9 +533,10 @@ V nadaljevanju nam bo prišlo prav, če karakteriziramo podpolmodule generirane 
 
 Ta rezultat seveda ni presenetljiv, saj velja tudi za module in pa vektorske prostore. V slednjem nam je \Gen{X} znan pod imenom linearne ogrinjače množice vektorjev $X$.
 
-Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite[2.\,5.\,1.\,]{bib:Gondran}. Ta se glasi:
+Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite[Poglavje 5, definicija 2.\,5.\,1.\,]{bib:Gondran}. Ta se glasi:
 
 \begin{definicija}
+	\label{def:linneodv1}
 	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i \in I}$ neprazna (končna ali števno neskončna) družina elementov iz $M$. Za vsako podmnožico indeksov $J \subset I$ označimo z $X_J$ poddružino $X$, ki jo določajo indeksi $j\in J$. Z $\Gen{X_J}$ označimo $R$-podpolmodul, ki ga generira $X_J$.
 	
 	Pravimo, da je družina $X$ \pojem{linearno odvisna} natanko tedaj, ko obstajata dve končni disjunktni podmnožici indeksov $I_1\subset I$ in $I_2\subset I$, skupaj s skalarji $\lambda_i \in R\setminus\{0\}; i\in I_1\cup I_2$, da velja: \begin{align*}
@@ -547,19 +548,26 @@ Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v p
 	\end{align}
 \end{definicija}
 
-Linearno neodvisnost lahko v polmodulih nad komutativnimi polkolobarji ekvivalentno karakteriziramo s pogojem, ki je naveden v \cite[definicija 2.\,3.\,]{bib:Tanbase}.
+V \cite[definicija 2.\,3.\,]{bib:Tanbase} Tan definira linearno neodvisnost v polmodulih nad polkolobarji drugače. Da bo pojma, za katera se izkaže, da ne sovpadata, lažje razločevati, bomo linearno (ne)odvisnost po Tanu imenovali \pojem{šibka linearna (ne)odvisnost}. Ta se glasi takole:
 \begin{definicija}\label{def:linneodv2}
-	Naj bo $R$ komutativen polkolobar in $M$ polmodul nad $R$. Množica $X\subseteq M$ je linearno neodvisna v $M$, če za njo velja naslednji pogoj.
+	Naj bo $R$ (levi) polkolobar in $M$ polmodul nad $R$. Množica $X\subseteq M$ je šibko linearno neodvisna v $M$, če za njo velja
 \begin{align}
-	\forall x_i\in X: x_i \notin \Gen{X\setminus\{x_i\}}
+	\forall x\in X: x \notin \Gen{X\setminus\{x\}}
 \end{align}
 \end{definicija}
 
-Hitro premislimo, da je to nad komutativnimi polkolobarji res ekvivalentno definiciji iz \cite[2.\,5.\,1.\,]{bib:Gondran}. Naj bo $M$ polmodul nad komutativnim polkolobarjem $R$ in naj bo $X$ podmnožica v $M$. Vidimo, da je druga karakterizacija poseben primer prve, v katerem je $I_1 = \{i\}$ in $I_2 = I\setminus\{i\}$, saj če $x\notin \Gen{X\setminus\{x\}}$, potem $\Gen{\{x\}}\cap \Gen{X\setminus\{x\}} = \{\theta\}$. Torej ,če za $X$ velja pogoj iz prve karakterizacije, velja tudi pogoj iz druge. Po drugi strani, če za $X$ velja pogoj iz druge karakterizacije, upoštevamo, da velja $\forall i_1\in I: \{i_1\} \cap I\setminus\{i_1\} =\emptyset$ in od tod za vsak indeks $i_1$ sledi $\Gen{\{x_{i_1}\}}\cap \Gen{X\setminus \{x_{i_1}\}} = \{\theta\}$. Potem za vsaka indeksa $i_1, i_2\in I$ velja $\{i_1, i_2\}\cap I\setminus \{i_1, i_2\} = \emptyset$ in $\Gen{\{x_{i_1}, x_{i_2}\}}\cap\Gen{X\setminus\{x_{i_1}, x_{i_2}\}} = \{\theta\}$. Na ta načinlahko sestavimo poljubno (števno) indeksno podmnožico $I_1$ v $I$. Ker sklep velja za $I_2 = I\setminus I_1$, bo veljal tudi, če za $I_2$ vzamemo kako podmnožico od $I\setminus I_1$.
+Hitro lahko vidimo, da če je $X$ linearno neodvisna, bo tudi šibko linearno neodvisna. Naj bo $M$ polmodul nad komutativnim polkolobarjem $R$, naj bo $I$ končna ali števno neskončna indeksna množica ter naj bo $X = (x_i)_{i\in I}$ podmnožica v $M$. 
+Če je $X$ linearno neodvisna, potem pogledamo posebni primer $I_1 = \{i\}$ in $I_2 = I\setminus\{i\}$. Če za nek $x\in X$ velja $\Gen{\{x\}}\cap \Gen{X\setminus\{x\}} = \{\theta\}$, potem sledi $x\notin \Gen{X\setminus\{x\}}$. Za $\forall i \in I$ potem v posebnem primeru velja $x_i \notin \Gen{X\setminus\{x_i\}}$, kar pa je v resnici ravno pogoj iz definicije šibke linearne neodvisnosti. Seveda velja tudi, da če je množica $X$ šibko linearno odvisna, potem je tudi linearno odvisna.
+
+
+
+%Po drugi strani, če za $X$ velja pogoj iz druge karakterizacije, vzamemo dve disjunktni podmnožici, $I_1$ in $I_2$, indeksne množice $I$. Z njima generiramo $\Gen{X_{I_1}}$ ter $\Gen{X_{I_2}}$ in upoštevamo, da lahko $I_1$ zapišemo kot končno ali pa števno neskončno unijo enojcev $\{i\}$, torej $I_1 = \Cup_{i\in I_1}i$.
+
+%upoštevamo, da velja $\forall i_1\in I: \{i_1\} \cap I\setminus\{i_1\} =\emptyset$ in od tod za vsak indeks $i_1$ sledi $\Gen{\{x_{i_1}\}}\cap \Gen{X\setminus \{x_{i_1}\}} = \{\theta\}$. Potem za vsaka indeksa $i_1, i_2\in I$ velja $\{i_1, i_2\}\cap I\setminus \{i_1, i_2\} = \emptyset$ in $\Gen{\{x_{i_1}, x_{i_2}\}}\cap\Gen{X\setminus\{x_{i_1}, x_{i_2}\}} = \{\theta\}$. Na ta načinlahko sestavimo poljubno (števno) indeksno podmnožico $I_1$ v $I$. Ker sklep velja za $I_2 = I\setminus I_1$, bo veljal tudi, če za $I_2$ vzamemo kako podmnožico od $I\setminus I_1$.
 
 V \cite[definicija 2.\,3.\,]{bib:Tanbase} je definiran tudi pojem proste množice in proste baze. V spodnji definicij povzamemo oboje.
 \begin{definicija}
-Naj bo $R$ komutativen polkolobar. Pravimo, da je neprazna podmnožica $X$ v $R$-polmodulu $M$ \pojem{prosta množica} v $M$, če za vsak element v $M$ velja, da če ga lahko zapišemo kot linearno kombinacijo elementov v $X$, je ta zapis enoličen. 
+Naj bo $R$ (levi) polkolobar. Pravimo, da je neprazna podmnožica $X$ v $R$-polmodulu $M$ \pojem{prosta množica} v $M$, če za vsak element v $M$ velja, da če ga lahko zapišemo kot linearno kombinacijo elementov v $X$, je ta zapis enoličen. 
 \end{definicija}
 
 Kratek premislek nam pove, da je vsaka prosta množica v $M$ hkrati tudi linearno neodvisna. Da to vidimo, se skličemo na definicijo linearne neodvisnosti \ref{def:linneodv2}, ki smo jo pravkar navedli.
