@@ -712,7 +712,7 @@ Pri obravnavi tega vprašanja nam bosta pomagali že dokazana lema \ref{lema:inv
 
 Izreka \ref{izr:ABIBAI} v tem delu ne bomo dokazali, bomo ga pa privzeli kot veljavnega. Dva dokaza se nahajata v \cite[poglavje 3 in poglavje 4]{bib:Reutenauer}.
 
-Sedaj se lahko zapišemo naslednjo trditev in dokaz, oba povzeta po \cite[lema 2.\ 3.]{bib:Tanbase}.
+Sedaj lahko zapišemo naslednjo trditev in dokaz, oba povzeta po \cite[lema 2.\ 3.]{bib:Tanbase}.
 
 \begin{trditev}\label{trd:obrnljMatr}
 	Naj bo $R$ komutativen polkolobar v katerem $1$ ni aditivno obrnljiva in velja $1 = u \oplus v \Rightarrow u\in U(R) \lor v\in U(R)~\forall u, v \in R$. Naj bo $A\in M_n(R)$. Če so diagonalni elementi matrike $A$ multiplikativno obrnljivi v $R$ (torej $a_{ii}\in U(R)~\forall i \in \{1, \ldots, n\}$) in če so vsi izvendiagonalni elementi v $A$ aditivno obrnljivi ($a_{i,j}\in V(R)~\forall i, j\in \{1, \ldots, n\} ~;~i\neq j$), potem je $A$ obrnljiva.
@@ -788,23 +788,23 @@ To nas privede do naslednje definicije.
 Na tej točki definiramo še t.~i.~faktorski rang matrike, saj bo ta pojem relevanten v naslednji trditvi.
 
 \begin{definicija}\label{def:faktorrang}
-	Naj bo $A\in M_{m\times n}(R)$ poljubna $m\times n$ matrika nad komutativnim polkolobarjem $R$. Najmanjšemu naravnemu številu $k$, za katerega velja, da je $A= B*C$ za neka $B\in M_{m\times k}(R)$ in $C\in M_{k\times n}(R)$, pravimo faktorski rang matrike $A$ in ga označimo z $\rho_S(A)$.
+	Naj bo $A\in M_{m\times n}(R)$ poljubna $m\times n$ matrika nad komutativnim polkolobarjem $R$. Najmanjšemu naravnemu številu $k$, za katerega velja, da je $A= B*C$ za neka $B\in M_{m\times k}(R)$ in $C\in M_{k\times n}(R)$, pravimo faktorski rang matrike $A$ in ga označimo z $\rho_s(A)$.
 \end{definicija}
 
 Za prehodne matrike med bazami končno generiranega $R$-polmodula $M$ bomo sedaj pokazali, da so njihovi faktorski rangi povezani z $r(M)$.
 
 \begin{izrek}\label{izr:transmatfakrang}
-	Naj bo $M$ $R$-polmodul ranga $r$ nad komutativnim polkolobarjem $R$, in naj bosta $S$ in $T$ njegovi šibki bazi. Potem za vsako prehodno matriko $A$ iz $T$ v $S$ velja, da je njen faktorski rang najmanj $r$, torej $r \leq \rho_S(A)$. Poleg tega med šibkima bazama obstaja prehodna matrika $\widehat{A}$, za katero je $r = \rho_S(\widehat{A})$.
+	Naj bo $M$ $R$-polmodul ranga $r$ nad komutativnim polkolobarjem $R$, in naj bosta $S$ in $T$ njegovi šibki bazi. Potem za vsako prehodno matriko $A$ iz $T$ v $S$ velja, da je njen faktorski rang najmanj $r$, torej $r \leq \rho_s(A)$. Poleg tega med šibkima bazama obstaja prehodna matrika $\widehat{A}$, za katero je $r = \rho_s(\widehat{A})$.
 \end{izrek}
 
 \begin{dokaz}
-		Naj bo $A$ poljubna $n\times m$ prehodna matrika iz $T = \{t_1, \ldots, t_n\}$ v $S = \{s_1, \ldots, s_m\}$ in naj bo $\rho_S(A) = k$. Potem je, po definiciji faktorskega ranga, $A = B*C$ za neki matriki $B\in M_{n\times k}(R)$ in $C\in M_{k\times m}(R)$. Označimo $\gamma_l =\sum_{j = 1}^{n}b_{jl}\cdot t_j$ za vsak $l\in \{1, \ldots, k\}$. Sestavimo množico $\Gamma$, ki vsebuje vse $\gamma_l$, torej $\Gamma = \{\gamma_1, \ldots, \gamma_k\}$. Očitno je $\Gamma$ podmnožica v $M$.
+		Naj bo $A$ poljubna $n\times m$ prehodna matrika iz $T = \{t_1, \ldots, t_n\}$ v $S = \{s_1, \ldots, s_m\}$ in naj bo $\rho_s(A) = k$. Potem je, po definiciji faktorskega ranga, $A = B*C$ za neki matriki $B\in M_{n\times k}(R)$ in $C\in M_{k\times m}(R)$. Označimo $\gamma_l =\sum_{j = 1}^{n}b_{jl}\cdot t_j$ za vsak $l\in \{1, \ldots, k\}$. Sestavimo množico $\Gamma$, ki vsebuje vse $\gamma_l$, torej $\Gamma = \{\gamma_1, \ldots, \gamma_k\}$. Očitno je $\Gamma$ podmnožica v $M$.
 		
 		Sedaj zapišemo elemente v $S$ kot linearne kombinacije elementov iz $T$. Za vsak indeks $i\in\{1, \ldots m\}$ je $s_i = \sum_{j = 1}^{n} a_{ji}\cdot t_j$. Sedaj upoštevamo, da lahko $A$ zapišemo kot produkt $B$ in $C$ in dobimo:  $$s_i = \sum_{j=1}^{n} \left(\sum_{l = 1}^{k}b_{jl}c_{li}\right)\cdot t_j = \sum_{j=1}^{n}\sum_{l = 1}^{k}b_{jl}c_{li}\cdot t_j = \sum_{l=1}^{k}\sum_{j = 1}^{n}c_{li}b_{jl}\cdot t_j = \sum_{l=1}^{k}c_{li}\left(\sum_{j = 1}^{n}b_{jl}\cdot t_j\right)$$
 		
-		V oklepaju prepoznamo $\gamma_l$, torej nam je uspelo zapisati $s_i = \sum_{l = 1}^{k} c_{li}\gamma_l$ za vsak $i\in \{1, \ldots, m\}$. Od tod sledi, da $\Gamma$ generira $S$ in posledično tudi $M$, saj $S$ generira $M$. Potem pa je $r = r(M) \leq k = \rho_S(A).$ in s tem smo pokazali prvi del trditve.
+		V oklepaju prepoznamo $\gamma_l$, torej nam je uspelo zapisati $s_i = \sum_{l = 1}^{k} c_{li}\gamma_l$ za vsak $i\in \{1, \ldots, m\}$. Od tod sledi, da $\Gamma$ generira $S$ in posledično tudi $M$, saj $S$ generira $M$. Potem pa je $r = r(M) \leq k = \rho_s(A).$ in s tem smo pokazali prvi del trditve.
 		
-		Da dokažemo drugi del trditve, najprej upoštevamo definicijo ranga polmodula. Ker je $r(M) = r$, obstaja neka šibka baza $\Gamma$ od $M$, da velja $\abs{\Gamma} = r$. Naj bo $\Gamma = \{\gamma_1, \ldots, \gamma_r\}$ ter naj bo $B \in M_{n\times r}(R)$ prehodna matrika iz $T$ v $\Gamma$. Poleg tega naj bo $C\in M_{r\times m}$ prehodna matrika iz $\Gamma$ v $S$. Zapis $(\gamma_1, \gamma_2, \ldots, \gamma_r) = (t_1, t_2, \ldots, t_n)*B$ vstavimo v $(s_1, s_2, \ldots, s_m) = (\gamma_1, \gamma_2, \ldots, \gamma_r)*C$ in s tem pridobimo zapis $$(s_1, s_2, \ldots, s_m) = (t_1, t_2, \ldots, t_n)*B*C$$ Označimo $B*C = \widehat{A}$ in takoj vidimo, da je $\widehat{A}$ prehodna matrika med $T$ in $S$ za katero je $\rho_S(\widehat{A}) \leq r$. Po drugi strani pa nam prvi del trditve pove, da je $r \leq \rho_S(\widehat{A})$. Sledi, da je $\rho_S(\widehat{A}) = r$ in s tem je dokazan tudi drugi del trditve.
+		Da dokažemo drugi del trditve, najprej upoštevamo definicijo ranga polmodula. Ker je $r(M) = r$, obstaja neka šibka baza $\Gamma$ od $M$, da velja $\abs{\Gamma} = r$. Naj bo $\Gamma = \{\gamma_1, \ldots, \gamma_r\}$ ter naj bo $B \in M_{n\times r}(R)$ prehodna matrika iz $T$ v $\Gamma$. Poleg tega naj bo $C\in M_{r\times m}$ prehodna matrika iz $\Gamma$ v $S$. Zapis $(\gamma_1, \gamma_2, \ldots, \gamma_r) = (t_1, t_2, \ldots, t_n)*B$ vstavimo v $(s_1, s_2, \ldots, s_m) = (\gamma_1, \gamma_2, \ldots, \gamma_r)*C$ in s tem pridobimo zapis $$(s_1, s_2, \ldots, s_m) = (t_1, t_2, \ldots, t_n)*B*C$$ Označimo $B*C = \widehat{A}$ in takoj vidimo, da je $\widehat{A}$ prehodna matrika med $T$ in $S$ za katero je $\rho_s(\widehat{A}) \leq r$. Po drugi strani pa nam prvi del trditve pove, da je $r \leq \rho_s(\widehat{A})$. Sledi, da je $\rho_s(\widehat{A}) = r$ in s tem je dokazan tudi drugi del trditve.
 \end{dokaz}
 
 Za naslednjo trditev se spomnimo definicije prostega (levega) $R$-polmodula v \ref{def:polmodbaza}. Polmodul (levi, desni ali obojestranski) $M$ nad polkolobarjem $R$ je prost, če premore kako prosto bazo.
@@ -916,10 +916,10 @@ O bazah nad polmoduli se da povedati še marsikaj, a ker to ni tema te naloge bo
 \subsection{lastne vrednosti}
 Spodobi se, da vsaj omenimo lastne vrednosti in lastne vektorje, saj imajo ti izjemen pomen v klasični linearni algebri. V temo se ne bomo preveč poglobili, saj bi lahko tej temi posvetili lastno diplomsko nalogo. Vseeno bomo pa vsaj definirali koncepta in dokazali dva elementarna rezultata. Pri tem se bomo uprli na \cite{bib:Gondran}.
 
-Naj bo $(R, \oplus, \otimes)$ polkolobar in obravnavamo $R$-polmodul $M = R^n$ kot v zgledu \ref{zgled:Rnpolmodul}. Naj bo $\map{h}{M}{M}$ endomorfizem $R$-polmodulov. Vsak vektor $v\in M$ lahko zapišemo kot linearno kombinacijo $v = \sum_{i = 1}^{n}v_i\cdot e_i$, kjer so $e_i$ vektorji, ki imajo na $i$-tem mestu $1$, na vseh ostalih komponentah pa $0$. Vidimo, da je endomorfizem $h$ natanko določen s slikami vektorjev $e_i$, torej $h(e_1), h(e_2), \ldots, h(e_n)$, oziroma z matriko $A\in M_n(R)$, ki ima za stolpce vektorje $h(e_1), \ldots, h(e_n)$. V tem primeru za vsak $x\in M$ velja zapis $h(x) = A*x$, kjer je produkt med matriko $A$ in vektorjem $x$ definiran s predpisom $\forall i\in \{1, 2, \ldots, n\};~(A*x)_i = \sum_{j = 1}^{n} a_{ij}\otimes x_j$, kot smo navajeni.
+Naj bo $(R, \oplus, \otimes)$ polkolobar in obravnavamo $R$-polmodul $M = R^n$ kot v zgledu \ref{zgled:Rnpolmodul}. Naj bo $\map{h}{M}{M}$ endomorfizem $R$-polmodulov. Vsak vektor $v\in M$ lahko zapišemo kot linearno kombinacijo $v = \sum_{i = 1}^{n}v_i\cdot e_i$, kjer so $e_i$ vektorji, ki imajo na $i$-tem mestu multiplikativno enoto $1$, na vseh ostalih komponentah pa aditivno enoto $0$. Vidimo, da je endomorfizem $h$ natanko določen s slikami vektorjev $e_i$, torej $h(e_1), h(e_2), \ldots, h(e_n)$, oziroma z matriko $A\in M_n(R)$, ki ima za stolpce vektorje $h(e_1), \ldots, h(e_n)$. V tem primeru za vsak $x\in M$ velja zapis $h(x) = A*x$, kjer je produkt med matriko $A$ in vektorjem $x$ definiran s predpisom $\forall i\in \{1, 2, \ldots, n\};~(A*x)_i = \sum_{j = 1}^{n} a_{ij}\otimes x_j$, kot smo navajeni.
 
 \begin{definicija}
-	Naj bo $R$ polkolobar in $M = R^n$ $R$-polmodul. Naj bo $A\in M_n(R)$ matrika, ki pripade endomorfizmu $\map{h}{M}{M}$. Pravimo, da je $\lambda$ \pojem{lastna vrednost} matrike $A$, če obstaja tak vektor $v\in M\setminus\{0\}$, da velja $A * v = \lambda \cdot v$. Vektorju $v$ previmo \pojem{lastni vektor} matrike $A$ za lastno vrednost $\lambda$.
+	Naj bo $R$ polkolobar in $M = R^n$ $R$-polmodul. Naj bo $A\in M_n(R)$ matrika, ki pripada endomorfizmu $\map{h}{M}{M}$. Pravimo, da je $\lambda$ \pojem{lastna vrednost} matrike $A$, če obstaja tak vektor $v\in M\setminus\{0\}$, da velja $A * v = \lambda \cdot v$. Vektorju $v$ previmo \pojem{lastni vektor} matrike $A$ za lastno vrednost $\lambda$.
 \end{definicija}
 
 
@@ -928,11 +928,11 @@ Naj bo $R$ komutativen polkolobar in naj bo $L_\lambda$ množica lastnih vektorj
 \end{trditev}
 
 \begin{dokaz}
-Vzemimo torej poljubna skalarja $\alpha, \beta\in R$ in poljubna vektorja $X$ in $Y$ iz $L_\lambda$ ter poglejmo, kaj lahko povemo o vektorju $\alpha\cdot X + \beta\cdot Y$. $$A(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot A(X) + \beta\cdot A(Y) = \alpha\cdot\lambda\cdot X + \beta\cdot\lambda\cdot Y = \lambda\cdot (\alpha\cdot X + \beta\cdot Y)$$ To pomeni, da je tudi $(\alpha\cdot X + \beta\cdot Y)\in L_\lambda$. Potem je pa očitno $(L_\lambda, +, \cdot)$ t.~i.~lastni $R$-polmodul za lastno vrednost $\lambda$. Še več, vidimo, da smo v resnici pokazali, da je $(L_\lambda, +, \cdot)$ $R$-podpolmodul v $(R^n, +, \cdot)$ in to za vsako lastno vrednost $\lambda$ poljubne matrike $A\in M_n(R)$.
+Vzemimo torej poljubna skalarja $\alpha, \beta\in R$ in poljubna vektorja $X$ in $Y$ iz $L_\lambda$ ter poglejmo, kaj lahko povemo o vektorju $\alpha\cdot X + \beta\cdot Y$. $$A(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot A(X) + \beta\cdot A(Y) = \alpha\cdot\lambda\cdot X + \beta\cdot\lambda\cdot Y = \lambda\cdot (\alpha\cdot X + \beta\cdot Y)$$ To pomeni, da je tudi $(\alpha\cdot X + \beta\cdot Y)\in L_\lambda$. Potem je pa očitno $(L_\lambda, +, \cdot)$ t.~i.~lastni $R$-polmodul za lastno vrednost $\lambda$. Še več, vidimo, da smo v resnici pokazali, da je $(L_\lambda, +, \cdot)$ $R$-podpolmodul v $(M, +, \cdot)$ in to za vsako lastno vrednost $\lambda$ poljubne matrike $A\in M_n(R)$.
 \end{dokaz}
 
 \begin{trditev}
-Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (torej $a\otimes a = a \forall a\in R$). Naj bo $M=R^n$ $R$-polmodul in $\map{A}{M}{M}$ naj bo $n\times n$ matrika, ki pripada nekemu endomorfizmu $M$. Če je tedaj $v$ lastni vektor za $1$, je $\lambda\cdot v$ lastni vektor za $A$ za lastno vrednost $\lambda$.
+Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (torej $a\otimes a = a ~\forall a\in R$). Naj bo $M=R^n$ $R$-polmodul in $\map{A}{M}{M}$ naj bo $n\times n$ matrika, ki pripada nekemu endomorfizmu $M$. Če je tedaj $v\in M$ lastni vektor za $1$, je $\lambda\cdot v$ lastni vektor matrike $A$ za lastno vrednost $\lambda$.
 \end{trditev}
 \begin{dokaz}
 	Po predpostavki je $A*v = v$. Hkrati velja $A*(\lambda\cdot v) = \lambda\cdot (A*v) = \lambda\cdot v$. Na tej točki upoštevamo idempotentnost množenja v $R$ in opazimo $\lambda = \lambda\otimes\lambda$. Potem je $\lambda\cdot v = (\lambda\otimes\lambda)\cdot v = \lambda \cdot (\lambda\cdot v)$, torej je $\lambda\cdot v$ lastni vektor matrike $A$ za lastno vrednost $\lambda$.
@@ -962,7 +962,10 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 \geslo{base (of a semimodule)}{baza (polmodula) -- linearno neodvisna podmnožica v polmodulu, ki ga generira}
 \geslo{complete set}{polna množica}
 \geslo{dioid}{dioid}
+\geslo{eigenvalue}{lastna vrednost}
+\geslo{eigenvector}{lastni vektor}
 \geslo{endomorphism}{endomorfizem -- homomorfizem, ki ima isto domeno in kodomeno}
+\geslo{factor rank}{faktorski rang}
 \geslo{finitely generated semimodule}{končno generiran polmodul -- polmodul, za katerega obstaja končna množica, ki ga generira}
 \geslo{free semimodule}{prosti polmodul -- polmodul, ki premore kako prosto bazo}
 \geslo{free set in a semimodule}{prosta množica v polmodulu -- podmnožica v polmodulu za katero velja, da lahko vsak element iz polmodula zapišemo kot linearno kombinacijo njenih elementov na največ en način}  
@@ -984,9 +987,11 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 \geslo{the element $0 \in R$ is absorbing for $\otimes$}{element $0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
 \geslo{the greatest element}{zadnji element}
 \geslo{the least element}{prvi element}
+\geslo{transition matrix}{prehodna matrika}
 \geslo{upper bound}{zgornja meja}
-\geslo{weak linear independence}{šibka linearna neodvisnost}
 \geslo{weak dimension of the $R$-semimodule $M$}{šibka dimenzija $R$-polmodula $M$ -- minimalna kardinalnost šibko linearno neodvisnih množic, ki generirajo $M$.}
+\geslo{weak linear independence}{šibka linearna neodvisnost}
+\geslo{weak base of a semimodule}{šibka baza polmodula}
 %\geslo{}{}
 %\geslo{}{}
 %\geslo{}{}
@@ -995,11 +1000,11 @@ Naj bo $R$ komutativen polkolobar in naj bo $\otimes$ idempotentna operacija (to
 \begin{thebibliography}{99}
 	\bibitem{bib:Reutenauer} C. Reutenauer in H.~Straubing, \emph{Inversion of matrices over a commutative semiring},~Journal of Algebra~\textbf{88}~(1984)~350--360.	
 %	\bibitem{bib:Golan} J. Golan, \emph{Semirings and their applications}, Springer, Dordrecht, 1999; dostopno tudi na \url{https://link.springer.com/book/10.1007/978-94-015-9333-5}. 
-	\bibitem{bib:AkianTropSemi} M.~Akian, S.~Gaubert in A.~Guterman,~\emph{Linear independence over tropical semirings and beyond}, v: Tropical and Idempotent Mathematics~vol.~\textbf{495}(ur.\ G.~Litvinov in S.~Sergeev), Amer. \ Math.\ Soc., Providence, 2008, str.\ 1--38
+	\bibitem{bib:AkianTropSemi} M.~Akian, S.~Gaubert in A.~Guterman,~\emph{Linear independence over tropical semirings and beyond}, v: Tropical and Idempotent Mathematics~vol.~\textbf{495}~(ur.\ G.~Litvinov in S.~Sergeev), Amer. \ Math.\ Soc., Providence, 2008, str.\ 1--38
 	
 	\bibitem{bib:Gondran} M.~Gondran in M.~Minoux, \emph{Graphs, dioids and semirings: New models and algorithms}, Operations Research/Computer Science Interfaces \textbf{41}, Springer, Boston, 2008; dostopno tudi na \url{https://www.researchgate.net/publication/266193429_Graphs_Dioids_and_Semirings_New_Models_and_Algorithms}.
 	
-%	\bibitem{bib:Grosu} R. Grosu, \emph{The Cayley-Hamilton theorem for noncommutative semirings}, v: Domaratzki, M., Salomaa, K. (eds) Implementation and Application of Automata. CIAA 2010. Lecture Notes in Computer Science, vol 6482. Springer, Berlin. %??? 
+%	\bibitem{bib:Grosu} R. Grosu, \emph{The Cayley-Hamilton theorem for noncommutative semirings}, v: Implementation and Application of Automata~(ur.\ M.~Domaratzki, K.~Salomaa), Springer, Berlin, 2011, str. 143--153 
 
 	\bibitem{bib:Tanbase} Y.\ J.\ Tan,~\emph{Bases in semimodules over commutative semirings}, v: Linear Algebra Appl.~\textbf{443}~(2014)~139--152.
 	
