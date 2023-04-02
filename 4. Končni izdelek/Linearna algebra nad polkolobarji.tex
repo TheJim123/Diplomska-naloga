@@ -1017,26 +1017,78 @@ $\pi = \begin{pmatrix}
 Vzemimo sedaj zaporedje $w = oprsš$. Potem je $\sigma(w) = poršs$ in $\pi(w) = posšr$. Dodatno je $\sigma(\bar{\pi}) = (2, 1)(1, 2)(3, 5)(5, 4)(4, 3)$.
 \end{zgled}
 
-Za konec navedemo še eno definicijo, ki bo prišla prav v naslednjem podpoglavju.
-\begin{definicija}
-	Naj bo $w = w_1w_2\ldots w_n$ neko zaporedje dolžine $n\in\N$. Vsoti $\sum_{\pi\in P(n)}\pi(w)$ pravimo \pojem{permutacijsko zaprtje} zaporedja $w$ in ga označimo z $\llbracket w \rrbracket$.
-\end{definicija}
+\subsection{Pideterminanta in karakteristični pipolinom:}\label{subsect:pidetinpipoly}
+V tem odseku bosta predstavljeni posplošitvi konceptov determinante in karakterističnega polinoma matrike, t.~i.~\pojem{pideterminanta} in \pojem{karakteristični pipolinom}.
 
-\subsection{Pideterminanta:}\label{subsect:pideterminant}
-Za dano permutacijo $\pi$ množice z $n$ elementi lahko permutacijsko zaporedje $\bar{\pi}$ uporabimo tudi na dani $n\times n$ matriki $A$ na naslednji način: $$\bar{\pi}(A) = (1, \pi(1))(2, \pi(2))\ldots (n, \pi(n))(A) = A_{1\pi(1)}A_{2\pi(2)}\ldots A_{n\pi(n)}$$
-Pri tem je $A_{ij}$ element matrike $A$, ki se nahaja v $i$-ti vrstici in $j$-tem stolpcu. 
-Sedaj se spomnimo definicije determinante nad polji.
+Za začetek se spomnimo definicije determinante za matrike nad polji. 
 \begin{definicija}
 	Naj bo $F$ polje in $A\in M_n(F)$ kvadratna matrika nad $F$. Potem je determinanta matrike $A$ definirana s predpisom: $$det(A) = \sum_{\pi\in P(n)}sgn(\pi)a_{1\pi(1)}a_{2}\pi(2)\ldots a_{n\pi(n)}$$
 \end{definicija}
-Formulo iz definicije lahko skrajšamo s pomočjo uporabe permutacijskega zaporedja $\bar{\pi}$ na matriki $A$. Dodatno lahko še permutacije $\pi\in P(n)$ ločimo glede na parnost. Nova formula ima obliko $$det(A) = \sum_{\pi\in P(n)}sgn(\pi)\bar{\pi}(A) = \sum_{\pi\in P^{+}(n)}\bar{\pi}(A) - \sum_{\pi\in P^{-}(n)}\bar{\pi}(A)$$
+Formulo iz definicije lahko skrajšamo s pomočjo uporabe permutacijskega zaporedja $\bar{\pi}$ na matriki $A$ na naslednji način:
+Za dano permutacijo $\pi$ množice z $n$ elementi in permutacijsko zaporedje $\bar{\pi}$ je $\bar{\pi}(A) = (1, \pi(1))(2, \pi(2))\ldots (n, \pi(n))(A) = A_{1\pi(1)}\cdot A_{2\pi(2)}\cdot\ldots\cdot A_{n\pi(n)}$. Pri tem je $A_{ij}$ element matrike $A$, ki se nahaja v $i$-ti vrstici in $j$-tem stolpcu, $\cdot$ pa množenje.
+Dodatno lahko še permutacije $\pi\in P(n)$ ločimo glede na parnost. Nova formula ima obliko $$det(A) = \sum_{\pi\in P(n)}sgn(\pi)\bar{\pi}(A) = \sum_{\pi\in P^{+}(n)}\bar{\pi}(A) - \sum_{\pi\in P^{-}(n)}\bar{\pi}(A)$$
 Vsoto po sodih permutacijah označimo z $det^{+}(A)$, vsoto po lihih permutacijah pa z $det^{-}(A)$. Potem lahko determinanto matrike $A$ zapišemo tudi kot $$det(A) = det^{+}(A) - det^{-}(A)$$
 
+Oznaki $det^{+}(A)$ in $det^{-}(A)$ bosta prišli prav pri obravnavi zapisa pideterminante, katere definicijo navajamo spodaj.
+
 \begin{definicija}
-	Naj bo $R$ nek polkolobar in $A\in M_n(R)$ kvadratna matrika. Urejeni dvojici podani s predpisom $$pdt(A) = (\sum_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi})(A), \sum_{\substack{\pi\in P^{-}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi})(A))$$ pravimo~\pojem{pideterminanta} matrike $A$. 
+	Naj bo $R$ nek polkolobar in $A\in M_n(R)$ kvadratna matrika. Urejeni dvojici podani s predpisom $$pdt(A) = \big(\sum_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(A)), \sum_{\substack{\pi\in P^{-}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(A))\big)$$ pravimo~\pojem{pideterminanta} matrike $A$. 
 \end{definicija}
 
-Ko v definiciji prepoznamo permutacijsko zaprtje, lahko formulo zapišemo tudi kot $pdt(A) = (\llbracket det^{+}(A) \rrbracket, \llbracket det^{-}(A) \rrbracket)$.
+V definiciji pideterminante opazimo, da nastopa dvojna vsota. Posebej za prvo komponento dvojice vidimo da je $\sum_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(A)) = \sum_{\sigma \in P(n)} \sum_{\pi\in P^{+}(n)}\sigma(\bar{\pi}(A))$ in podobno tudi za drugo komponento. Če razumemo uporabo permutacje $\sigma$ na vsoti zaporedij $a_{11}a_{12}\ldots a_{1n} + a_{21}a_{22}\ldots a_{2n} + \ldots + a_{n1}a_{n2}\ldots a_{nn}$, torej $$\sigma(a_{11}a_{12}\ldots a_{1n} + a_{21}a_{22}\ldots a_{2n} + \ldots + a_{n1}a_{n2}\ldots a_{nn})$$ kot vsoto s $\sigma$ premešanih zaporedij $$\sigma(a_{11}a_{12}\ldots a_{1n}) + \sigma(a_{21}a_{22}\ldots a_{2n}) +\ldots + \sigma(a_{n1}a_{n2}\ldots a_{nn})$$ potem lahko vsoto v prvi komponenti zapišemo kot $\sum_{\sigma \in P(n)}\sigma\big(\sum_{\pi\in P^{+}(n)}\bar{\pi}(A)\big) = \sum_{\sigma \in P(n)}\sigma(det^{+}(A))$. Ko je $\sigma = id$, dobimo v tej vsoti kar $det^{+}(A)$. Ostale permutacije $\sigma\in P(n)$ nam v resinici dajo podobne vsote, s tem da premešajo vrstne rede faktorjev v členih. 
+V komutativnih polkolobarjih so vse te vsote enake, torej dobimo $n!det^{+}(A)$. Podobno se v tem primeru zgodi tudi na drugi komponenti. Ko to dvoje združimo dobimo, da je pideterminanta $n\times n$ matrike $A$ nad komutativnim polkolobarjem enaka $pdt(A) = n!(det^{+}(A), det^{-}(A))$. 
+Uvedemo še eno oznako: $$\llbracket w \rrbracket = \sum_{\pi\in P(n)}\pi(w)$$ 
+Uporaba te oznake nam omogoča naslednji zapis pideterminante: $$pdt(A) = (\llbracket det^{+}(A) \rrbracket, \llbracket det^{-}(A) \rrbracket)$$
+
+Naslednji zgled bo pokazal uporabo uvedenih pojmov.
+\begin{zgled}
+	Naj bo $A = \begin{bmatrix}
+		a_{11} & a_{12} \\
+		a_{21} & a_{22}
+	\end{bmatrix}$ neka $2\times 2$ matrika nad poljubnim polkolobarjem $R$. Vemo, da je $P(2) = \{id, (1~2)\}$. Pri tem sta $P^{+}(2) = \{id\}$ in $P^{-}(2) = \{(1~2)\}$. Označimo $\sigma = (1~2)$.
+	Za izračun pideterminante bomo najprej potrebovali $det^{+}(A)$ in $det^{-}(A)$. Velja: \begin{align*}
+		det^{+}(A) &= A_{11}\cdot A_{22} = a_{11}a_{22} \\
+		det^{-}(A) &= A_{12}\cdot A_{21} = a_{12}a_{21}
+	\end{align*}
+	Sedaj poračunajmo še $\llbracket det^{+}(A) \rrbracket$ in $\llbracket det^{-}(A) \rrbracket$:
+	\begin{align*}
+		\llbracket det^{+}(A) \rrbracket &= id(a_{11}a_{22}) + \sigma(a_{11}a_{22}) = a_{11}a_{22} + a_{22}a_{11} \\
+		\llbracket det^{-}(A) \rrbracket &= id(a_{12}a_{21}) + \sigma(a_{12}a_{21}) = a_{12}a_{21} + a_{21}a_{12}
+	\end{align*}
+	Sledi, da je $pdt(A) = (a_{11}a_{22} + a_{22}a_{11}, a_{12}a_{21} + a_{21}a_{12})$
+\end{zgled}
+Preden definiramo karakteristični pipolinom matrike nad polkolobarjem se spomnimo, kaj je karakteristični polinom matrike nad poljem.
+
+\begin{definicija}
+	Naj bo $F$ polje in $A\in M_n(F)$ kvadratna matrika nad njim. Karakteristični polinom $p_A(\lambda)$ matrike $A$ je polinom v spremenljivki $\lambda$, ki ga določa predpis $p_A(\lambda) = det(A - \lambda\cdot I)$.
+\end{definicija}
+Karakteristični polinom lahko zapišemo tudi v obliki, ki upošteva zapis determinante kot razliko $det^{+}$ in $det^{-}$. Potem je $p_A(\lambda) = det^{+}(A - \lambda\cdot I) - det^{-}(A - \lambda\cdot I) = p_A^{+}(\lambda) - p_A^{-}(\lambda)$. Opremljeni s temi oznakami lahko sedaj definiramo karakteristični pipolinom matrike nad polkolobarjem.
+
+\begin{definicija}
+	Naj bo $R$ polkolobar in $A\in M_n(R)$ kvadratna matrika nad njim. \pojem{Karakteristični pipolinom} $pp_A$ matrike $A$ v spremenljivki $\lambda$ je urejen par polinomov definiran s predpisom $$pp_A(\lambda) = (\llbracket p_A^{+}(\lambda)\rrbracket, \llbracket p_A^{-}(\lambda)\rrbracket) = (pp_A^{+}(\lambda), pp_A^{-}(\lambda))$$
+\end{definicija}
+
+Definicijo dopolnimo z naslednjim zgledom.
+
+\begin{zgled}
+Naj bo $A = \begin{bmatrix}
+	a_{11} & a_{12} \\
+	a_{21} & a_{22}
+\end{bmatrix}$ matrika nad nekim polkolobarjem in poračunajmo njen karakteristični pipolinom. Tega lahko poračunamo tako, da se najprej pretvarjamo, da delamo nad poljem, nato pa seštejemo ">pozitivne"< člene v $p_A^{+}$, ">negativne"< pa v $p_A^{-}$.
+Če bi $R$ bil polje, bi karakteristični polinom matrike $A$ imel predpis $P_A(\lambda) = a_{11}a_{22} + \lambda^2 - \lambda(a_{11} + a_{22}) - a_{12}a_{21} = a_{11}a_{22} + \lambda^2 - (\lambda(a_{11} + a_{22}) + a_{12}a_{21})$. Sledi, da je potem $p_A^{+}(\lambda) = a_{11}a_{22} + \lambda^2$ in $p_A^{-}(\lambda) = \lambda(a_{11} + a_{22}) + a_{12}a_{21}$. Sedaj lahko poračunamo $pp_A^{+}(\lambda)$ in $pp_A^{-}(\lambda)$.
+
+\begin{align*}
+	pp_A^{+}(\lambda) &= \llbracket \lambda^2 + a_{11}a_{22}\rrbracket = \lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11} \\
+	pp_A^{-}(\lambda) &= \llbracket \lambda(a_{11} + a_{22}) + a_{12}a_{21}\rrbracket = \lambda(a_{11} + a_{22}) + a_{12}a_{21} + (a_{11} + a_{22})\lambda + a_{21}a_{12}
+\end{align*}
+Sledi, da je karakteristični pipolinom matrike $A$ enak $$pp_A(\lambda)= (\lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11}, \lambda(a_{11} + a_{22}) + a_{12}a_{21} + (a_{11} + a_{22})\lambda + a_{21}a_{12})$$
+\end{zgled}
+
+Sedaj lahko končno preidemo na obravnavo posplošenega Cayley-Hamiltonovega izreka, kar bomo storili v naslednjem poglavju.
+
+\subsection{Cayley-Hamiltonov izrek nad polkolobarji:} \label{subsect:CHTtheorem}
+
+
 
 \section*{Slovar strokovnih izrazov}
 
