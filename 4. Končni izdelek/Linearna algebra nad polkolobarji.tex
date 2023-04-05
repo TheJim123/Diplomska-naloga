@@ -995,7 +995,7 @@ Za začetek osvežimo svoje znanje o permutacijah, saj bodo te igrale bistveno v
 	\end{cases*}
 	$$
 	kjer je $dom(\sigma) = S$ domena delne permutacije $\sigma$.
-	
+	Poljubni permutaciji $\pi\in P(n)$ pripada asociiran graf $G(\pi) = (\{1, 2, \ldots, n\}, \{(i, \pi(i));~i\in \{1, 2, \ldots, n\}\})$. Z asociiranega grafa lahko hitro razberemo parnost permutacije ter tudi njeno dekompozicijo na produkt disjunktnih ciklov.
 	Za dano permutacijo $\pi$ s $\bar{\pi}$ označimo zaporedje $(1, \pi(1)), (2, \pi(2)), \ldots, (n, \pi(n))$. Za dano zaporedje $w = w_1w_2\ldots w_n$ lahko permutacijo $\pi$ razširimo po komponentah, tako da je $\pi(w) = w_{\pi(1)}w_{\pi(2)}\ldots w_{\pi(n)}$.
 \end{definicija}
 Poglejmo en konkreten primer za vse navedene pojme.
@@ -1020,11 +1020,12 @@ Vzemimo sedaj zaporedje $w = oprsš$. Potem je $\sigma(w) = poršs$ in $\pi(w) =
 \subsection{Pideterminanta in karakteristični pipolinom:}\label{subsect:pidetinpipoly}
 V tem odseku bosta predstavljeni posplošitvi konceptov determinante in karakterističnega polinoma matrike, t.~i.~\pojem{pideterminanta} in \pojem{karakteristični pipolinom}.
 
-Za začetek se spomnimo definicije determinante za matrike nad polji. 
+Najprej se spomnimo, da lahko vsaki kvadratni matriki $X\in M_n(F)$ nad poljem $F$ določimo asociiran usmerjen obtežen graf $G(X) = (V, E, X)$, kjer je $V= \{1, 2, \ldots, n\}$ množica vozlišč, $E=\{(i, j)\in V^2;~x_{ij}\neq 0\}$ pa množica povezav z utežmi $X_{ij}$. Zaporedju povezav $p_1p_2\ldots p_n$ iz $E$ pravimo \pojem{sprehod}. Sprehodu pravimo \pojem{pot}, če je omejen in so vozlišča, ki jih obišče, različna, razen morda prvega in zadnjega. Utež poti je enaka produktu uteži povezav, ki jih pot vsebuje. Sklenjeni poti pravimo \pojem{cikel}. 
+Sedaj se spomnimo definicije determinante za matrike nad polji. 
 \begin{definicija}
 	Naj bo $F$ polje in $X\in M_n(F)$ kvadratna matrika nad $F$. Potem je determinanta matrike $X$ definirana s predpisom: $$det(X) = \sum_{\pi\in P(n)}sgn(\pi)x_{1\pi(1)}x_{2}\pi(2)\ldots x_{n\pi(n)}$$
 \end{definicija}
-Formulo iz definicije lahko skrajšamo s pomočjo uporabe permutacijskega zaporedja $\bar{\pi}$ na matriki $X$ na naslednji način:
+Formulo iz definicije lahko skrajšamo s pomočjo uporabe permutacijskih zaporedij, sprehodov in asociiranih uteži poti na matriki $X$ na naslednji način:
 Za dano permutacijo $\pi$ množice z $n$ elementi in permutacijsko zaporedje $\bar{\pi}$ je $\bar{\pi}(X) = (1, \pi(1))(2, \pi(2))\ldots (n, \pi(n))(X) = X_{1\pi(1)}\cdot X_{2\pi(2)}\cdot\ldots\cdot X_{n\pi(n)}$. Pri tem je $X_{ij}$ element matrike $X$, ki se nahaja v $i$-ti vrstici in $j$-tem stolpcu, $\cdot$ pa multiplikativna operacija na polju $F$.
 Dodatno lahko še permutacije $\pi\in P(n)$ ločimo glede na parnost. Nova formula ima obliko $$det(X) = \sum_{\pi\in P(n)}sgn(\pi)\bar{\pi}(X) = \sum_{\pi\in P^{+}(n)}\bar{\pi}(X) - \sum_{\pi\in P^{-}(n)}\bar{\pi}(X)$$
 Vsoto po sodih permutacijah označimo z $det^{+}(X)$, vsoto po lihih permutacijah pa z $det^{-}(X)$. Potem lahko determinanto matrike $X$ zapišemo tudi kot $$det(X) = det^{+}(X) - det^{-}(X)$$
@@ -1193,8 +1194,7 @@ Izkaže se, da sklep na koncu zgleda \ref{zgled:matA3} velja tudi v splošnem za
 	Naj bo $R$ poljuben polkolobar in $X\in M_n(R)$ neka kvadratna matrika nad $R$. Potem je $pp_X^{+}(X) = pp_X^{-}(X)$.
 \end{izrek}
 
-
-
+V zgledu \ref{zgled:matA3} smo pokazali izrek za $n = 2$ tako, da smo direktno poračunali komponenti pipolinoma, v dokazu pa bomo postopoma skonstruirali obe komponenti na tak način, da bo veljala enakost iz izreka. Dodatno ta pristop utemeljimo s pomočjo matriki asociiranih grafov. Demonstrirajmo postopek konstrukcije na primeru $n = 2$. Z $LS_i$ označimo levo stran enakosti v $i$-tem koraku, z $DS_i$ pa desno stran enakosti v $i$-tem koraku. Naj bo $R$ polkolobar in  $X\in M_2(R)$. Za $LS_0$ določimo $LS_0 = X^2$. Opazimo, da je vsaka komponenta $X^2$ vsota produktov dolžine $2$, kjer je vsak produkt enak uteži na neki poti v asociiranem grafu $G(X)$. Ker ima $G(X)$ $n$ vozlišč more biti vsaj ena od teh poti cikel. Z $diag_s(X^2)$ označimo skrčitev diagonale matrike $X^2$ na produkte, ki predstavljajo utež nekega cikla v $G(X)$, z $Tr_s(X^2)$ označimo vsoto produktov iz $diag_s(X^2)$. S pomočjo te notacije določimo $DS_0 = Tr_s(X^2)\cdot I$. Vse uteži ciklov v $Tr_s(X^2)$ so permutacije uteži cikla, ki izhaja v vozlišču $1$. V tem primeru sta to $\pi_1 = id$ in $\pi_2 = (1~2)$. Drugače povedano, $DS_0 = \sum_{i = 1}^{2}\pi_i(a_{12}a_{21}) \cdot I$. Posledica množenja z matrično identiteto $I$ nam vsili odvečne uteži na določenih mestih. Ta problem rešimo tako, da levo stran spremenimo v vsoto teh enakih permutacij $LS_1 = \sum_{i = 1}^{2}\pi_i(X^2)$. Seveda to vsili nove odvečne uteži na levi strani, kar popravimo tako, uteži na ciklih dolžine $1$ dodamo na desno stran in to potem uravnotežimo na levi strani.
 \section*{Slovar strokovnih izrazov}
 
 \geslo{base of a semimodule}{baza polmodula -- linearno neodvisna podmnožica v polmodulu, ki ga generira}
