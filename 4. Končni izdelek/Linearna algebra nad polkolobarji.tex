@@ -1077,15 +1077,15 @@ Definicijo dopolnimo z naslednjim zgledom.
 
 \begin{zgled}\label{zgled:matA2}
 Vrnimo se k matriki $A$ iz zgleda \ref{zgled:matA1} in poračunajmo njen karakteristični pipolinom. Tega lahko poračunamo tako, da se najprej pretvarjamo, da delamo nad poljem, nato pa seštejemo ">pozitivne"< člene v $p_A^{+}$, ">negativne"< pa v $p_A^{-}$.
-Če bi $R$ bil polje, bi karakteristični polinom matrike $A$ imel predpis $P_A(\lambda) = a_{11}a_{22} + \lambda^2 - \lambda(a_{11} + a_{22}) - a_{12}a_{21} = a_{11}a_{22} + \lambda^2 - (\lambda(a_{11} + a_{22}) + a_{12}a_{21})$. Sledi, da je potem $p_A^{+}(\lambda) = a_{11}a_{22} + \lambda^2$ in $p_A^{-}(\lambda) = \lambda(a_{11} + a_{22}) + a_{12}a_{21}$. Sedaj lahko poračunamo $pp_A^{+}(\lambda)$ in $pp_A^{-}(\lambda)$.
+Če bi $R$ bil polje, bi karakteristični polinom matrike $A$ imel predpis $P_A(\lambda) = a_{11}a_{22} + \lambda^2 - (a_{11} + a_{22})\lambda - a_{12}a_{21} = a_{11}a_{22} + \lambda^2 - ((a_{11} + a_{22})\lambda + a_{12}a_{21})$. Sledi, da je potem $p_A^{+}(\lambda) = a_{11}a_{22} + \lambda^2$ in $p_A^{-}(\lambda) = (a_{11} + a_{22})\lambda + a_{12}a_{21}$. Sedaj lahko poračunamo $pp_A^{+}(\lambda)$ in $pp_A^{-}(\lambda)$.
 
 \begin{align*}
 	pp_A^{+}(\lambda) &= \llbracket \lambda^2 + a_{11}a_{22}\rrbracket = \lambda^2 + a_{11}a_{22} + \sigma(\lambda^2) + \sigma(a_{11}a_{22}) \\ 
 	&= \lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11} \\
-	pp_A^{-}(\lambda) &= \llbracket \lambda(a_{11} + a_{22}) + a_{12}a_{21}\rrbracket \\ &= \lambda(a_{11} + a_{22}) + a_{12}a_{21} + \sigma(\lambda(a_{11} + a_{22}))+ \sigma(a_{12}a_{21}) \\ 
-	&= \lambda(a_{11} + a_{22}) + a_{12}a_{21} + (a_{11} + a_{22})\lambda + a_{21}a_{12}
+	pp_A^{-}(\lambda) &= \llbracket (a_{11} + a_{22})\lambda + a_{12}a_{21}\rrbracket \\ &= (a_{11} + a_{22})\lambda + a_{12}a_{21} + \sigma((a_{11} + a_{22})\lambda)+ \sigma(a_{12}a_{21}) \\ 
+	&= (a_{11} + a_{22})\lambda + a_{12}a_{21} + \lambda(a_{11} + a_{22}) + a_{21}a_{12}
 \end{align*}
-Sledi, da je karakteristični pipolinom matrike $A$ enak $$pp_A(\lambda)= (\lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11}, \lambda(a_{11} + a_{22}) + a_{12}a_{21} + (a_{11} + a_{22})\lambda + a_{21}a_{12})$$
+Sledi, da je karakteristični pipolinom matrike $A$ enak $$pp_A(\lambda)= (\lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11}, (a_{11} + a_{22})\lambda + a_{12}a_{21} + \lambda(a_{11} + a_{22}) + a_{21}a_{12})$$
 \end{zgled}
 
 Sedaj lahko končno preidemo na obravnavo posplošenega Cayley-Hamiltonovega izreka, kar bomo storili v naslednjem poglavju.
@@ -1107,7 +1107,7 @@ V primeru matrike $X = \begin{bmatrix}
 V primeru karakterističnega pipolinoma moramo biti malce bolj previdni. Razlog za to lahko vidimo že v primeru $2\times 2$ matrike $A$ iz zgledov . Posebej poglejmo razliko med $\llbracket p_A^{+}(\lambda)\rrbracket$ in $\llbracket p_A^{+}(A)\rrbracket$. V primeru $\llbracket p_A^{+}(\lambda) \rrbracket = \llbracket \lambda^2 + a_{11}a_{22}\rrbracket$ nastopa člen $\sigma(\lambda^2)$, kjer je $\sigma = (1~2)$. Tukaj uporaba $\sigma$ na $\lambda^2$ preprosto pomeni zamenjavo vrstnega reda množenja. V $\llbracket p_A^{+}(A)\rrbracket$ pa nastopa člen $\sigma(A^2)$, ki pa potrebuje pravilno interpretacijo. V prvi vrsti se zavedajmo, da bo, za vsako matriko $X$ nad nekim polkolobarjem in za vsak $n\in\N$, vsaka komponenta matrike $X^n$ vsota produktov $n$ elementov. Obe komponenti $pp_X(\lambda)$ bosta polinoma stopnje $n$. Ko v kateregakoli od teh polinomov vstavimo $X$, bomo dobili vsoto $n\times n$ matrik, ki bodo, po tem ko poračunamo skalarno množenje vsakega člena, v vsaki komponenti imele vsote produktov $n$ elementov. Ko potem na kakem izmed teh členov uporabimo permutacijo $\mu\in P(n)$, to storimo po komponentah: $$\mu(X^n) = \left[\mu(X^n_{ij})\right]_{ij}$$ Dodatno upoštevamo, da ko uporabimo permutacijo $\mu$ na vsoti produktov $n$ elementov, to razumemo kot vsoto produktov katerih faktorji so bili premešani z $\mu$. Dodatno vsak člen oblike $a_{ij}^k$ razumemo kot $\underbrace{a_{ij}a_{ij}\ldots a_{ij}}_{\text{$k$-krat}}$. Poglejmo si to na konkretnem primeru.
 
 \begin{zgled}\label{zgled:matA3}
-	Ponovno se vrnimo k matriki $A$ iz zgledov \ref{zgled:matA1} in \ref{zgled:matA2}. Vemo že, da je $pp_A(\lambda) = (\llbracket\lambda^2 + a_{11}a_{22}\rrbracket,\llbracket\lambda(a_{11} + a_{22})+ a_{21}a_{12}\rrbracket)$. Vstavimo $A$ v njen karakteristični pipolinom in dobimo $pp_A(A) = (pp_A^{+}(A), pp_A^{-}(A)) = (\llbracket A^2 + a_{11}a_{22}\cdot I\rrbracket,\llbracket A\cdot (a_{11} + a_{22}) + a_{21}a_{12}\cdot I\rrbracket)$. Poračunajmo vsako komponento posebej.
+	Ponovno se vrnimo k matriki $A$ iz zgledov \ref{zgled:matA1} in \ref{zgled:matA2}. Vemo že, da je $pp_A(\lambda) = (\llbracket\lambda^2 + a_{11}a_{22}\rrbracket,\llbracket (a_{11} + a_{22})\lambda + a_{21}a_{12}\rrbracket)$. Vstavimo $A$ v njen karakteristični pipolinom in dobimo $pp_A(A) = (pp_A^{+}(A), pp_A^{-}(A)) = (\llbracket A^2 + a_{11}a_{22}\cdot I\rrbracket,\llbracket (a_{11} + a_{22})\cdot A + a_{21}a_{12}\cdot I\rrbracket)$. Poračunajmo vsako komponento posebej.
 	
 	\begin{align*}
 		A^2 &= \begin{bmatrix}
@@ -1150,30 +1150,30 @@ $$\begin{bmatrix}
 
 Poračunajmo še $pp_A^{-}(A)$. Da nam bo lažje najprej poračunajmo člene.
 \begin{align*}
-	A\cdot (a_{11} + a_{22}) &= \begin{bmatrix}
-		a_{11}(a_{11} + a_{22}) & a_{12}(a_{11} + a_{22}) \\
-		a_{21}(a_{11} + a_{22}) & a_{22}(a_{11} + a_{22})
-	\end{bmatrix} \\ &= \begin{bmatrix}
+	(a_{11} + a_{22})\cdot A &= \begin{bmatrix}
+		a_{11}^2 + a_{22}a_{11} & a_{11}a_{12} + a_{22}a_{12} \\
+		a_{11}a_{21} + a_{22}a_{21} & a_{11}a_{22} + a_{22}^2
+	\end{bmatrix} \\
+\sigma((a_{11} + a_{22})\cdot A) &= \begin{bmatrix}
+	\sigma((a_{11} + a_{22})a_{11}) & \sigma((a_{11} + a_{22})a_{12}) \\
+	\sigma((a_{11} + a_{22})a_{21}) & \sigma((a_{11} + a_{22})a_{22})
+\end{bmatrix} \\ &= \begin{bmatrix}
+	a_{11}(a_{11} + a_{22}) & a_{12}(a_{11} + a_{22}) \\
+	a_{21}(a_{11} + a_{22}) & a_{22}(a_{11} + a_{22})
+\end{bmatrix} \\ &= \begin{bmatrix}
 	a_{11}^2 + a_{11}a_{22} & a_{12}a_{11} + a_{12}a_{22} \\
 	a_{21}a_{11} + a_{21}a_{22} & a_{22}a_{11} + a_{22}^2
-\end{bmatrix} \\
-\sigma(A\cdot (a_{11} + a_{22})) &= \begin{bmatrix}
-	\sigma(a_{11}^2 + a_{11}a_{22}) & \sigma(a_{12}a_{11} + a_{12}a_{22}) \\
-	\sigma(a_{21}a_{11} + a_{21}a_{22}) & \sigma(a_{22}a_{11} + a_{22}^2)
-\end{bmatrix} \\ &= \begin{bmatrix}
-a_{11}^2 + a_{22}a_{11} & a_{11}a_{12} + a_{22}a_{12} \\
-a_{11}a_{21} + a_{22}a_{21} & a_{11}a_{22} + a_{22}^2
 \end{bmatrix}
 \end{align*}
 \begin{align*}
-	pp_A^{-}(A) &= \llbracket A\cdot (a_{11} + a_{22}) + a_{21}a_{12}\cdot I \rrbracket \\ &= A\cdot (a_{11} + a_{22}) + \sigma(A\cdot (a_{11} + a_{22})) + a_{21}a_{12}\cdot I + \sigma(a_{21}a_{12}\cdot I) \\
-	&= A\cdot (a_{11} + a_{22}) + (a_{11} + a_{22})\cdot  A + a_{21}a_{12}\cdot I + a_{12}a_{21}\cdot I \\ &= \begin{bmatrix}
-		a_{11}^2 + a_{11}a_{22} & a_{12}a_{11} + a_{12}a_{22} \\
-		a_{21}a_{11} + a_{21}a_{22} & a_{22}a_{11} + a_{22}^2
-	\end{bmatrix} + \begin{bmatrix}
+	pp_A^{-}(A) &= \llbracket (a_{11} + a_{22})\cdot A + a_{21}a_{12}\cdot I \rrbracket \\ &= (a_{11} + a_{22})\cdot A + \sigma((a_{11} + a_{22})\cdot A) + a_{21}a_{12}\cdot I + \sigma(a_{21}a_{12}\cdot I) \\
+	&= (a_{11} + a_{22})\cdot A + A\cdot (a_{11} + a_{22}) + a_{21}a_{12}\cdot I + a_{12}a_{21}\cdot I \\ &= \begin{bmatrix}
 	a_{11}^2 + a_{22}a_{11} & a_{11}a_{12} + a_{22}a_{12} \\
 	a_{11}a_{21} + a_{22}a_{21} & a_{11}a_{22} + a_{22}^2
-\end{bmatrix} \\ &+ \begin{bmatrix}
+\end{bmatrix} + \begin{bmatrix}
+a_{11}^2 + a_{11}a_{22} & a_{12}a_{11} + a_{12}a_{22} \\
+a_{21}a_{11} + a_{21}a_{22} & a_{22}a_{11} + a_{22}^2
+\end{bmatrix}\\ &+ \begin{bmatrix}
 a_{21}a_{12} + a_{12}a_{21} & 0 \\
 0 & a_{21}a_{12} + a_{12}a_{21}
 \end{bmatrix}
@@ -1194,7 +1194,78 @@ Izkaže se, da sklep na koncu zgleda \ref{zgled:matA3} velja tudi v splošnem za
 	Naj bo $R$ poljuben polkolobar in $X\in M_n(R)$ neka kvadratna matrika nad $R$. Potem je $pp_X^{+}(X) = pp_X^{-}(X)$.
 \end{izrek}
 
-V zgledu \ref{zgled:matA3} smo pokazali izrek za $n = 2$ tako, da smo direktno poračunali komponenti pipolinoma, v dokazu pa bomo postopoma skonstruirali obe komponenti na tak način, da bo veljala enakost iz izreka. Dodatno ta pristop utemeljimo s pomočjo matriki asociiranih grafov. Demonstrirajmo postopek konstrukcije na primeru $n = 2$. Z $LS_i$ označimo levo stran enakosti v $i$-tem koraku, z $DS_i$ pa desno stran enakosti v $i$-tem koraku. Naj bo $R$ polkolobar in  $X\in M_2(R)$. Za $LS_0$ določimo $LS_0 = X^2$. Opazimo, da je vsaka komponenta $X^2$ vsota produktov dolžine $2$, kjer je vsak produkt enak uteži na neki poti v asociiranem grafu $G(X)$. Ker ima $G(X)$ $n$ vozlišč more biti vsaj ena od teh poti cikel. Z $diag_s(X^2)$ označimo skrčitev diagonale matrike $X^2$ na produkte, ki predstavljajo utež nekega cikla v $G(X)$, z $Tr_s(X^2)$ označimo vsoto produktov iz $diag_s(X^2)$. S pomočjo te notacije določimo $DS_0 = Tr_s(X^2)\cdot I$. Vse uteži ciklov v $Tr_s(X^2)$ so permutacije uteži cikla, ki izhaja v vozlišču $1$. V tem primeru sta to $\pi_1 = id$ in $\pi_2 = (1~2)$. Drugače povedano, $DS_0 = \sum_{i = 1}^{2}\pi_i(a_{12}a_{21}) \cdot I$. Posledica množenja z matrično identiteto $I$ nam vsili odvečne uteži na določenih mestih. Ta problem rešimo tako, da levo stran spremenimo v vsoto teh enakih permutacij $LS_1 = \sum_{i = 1}^{2}\pi_i(X^2)$. Seveda to vsili nove odvečne uteži na levi strani, kar popravimo tako, uteži na ciklih dolžine $1$ dodamo na desno stran in to potem uravnotežimo na levi strani.
+V zgledu \ref{zgled:matA3} smo pokazali izrek za $n = 2$ tako, da smo direktno poračunali komponenti pipolinoma, v dokazu pa bomo postopoma skonstruirali obe komponenti na tak način, da bo veljala enakost iz izreka. Dodatno ta pristop utemeljimo s pomočjo matriki asociiranih grafov. Demonstrirajmo postopek konstrukcije na primeru $n = 2$. Z $LS_i$ označimo levo stran enakosti v $i$-tem koraku, z $DS_i$ pa desno stran enakosti v $i$-tem koraku. Naj bo $R$ polkolobar in $X\in M_2(R)$ s predpisom $X = \begin{bmatrix}
+	x_{11} & x_{12} \\
+	x_{21} & x_{22}
+\end{bmatrix}$. Za $LS_0$ določimo $LS_0 = X^2 = \begin{bmatrix}
+x_{11}x_{11} + x_{12}x_{21} & x_{11}x_{12} + x_{12}x_{22} \\
+x_{21}x_{11} + x_{22}x_{21} & x_{21}x_{12} + x_{22}x_{22}
+\end{bmatrix}$. Opazimo, da je vsaka komponenta $X^2$ vsota produktov dolžine $2$, kjer je vsak produkt enak uteži na neki poti v asociiranem grafu $G(X)$. Ker ima $G(X)$ $n$ vozlišč more biti vsaj ena od teh poti cikel. Z $diag_s(X^2)$ označimo skrčitev diagonale matrike $X^2$ na produkte, ki predstavljajo utež nekega cikla v $G(X)$, s $Tr_s(X^2)$ pa označimo vsoto produktov iz $diag_s(X^2)$. Vidimo, da sta $diag_s(X^2) = \{x_{12}x_{21}, x_{21}x_{12}\}$ in $Tr_s(X^2) = x_{12}x_{21} + x_{21}x_{12}$. S pomočjo tega določimo začetno desno stran enakosti $DS_0 = Tr_s(X^2)\cdot I$. Vse uteži ciklov v $Tr_s(X^2)$ so permutacije uteži cikla, ki izhaja v vozlišču $1$. V tem primeru sta to $\pi_1 = id$ in $\pi_2 = (1~2)$. Drugače povedano, $DS_0 = \sum_{i = 1}^{2}\pi_i(x_{12}x_{21}) \cdot I = \begin{bmatrix}
+x_{12}x_{21} + x_{21}x_{12} & 0 \\
+0 & x_{12}x_{21} + x_{21}x_{12}
+\end{bmatrix}$. Posledica množenja z matrično identiteto $I$ nam vsili ">odvečne"< uteži na določenih mestih. Posebej, v $(X^2)_{11}$ imamo člen $x_{12}x_{21}$, nimamo pa člena $x_{21}x_{12}$. Ta problem rešimo tako, da levo stran spremenimo v vsoto teh enakih permutacij $LS_1 = \sum_{i = 1}^{2}\pi_i(X^2) = \begin{bmatrix}
+x_{11}x_{11} + x_{12}x_{21} + x_{11}x_{11} + x_{21}x_{12} & x_{11}x_{12} + x_{12}x_{22} + x_{12}x_{11} + x_{22}x_{12}\\
+ x_{21}x_{11} + x_{22}x_{21} + x_{11}x_{21} + x_{21}x_{22} & x_{21}x_{12} + x_{22}x_{22} + x_{12}x_{21} + x_{22}x_{22}
+\end{bmatrix}$. Seveda to vsili nove odvečne uteži na levi strani, kar popravimo tako, da uteži na ciklih dolžine $1$ dodamo na desno stran in to potem uravnotežimo na levi strani. Edina prava cikla dolžine $1$ imata uteži $x_{11}$ in $x_{22}$. Če iz $LS_1$ odmislimo elemente, ki so že v $DS_0$, nam ostane matrika \begin{align*}
+& \begin{bmatrix}
+	x_{11}x_{11} + x_{11}x_{11} & x_{11}x_{12} + x_{12}x_{22} + x_{12}x_{11} + x_{22}x_{12}\\
+	x_{21}x_{11} + x_{22}x_{21} + x_{11}x_{21} + x_{21}x_{22} & x_{22}x_{22} + x_{22}x_{22}
+\end{bmatrix}\\ &= \begin{bmatrix}
+x_{11}x_{11} & x_{11}x_{12} \\
+x_{11}x_{21} & 0
+\end{bmatrix} + \begin{bmatrix}
+x_{11}x_{11} & x_{12}x_{22} + x_{12}x_{11} + x_{22}x_{12}\\
+x_{21}x_{11} + x_{22}x_{21} + x_{21}x_{22} & x_{22}x_{22} + x_{22}x_{22}
+\end{bmatrix} \\
+&= \begin{bmatrix}
+	x_{11}x_{11} & x_{11}x_{12} \\
+	x_{11}x_{21} & 0
+\end{bmatrix} + \begin{bmatrix}
+	0 & x_{22}x_{12}\\
+	x_{22}x_{21} & x_{22}x_{22}
+\end{bmatrix} + \begin{bmatrix}
+x_{11}x_{11} & x_{12}x_{22} + x_{12}x_{11} \\
+x_{21}x_{11} + x_{21}x_{22} & x_{22}x_{22}
+\end{bmatrix} \\
+&= \begin{bmatrix}
+	x_{11}x_{11} & x_{11}x_{12} \\
+	x_{11}x_{21} & 0
+\end{bmatrix} + \begin{bmatrix}
+	0 & x_{22}x_{12}\\
+	x_{22}x_{21} & x_{22}x_{22}
+\end{bmatrix} + \begin{bmatrix}
+	x_{11}x_{11} & x_{12}x_{11} \\
+	x_{21}x_{11} & 0
+\end{bmatrix} + \begin{bmatrix}
+0 & x_{12}x_{22} \\
+x_{21}x_{22} & x_{22}x_{22}
+\end{bmatrix}
+\end{align*}
+Opazimo, da se prva in tretja matrika razlikujeta samo v tem, da so produkti v komponentah premešani. Enako opazimo za drugo in četrto matriko v vsoti. Poleg tega lahko v vsaki matriki izpostavimo en faktor. Ko to storimo, izgleda vsota tako: $$x_{11}\cdot\begin{bmatrix}
+	x_{11} & x_{12} \\
+	x_{21} & 0
+\end{bmatrix} + x_{22}\cdot\begin{bmatrix}
+	0 & x_{12}\\
+	x_{21} & x_{22}
+\end{bmatrix} + \begin{bmatrix}
+	x_{11} & x_{12} \\
+	x_{21} & 0
+\end{bmatrix}\cdot x_{11} + \begin{bmatrix}
+	0 & x_{12} \\
+	x_{21} & x_{22}
+\end{bmatrix}\cdot x_{22}$$
+Matrike, ki preostanejo, so zelo blizu matriki $X$, zato bomo na desno stran prišteli $x_{11}\cdot X + x_{22}\cdot X + X\cdot x_{11} + X\cdot x_{22} = (x_{11} + x_{22})\cdot X + X\cdot (x_{11} + x_{22}) = \sum_{i = 1}^{2}\pi_i((x_{11} + x_{22})\cdot X)$. Torej je $DS_1 = \sum_{i = 1}^2\pi_i((x_{11} + x_{22})\cdot X) + \sum_{i = 1}^2\pi_i(x_{12}x_{21})\cdot I = \sum_{i = 1}^2\pi_i((x_{11} + x_{22})\cdot X + x_{12}x_{21}\cdot I) = \llbracket (x_{11} + x_{22})\cdot X + x_{12}x_{21}\cdot I \rrbracket = pp_X^{-}(X)$.
+Ko iz matrike $DS_1$ odmislimo vse člene, ki se nahajajo v $LS_1$, nam ostane matrika $$\begin{bmatrix}
+	 x_{11}x_{22} + x_{22}x_{11} & 0 \\
+	0 & x_{11}x_{22} + x_{22}x_{11}
+\end{bmatrix} = \begin{bmatrix}
+x_{11}x_{22} & 0 \\
+0 & x_{11}x_{22}
+\end{bmatrix} + \begin{bmatrix}
+x_{22}x_{11} & 0 \\
+0 & x_{22}x_{11}
+\end{bmatrix}$$
+$LS_1$ je treba torej prišteti še $\sum_{i=1}^{2}\pi_i(x_{11}x_{22}\cdot I)$. Sledi torej $LS_2 = \sum_{i = 1}^{2}\pi_i(X^2) + \sum_{i = 1}^{2}\pi_i(x_{11}x_{22}\cdot I) = \sum_{i = 1}^{2}\pi_i(X^2 + x_{11}x_{22}\cdot I) = \llbracket X^2 + x_{11}x_{22}\cdot I \rrbracket = pp_X^{+}(X)$. V tem zadnjem koraku nismo pridobili nobenih ">odvečnih"< uteži, torej se postopek tukaj zaključi in sledi enakost $pp_X^{+}(X) = LS_2 = DS_1 = pp_X^{-}(X)$.
 \section*{Slovar strokovnih izrazov}
 
 \geslo{base of a semimodule}{baza polmodula -- linearno neodvisna podmnožica v polmodulu, ki ga generira}
