@@ -10,16 +10,16 @@
 
 %  V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga organizacije dela --
 %  v katerem poglavju/razdelku je kaj, pač pa le opis vsebine.
-\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavana zgolj osnovna izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$ ter lastnosti in obrnljivost matrik nad polkolobarjem $R$.}
+\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavana zgolj osnovna izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$, lastnosti in obrnljivost matrik nad polkolobarjem $R$ ter Cayley-Hamiltonov izrek.}
 
 %  Prevod slovenskega povzetka v angleščino.
-\abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$  if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for a long time now and as such most of the classical questions relating to the structures from the perspective of linear algebra have already been answered. The paper will present some of these results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields, such as the existence and properties of bases of an $R$-semimodule and the properties and invertibility of a matrix over a semiring $R$.}
+\abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$ if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for a long time now and as such most of the classical questions relating to the structures from the perspective of linear algebra have already been answered. The paper will present some of these results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields, such as the existence and properties of bases of a $R$-semimodule, the properties and invertibility of a matrix over a semiring $R$ and the Cayley-Hamilton theorem.}
 
 % navedite vsaj eno klasifikacijsko oznako --
 % dostopne so na www.ams.org/mathscinet/msc/msc2020.html
 \klasifikacija{16Y60, 12K10}
-\kljucnebesede{Linearna algebra, algebra, polkolobar, polmodul, dioid, bideterminanta, karakteristični bipolinom, posplošeni Cayley-Hamiltonov izrek} % navedite nekaj ključnih pojmov, ki nastopajo v delu
-\keywords{Linear algebra, algebra, semiring, semimodule, dioid, bideterminant, characteristic bipolynomial, generalized Cayley-Hamilton theorem} % angleški prevod ključnih besed
+\kljucnebesede{Linearna algebra, algebra, polkolobar, polmodul, dioid, pideterminanta, karakteristični pipolinom, posplošeni Cayley-Hamiltonov izrek} % navedite nekaj ključnih pojmov, ki nastopajo v delu
+\keywords{Linear algebra, algebra, semiring, semimodule, dioid, pideterminant, characteristic pipolynomial, generalized Cayley-Hamilton theorem} % angleški prevod ključnih besed
 
 \zapisiMetaPodatke  % poskrbi za metapodatke in veljaven PDF/A-1b standard
 
@@ -83,11 +83,11 @@
 \tableofcontents
 
 \section{Uvod}\label{sect:intro}
-Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obravnavati številske množice. Med primere spadajo nenegativni odseki celih, racionalnih ter realnih števil (opremljeni s standardnim seštevanjem in množenjem), razne strukture nad množicami, ki so uporabne v topologiji, t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti v podjetjih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
+Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obravnavati številske množice. Med primere spadajo nenegativni odseki celih, racionalnih ter realnih števil (opremljeni s standardnim seštevanjem in množenjem), t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti v podjetjih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
 
 Kljub njihovi uporabnosti in pogostem pojavljanju, tako polkolobarji kot strukture nad njimi v sklopu standardne matematične izobrazbe eksplicitno ne prejmejo kaj dosti pozornosti. Poleg popolnoma praktičnih motivacij za obravnavo teh struktur se izkaže, da nas obravnava polkolobarjev oz. linearne algebre nad njimi privede tudi do bistva definicij določenih lastnosti in konceptov v klasični linearni algebri nad vektorskimi prostori. 
 
-V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmoduli kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku.
+V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmoduli kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku, v zadnjem poglavju pa bomo obravnavali posplošitev determinante, karakterističnega polinoma in navedli Cayley-Hamiltonov izrek.
 
 Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(E, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Osnovni primer so enačbe, s katerimi se spoznamo že v osnovni šoli. Vzemimo za primer množico naravnih števil skupaj z $0$, torej $\No$, opremljeno s standardnim seštevanjem ter množenjem. Naj bosta $a, b\in \No$ parametra v enačbi $a + x = b$. Ta enačba ima na $(\No, +, \cdot)$ rešitev, čim je $a \leq b$. Naslednji zgled je povzet iz \cite[str. 1 -- 2]{bib:Gondran}.
 
@@ -1023,23 +1023,25 @@ V tem odseku bosta predstavljeni posplošitvi konceptov determinante in karakter
 Najprej se spomnimo, da lahko vsaki kvadratni matriki $X\in M_n(F)$ nad poljem $F$ določimo asociiran usmerjen obtežen graf $G(X) = (V, E, X)$, kjer je $V= \{1, 2, \ldots, n\}$ množica vozlišč, $E=\{(i, j)\in V^2;~x_{ij}\neq 0\}$ pa množica povezav z utežmi $X_{ij}$. Zaporedju povezav $p_1p_2\ldots p_n$ iz $E$ pravimo \pojem{sprehod}. Sprehodu pravimo \pojem{pot}, če je omejen in so vozlišča, ki jih obišče, različna, razen morda prvega in zadnjega. Utež poti je enaka produktu uteži povezav, ki jih pot vsebuje. Sklenjeni poti pravimo \pojem{cikel}. 
 Sedaj se spomnimo definicije determinante za matrike nad polji. 
 \begin{definicija}
-	Naj bo $F$ polje in $X\in M_n(F)$ kvadratna matrika nad $F$. Potem je determinanta matrike $X$ definirana s predpisom: $$det(X) = \sum_{\pi\in P(n)}sgn(\pi)x_{1\pi(1)}x_{2}\pi(2)\ldots x_{n\pi(n)}$$
+	Naj bo $(F), \oplus, \otimes$ polje in $X\in M_n(F)$ kvadratna matrika nad $F$. Potem je determinanta matrike $X$ definirana s predpisom: $$det(X) = \bigoplus_{\pi\in P(n)}sgn(\pi)x_{1\pi(1)}x_{2\pi(2)}\ldots x_{n\pi(n)}$$
 \end{definicija}
 Formulo iz definicije lahko skrajšamo s pomočjo uporabe permutacijskih zaporedij, sprehodov in asociiranih uteži poti na matriki $X$ na naslednji način:
-Za dano permutacijo $\pi$ množice z $n$ elementi in permutacijsko zaporedje $\bar{\pi}$ je $\bar{\pi}(X) = (1, \pi(1))(2, \pi(2))\ldots (n, \pi(n))(X) = X_{1\pi(1)}\cdot X_{2\pi(2)}\cdot\ldots\cdot X_{n\pi(n)}$. Pri tem je $X_{ij}$ element matrike $X$, ki se nahaja v $i$-ti vrstici in $j$-tem stolpcu, $\cdot$ pa multiplikativna operacija na polju $F$.
-Dodatno lahko še permutacije $\pi\in P(n)$ ločimo glede na parnost. Nova formula ima obliko $$det(X) = \sum_{\pi\in P(n)}sgn(\pi)\bar{\pi}(X) = \sum_{\pi\in P^{+}(n)}\bar{\pi}(X) - \sum_{\pi\in P^{-}(n)}\bar{\pi}(X)$$
+Za dano permutacijo $\pi$ množice z $n$ elementi in permutacijsko zaporedje $\bar{\pi}$ je $\bar{\pi}(X) = (1, \pi(1))(2, \pi(2))\ldots (n, \pi(n))(X) = X_{1\pi(1)}X_{2\pi(2)}\ldots X_{n\pi(n)}$. Pri tem je $X_{ij}$ element matrike $X$, ki se nahaja v $i$-ti vrstici in $j$-tem stolpcu.
+Dodatno lahko še permutacije $\pi\in P(n)$ ločimo glede na parnost. Nova formula ima obliko $$det(X) = \bigoplus_{\pi\in P(n)}sgn(\pi)\bar{\pi}(X) = \bigoplus_{\pi\in P^{+}(n)}\bar{\pi}(X) - \bigoplus_{\pi\in P^{-}(n)}\bar{\pi}(X)$$
 Vsoto po sodih permutacijah označimo z $det^{+}(X)$, vsoto po lihih permutacijah pa z $det^{-}(X)$. Potem lahko determinanto matrike $X$ zapišemo tudi kot $$det(X) = det^{+}(X) - det^{-}(X)$$
 
 Oznaki $det^{+}(X)$ in $det^{-}(X)$ bosta prišli prav pri obravnavi zapisa pideterminante, katere definicijo navajamo spodaj.
 
 \begin{definicija}
-	Naj bo $R$ nek polkolobar in $X\in M_n(R)$ kvadratna matrika. Urejeni dvojici podani s predpisom $$pdt(X) = \big(\sum_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(X)), \sum_{\substack{\pi\in P^{-}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(X))\big)$$ pravimo~\pojem{pideterminanta} matrike $X$. 
+	Naj bo $R$ nek polkolobar in $X\in M_n(R)$ kvadratna matrika. Urejeni dvojici podani s predpisom $$pdt(X) = \big(\bigoplus_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(X)), \bigoplus_{\substack{\pi\in P^{-}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(X))\big)$$ pravimo~\pojem{pideterminanta} matrike $X$. 
 \end{definicija}
 
-V definiciji pideterminante opazimo, da nastopa dvojna vsota. Posebej za prvo komponento dvojice vidimo da je $\sum_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(X)) = \sum_{\sigma \in P(n)} \sum_{\pi\in P^{+}(n)}\sigma(\bar{\pi}(X))$ in podobno tudi za drugo komponento. Če razumemo uporabo permutacje $\sigma$ na vsoti zaporedij $x_{11}x_{12}\ldots x_{1n} + x_{21}x_{22}\ldots x_{2n} + \ldots + x_{n1}x_{n2}\ldots x_{nn}$, torej $$\sigma(x_{11}x_{12}\ldots x_{1n} + x_{21}x_{22}\ldots x_{2n} + \ldots + x_{n1}x_{n2}\ldots x_{nn})$$ kot vsoto s $\sigma$ premešanih zaporedij $$\sigma(x_{11}x_{12}\ldots x_{1n}) + \sigma(x_{21}x_{22}\ldots x_{2n}) +\ldots + \sigma(x_{n1}x_{n2}\ldots x_{nn})$$ potem lahko vsoto v prvi komponenti zapišemo kot $\sum_{\sigma \in P(n)}\sigma\big(\sum_{\pi\in P^{+}(n)}\bar{\pi}(X)\big) = \sum_{\sigma \in P(n)}\sigma(det^{+}(X))$. Ko je $\sigma = id$, dobimo v tej vsoti kar $det^{+}(X)$. Ostale permutacije $\sigma\in P(n)$ nam v resinici dajo podobne vsote, s tem da premešajo vrstne rede faktorjev v členih. 
-V komutativnih polkolobarjih so vse te vsote enake, torej dobimo $n!det^{+}(X)$. Podobno se v tem primeru zgodi tudi na drugi komponenti. Ko to dvoje združimo dobimo, da je pideterminanta $n\times n$ matrike $X$ nad komutativnim polkolobarjem enaka $pdt(X) = n!(det^{+}(X), det^{-}(X))$. 
-Uvedemo še eno oznako: $$\llbracket w \rrbracket = \sum_{\pi\in P(n)}\pi(w)$$ 
-Uporaba te oznake nam omogoča naslednji zapis pideterminante: $$pdt(X) = (\llbracket det^{+}(X) \rrbracket, \llbracket det^{-}(X) \rrbracket)$$
+V definiciji pideterminante opazimo, da nastopa dvojna vsota. Posebej za prvo komponento dvojice vidimo da je $\bigoplus_{\substack{\pi\in P^{+}(n) \\ \sigma\in P(n)}}\sigma(\bar{\pi}(X)) = \bigoplus_{\sigma \in P(n)} \bigoplus_{\pi\in P^{+}(n)}\sigma(\bar{\pi}(X))$ in podobno tudi za drugo komponento. Če razumemo uporabo permutacje $\sigma$ na vsoti zaporedij $x_{11}x_{12}\ldots x_{1n} \oplus x_{21}x_{22}\ldots x_{2n} \oplus \ldots \oplus x_{n1}x_{n2}\ldots x_{nn}$, torej $$\sigma(x_{11}x_{12}\ldots x_{1n} \oplus x_{21}x_{22}\ldots x_{2n} \oplus \ldots \oplus x_{n1}x_{n2}\ldots x_{nn})$$ kot vsoto s $\sigma$ premešanih zaporedij $$\sigma(x_{11}x_{12}\ldots x_{1n}) \oplus \sigma(x_{21}x_{22}\ldots x_{2n}) \oplus \ldots \oplus \sigma(x_{n1}x_{n2}\ldots x_{nn})$$ potem lahko vsoto v prvi komponenti zapišemo kot $\bigoplus_{\sigma \in P(n)}\sigma\big(\bigoplus_{\pi\in P^{+}(n)}\bar{\pi}(X)\big) = \bigoplus_{\sigma \in P(n)}\sigma(det^{+}(X))$. Ko je $\sigma = id$, dobimo v tej vsoti kar $det^{+}(X)$. Ostale permutacije $\sigma\in P(n)$ nam v resinici dajo podobne vsote, s tem da premešajo vrstne rede faktorjev v členih. 
+V komutativnih polkolobarjih so vse te vsote enake, torej dobimo $n!\cdot det^{+}(X) = \underbrace{det^{+}(X) \oplus \ldots \oplus det^{+}(X)}_{\text{$n!$-krat}}$. Podobno se v tem primeru zgodi tudi na drugi komponenti. Ko to dvoje združimo dobimo, da je pideterminanta $n\times n$ matrike $X$ nad komutativnim polkolobarjem enaka $pdt(X) = n!\cdot (det^{+}(X), det^{-}(X))$. 
+Uvedemo še eno oznako: $$\llbracket w \rrbracket = \bigoplus_{\pi\in P(n)}\pi(w)$$ 
+Uporaba te oznake nam omogoča naslednji zapis pideterminante: $$pdt(X) = (\llbracket det^{+}(X) \rrbracket, \llbracket det^{-}(X) \rrbracket) = (pdt^{+}(X), pdt^{-}(X))$$
+
+Dodatno, za matriko $X$ nad nekim poljem $(F, \oplus, \otimes)$ velja $$det(X) = det^{+}(X) \ominus det^{-}(X) = \frac{1}{n!}(pdt^{+}(X) \ominus pdt^{-}(X))$$
 
 Naslednji zgled bo pokazal uporabo uvedenih pojmov.
 \begin{zgled}\label{zgled:matA1}
@@ -1048,47 +1050,49 @@ Naslednji zgled bo pokazal uporabo uvedenih pojmov.
 		a_{21} & a_{22}
 	\end{bmatrix}$ neka $2\times 2$ matrika nad poljubnim polkolobarjem $R$. Vemo, da je $P(2) = \{id, (1~2)\}$. Pri tem sta $P^{+}(2) = \{id\}$ in $P^{-}(2) = \{(1~2)\}$. Označimo $\sigma = (1~2)$.
 	Za izračun pideterminante bomo najprej potrebovali $det^{+}(A)$ in $det^{-}(A)$. Velja: \begin{align*}
-		det^{+}(A) &= A_{11}\cdot A_{22} = a_{11}a_{22} \\
-		det^{-}(A) &= A_{12}\cdot A_{21} = a_{12}a_{21}
+		det^{+}(A) &= A_{11}A_{22} = a_{11}a_{22} \\
+		det^{-}(A) &= A_{12}A_{21} = a_{12}a_{21}
 	\end{align*}
 	Sedaj poračunajmo še $\llbracket det^{+}(A) \rrbracket$ in $\llbracket det^{-}(A) \rrbracket$:
 	\begin{align*}
-		\llbracket det^{+}(A) \rrbracket &= id(a_{11}a_{22}) + \sigma(a_{11}a_{22}) = a_{11}a_{22} + a_{22}a_{11} \\
-		\llbracket det^{-}(A) \rrbracket &= id(a_{12}a_{21}) + \sigma(a_{12}a_{21}) = a_{12}a_{21} + a_{21}a_{12}
+		\llbracket det^{+}(A) \rrbracket &= id(a_{11}a_{22}) \oplus \sigma(a_{11}a_{22}) = a_{11}a_{22} \oplus a_{22}a_{11} \\
+		\llbracket det^{-}(A) \rrbracket &= id(a_{12}a_{21}) \oplus \sigma(a_{12}a_{21}) = a_{12}a_{21} \oplus a_{21}a_{12}
 	\end{align*}
-	Sledi, da je $pdt(A) = (a_{11}a_{22} + a_{22}a_{11}, a_{12}a_{21} + a_{21}a_{12})$
+	Sledi, da je $pdt(A) = (a_{11}a_{22} \oplus a_{22}a_{11}, a_{12}a_{21} \oplus a_{21}a_{12})$
 \end{zgled}
+
+
 Preden definiramo karakteristični pipolinom matrike nad polkolobarjem se spomnimo, kaj je karakteristični polinom matrike nad poljem.
 
 \begin{definicija}
-	Naj bo $F$ polje in $X\in M_n(F)$ kvadratna matrika nad njim. Karakteristični polinom $p_X(\lambda)$ matrike $X$ je polinom v spremenljivki $\lambda$, ki ga določa predpis $p_X(\lambda) = det(X - \lambda\cdot I)$.
+	Naj bo $F$ polje in $X\in M_n(F)$ kvadratna matrika nad njim. Karakteristični polinom $p_X(\lambda)$ matrike $X$ je polinom v spremenljivki $\lambda$, ki ga določa predpis $p_X(\lambda) = det(X \ominus \lambda\cdot I)$.
 \end{definicija}
  
- Po zgledu determinante lahko tudi karakteristični polinom $p_X(\lambda)$ razdelimo na razliko dveh polinomov: $$p_X(\lambda) = p_X^{+}(\lambda) - š_X^{-}(\lambda)$$
- To storimo tako, da vse pozitivno predznačene člene $p_X(\lambda)$ označimo s $p_X^{+}(\lambda)$, pri ostalih pa izpostavimo $-$ in dobljeno vsoto označimo s $p_X^{-}(\lambda)$.
+ Po zgledu determinante lahko tudi karakteristični polinom $p_X(\lambda)$ razdelimo na razliko dveh polinomov: $$p_X(\lambda) = p_X^{+}(\lambda) \ominus p_X^{-}(\lambda)$$
+ To storimo tako, da vse ">pozitivno"< predznačene člene $p_X(\lambda)$ označimo s $p_X^{+}(\lambda)$, pri ostalih pa izpostavimo $\ominus$ in dobljeno vsoto označimo s $p_X^{-}(\lambda)$.
  Sedaj definirajmo karakteristični pipolinom matrike nad polkolobarjem.
 
 \begin{definicija}
 	Naj bo $R$ polkolobar in $X\in M_n(R)$ kvadratna matrika nad njim. \pojem{Karakteristični pipolinom} $pp_X(\lambda)$ matrike $X$ v spremenljivki $\lambda$ je urejen par polinomov definiran s predpisom $$pp_X(\lambda) = (\llbracket p_X^{+}(\lambda)\rrbracket, \llbracket p_X^{-}(\lambda)\rrbracket) = (pp_X^{+}(\lambda), pp_X^{-}(\lambda))$$
-	Pri tem $p_X^{+}(\lambda)$ in $p_X^{-}(\lambda)$ dobimo tako, da se pretvarjamo, da delamo nad poljem, zapišemo pripadajoči karakteristični polinom $p_X(\lambda) = p_X^{+}(\lambda) - p_X^{-}(\lambda)$.
+	Pri tem $p_X^{+}(\lambda)$ in $p_X^{-}(\lambda)$ dobimo tako, da se pretvarjamo, da delamo nad poljem, zapišemo pripadajoči karakteristični polinom $p_X(\lambda) = p_X^{+}(\lambda) \ominus p_X^{-}(\lambda)$.
 \end{definicija}
 
 Definicijo dopolnimo z naslednjim zgledom.
 
 \begin{zgled}\label{zgled:matA2}
 Vrnimo se k matriki $A$ iz zgleda \ref{zgled:matA1} in poračunajmo njen karakteristični pipolinom. Tega lahko poračunamo tako, da se najprej pretvarjamo, da delamo nad poljem, nato pa seštejemo ">pozitivne"< člene v $p_A^{+}$, ">negativne"< pa v $p_A^{-}$.
-Če bi $R$ bil polje, bi karakteristični polinom matrike $A$ imel predpis $P_A(\lambda) = a_{11}a_{22} + \lambda^2 - (a_{11} + a_{22})\lambda - a_{12}a_{21} = a_{11}a_{22} + \lambda^2 - ((a_{11} + a_{22})\lambda + a_{12}a_{21})$. Sledi, da je potem $p_A^{+}(\lambda) = a_{11}a_{22} + \lambda^2$ in $p_A^{-}(\lambda) = (a_{11} + a_{22})\lambda + a_{12}a_{21}$. Sedaj lahko poračunamo $pp_A^{+}(\lambda)$ in $pp_A^{-}(\lambda)$.
+Če bi $R$ bil polje, bi karakteristični polinom matrike $A$ imel predpis $P_A(\lambda) = a_{11}a_{22} \oplus \lambda^2 \ominus (a_{11} \oplus a_{22})\lambda \ominus a_{12}a_{21} = a_{11}a_{22} \oplus \lambda^2 \ominus ((a_{11} \oplus a_{22})\lambda \oplus a_{12}a_{21})$. Sledi, da je potem $p_A^{+}(\lambda) = a_{11}a_{22} \oplus \lambda^2$ in $p_A^{-}(\lambda) = (a_{11} \oplus a_{22})\lambda \oplus a_{12}a_{21}$. Sedaj lahko poračunamo $pp_A^{+}(\lambda)$ in $pp_A^{-}(\lambda)$.
 
 \begin{align*}
-	pp_A^{+}(\lambda) &= \llbracket \lambda^2 + a_{11}a_{22}\rrbracket = \lambda^2 + a_{11}a_{22} + \sigma(\lambda^2) + \sigma(a_{11}a_{22}) \\ 
-	&= \lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11} \\
-	pp_A^{-}(\lambda) &= \llbracket (a_{11} + a_{22})\lambda + a_{12}a_{21}\rrbracket \\ &= (a_{11} + a_{22})\lambda + a_{12}a_{21} + \sigma((a_{11} + a_{22})\lambda)+ \sigma(a_{12}a_{21}) \\ 
-	&= (a_{11} + a_{22})\lambda + a_{12}a_{21} + \lambda(a_{11} + a_{22}) + a_{21}a_{12}
+	pp_A^{+}(\lambda) &= \llbracket \lambda^2 \oplus a_{11}a_{22}\rrbracket = \lambda^2 \oplus a_{11}a_{22} \oplus \sigma(\lambda^2) \oplus \sigma(a_{11}a_{22}) \\ 
+	&= \lambda^2 \oplus a_{11}a_{22} \oplus \lambda^2 \oplus a_{22}a_{11} \\
+	pp_A^{-}(\lambda) &= \llbracket (a_{11} \oplus a_{22})\lambda \oplus a_{12}a_{21}\rrbracket \\ &= (a_{11} \oplus a_{22})\lambda \oplus a_{12}a_{21} \oplus \sigma((a_{11} \oplus a_{22})\lambda) \oplus \sigma(a_{12}a_{21}) \\ 
+	&= (a_{11} \oplus a_{22})\lambda \oplus a_{12}a_{21} \oplus \lambda(a_{11} \oplus a_{22}) \oplus a_{21}a_{12}
 \end{align*}
-Sledi, da je karakteristični pipolinom matrike $A$ enak $$pp_A(\lambda)= (\lambda^2 + a_{11}a_{22} + \lambda^2 + a_{22}a_{11}, (a_{11} + a_{22})\lambda + a_{12}a_{21} + \lambda(a_{11} + a_{22}) + a_{21}a_{12})$$
+Sledi, da je karakteristični pipolinom matrike $A$ enak $$pp_A(\lambda)= (\lambda^2 \oplus a_{11}a_{22} \oplus \lambda^2 \oplus a_{22}a_{11}, (a_{11} \oplus a_{22})\lambda \oplus a_{12}a_{21} \oplus \lambda(a_{11} \oplus a_{22}) \oplus a_{21}a_{12})$$
 \end{zgled}
 
-Sedaj lahko končno preidemo na obravnavo posplošenega Cayley-Hamiltonovega izreka, kar bomo storili v naslednjem poglavju.
+Opazimo, da je za matriko $X$ nad nekim poljem $F$ karakteristični polinom enak $$p_X(\lambda) = \frac{1}{n!}(pp_X^{+}(\lambda) \ominus pp_X^{-}(\lambda))$$ Sedaj lahko končno preidemo na obravnavo posplošenega Cayley-Hamiltonovega izreka, kar bomo storili v naslednjem poglavju.
 
 \subsection{Cayley-Hamiltonov izrek nad polkolobarji:} \label{subsect:CHTtheorem}
 V tem podpoglavju bomo navedli posplošeni Cayley-Hamiltonov izrek in demonstrirali veljavnost na $2\times 2$ kvadratnih matrikah. Dodatno bomo navedli idejo dokaza izreka, dokaz pa bo opuščen. 
@@ -1097,44 +1101,44 @@ V tem podpoglavju bomo navedli posplošeni Cayley-Hamiltonov izrek in demonstrir
 	Naj bo $F$ polje in $X\in M_n(F)$ neka kvadratna matrika in naj bo $p_X(\lambda)$ njen karakteristični polinom. Potem je $p_X(X) = 0$.
 \end{izrek}
 
-Seveda, če upoštevamo zapis $p_X(\lambda) = p_X^{+}(\lambda) - p_X^{-}(\lambda)$ iz izreka sledi $p_X^{+}(X) = p_X^{-}(X)$. Pri vstavljanju matrike $X$ v $p_X$ sledimo konvenciji in vsako potenco $\lambda^n$ nadomestimo z $X^n$, vsako konstanto $c\in F$ pa s $c\cdot I$.
+Seveda, če upoštevamo zapis $p_X(\lambda) = p_X^{+}(\lambda) \ominus p_X^{-}(\lambda)$ iz izreka sledi $p_X^{+}(X) = p_X^{-}(X)$. Pri vstavljanju matrike $X$ v $p_X(\lambda)$ sledimo konvenciji in vsako potenco $\lambda^n$ nadomestimo z $X^n$, vsako konstanto $c\in F$ pa s $c\cdot I$. Poleg tega vsak produkt tipa $c\cdot \lambda$ nadomestimo z $c\cdot X$. Posebej omenimo, da $\oplus$ zamenjamo s $+$.
 
 V primeru matrike $X = \begin{bmatrix}
 	x_{11} & x_{12} \\
 	x_{21} & x_{22}
-\end{bmatrix}$ nad poljem $F$, vemo, da je njen karakteristični polinom $p_X(\lambda) = \lambda^2 - (x_{11} + x_{22})\lambda + (x_{11}x_{22} - x_{12}x_{21})$, torej je potem $p_X(X) = X^2 - (x_{11} + x_{22})\cdot X + (x_{11}x_{22} - x_{12}x_{21})\cdot I = 0$. 
+\end{bmatrix}$ nad poljem $F$, vemo, da je njen karakteristični polinom $p_X(\lambda) = \lambda^2 \ominus (x_{11} \oplus x_{22})\lambda \oplus (x_{11}x_{22} \ominus x_{12}x_{21})$, torej je potem $p_X(X) = X^2 \ominus (x_{11} \oplus x_{22})\cdot X \oplus (x_{11}x_{22} \ominus x_{12}x_{21})\cdot I = 0$. 
 
-V primeru karakterističnega pipolinoma moramo biti malce bolj previdni. Razlog za to lahko vidimo že v primeru $2\times 2$ matrike $A$ iz zgledov . Posebej poglejmo razliko med $\llbracket p_A^{+}(\lambda)\rrbracket$ in $\llbracket p_A^{+}(A)\rrbracket$. V primeru $\llbracket p_A^{+}(\lambda) \rrbracket = \llbracket \lambda^2 + a_{11}a_{22}\rrbracket$ nastopa člen $\sigma(\lambda^2)$, kjer je $\sigma = (1~2)$. Tukaj uporaba $\sigma$ na $\lambda^2$ preprosto pomeni zamenjavo vrstnega reda množenja. V $\llbracket p_A^{+}(A)\rrbracket$ pa nastopa člen $\sigma(A^2)$, ki pa potrebuje pravilno interpretacijo. V prvi vrsti se zavedajmo, da bo, za vsako matriko $X$ nad nekim polkolobarjem in za vsak $n\in\N$, vsaka komponenta matrike $X^n$ vsota produktov $n$ elementov. Obe komponenti $pp_X(\lambda)$ bosta polinoma stopnje $n$. Ko v kateregakoli od teh polinomov vstavimo $X$, bomo dobili vsoto $n\times n$ matrik, ki bodo, po tem ko poračunamo skalarno množenje vsakega člena, v vsaki komponenti imele vsote produktov $n$ elementov. Ko potem na kakem izmed teh členov uporabimo permutacijo $\mu\in P(n)$, to storimo po komponentah: $$\mu(X^n) = \left[\mu(X^n_{ij})\right]_{ij}$$ Dodatno upoštevamo, da ko uporabimo permutacijo $\mu$ na vsoti produktov $n$ elementov, to razumemo kot vsoto produktov katerih faktorji so bili premešani z $\mu$. Dodatno vsak člen oblike $a_{ij}^k$ razumemo kot $\underbrace{a_{ij}a_{ij}\ldots a_{ij}}_{\text{$k$-krat}}$. Poglejmo si to na konkretnem primeru.
+V primeru karakterističnega pipolinoma moramo biti malce bolj previdni. Razlog za to lahko vidimo že v primeru $2\times 2$ matrike $A$ iz zgledov. Posebej poglejmo razliko med $\llbracket p_A^{+}(\lambda)\rrbracket$ in $\llbracket p_A^{+}(A)\rrbracket$. V primeru $\llbracket p_A^{+}(\lambda) \rrbracket = \llbracket \lambda^2 \oplus a_{11}a_{22}\rrbracket$ nastopa člen $\sigma(\lambda^2)$, kjer je $\sigma = (1~2)$. Tukaj uporaba $\sigma$ na $\lambda^2$ preprosto pomeni zamenjavo vrstnega reda množenja. V $\llbracket p_A^{+}(A)\rrbracket$ pa nastopa člen $\sigma(A^2)$, ki pa potrebuje pravilno interpretacijo. V prvi vrsti se zavedajmo, da bo, za vsako matriko $X$ nad nekim polkolobarjem in za vsak $n\in\N$, vsaka komponenta matrike $X^n$ vsota produktov $n$ elementov. Obe komponenti $pp_X(\lambda)$ bosta polinoma stopnje $n$. Ko v kateregakoli od teh polinomov vstavimo $X$, bomo dobili vsoto $n\times n$ matrik, ki bodo, po tem ko poračunamo skalarno množenje vsakega člena, v vsaki komponenti imele vsote produktov $n$ elementov. Ko potem na kakem izmed teh členov uporabimo permutacijo $\mu\in P(n)$, to storimo po komponentah: $$\mu(X^n) = \left[\mu(X^n_{ij})\right]_{ij}$$ Upoštevamo tudi, da ko uporabimo permutacijo $\mu$ na vsoti produktov $n$ elementov, to razumemo kot vsoto produktov katerih faktorji so bili premešani z $\mu$. Dodatno vsak člen oblike $a_{ij}^k$ razumemo kot $\underbrace{a_{ij}a_{ij}\ldots a_{ij}}_{\text{$k$-krat}}$. Poglejmo si to na konkretnem primeru.
 
 \begin{zgled}\label{zgled:matA3}
-	Ponovno se vrnimo k matriki $A$ iz zgledov \ref{zgled:matA1} in \ref{zgled:matA2}. Vemo že, da je $pp_A(\lambda) = (\llbracket\lambda^2 + a_{11}a_{22}\rrbracket,\llbracket (a_{11} + a_{22})\lambda + a_{21}a_{12}\rrbracket)$. Vstavimo $A$ v njen karakteristični pipolinom in dobimo $pp_A(A) = (pp_A^{+}(A), pp_A^{-}(A)) = (\llbracket A^2 + a_{11}a_{22}\cdot I\rrbracket,\llbracket (a_{11} + a_{22})\cdot A + a_{21}a_{12}\cdot I\rrbracket)$. Poračunajmo vsako komponento posebej.
+	Ponovno se vrnimo k matriki $A$ iz zgledov \ref{zgled:matA1} in \ref{zgled:matA2}. Vemo že, da je $pp_A(\lambda) = (\llbracket\lambda^2 \oplus a_{11}a_{22}\rrbracket,\llbracket (a_{11} \oplus a_{22})\lambda \oplus a_{21}a_{12}\rrbracket)$. Vstavimo $A$ v njen karakteristični pipolinom in dobimo $pp_A(A) = (pp_A^{+}(A), pp_A^{-}(A)) = (\llbracket A^2 + a_{11}a_{22}\cdot I\rrbracket,\llbracket (a_{11} \oplus a_{22})\cdot A + a_{21}a_{12}\cdot I\rrbracket)$. Poračunajmo vsako komponento posebej.
 	
 	\begin{align*}
 		A^2 &= \begin{bmatrix}
-			a_{11}^2 + a_{12}a_{21} & a_{11}a_{12} + a_{12}a_{22} \\
-			a_{21}a_{11} + a_{22}a_{21} & a_{21}a_{12} + a_{22}^2
+			a_{11}^2 \oplus a_{12}a_{21} & a_{11}a_{12} \oplus a_{12}a_{22} \\
+			a_{21}a_{11} \oplus a_{22}a_{21} & a_{21}a_{12} \oplus a_{22}^2
 		\end{bmatrix} \\
 		\sigma(A^2) &= \sigma\bigg(\begin{bmatrix}
-			a_{11}^2 + a_{12}a_{21} & a_{11}a_{12} + a_{12}a_{22} \\
-			a_{21}a_{11} + a_{22}a_{21} & a_{21}a_{12} + a_{22}^2
+			a_{11}^2 \oplus a_{12}a_{21} & a_{11}a_{12} \oplus a_{12}a_{22} \\
+			a_{21}a_{11} \oplus a_{22}a_{21} & a_{21}a_{12} \oplus a_{22}^2
 		\end{bmatrix}\bigg) \\
 	&= \begin{bmatrix}
-		\sigma(a_{11}^2) + \sigma(a_{12}a_{21}) & \sigma(a_{11}a_{12}) + \sigma(a_{12}a_{22}) \\
-		\sigma(a_{21}a_{11}) + \sigma(a_{22}a_{21}) & \sigma(a_{21}a_{12}) + \sigma(a_{22}^2)
+		\sigma(a_{11}^2) \oplus \sigma(a_{12}a_{21}) & \sigma(a_{11}a_{12}) \oplus \sigma(a_{12}a_{22}) \\
+		\sigma(a_{21}a_{11}) \oplus \sigma(a_{22}a_{21}) & \sigma(a_{21}a_{12}) \oplus \sigma(a_{22}^2)
 	\end{bmatrix} \\
 &= \begin{bmatrix}
-	a_{11}^2 + a_{21}a_{12} & a_{12}a_{11} + a_{22}a_{12} \\
-	a_{11}a_{21} + a_{21}a_{22} & a_{12}a_{21} + a_{22}^2
+	a_{11}^2 \oplus a_{21}a_{12} & a_{12}a_{11} \oplus a_{22}a_{12} \\
+	a_{11}a_{21} \oplus a_{21}a_{22} & a_{12}a_{21} \oplus a_{22}^2
 \end{bmatrix}
 	\end{align*}
 Od tod sledi \begin{align*}
 pp_A^{+}(A) &= \llbracket A^2 + a_{11}a_{22}\cdot I \rrbracket = A^2 + \sigma(A^2) + a_{11}a_{22}\cdot I + \sigma(a_{11}a_{22}\cdot I) \\ 
 &= \begin{bmatrix}
-	a_{11}^2 + a_{12}a_{21} & a_{11}a_{12} + a_{12}a_{22} \\
-	a_{21}a_{11} + a_{22}a_{21} & a_{21}a_{12} + a_{22}^2
+	a_{11}^2 \oplus a_{12}a_{21} & a_{11}a_{12} \oplus a_{12}a_{22} \\
+	a_{21}a_{11} \oplus a_{22}a_{21} & a_{21}a_{12} \oplus a_{22}^2
 \end{bmatrix} + \begin{bmatrix}
-a_{11}^2 + a_{21}a_{12} & a_{12}a_{11} + a_{22}a_{12} \\
-a_{11}a_{21} + a_{21}a_{22} & a_{12}a_{21} + a_{22}^2
+a_{11}^2 \oplus a_{21}a_{12} & a_{12}a_{11} \oplus a_{22}a_{12} \\
+a_{11}a_{21} \oplus a_{21}a_{22} & a_{12}a_{21} \oplus a_{22}^2
 \end{bmatrix} \\ &+ \begin{bmatrix}
 	a_{11}a_{22} & 0 \\
 	0 & a_{11}a_{22}
@@ -1145,45 +1149,45 @@ a_{11}a_{21} + a_{21}a_{22} & a_{12}a_{21} + a_{22}^2
 
 Ko vse matrike seštejemo, dobimo
 $$\begin{bmatrix}
-	2a_{11}^2 + a_{21}a_{12} + a_{12}a_{21} + a_{11}a_{22} + a_{22}a_{11} & a_{11}a_{12} + a_{12}a_{22} + a_{12}a_{11} + a_{22}a_{12} \\ a_{21}a_{11} + a_{22}a_{21} + a_{11}a_{21} + a_{21}a_{22} & a_{21}a_{12} + a_{12}a_{21} + 2a_{22}^2 + a_{11}a_{22} + a_{22}a_{11}
+	2a_{11}^2 \oplus a_{21}a_{12} \oplus a_{12}a_{21} \oplus a_{11}a_{22} \oplus a_{22}a_{11} & a_{11}a_{12} \oplus a_{12}a_{22} \oplus a_{12}a_{11} \oplus a_{22}a_{12} \\ a_{21}a_{11} \oplus a_{22}a_{21} \oplus a_{11}a_{21} \oplus a_{21}a_{22} & a_{21}a_{12} \oplus a_{12}a_{21} \oplus 2a_{22}^2 \oplus a_{11}a_{22} \oplus a_{22}a_{11}
 \end{bmatrix}$$
 
 Poračunajmo še $pp_A^{-}(A)$. Da nam bo lažje najprej poračunajmo člene.
 \begin{align*}
-	(a_{11} + a_{22})\cdot A &= \begin{bmatrix}
-		a_{11}^2 + a_{22}a_{11} & a_{11}a_{12} + a_{22}a_{12} \\
-		a_{11}a_{21} + a_{22}a_{21} & a_{11}a_{22} + a_{22}^2
+	(a_{11} \oplus a_{22})\cdot A &= \begin{bmatrix}
+		a_{11}^2 \oplus a_{22}a_{11} & a_{11}a_{12} \oplus a_{22}a_{12} \\
+		a_{11}a_{21} \oplus a_{22}a_{21} & a_{11}a_{22} \oplus a_{22}^2
 	\end{bmatrix} \\
-\sigma((a_{11} + a_{22})\cdot A) &= \begin{bmatrix}
-	\sigma((a_{11} + a_{22})a_{11}) & \sigma((a_{11} + a_{22})a_{12}) \\
-	\sigma((a_{11} + a_{22})a_{21}) & \sigma((a_{11} + a_{22})a_{22})
+\sigma((a_{11} \oplus a_{22})\cdot A) &= \begin{bmatrix}
+	\sigma((a_{11} \oplus a_{22})a_{11}) & \sigma((a_{11} \oplus a_{22})a_{12}) \\
+	\sigma((a_{11} \oplus a_{22})a_{21}) & \sigma((a_{11} \oplus a_{22})a_{22})
 \end{bmatrix} \\ &= \begin{bmatrix}
-	a_{11}(a_{11} + a_{22}) & a_{12}(a_{11} + a_{22}) \\
-	a_{21}(a_{11} + a_{22}) & a_{22}(a_{11} + a_{22})
+	a_{11}(a_{11} \oplus a_{22}) & a_{12}(a_{11} \oplus a_{22}) \\
+	a_{21}(a_{11} \oplus a_{22}) & a_{22}(a_{11} \oplus a_{22})
 \end{bmatrix} \\ &= \begin{bmatrix}
-	a_{11}^2 + a_{11}a_{22} & a_{12}a_{11} + a_{12}a_{22} \\
-	a_{21}a_{11} + a_{21}a_{22} & a_{22}a_{11} + a_{22}^2
+	a_{11}^2 \oplus a_{11}a_{22} & a_{12}a_{11} \oplus a_{12}a_{22} \\
+	a_{21}a_{11} \oplus a_{21}a_{22} & a_{22}a_{11} \oplus a_{22}^2
 \end{bmatrix}
 \end{align*}
 \begin{align*}
-	pp_A^{-}(A) &= \llbracket (a_{11} + a_{22})\cdot A + a_{21}a_{12}\cdot I \rrbracket \\ &= (a_{11} + a_{22})\cdot A + \sigma((a_{11} + a_{22})\cdot A) + a_{21}a_{12}\cdot I + \sigma(a_{21}a_{12}\cdot I) \\
-	&= (a_{11} + a_{22})\cdot A + A\cdot (a_{11} + a_{22}) + a_{21}a_{12}\cdot I + a_{12}a_{21}\cdot I \\ &= \begin{bmatrix}
-	a_{11}^2 + a_{22}a_{11} & a_{11}a_{12} + a_{22}a_{12} \\
-	a_{11}a_{21} + a_{22}a_{21} & a_{11}a_{22} + a_{22}^2
+	pp_A^{-}(A) &= \llbracket (a_{11} \oplus a_{22})\cdot A + a_{21}a_{12}\cdot I \rrbracket \\ &= (a_{11} \oplus a_{22})\cdot A + \sigma((a_{11} \oplus a_{22})\cdot A) + a_{21}a_{12}\cdot I + \sigma(a_{21}a_{12}\cdot I) \\
+	&= (a_{11} \oplus a_{22})\cdot A + A\cdot (a_{11} \oplus a_{22}) + a_{21}a_{12}\cdot I + a_{12}a_{21}\cdot I \\ &= \begin{bmatrix}
+	a_{11}^2 \oplus a_{22}a_{11} & a_{11}a_{12} \oplus a_{22}a_{12} \\
+	a_{11}a_{21} \oplus a_{22}a_{21} & a_{11}a_{22} \oplus a_{22}^2
 \end{bmatrix} + \begin{bmatrix}
-a_{11}^2 + a_{11}a_{22} & a_{12}a_{11} + a_{12}a_{22} \\
-a_{21}a_{11} + a_{21}a_{22} & a_{22}a_{11} + a_{22}^2
+a_{11}^2 \oplus a_{11}a_{22} & a_{12}a_{11} \oplus a_{12}a_{22} \\
+a_{21}a_{11} \oplus a_{21}a_{22} & a_{22}a_{11} \oplus a_{22}^2
 \end{bmatrix}\\ &+ \begin{bmatrix}
-a_{21}a_{12} + a_{12}a_{21} & 0 \\
-0 & a_{21}a_{12} + a_{12}a_{21}
+a_{21}a_{12} \oplus a_{12}a_{21} & 0 \\
+0 & a_{21}a_{12} \oplus a_{12}a_{21}
 \end{bmatrix}
 \end{align*}
 Ko seštejemo vse matrike tokrat dobimo $$\begin{bmatrix}
-	2a_{11}^2 + a_{11}a_{22} + a_{22}a_{11} + a_{21}a_{12} + a_{12}a_{21} & a_{12}a_{11} + a_{12}a_{22} + a_{11}a_{12} + a_{22}a_{12} \\
-	a_{21}a_{11} + a_{21}a_{22} + a_{11}a_{21} + a_{22}a_{21} & a_{22}a_{11} + 2a_{22}^2 + a_{11}a_{22} + a_{21}a_{12} + a_{12}a_{21}
+	2a_{11}^2 \oplus a_{11}a_{22} \oplus a_{22}a_{11} \oplus a_{21}a_{12} \oplus a_{12}a_{21} & a_{12}a_{11} \oplus a_{12}a_{22} \oplus a_{11}a_{12} \oplus a_{22}a_{12} \\
+	a_{21}a_{11} \oplus a_{21}a_{22} \oplus a_{11}a_{21} \oplus a_{22}a_{21} & a_{22}a_{11} \oplus 2a_{22}^2 \oplus a_{11}a_{22} \oplus a_{21}a_{12} \oplus a_{12}a_{21}
 \end{bmatrix}$$ oziroma $$\begin{bmatrix}
-2a_{11}^2 + a_{21}a_{12} + a_{12}a_{21} + a_{11}a_{22} + a_{22}a_{11} & a_{11}a_{12} + a_{12}a_{22} + a_{12}a_{11} + a_{22}a_{12} \\
-a_{21}a_{11} + a_{22}a_{21} + a_{11}a_{21} + a_{21}a_{22} & a_{21}a_{12} + a_{12}a_{21} + 2a_{22}^2 + a_{11}a_{22} + a_{22}a_{11}
+2a_{11}^2 \oplus a_{21}a_{12} \oplus a_{12}a_{21} \oplus a_{11}a_{22} \oplus a_{22}a_{11} & a_{11}a_{12} \oplus a_{12}a_{22} \oplus a_{12}a_{11} \oplus a_{22}a_{12} \\
+a_{21}a_{11} \oplus a_{22}a_{21} \oplus a_{11}a_{21} \oplus a_{21}a_{22} & a_{21}a_{12} \oplus a_{12}a_{21} \oplus 2a_{22}^2 \oplus a_{11}a_{22} \oplus a_{22}a_{11}
 \end{bmatrix}$$
 Spotoma smo torej pokazali, da je $pp_A^{+}(A) = pp_A^{-}(A)$.
 \end{zgled}
@@ -1198,24 +1202,24 @@ V zgledu \ref{zgled:matA3} smo pokazali izrek za $n = 2$ tako, da smo direktno p
 	x_{11} & x_{12} \\
 	x_{21} & x_{22}
 \end{bmatrix}$. Za $LS_0$ določimo $LS_0 = X^2 = \begin{bmatrix}
-x_{11}x_{11} + x_{12}x_{21} & x_{11}x_{12} + x_{12}x_{22} \\
-x_{21}x_{11} + x_{22}x_{21} & x_{21}x_{12} + x_{22}x_{22}
-\end{bmatrix}$. Opazimo, da je vsaka komponenta $X^2$ vsota produktov dolžine $2$, kjer je vsak produkt enak uteži na neki poti v asociiranem grafu $G(X)$. Ker ima $G(X)$ $n$ vozlišč more biti vsaj ena od teh poti cikel. Z $diag_s(X^2)$ označimo skrčitev diagonale matrike $X^2$ na produkte, ki predstavljajo utež nekega cikla v $G(X)$, s $Tr_s(X^2)$ pa označimo vsoto produktov iz $diag_s(X^2)$. Vidimo, da sta $diag_s(X^2) = \{x_{12}x_{21}, x_{21}x_{12}\}$ in $Tr_s(X^2) = x_{12}x_{21} + x_{21}x_{12}$. S pomočjo tega določimo začetno desno stran enakosti $DS_0 = Tr_s(X^2)\cdot I$. Vse uteži ciklov v $Tr_s(X^2)$ so permutacije uteži cikla, ki izhaja v vozlišču $1$. V tem primeru sta to $\pi_1 = id$ in $\pi_2 = (1~2)$. Drugače povedano, $DS_0 = \sum_{i = 1}^{2}\pi_i(x_{12}x_{21}) \cdot I = \begin{bmatrix}
-x_{12}x_{21} + x_{21}x_{12} & 0 \\
-0 & x_{12}x_{21} + x_{21}x_{12}
+x_{11}x_{11} \oplus x_{12}x_{21} & x_{11}x_{12} \oplus x_{12}x_{22} \\
+x_{21}x_{11} \oplus x_{22}x_{21} & x_{21}x_{12} \oplus x_{22}x_{22}
+\end{bmatrix}$. Opazimo, da je vsaka komponenta $X^2$ vsota produktov dolžine $2$, kjer je vsak produkt enak uteži na neki poti v asociiranem grafu $G(X)$. Ker ima $G(X)$ $n$ vozlišč more biti vsaj ena od teh poti cikel. Z $diag_s(X^2)$ označimo skrčitev diagonale matrike $X^2$ na produkte, ki predstavljajo utež nekega cikla v $G(X)$, s $Tr_s(X^2)$ pa označimo vsoto produktov iz $diag_s(X^2)$. Vidimo, da sta $diag_s(X^2) = \{x_{12}x_{21}, x_{21}x_{12}\}$ in $Tr_s(X^2) = x_{12}x_{21} \oplus x_{21}x_{12}$. S pomočjo tega določimo začetno desno stran enakosti $DS_0 = Tr_s(X^2)\cdot I$. Vse uteži ciklov v $Tr_s(X^2)$ so permutacije uteži cikla, ki izhaja v vozlišču $1$. V tem primeru sta to $\pi_1 = id$ in $\pi_2 = (1~2)$. Drugače povedano, $DS_0 = \sum_{i = 1}^{2}\pi_i(x_{12}x_{21}) \cdot I = \begin{bmatrix}
+x_{12}x_{21} \oplus x_{21}x_{12} & 0 \\
+0 & x_{12}x_{21} \oplus x_{21}x_{12}
 \end{bmatrix}$. Posledica množenja z matrično identiteto $I$ nam vsili ">odvečne"< uteži na določenih mestih. Posebej, v $(X^2)_{11}$ imamo člen $x_{12}x_{21}$, nimamo pa člena $x_{21}x_{12}$. Ta problem rešimo tako, da levo stran spremenimo v vsoto teh enakih permutacij $LS_1 = \sum_{i = 1}^{2}\pi_i(X^2) = \begin{bmatrix}
-x_{11}x_{11} + x_{12}x_{21} + x_{11}x_{11} + x_{21}x_{12} & x_{11}x_{12} + x_{12}x_{22} + x_{12}x_{11} + x_{22}x_{12}\\
- x_{21}x_{11} + x_{22}x_{21} + x_{11}x_{21} + x_{21}x_{22} & x_{21}x_{12} + x_{22}x_{22} + x_{12}x_{21} + x_{22}x_{22}
+x_{11}x_{11} \oplus x_{12}x_{21} \oplus x_{11}x_{11} \oplus x_{21}x_{12} & x_{11}x_{12} \oplus x_{12}x_{22} \oplus x_{12}x_{11} \oplus x_{22}x_{12}\\
+x_{21}x_{11} \oplus x_{22}x_{21} \oplus x_{11}x_{21} \oplus x_{21}x_{22} & x_{21}x_{12} \oplus x_{22}x_{22} \oplus x_{12}x_{21} \oplus x_{22}x_{22}
 \end{bmatrix}$. Seveda to vsili nove odvečne uteži na levi strani, kar popravimo tako, da uteži na ciklih dolžine $1$ dodamo na desno stran in to potem uravnotežimo na levi strani. Edina prava cikla dolžine $1$ imata uteži $x_{11}$ in $x_{22}$. Če iz $LS_1$ odmislimo elemente, ki so že v $DS_0$, nam ostane matrika \begin{align*}
 & \begin{bmatrix}
-	x_{11}x_{11} + x_{11}x_{11} & x_{11}x_{12} + x_{12}x_{22} + x_{12}x_{11} + x_{22}x_{12}\\
-	x_{21}x_{11} + x_{22}x_{21} + x_{11}x_{21} + x_{21}x_{22} & x_{22}x_{22} + x_{22}x_{22}
+	x_{11}x_{11} \oplus x_{11}x_{11} & x_{11}x_{12} \oplus x_{12}x_{22} \oplus x_{12}x_{11} \oplus x_{22}x_{12}\\
+	x_{21}x_{11} \oplus x_{22}x_{21} \oplus x_{11}x_{21} \oplus x_{21}x_{22} & x_{22}x_{22} \oplus x_{22}x_{22}
 \end{bmatrix}\\ &= \begin{bmatrix}
 x_{11}x_{11} & x_{11}x_{12} \\
 x_{11}x_{21} & 0
 \end{bmatrix} + \begin{bmatrix}
-x_{11}x_{11} & x_{12}x_{22} + x_{12}x_{11} + x_{22}x_{12}\\
-x_{21}x_{11} + x_{22}x_{21} + x_{21}x_{22} & x_{22}x_{22} + x_{22}x_{22}
+x_{11}x_{11} & x_{12}x_{22} \oplus x_{12}x_{11} \oplus x_{22}x_{12}\\
+x_{21}x_{11} \oplus x_{22}x_{21} \oplus x_{21}x_{22} & x_{22}x_{22} \oplus x_{22}x_{22}
 \end{bmatrix} \\
 &= \begin{bmatrix}
 	x_{11}x_{11} & x_{11}x_{12} \\
@@ -1224,8 +1228,8 @@ x_{21}x_{11} + x_{22}x_{21} + x_{21}x_{22} & x_{22}x_{22} + x_{22}x_{22}
 	0 & x_{22}x_{12}\\
 	x_{22}x_{21} & x_{22}x_{22}
 \end{bmatrix} + \begin{bmatrix}
-x_{11}x_{11} & x_{12}x_{22} + x_{12}x_{11} \\
-x_{21}x_{11} + x_{21}x_{22} & x_{22}x_{22}
+x_{11}x_{11} & x_{12}x_{22} \oplus x_{12}x_{11} \\
+x_{21}x_{11} \oplus x_{21}x_{22} & x_{22}x_{22}
 \end{bmatrix} \\
 &= \begin{bmatrix}
 	x_{11}x_{11} & x_{11}x_{12} \\
@@ -1254,10 +1258,10 @@ Opazimo, da se prva in tretja matrika razlikujeta samo v tem, da so produkti v k
 	0 & x_{12} \\
 	x_{21} & x_{22}
 \end{bmatrix}\cdot x_{22}$$
-Matrike, ki preostanejo, so zelo blizu matriki $X$, zato bomo na desno stran prišteli $x_{11}\cdot X + x_{22}\cdot X + X\cdot x_{11} + X\cdot x_{22} = (x_{11} + x_{22})\cdot X + X\cdot (x_{11} + x_{22}) = \sum_{i = 1}^{2}\pi_i((x_{11} + x_{22})\cdot X)$. Torej je $DS_1 = \sum_{i = 1}^2\pi_i((x_{11} + x_{22})\cdot X) + \sum_{i = 1}^2\pi_i(x_{12}x_{21})\cdot I = \sum_{i = 1}^2\pi_i((x_{11} + x_{22})\cdot X + x_{12}x_{21}\cdot I) = \llbracket (x_{11} + x_{22})\cdot X + x_{12}x_{21}\cdot I \rrbracket = pp_X^{-}(X)$.
+Matrike, ki preostanejo, so zelo blizu matriki $X$, zato bomo na desno stran prišteli $x_{11}\cdot X + x_{22}\cdot X + X\cdot x_{11} + X\cdot x_{22} = (x_{11} \oplus x_{22})\cdot X + X\cdot (x_{11} \oplus x_{22}) = \sum_{i = 1}^{2}\pi_i((x_{11} \oplus x_{22})\cdot X)$. Torej je $DS_1 = \sum_{i = 1}^2\pi_i((x_{11} \oplus x_{22})\cdot X) + \sum_{i = 1}^2\pi_i(x_{12}x_{21})\cdot I = \sum_{i = 1}^2\pi_i((x_{11} \oplus x_{22})\cdot X + x_{12}x_{21}\cdot I) = \llbracket (x_{11} \oplus x_{22})\cdot X + x_{12}x_{21}\cdot I \rrbracket = pp_X^{-}(X)$.
 Ko iz matrike $DS_1$ odmislimo vse člene, ki se nahajajo v $LS_1$, nam ostane matrika $$\begin{bmatrix}
-	 x_{11}x_{22} + x_{22}x_{11} & 0 \\
-	0 & x_{11}x_{22} + x_{22}x_{11}
+	 x_{11}x_{22} \oplus x_{22}x_{11} & 0 \\
+	0 & x_{11}x_{22} \oplus x_{22}x_{11}
 \end{bmatrix} = \begin{bmatrix}
 x_{11}x_{22} & 0 \\
 0 & x_{11}x_{22}
@@ -1265,7 +1269,9 @@ x_{11}x_{22} & 0 \\
 x_{22}x_{11} & 0 \\
 0 & x_{22}x_{11}
 \end{bmatrix}$$
-$LS_1$ je treba torej prišteti še $\sum_{i=1}^{2}\pi_i(x_{11}x_{22}\cdot I)$. Sledi torej $LS_2 = \sum_{i = 1}^{2}\pi_i(X^2) + \sum_{i = 1}^{2}\pi_i(x_{11}x_{22}\cdot I) = \sum_{i = 1}^{2}\pi_i(X^2 + x_{11}x_{22}\cdot I) = \llbracket X^2 + x_{11}x_{22}\cdot I \rrbracket = pp_X^{+}(X)$. V tem zadnjem koraku nismo pridobili nobenih ">odvečnih"< uteži, torej se postopek tukaj zaključi in sledi enakost $pp_X^{+}(X) = LS_2 = DS_1 = pp_X^{-}(X)$.
+$LS_1$ je treba torej prišteti še $\sum_{i=1}^{2}\pi_i(x_{11}x_{22}\cdot I)$. Sledi, da je $LS_2 = \sum_{i = 1}^{2}\pi_i(X^2) + \sum_{i = 1}^{2}\pi_i(x_{11}x_{22}\cdot I) = \sum_{i = 1}^{2}\pi_i(X^2 + x_{11}x_{22}\cdot I) = \llbracket X^2 + x_{11}x_{22}\cdot I \rrbracket = pp_X^{+}(X)$. V tem zadnjem koraku nismo pridobili nobenih ">odvečnih"< uteži, torej se postopek tukaj zaključi in sledi enakost $pp_X^{+}(X) = LS_2 = DS_1 = pp_X^{-}(X)$.
+
+Enak postopek lahko uporabimo za poljubno $n\times n$ matriko $X\in M_n(R)$. Začnemo torej z $LS_0 = X^n$ in $DS_0 = Tr_s(X^n)\cdot I$ oziroma $LS_1 = \llbracket X^n \rrbracket$ ter $DS_1 = \llbracket Tr_s(X^n)\cdot I\rrbracket$. Nato izmenično na vsaki strani ">popravimo"< t.~i.~ ">odvečne"< komponente, dokler ne dosežemo, da je na desni strani $pp_X^{-}(X)$, na levi pa $pp_X^{+}(X)$.
 \section*{Slovar strokovnih izrazov}
 
 \geslo{base of a semimodule}{baza polmodula -- linearno neodvisna podmnožica v polmodulu, ki ga generira}
