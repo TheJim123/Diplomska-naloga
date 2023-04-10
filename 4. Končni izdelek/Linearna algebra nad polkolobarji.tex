@@ -10,10 +10,10 @@
 
 %  V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga organizacije dela --
 %  v katerem poglavju/razdelku je kaj, pač pa le opis vsebine.
-\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo na posebnem primeru znanim pod imenom dioid. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$ polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj s stališča linearne algebre ima že odgovore. V nalogi bodo obravnavana zgolj osnovna izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$, lastnosti in obrnljivost matrik nad polkolobarjem $R$ ter Cayley-Hamiltonov izrek.}
+\povzetek{Delo obravnava algebraično strukturo polkolobarja z dodatno pozornostjo dano na posebni primer dioida. Množica $R$ je polkolobar za binarni notranji operaciji $\oplus$ in $\otimes$, če je $(R, \oplus)$ komutativen monoid z enoto $0$, $(R, \otimes)$ monoid z enoto $1$, med $\otimes$ in $\oplus$ velja leva ali desna distributivnost ter velja, da $0$ izniči $\otimes$, torej $\forall a \in R;~a\otimes 0 = 0\otimes a = 0$. Če je $(R, \oplus)$ poleg tega še delno urejen s kanonično relacijo $\leq$, polkolobarju $(R, \oplus, \otimes)$ pravimo dioid. Tako pojem dioida kot pojem polkolobarja obstajata že nekaj časa in mnogo klasičnih vprašanj v povezavi s temi strukturami, s stališča linearne algebre, že ima odgovore. V nalogi bodo obravnavana zgolj osnovna izmed teh. Obravnavana vprašanja so predvsem centrirana na lastnostih polkolobarjev in dioidov ter posplošitvah konceptov iz klasične linearne algebre nad polji, kot so obstoj in lastnosti baz $R$-polmodula nad polkolobarjem $R$, lastnosti in obrnljivost matrik nad polkolobarjem $R$ ter Cayley-Hamiltonov izrek.}
 
 %  Prevod slovenskega povzetka v angleščino.
-\abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$ if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for a long time now and as such most of the classical questions relating to the structures from the perspective of linear algebra have already been answered. The paper will present some of these results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields, such as the existence and properties of bases of a $R$-semimodule, the properties and invertibility of a matrix over a semiring $R$ and the Cayley-Hamilton theorem.}
+\abstract{This paper discusses the algebraic structure of a semiring, with additional attention given to the special case of a dioid. The set $R$ is a semiring for the binary internal laws $\oplus$ and $\otimes$ if $(R, \oplus)$ is a commutative monoid with the neutral element $0$, $(R, \otimes)$ is a monoid with the neutral element $1$, $\otimes$ is left- or right-distributive with respect to $\oplus$ and if $0$ is absorbing for $\otimes$, i. e. $\forall a \in R; a\otimes 0 = 0\otimes a = 0$. If additionally $(R, \oplus)$ is also ordered with the canonical order relation $\leq$, we instead call $(R, \oplus, \otimes)$ a dioid. Both terms have existed for some time now and most of the classical questions relating to the structures, from the perspective of linear algebra, have already been answered. From among those, this paper will present some of the more elementary results. In particular, the focus will be on the properties of semirings and dioid and on generalizations of concepts from classical linear algebra over fields such as the existence and properties of bases of a $R$-semimodule, the properties and invertibility of a matrix over a semiring $R$ and the Cayley-Hamilton theorem.}
 
 % navedite vsaj eno klasifikacijsko oznako --
 % dostopne so na www.ams.org/mathscinet/msc/msc2020.html
@@ -83,23 +83,24 @@
 \tableofcontents
 
 \section{Uvod}\label{sect:intro}
-Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obravnavati številske množice. Med primere spadajo nenegativni odseki celih, racionalnih ter realnih števil (opremljeni s standardnim seštevanjem in množenjem), t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti v podjetjih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
+Polkolobarji so algebraična struktura, s katero se srečamo čim začnemo obravnavati številske množice. Med primere spadajo nenegativni odseki celih, racionalnih ter realnih števil (opremljeni s standardnim seštevanjem in množenjem), t.~i.~tropski polkolobarji, ki se uporabljajo za ocenjevanje učinkovitosti v podjetjih itd. Uporabo imajo tudi v teoretični računalniški znanosti in kriptografiji. 
 
-Kljub njihovi uporabnosti in pogostem pojavljanju, tako polkolobarji kot strukture nad njimi v sklopu standardne matematične izobrazbe eksplicitno ne prejmejo kaj dosti pozornosti. Poleg popolnoma praktičnih motivacij za obravnavo teh struktur se izkaže, da nas obravnava polkolobarjev oz. linearne algebre nad njimi privede tudi do bistva definicij določenih lastnosti in konceptov v klasični linearni algebri nad vektorskimi prostori. 
+Kljub njihovi uporabnosti in pogostemu pojavljanju, tako polkolobarji kot strukture nad njimi, v sklopu standardne matematične izobrazbe, eksplicitno ne prejmejo kaj dosti pozornosti. Poleg popolnoma praktičnih motivacij za obravnavo teh struktur se izkaže, da nas obravnava polkolobarjev oz. linearne algebre nad njimi privede tudi do bistva definicij določenih lastnosti in konceptov v klasični linearni algebri nad polji. 
 
-V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji, njihovi posebni primeri in razne trditve, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmoduli kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, kot je na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku, v zadnjem poglavju pa bomo obravnavali posplošitev determinante, karakterističnega polinoma in navedli Cayley-Hamiltonov izrek.
+V tem delu bodo obravnavane nekatere razmeroma osnovne lastnosti polkolobarjev (in v manjši meri tudi dioidov) ter linearne algebre nad njimi. V drugem razdelku bodo na kratko definirani in obravnavani polkolobarji in dioidi ter razne trditve o njih, v večji meri skupaj z dokazi. V tretjem razdelku bodo definirani polmoduli kot posplošitve modulov in obravnavavana bodo tipična vprašanja, ki se nanašajo na vektorske prostore v klasični linearni algebri, na primer vprašanje obstoja in kardinalnosti baze. Sledila bo definicija linearnih preslikav in matrik nad polkolobarji ter obravnava lastnosti le teh v četrtem razdelku, v zadnjem poglavju pa bomo obravnavali posplošitev determinante in karakterističnega polinoma ter navedli Cayley-Hamiltonov izrek.
 
-Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(E, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Osnovni primer so enačbe, s katerimi se spoznamo že v osnovni šoli. Vzemimo za primer množico naravnih števil skupaj z $0$, torej $\No$, opremljeno s standardnim seštevanjem ter množenjem. Naj bosta $a, b\in \No$ parametra v enačbi $a + x = b$. Ta enačba ima na $(\No, +, \cdot)$ rešitev, čim je $a \leq b$. Naslednji zgled je povzet iz \cite[str. 1 -- 2]{bib:Gondran}.
+Za začetek obravnavajmo motivacijski primer, ki nam bo pokazal, da četudi operaciji $\oplus$ in $\otimes$ na neki algebrajski strukturi $(R, \oplus, \otimes)$ nista obrnljivi, še vedno lahko rešujemo določene tipe enačb. Osnovni primer so enačbe, s katerimi se spoznamo že v osnovni šoli. Vzemimo za primer množico naravnih števil skupaj z $0$, torej $\No$, opremljeno s standardnim seštevanjem ter množenjem. Naj bosta $a, b\in \No$ parametra v enačbi $a + x = b$. Ta enačba ima na $(\No, +, \cdot)$ rešitev, čim je $a \leq b$. Naslednji zgled je povzet iz \cite[str. 1 -- 2]{bib:Gondran}.
 
 \begin{zgled}
-	Množico nenegativnih realnih števil $\Pplus{R}$ opremimo s standardnima operacijiama seštevanja in množenja in to strukturo označimo z oznako $(\Pplus{R}, +, \cdot)$. Na tej strukturi ima enačba $x = a\cdot x + b$ rešitev za vsak $b$ čim je $a < 1$: $$ x = \frac{1}{1 - a} \cdot b = \sum_{i = 0}^{\infty}a^i \cdot b = (1 + a + a^2 + \ldots)\cdot b$$
+	Množico nenegativnih realnih števil $\Pplus{R}$ opremimo s standardnima operacijiama seštevanja in množenja in to strukturo označimo z $(\Pplus{R}, +, \cdot)$. Na tej strukturi ima enačba $x = a\cdot x + b$ rešitev za vsak $b$ čim je $a < 1$: $$ x = \frac{1}{1 - a} \cdot b = \sum_{i = 0}^{\infty}a^i \cdot b = (1 + a + a^2 + \ldots)\cdot b$$
 \end{zgled}
 
-Izkaže se, da lahko nad polkolobarji počnemo več kot le reševanje preprostih enačb. Da to vidimo je dovolj, da obravnavamo kvadratne matrike nad $\Pplus{R}$. Naj bo $A \in\R^{n\times n}$ realna kvadratna matrika za katero velja, da so vse vrednosti v njej nenegativne, torej $a_{ij} \geq 0, \forall i, j \in \{1, 2, \ldots, n\}$. Perron-Frobeniusov izrek nam potem zagotovi, da bo $A$ imela nenegativno realno lastno vrednost $\lambda$, enako njenemu spektralnemu radiju $\rho(A)$, ter da bo pripadajoč lasten vektor $w$ imel same nenegativne realne koeficiente, torej $w_i \geq 0; \forall i\in \{1, 2, \ldots, n\}$. 
+Izkaže se, da lahko nad polkolobarji počnemo več kot le reševanje preprostih enačb. Da to vidimo je dovolj, da obravnavamo kvadratne matrike nad $\Pplus{R}$. 
+Naj bo $A \in\R^{n\times n}$ realna kvadratna matrika za katero velja, da so vse vrednosti v njej nenegativne, torej $a_{ij} \geq 0, \forall i, j \in \{1, 2, \ldots, n\}$. Perron-Frobeniusov izrek nam potem zagotovi, da bo $A$ imela nenegativno realno lastno vrednost $\lambda$, enako njenemu spektralnemu radiju $\rho(A)$, ter da bo pripadajoč lasten vektor $w$ imel same nenegativne realne koeficiente, torej $w_i \geq 0;~\forall i\in \{1, 2, \ldots, n\}$. 
 Za matriko $A$, za katero veljalo pogoji iz prej omenjenega izreka, lahko rečemo, da v resnici spada v množico $\Pplus{R}^{n\times n}$. Ker je ta množica polkolobar, kot bomo premislili kasneje, lahko torej govorimo, ne samo o rešitvah enačb nad polkolobarji, ampak tudi o matrikah in lastnih vrednostih nad temi strukturami, čeprav niti $(\Pplus{R}, +, \cdot)$ niti $(\Pplus{R}\setminus\{0\}, +, \cdot)$ nista polji. Ta tip matrik (in prej omenjen izrek) se pojavlja na področju verjetnosti, predvsem v teoriji dinamičnih sistemov. Nepresenetljivo, struktura $(\Pplus{R}, +, \cdot)$ tudi igra pomembno vlogo v teoriji mere.
 
 \section{Monoidi, polkolobarji in dioidi:}\label{sect:basicstructures}
-V tem razdelku se bomo prvič srečali s pojmi, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[Poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. 
+V tem razdelku se bomo prvič srečali s pojmi, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. 
 \subsection{Monoidi:}\label{subsect:monoid}
 Za začetek bomo osvežili znanje o monoidih in dokazali nekaj relevantnih rezultatov, preden se lotimo obravnave novih konceptov. 
 \begin{definicija}
@@ -120,7 +121,7 @@ Dodatno navedimo še definicijo relacije urejenosti, saj bodo tudi te igrale pom
 	\end{enumerate}
 Če je poleg tega še sovisna, torej če velja $\forall a, b \in X: a \leq b \lor b \leq a$, pravimo, da je relacija \pojem{linearna urejenost}.
 \end{definicija}
-Tudi monoidi, kot množice, lahko premorejo kako relacijo urejenosti, ki je lahko v neki zvezi z operacijo na monoidu, ali pa ne. Iz tega razloga uvedemo nov pojem za tiste monoide, v katerih velja določena zveza.
+Tudi monoidi, kot množice, lahko premorejo kako relacijo urejenosti, ki je lahko, a ni nujno, v neki zvezi z operacijo na monoidu. Iz tega razloga uvedemo nov pojem za tiste monoide, v katerih velja določena zveza.
 \begin{definicija}
 	Monoid $(M, \ast)$ je \pojem{urejen}, če je na njem definirana relacija urejenosti $\leq$, ki zadošča pogoju: \begin{align*} 
 	a \leq \acute{a} \Rightarrow ((a \ast \hat{a} \leq \acute{a} \ast \hat{a})~\&~(\hat{a} \ast a \leq \hat{a}\ast \acute{a})) ~\text{za vse}~a, \acute{a},\hat{a}\in M.
@@ -145,7 +146,7 @@ S pomočjo navedenih definicij bomo sedaj izrazili in dokazali prvi izrek te nal
 \end{izrek}
 \begin{dokaz}
 	Naj bo $(G, \oplus)$ grupa in za vsak element $a\in G$ označimo njegov inverz kot $-a$. Denimo, da je ta grupa tudi kanonično urejena in naj bosta $x$ ter $y$ dva poljubna različna elementa iz $G$ (torej $x\neq y$).
-	Ker je $(G, \oplus)$ grupa obstaja tak $z\in G$, da je $x = y \oplus z$, torej je $y \leq x$. Konkretno: vzamemo $z = (-y)\oplus x$. Poleg tega obstaja tak $w\in G$, da je $y = x \oplus w$ (vzamemo kar $w = (-x)\oplus y$), torej je $x \leq y$. Potem po antisimetričnosti $\leq$ sledi $a = b$, kar nas privede v protislovje.
+	Ker je $(G, \oplus)$ grupa obstaja tak $z\in G$, da je $x = y \oplus z$, torej je $y \leq x$. Konkretno: vzamemo $z = (-y)\oplus x$. Poleg tega obstaja tak $w\in G$, da je $y = x \oplus w$ (vzamemo kar $w = (-x)\oplus y$), torej je $x \leq y$. Potem po antisimetričnosti $\leq$ sledi, da je $a = b$, kar nas privede v protislovje.
 \end{dokaz}
 
 \begin{opomba}
@@ -166,17 +167,17 @@ Kanonično urejeni monoidi imajo še eno zanimivo lastnost, ki nam je znana iz r
 	Lastnosti iz trditve \ref{trd:poz} pravimo \pojem{pozitivnost}, za strukturo, ki ima to lastnost, pa pravimo, da zadošča pogoju pozitivnosti. Tipičen primer, ki zadošča tej lastnosti, je $(\No, +)$. 
 \end{opomba}
 
-Za konec tega odseka uporabimo lastnost pozitivnosti v naslednjem izreku.
-\begin{izrek}
+Za konec tega podpoglavja uporabimo lastnost pozitivnosti v naslednjem izreku.
+\begin{izrek}\label{izr:poz}
 Naj bo vsak element $x$ komutativnega monoida $(M, \oplus)$ okrajšljiv, torej $\forall a, b\in M:$ $$a\oplus x = b\oplus x \Rightarrow a = b$$ in $$x\oplus a = x\oplus b \Rightarrow x = y$$ Dodatno, naj $M$ zadošča pogoju pozitivnosti. Potem je kanonična šibka urejenost definirana na $M$ antisimetrična in $M$ je kanonično urejen.
 \end{izrek}
-\begin{dokaz} Denimo, da za neka elementa $x, y\in M$ velja $x\leq y$ in $y\leq x$. Potem obstajata $z, w\in M$, da velja $y = x \oplus z$ in $x = y \oplus w$. Ko prvo enakost vstavimo v drugo, dobimo $x \oplus 0 = x = (x \oplus z) \oplus w = x \oplus (z\oplus w)$, od tod pa, zaradi okrajšljivosti elementa $x$, sklepamo $z\oplus w = 0$. Zaradi pozitivnosti sledi $z = 0$ in $w = 0$, od tod pa $x = y$.
+\begin{dokaz} Denimo, da za neka elementa $x, y\in M$ velja $x\leq y$ in $y\leq x$. Potem obstajata $z, w\in M$, da velja $y = x \oplus z$ in $x = y \oplus w$. Ko prvo enakost vstavimo v drugo, dobimo $x \oplus 0 = x = (x \oplus z) \oplus w = x \oplus (z\oplus w)$, od tod pa, zaradi okrajšljivosti elementa $x$, sklepamo, da je $z\oplus w = 0$. Zaradi pozitivnosti sledi $z = 0$ in $w = 0$, od tod pa $x = y$.
 \end{dokaz}
 
 \subsection{Polkolobarji} \label{subsect:semiring}
 Sedaj, ko smo osvežili in dopolnili znanje o monoidih, se lahko lotimo polkolobarjev.
 \begin{definicija}
-	Za neprazno množico $R$, ki je opremljena z notranjima binarnima operacijama $\oplus$ in $\otimes$ pravimo, da je \pojem{polkolobar}, če zanjo velja naslednje:
+	Za neprazno množico $R$, ki je opremljena z notranjima binarnima operacijama $\oplus$ in $\otimes$, pravimo, da je \pojem{polkolobar}, če izpolnjuje naslednje pogoje:
 	\begin{enumerate}
 		\item $(R, \oplus)$ je komutativen monoid z nevtralnim elementom $0$
 		\item $(R, \otimes)$ je monoid z enoto $1$
@@ -187,17 +188,17 @@ Sedaj, ko smo osvežili in dopolnili znanje o monoidih, se lahko lotimo polkolob
 \end{definicija}
 V posebnem primeru, ko je $1 = 0$, za polkolobar $R$ velja $R = \{0\}$. Ker nas ta trivialen primer ne zanima, od zdaj naprej predpostavimo $1 \neq 0$.
 \begin{opomba}
-	Dodatno lahko definirano \pojem{levi polkolobar} na enak način kot polkolobar, le da zahtevamo samo levo distributivnost in analogno lahko definiramo tudi \pojem{desni polkolobar}. $(R,\oplus, \otimes)$ je potem polkolobar če je hkrati levi in desni polkolobar.
+	Dodatno lahko definiramo \pojem{levi polkolobar} na enak način kot polkolobar, le da zahtevamo samo levo distributivnost. Analogno lahko definiramo tudi \pojem{desni polkolobar}. $(R,\oplus, \otimes)$ je potem polkolobar če je hkrati levi in desni polkolobar.
 \end{opomba}
 \begin{opomba}
 	V resnici bi lahko gledali še malo manj opremljene strukture, t.~i.~pred-polkolobarje (">pre-semirings"< v angleščini). Definicija zanje je identična kot za polkolobar, le da ne zahtevamo obstoja enot ($0$ in $1$) za operaciji in tudi ne lastnosti \ref{def:izniči} iz definicije polkolobarja. V nekateri literaturi pod imenom polkolobarja obravnavajo pred-polkolobar, ki ima aditivno enoto (ne pa multiplikativne).
 \end{opomba}
-\begin{zgled}
-	Nenegativna cela števila $\No$ s standardnim seštevanjem in množenjem tvorijo polkolobar. Enako velja za nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$ za standardno seštevanje in množenje.
-\end{zgled}
+
+Po hitrem premisleku vidimo, da nenegativna cela števila $\No$ s standardnim seštevanjem in množenjem tvorijo polkolobar. Enako velja za nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$ za standardno seštevanje in množenje.
+
 Polkolobarji pa seveda niso omejeni samo na številske množice. V naslednjem zgledu navedemo primer polkolobarja nad množicami:
 \begin{zgled} \label{zgled:Potset}
-	Naj bo $X$ neprazna množica in $P(X)$ potenčna množica množice $X$. Potem je $(P(X), \cup, \cap)$ polkolobar. To bomo tudi utemeljili.
+	Naj bo $X$ neprazna množica in $P(X)$ potenčna množica množice $X$. Z $\cup$ označimo operacijo unije, s $\cap$ pa operacijo preseka. Potem je $(P(X), \cup, \cap)$ polkolobar. To bomo tudi utemeljili.
 	
 	$P(X)$ je očitno zaprta za $\cup$ in za $\cap$. Enota za $\cup$ je $\emptyset$, enota za $\cap$ pa kar $X$. Obe operaciji sta nad $P(X)$ asociativni ter komutativni, med njima pa velja tudi obojestranska distributivnost. Ne samo, da je $(P(X), \cup, \cap)$ polkolobar, je tudi komutativen polkolobar.
 \end{zgled}
@@ -210,23 +211,23 @@ Občasno nam bo prišlo prav, če bomo imeli oznake za množico aditivno obrnlji
 
 Opazimo lahko, da multiplikativna enota ni nujno vsebovana v $V(R)$. Da to vidimo, je dovolj vzeti polkolobar iz zgleda \ref{zgled:Potset}, kjer ne obstaja taka množica $Y$, da bi veljalo $Y \cup X = \emptyset$.
 
-V nadaljevanju nam bo prišla prav tudi naslednja lema iz \cite[Lema 2\,1]{bib:Tanbase}.
+V nadaljevanju nam bo prišla prav tudi naslednja lema iz \cite[lema 2\,1]{bib:Tanbase}.
 
 \begin{lema} \label{lema:invvpolkolob}
 	Naj bo $(R, \oplus, \otimes)$ komutativen polkolobar. 
 	
-	Potem velja $\forall p, q\in V(R), \forall r\in R: (-p)\otimes r = - (p\otimes r)~\&~ (-p)\otimes(-q) = p\otimes q$.
+	Potem za vsaka $p, q\in V(R)$ in za vsak $r\in R$ velja, da je $(-p)\otimes r = - (p\otimes r)~\&~ (-p)\otimes(-q) = p\otimes q$.
 \end{lema}
 
 \begin{dokaz}
-	Očitno velja $-p\in V(R)$ in $-(-p) = p~\forall p\in V(R)$. Poleg tega za vse $p, q\in V(R)$ in vse $r\in R$ velja $(-p)\otimes r \oplus p \otimes r = ((-p) \oplus p)\otimes r = 0\otimes r = 0$, torej $(-p)\otimes r = -(p\otimes r)$. Potem je pa tudi $(-p)\otimes(-q) = -(p\otimes(-q)) = -(-(p\otimes q)) = p\otimes q$.
+	Naj bosta $p, q \in V(R)$ in naj bo $r\in R$. Očitno velja, da je $-p\in V(R)$ in $-(-p) = p~\forall p\in V(R)$. Poleg tega za vse $p, q\in V(R)$ in vse $r\in R$ velja $(-p)\otimes r \oplus p \otimes r = ((-p) \oplus p)\otimes r = 0\otimes r = 0$, torej je $(-p)\otimes r = -(p\otimes r)$. Potem je pa tudi $(-p)\otimes(-q) = -(p\otimes(-q)) = -(-(p\otimes q)) = p\otimes q$.
 \end{dokaz}
 
 Pri spoznavanju grup, kolobarjev in ostalih algebraičnih struktur se neizogibno pojavi obravnava njihovih produktov. Tako kot pri kartezičnih produktih prej omenjenih struktur, tudi za polkolobarje v naslednjem zgledu obravnavamo, ali je produkt polkolobarjev, opremljen z induciranima operacijama, spet polkolobar. 
 
 \begin{zgled}
 	\label{zgled:prodpolkolobar}
-Denimo, da imamo $m$ polkolobarjev $(R_{i}, \oplus_{i}, \otimes_{i})$; $i\in \{1, 2, \ldots, m\}$. Potem označimo $R = R_1 \times \ldots \times R_m$ in elementi iz $R$ so oblike $x = \begin{bmatrix}
+Denimo, da imamo $m$ polkolobarjev $(R_{i}, \oplus_{i}, \otimes_{i})$; $i\in \{1, 2, \ldots, m\}$. Potem označimo $R = R_1 \times \ldots \times R_m$ in vidimo, da so elementi iz $R$ oblike $x = \begin{bmatrix}
 	x_1 \\
 	\vdots \\
 	x_m
@@ -252,23 +253,25 @@ Na ta način klasificiramo vse polkolobarje -- njihov razred razdelimo na razred
 Sedaj definirajmo in obravnavajmo še podstrukture polkolobarjev, torej podpolkolobarje.
 
 \begin{definicija}
-	Naj bo $(R, \oplus, \otimes)$ (levi) polkolobar. Neprazna množica $P$ je (levi) podpolkolobar v $R$, če je podmnožica v $R$ in če je zaprta za operaciji $\oplus_{|P}$ in $\otimes_{|P}$, ki ju podeduje od $R$. Operaciji $\oplus_{|P}$ in $\otimes_{|P}$ sta torej zožitvi $\oplus$ in $\otimes$ na $P$.
+	Naj bo $(R, \oplus, \otimes)$ polkolobar. Neprazna množica $P$ je podpolkolobar v $R$, če je podmnožica v $R$ in če je $(P, \oplus_{|P}, \otimes_{|P})$ polkolobar. Pri tem sta $\oplus_{|P}$ in $\otimes_{|P}$ zožitvi $\oplus$ in $\otimes$ na $P$.
 \end{definicija}
 
+Iz zgornje definicije hitro sledi naslednja trditev.
+
 \begin{trditev}
-	Naj bo $(R, \oplus, \otimes)$ (levi) polkolobar in $P\subseteq R$ neprazna podmnožica v $R$. Tedaj je $P$ (levi) podpolkolobar v $R$, čim je zaprt za zoženi operaciji in vsebuje obe enoti.
+	Naj bo $(R, \oplus, \otimes)$ polkolobar in $P\subseteq R$ neprazna podmnožica v $R$. Tedaj je $P$ podpolkolobar v $R$, čim je zaprt za zoženi operaciji $\oplus_{|P}$ in $\otimes_{|P}$ ter vsebuje obe enoti.
 \end{trditev}
 \begin{dokaz}
 	Denimo, da velja pogoj iz trditve. Operacija $\oplus_{|P}$ potem ima enoto v $P$ in od $\oplus$ podeduje asociativnost in komutativnost. Torej je $(P, \oplus_{|P})$ komutativen monoid. Podobno $\otimes_{|P}$ podeduje asociativnost in ima v $P$ enoto, torej je $(P, \otimes_{|P})$ monoid.
-	Tudi (leva) distributivnost se podeduje od operacij v $R$ in enako velja za lastnost, da aditivna enota izniči $\otimes_{|P}$ in s tem vidimo, da je $(P, \oplus_{|P}, \otimes_{|P})$ res podpolkolobar.
+	Tudi distributivnost se podeduje od operacij v $R$ in enako velja za lastnost, da aditivna enota izniči $\otimes_{|P}$ in s tem vidimo, da je $(P, \oplus_{|P}, \otimes_{|P})$ res polkolobar, torej je tudi podpolkolobar v $R$.
 \end{dokaz}
 
-Zgornji dokaz je dovolj preprost, da bi se ga dalo brez težav opustiti. Kljub temu ga navedemo, da dodatno poudarimo, da relativna preprostost struktur, s katerimi imamo trenutno opravka, v resnici ne oteži naše obravnave osnovnih konceptov. Zgoraj navedena trditev in dokaz sta izjemno podobna analogni trditvi in pripadajoćemu dokazu za kolobarje.
+Zgornji dokaz je dovolj preprost, da bi se ga dalo brez težav opustiti. Kljub temu ga navedemo, da dodatno poudarimo, da relativna preprostost struktur, s katerimi imamo trenutno opravka, v resnici ne oteži naše obravnave osnovnih konceptov. Zgoraj navedena trditev in dokaz sta izjemno podobna analogni trditvi in pripadajočemu dokazu za kolobarje.
 	
-Sedaj preidemo na preslikave med polkolobarji, specifično homomorfizme, ki so definirani na skoraj enak način kot homomorfizmi kolobarjev.
+Sedaj preidemo na preslikave med polkolobarji, specifično homomorfizme. Ti so definirani na skoraj enak način kot homomorfizmi kolobarjev, kar pokaže spodnja definicija.
 	
 \begin{definicija}
-	Naj bosta $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$ (leva) polkolobarja. Naj bosta $0$ in $1$ enoti v $R$ ter $e$ in $\varepsilon$ enoti v $P$. Preslikava $\map{\phi}{R}{P}$ je homomorfizem polkolobarjev, če zadošča naslednjim pogojem:
+	Naj bosta $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$  polkolobarja. Naj bo $0$ nevtralni element in $1$ enota v $R$ ter $e$ nevtralni element in $\varepsilon$ enota v $P$. Preslikava $\map{\phi}{R}{P}$ je homomorfizem polkolobarjev, če zadošča naslednjim pogojem:
 	\begin{itemize}
 		\item $\phi(0) = e$
 		\item $\phi(1) = \varepsilon$
@@ -293,27 +296,27 @@ Preden premaknemo pozornost na dioide, omenimo še, da lahko, tako kot za koloba
 	\end{itemize}
 \end{definicija}
 Preprost primer ideala polkolobarja najdemo v množici sodih naravnih števil (označeno z $2\N$) v $(\No, +, \cdot)$. Vsota dveh sodih števil je spet sodo število, poleg tega pa je vsak produkt poljubnega števila iz $\No$ in sodega števila spet sodo število.
+
 \subsection{Dioidi}\label{subsect:dioid}
 Kot smo že napovedali v prejšnjem podpoglavju, zahvaljujoč se izreku \ref{izr:kdunegrp}, lahko obravnavamo podkolobarje, ki so opremljeni s kanonično delno ureditvijo in se posledično ne obnašajo kot nam že znani kolobarji. Tem strukturam pravimo dioidi. Vseeno zapišimo formalno definicijo preden se lotimo obravnave.
 \begin{definicija}
-	Polkolobarju $(R, \oplus, \otimes)$, na katerem je kanonična relacija šibke urejenosti (definirana preko $\oplus$) delna urejenost, pravimo \pojem{dioid}. Komutativnemu polkolobarju $R$, na katerem je kanonična relacija šibke urejenosti delna urejenost, pravimo \pojem{komutativen dioid}.
+	Polkolobarju $(R, \oplus, \otimes)$, na katerem je kanonična relacija šibke urejenosti, definirana preko $\oplus$, delna urejenost, pravimo \pojem{dioid}. Komutativnemu polkolobarju $R$, na katerem je kanonična relacija šibke urejenosti delna urejenost, pravimo \pojem{komutativen dioid}.
 \end{definicija}
 	
-	Upoštevajoč opombo \ref{opomb:poz} lahko klasificiramo dioide kot polkolobarje, ki zadoščajo pogoju pozitivnosti.
+	Upoštevajoč izrek \ref{izr:poz} lahko klasificiramo dioide kot polkolobarje, ki so, glede na $\oplus$, okrajšljivi in zadoščajo pogoju pozitivnosti.
 \begin{opomba}
 	Če namesto (obojestranskega) polkolobarja vzamemo levi ali desni polkolobar in v njem opremimo $(R, \oplus)$ s kanonično delno urejenostjo, dobljeni strukturi pravimo levi oz. desni dioid.
 \end{opomba}
 
 Preprosti primer dioida je množica nenegativnih celih števil $\No$, opremljena z navadnim seštevanjem in množenjem ter kanonično delno (celo linearno) urejenostjo. Dodatno navedemo še nenegativna racionalna števila $\Pplus{Q}$ in nenegativna realna števila $\Pplus{R}$.
 
-Podobno, kot se množica celih števil $\Z$ s standardnim seštevanjem $+$ smatra za ">prototip"< abelovih grup, nam $(\No, +, \cdot)$ služij kot ">prototip"< dioidov. Seveda dioidi niso omejeni zgolj na nenegativne odseke številskih množic opremljene s $+$ in $\cdot$. Znane množice lahko opremimo tudi z manj standardnimi operacijami in tako pridobimo dioide, kot bo pokazal naslednji zgled.
+Podobno, kot se množica celih števil $\Z$ s standardnim seštevanjem $+$ smatra za ">prototip"< abelovih grup, nam $(\No, +, \cdot)$ služi kot ">prototip"< dioidov. Seveda dioidi niso omejeni zgolj na nenegativne odseke številskih množic opremljene s $+$ in $\cdot$. Znane množice lahko opremimo tudi z manj standardnimi operacijami in tako pridobimo dioide. To bo tudi pokazal naslednji zgled.
 
 \begin{zgled}\label{zgled:tropdioid}
-	Z $\bar{\R}$ označimo množico $\R \cup \{-\infty, +\infty\}$. Potem sta $(\bar{\R}, \min, +)$ in $(\bar{\R}, \max, +)$ dioida. V primeru prvega dioida je nevtralni element $+\infty$, enota pa je $0$, v primeru drugega pa sta enoti $-\infty$ in $0$. V obeh primerih sta obe operaciji komutativni in asociativni, med njima tudi očitno velja distributivnost in nevtralni element prve operacije izniči $+$. Obravnavani strukturi sta torej komutativna polkolobarja.\\
-	\\
-	 Dodatno vidimo da je kanonična šibka urejenost, definirana preko $\min$, tudi antisimetrična: $a\leq b \Rightarrow \exists c\in \bar{\R};~b = \min\{a, c\}$ in $b\leq a \Rightarrow \exists d\in \bar{\R};~a = \min\{b, d\}$, torej je $b = \min\{\min\{b, d\}, c\}$ oz. $b = \min\{b, d, c\} = \min\{b, \min\{d, c\}\}$. Sledi, da je $\min\{c, d\} = +\infty$, kar je možno edino ko $c = +\infty = d$, torej je $a = b$. Na enak način pokažemo antisimetričnost kanonične urejenosti definirane preko $\max$. \\
-	\\
-	Torej sta oba polkolobarja res tudi dioida. $(\bar{\R}, \min, +)$ in $(\bar{\R}, \max, +)$ imenujemo tropska polkolobarja oz. tropska dioida, odvisno od konteksta.
+	Z $\bar{\R}$ označimo množico $\R \cup \{-\infty, +\infty\}$. Potem sta $(\bar{\R}, \min, +)$ in $(\bar{\R}, \max, +)$ dioida. V primeru prvega dioida je nevtralni element $+\infty$, v primeru drugega pa $-\infty$. V obeh primerih je enota $0$ in vse tri operacije so komutativne ter asociativne. Med $\max$ in $+$ ter $\min$ in $+$ tudi očitno velja distributivnost in tako $\infty$ kot $-\infty$ izničita $+$. Obravnavani strukturi sta torej komutativna polkolobarja.
+	 Dodatno vidimo, da je kanonična šibka urejenost, definirana preko $\min$, tudi antisimetrična: $a\leq b \Rightarrow \exists c\in \bar{\R};~b = \min\{a, c\}$ in $b\leq a \Rightarrow \exists d\in \bar{\R};~a = \min\{b, d\}$, torej je $b = \min\{\min\{b, d\}, c\}$ oz. $b = \min\{b, d, c\} = \min\{b, \min\{d, c\}\}$. Sledi, da je $\min\{c, d\} = +\infty$, kar je možno zgolj ko je $c = +\infty = d$, torej je $a = b$. Na enak način pokažemo antisimetričnost kanonične urejenosti definirane preko $\max$.
+
+	Oba polkolobarja sta torej res dioida. $(\bar{\R}, \min, +)$ in $(\bar{\R}, \max, +)$ imenujemo tropska polkolobarja oz. tropska dioida, odvisno od konteksta.
 \end{zgled}
 
 \begin{trditev}
@@ -321,40 +324,16 @@ Podobno, kot se množica celih števil $\Z$ s standardnim seštevanjem $+$ smatr
 \end{trditev}
 \begin{dokaz}
 	To, da je $\leq$ usklajena z operacijo $\oplus$ vemo že iz definicije dioida. Pokažimo torej enako še za $\otimes$.
-	Vemo, da velja $a\leq b \iff \exists c\in R: b = a \oplus c$. Potem iz $a \leq b$ za $\forall x\in R$ sledi $(a \oplus c) \otimes x = b \otimes x$.
+	Vemo, da velja $a\leq b \iff \exists c\in R: b = a \oplus c$. Potem iz $a \leq b$ za vsak $x\in R$ sledi $(a \oplus c) \otimes x = b \otimes x$.
 	Po distributivnosti potem sledi $(a\otimes x) \oplus (c \otimes x) = b\otimes x$. Potem je pa $a\otimes x \leq b\otimes x ~\forall x\in R$. Podobno pokažemo tudi $x \otimes a \leq x \otimes b$. Sledi, da je $\leq$ usklajena z $\otimes$.
 \end{dokaz}
 
-Tudi pri dioidih lahko obravnavamo strukturo njihovih produktov. Denimo, da imamo $m$ dioidov $(R_{i}, \oplus_{i}, \otimes_{i})$, jih zmnožimo v $R = R_1 \times \ldots \times R_m$ in na to množico vpeljemo operaciji $\oplus$ in $\otimes$ na naslednji način: \begin{align*}
-	\forall x, y\in R: x \oplus y = \begin{bmatrix}
-		x_1 \\
-		\vdots \\
-		x_m
-	\end{bmatrix} \oplus \begin{bmatrix}
-		y_1 \\
-		\vdots \\
-		y_m
-	\end{bmatrix} = \begin{bmatrix}
-		x_1 \oplus_{1} y_1 \\
-		\vdots \\
-		x_m \oplus_{m} y_m
-	\end{bmatrix}
-\end{align*}
+Tudi pri dioidih lahko obravnavamo strukturo njihovih produktov. Vrnimo se k zgledu \ref{zgled:prodpolkolobar}, v katerem smo že premislili, da je $(R, \oplus, \otimes)$ polkolobar. Hitro vidimo, da je $\oplus$ usklajena s kanonično delno ureditvijo na $R$, saj za vsaka $x = \begin{bmatrix} x_1 \\ \vdots \\ x_m \end{bmatrix}$ in $y = \begin{bmatrix} y_1 \\ \vdots \\ y_m \end{bmatrix}$ iz $R$ velja $x \leq y \iff x_1 \leq_1 y_1 ~\&~ \ldots ~\&~ x_m \leq_m y_m$.
 
-in \begin{align*}
-	\forall x, y\in R: x \otimes y = \begin{bmatrix}
-		x_1 \otimes_{1} y_1 \\
-		\vdots \\
-		x_m \otimes_{m} y_m
-	\end{bmatrix}
-\end{align*}
-
-V zgledu \ref{zgled:prodpolkolobar} smo že premislili, da je $(R, \oplus, \otimes)$ polkolobar. Poleg tega hitro vidimo, da je $\oplus$ usklajena s kanonično delno ureditvijo na $R$, saj za vsaka $x = \begin{bmatrix} x_1 \\ \vdots \\ x_m \end{bmatrix}$ in $y = \begin{bmatrix} y_1 \\ \vdots \\ y_m \end{bmatrix}$ iz $R$ velja $x \leq y \iff x_1 \leq_1 y_1 ~\&~ \ldots ~\&~ x_m \leq_m y_m$.
-
-Tudi vprašanje podstruktur pri dioidih se splača obravnavati. Tem podstrukturam bomo pravili \pojem{poddioidi}. Njihov obstoj nam namigujejo ">prototipni"< dioidi - nenegativni odseki številskih množic opremljeni s standardnim seštevanjem in množenjem: $\No\subseteq\Pplus{Q}\subseteq\Pplus{R}$.
+Splača se obravnavati tudi vprašanje podstruktur dioidov. Tem podstrukturam bomo pravili \pojem{poddioidi}. Njihov obstoj nam namigujejo ">prototipni"< dioidi - nenegativni odseki številskih množic opremljeni s standardnim seštevanjem in množenjem: $\No\subseteq\Pplus{Q}\subseteq\Pplus{R}$.
 
 \begin{definicija}
-	Neprazna množica $P$ je poddioid dioida $(R, \oplus, \otimes)$, če je podmnožica v $R$, ki vsebuje obe enoti, in če je tudi sama dioid za operaciji, ki ju podeduje od $(R, \oplus, \otimes)$.
+	Neprazna množica $P$ je poddioid dioida $(R, \oplus, \otimes)$, če je podmnožica v $R$ in če je tudi sama dioid za operaciji, ki ju podeduje od $(R, \oplus, \otimes)$.
 \end{definicija}
 
 Hitro se da opaziti, da v preverjanju, ali je $P$ poddioid, ni treba direktno obravnavati urejenosti. Izkaže se, da je dovolj, da za podmnožico $P$ v dioidu $R$ preverimo, če je polkolobar.
@@ -368,7 +347,7 @@ Hitro se da opaziti, da v preverjanju, ali je $P$ poddioid, ni treba direktno ob
 	Če je $P$ poddioid je očitno tudi podpolkolobar. Denimo torej da za $P$ vemo zgolj, da je podpolkolobar v dioidu $R$ in si poglejmo kanonično šibko urejenost $\leq$ na njem. Ker je kanonična šibka urejenost na $R$ antisimetrična, ima to lastnost tudi na $P$, torej je $\leq$ na $P$ v resnici kanonična delna urejenost. Sledi, da je $P$ dioid, torej je poddioid v $R$.
 \end{dokaz}
 
-Pri obravnavi dioidov se omenimo še preslikave med njimi. Izkaže se, da v resnici ni treba uvesti nobenih novih pojmov, saj homomorfizmi polkolobarjev ohranjajo strukturo dioidov. Da to vidimo, si oglejmo poljubna dva dioida, $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$, ter preslikavo med njima, $\map{\phi}{R}{P}$, ki zadošča pogojem za homomorfizem polkolobarjev. Slednja zahteva je minimalna, saj mora homomorfizem dioidov hkrati biti tudi homomorfizem polkolobarjev. 
+Pri obravnavi dioidov še omenimo preslikave med njimi. Izkaže se, da v resnici ni treba uvesti nobenih novih pojmov, saj homomorfizmi polkolobarjev ohranjajo strukturo dioidov. Da to vidimo, si oglejmo poljubna dva dioida, $(R, \oplus, \otimes)$ in $(P, \boxplus, \boxtimes)$, ter preslikavo med njima, $\map{\phi}{R}{P}$, ki zadošča pogojem za homomorfizem polkolobarjev. Slednja zahteva je minimalna, saj mora homomorfizem dioidov hkrati biti tudi homomorfizem polkolobarjev. 
 
 Predpostavimo sedaj, da za neka elementa $a, b\in R$ velja $a\leq_R b$. Potem obstaja tak $c\in R$, da je $\phi(b) = \phi(a\oplus c) = \phi(a) \boxplus\phi(c)$, torej je $\phi(a) \leq_P\phi(b)$. Lahko se sicer zgodi, da za neprimerljiva elementa $x$ in $y$ iz $R$ velja, da sta $\phi(x)$ in $\phi(y)$ primerljiva, torej $\phi(x) \leq \phi(y)$ ali $\phi(x) \geq \phi(y)$. V prvem primeru obstaja nek element $z\in P$, da je $\phi(y) = \phi(x) \boxplus z$, a v tem primeru ne obstaja noben element $w\in R$, ki se preslika v $z$. Drugače povedano, $z\notin Im(\phi)$, kar pa nas ne moti. Simetričen premislek velja za primer $\phi(x) \geq \phi(y)$. Homomorfizmi polkolobarjev torej ohranjajo urejenost.
 
@@ -389,10 +368,10 @@ in
 
 Iz definicije sledi, da za vsaki podmnožici $P, Q \subseteq R$ velja: $$\big( \bigoplus_{p\in P} p \big) \otimes \big( \bigoplus_{q\in Q} q \big) = \bigoplus_{(p, q) \in P\times Q} (p \otimes q)$$.
 
-V polnem dioidu označimo kot zadnji element kar vsoto vseh elementov dioida $T = \bigoplus_{r \in R} r$. Prvi element je ravno aditivna enota $0$ (saj $0\leq r~\forall r\in R$). Poleg tega velja: $\forall r\in R: T \oplus r = T$ in $T \otimes 0 = 0$.
+V polnem dioidu označimo kot \pojem{vrhnji element} kar vsoto vseh elementov dioida $T = \bigoplus_{r \in R} r$. Za vrhnji element polnega dioida $T$ in za vsak $r\in R$ velja $T \oplus r = T$ in $T \otimes 0 = 0$.
 
 \begin{zgled}
-	Dioida $(\R\cup \{-\infty\}, \max, +)$ in $(\R\cup \{+\infty\}, \min, +)$ nista polna. Da postaneta polna, jima moramo dodati njuna zadnja elementa. Za prvi dioid je to $T = +\infty$., za drugi dioid pa je $T = -\infty$. Tropska dioida iz zgleda \ref{zgled:tropdioid} sta torej polna dioida.
+	Dioida $(\R\cup \{-\infty\}, \max, +)$ in $(\R\cup \{+\infty\}, \min, +)$ nista polna. Da postaneta polna, jima moramo dodati njuna vrhnja elementa. Za prvi dioid je to $T = +\infty$., za drugi dioid pa je $T = -\infty$. Tropska dioida iz zgleda \ref{zgled:tropdioid} sta torej polna dioida.
 \end{zgled}
 
 \begin{opomba}
@@ -403,7 +382,8 @@ V polnem dioidu označimo kot zadnji element kar vsoto vseh elementov dioida $T 
 Lastnosti dioidov glede na lastnosti kanonične delne urejenosti se da obravnavati v večjem obsegu, a to ni ključnega pomena za to nalogo. Zgoraj navedene definicije in zgledi, ki spadajo pod to temo, so navedeni primarno kot zanimivost in zavoljo malo širše obravnave. Preden se posvetimo primeru praktične aplikacije dioidov, navedimo še en zgled, ki ni vezan na znane številske množice. Zgleda \ref{zgled:endomorfdioid} in \ref{zgled:shortpathdioid} v nadaljevanju sta povzeta iz \cite[poglavje 6.\,2.\,]{bib:Gondran}.
 
 \begin{zgled} \label{zgled:endomorfdioid}
-	Naj bo $(R, +)$ kanonično urejen komutativen monoid z enoto $0$. Na množici $E$ endomorfizmov $R$ potem uvedemo operaciji $\oplus$ in $\otimes$ na sledeč način: $$\forall f, g \in E: (f\oplus g)(r) = f(r) + g(r) \text{~in~} (f\otimes g)(r) = f(r) \circ g(r) ~\forall r\in R,$$ kjer je $\circ$ navadno komponiranje preslikav. Hitro vidimo, da je $(E, \oplus, \otimes)$ dioid. 
+	Naj bo $(R, +)$ kanonično urejen komutativen monoid z enoto $0$. Na množici $E$ endomorfizmov $R$ potem uvedemo operaciji $\oplus$ in $\otimes$ na sledeč način: $$\forall f, g \in E: (f\oplus g)(r) = f(r) + g(r) \text{~in~} (f\otimes g)(r) = f(r) \circ g(r) ~\forall r\in R,$$ kjer je $\circ$ navadno komponiranje preslikav. Hitro vidimo, da je $(E, \oplus, \otimes)$ dioid.
+	Pri tem je nevtralni element v $E$ kar ničeln endomorfizem s predpisom $0(r) = 0;~\forall r\in R$, enota pa je identični endomorfizem s predpisom $id_R(r) = r;~\forall r\in R$.
 \end{zgled}
 
 Naslednji zgled, nam demonstrira praktično aplikacijo zgleda \ref{zgled:endomorfdioid}.
@@ -411,29 +391,29 @@ Naslednji zgled, nam demonstrira praktično aplikacijo zgleda \ref{zgled:endomor
 \begin{zgled}\label{zgled:shortpathdioid}
 	Vsebino zgleda \ref{zgled:endomorfdioid} lahko uporabimo v teoriji grafov v iskanju časovno najkrajše poti. Denimo, da imamo graf~$G = (V, E)$ in da vsaki povezavi $(i, j)$ pripada preslikava $h_{ij}$, ki nam poda čas prihoda $t_j$ v vozlišče $j$, če zapustimo vozlišče $i$ ob času $t_i$. Torej $ t_j = h_{ij}(t_i)$. Iščemo najkrajši čas, da prispemo iz vozlišča $t_1$ v izbrano vozlišče $t_i$.
 	
-	Za ta problem vzamemo $R = \R\cup\{+\infty\}, \oplus = \min, 0 = +\infty$. Za množico E vzamemo množico nepadajočih funkcij $f: R \mapsto R$, za katere gre $f(t) \to +\infty$ ko se $t$ bliža $+\infty$. Te funkcije so endomorfizmi nad $(\R\cup\{+\infty\}, \min)$, saj $f(\min\{t, \acute{t}\}) = \min\{f(t),f(\acute{t})\}$ in $f(+\infty) = +\infty$. Na enak način kot v prejšnjem zgledu sestavimo dioid $(E, \oplus, \otimes)$.
+	Za ta problem vzamemo $R = \R\cup\{+\infty\}, \oplus = \min, 0 = +\infty$. Za množico E vzamemo množico nepadajočih funkcij $f: R \mapsto R$, za katere gre $f(t) \to +\infty$, ko se $t$ bliža $+\infty$. Te funkcije so endomorfizmi nad $(\R\cup\{+\infty\}, \min)$, saj je $f(\min\{t, \acute{t}\}) = \min\{f(t),f(\acute{t})\}$ in $f(+\infty) = +\infty$. Na enak način kot v prejšnjem zgledu sestavimo dioid $(E, \oplus, \otimes)$.
 \end{zgled}
 
-Problem najkrajše poti lahko torej obravnavamo s pomočjo dioida endomorfizmov iz prejšnjega zgleda \ref{zgled:shortpathdioid}. Rešitve tega problema skupaj z algoritmi so, med drugimi, obravnavali Cooke in Halsey ($1966$) ter Minoux ($1976$).
+Problem najkrajše poti lahko torej obravnavamo s pomočjo dioida endomorfizmov iz prejšnjega zgleda \ref{zgled:shortpathdioid}.
 
-Na koncu izpostavimo še eno povezavo med polkolobarji in dioidi: Kot lahko vidimo v \cite[poglavje 6.\,9.\,]{bib:Gondran}, vsakemu polkolobarju pripada nek dioid. Pri določanju tega dioida bo seveda ključno to, da kanonični šibki urejenosti na izbranem polkolobarju dodamo antisimetričnost. Kako to naredimo, nam pove trditev \cite[trditev 6.\,9.\,1.\,]{bib:Gondran}, ki je navedena spodaj.
+Na koncu izpostavimo še eno povezavo med polkolobarji in dioidi. Kot lahko vidimo v \cite[poglavje 6.\,9.\,]{bib:Gondran}, vsakemu polkolobarju pripada nek dioid. Pri določanju tega dioida bo seveda ključno to, da kanonični šibki urejenosti na izbranem polkolobarju dodamo antisimetričnost. Kako to naredimo, je razkrito v \cite[trditev 6.\,9.\,1.\,]{bib:Gondran}, kar tudi navajamo spodaj.
 
 \begin{trditev}
-	Naj bo $(R, \oplus, \otimes)$ polkolobar v katerem kanonična relacija šibke urejenosti  $\leq$ ni antisimetrična (torej ni delna ureditev). Naj bo $\mathcal{E}$ ekvivalenčna relacija definirana na $R$:
+	Naj bo $(R, \oplus, \otimes)$ polkolobar v katerem kanonična relacija šibke urejenosti  $\leq$ ni antisimetrična (torej ni delna ureditev). Naj bo $\mathcal{E}$ ekvivalenčna relacija definirana na $R$ s predpisom:
 $$\forall r, s\in R: r\mathcal{E}s \iff r\leq s ~\&~ s \leq r$$
 	Potem je množica $\widehat{R} = R / \mathcal{E}$, opremljena z operacijama, ki ju inducirata $\oplus$ in $\otimes$, dioid. Temu dioidu pravimo dioid, ki je kanonično asociiran s polkolobarjem $(R, \oplus, \otimes)$.
 \end{trditev}
 \begin{dokaz}
-	Relacija $\mathcal{E}$, definirana zgoraj v izreku, je očitno refleksivna, tranzitivna in simetrična, torej je ekvivalenčna relacija. Potem so elementi $\widehat{R}$ ravno ekvivalenčni razredi relacije $\mathcal{E}$ na $R$ in ohranimo oznaki $\oplus$ in $\otimes$ za operacije, ki jih operaciji na $R$ inducirata na $\widehat{R}$. Nevtralna elementa v $\widehat{R}$ sta ekvivalenčna razreda, ki pripadata nevtralnima elementoma iz $R$. Ker aditivna enota $0$ v $(R, \oplus, \otimes)$ izniči $\otimes$, sledi da v $(\widehat{R}, \oplus, \otimes)$ razred kateremu pripada $0$ izniči operacijo, ki jo inducira $\otimes$. Hitro vidimo, da je $(\widehat{R}, \oplus, \otimes)$ polkolobar. Poleg tega kanonična relacija šibke urejenosti $\leq$ inducira antisimetrično relacijo šibke urejenosti, torej delno urejenost. Torej je $(\widehat{R}, \oplus, \otimes)$ dioid.
+	Relacija $\mathcal{E}$, definirana zgoraj v izreku, je očitno refleksivna, tranzitivna in simetrična, torej je ekvivalenčna relacija. Potem so elementi $\widehat{R}$ ravno ekvivalenčni razredi relacije $\mathcal{E}$ na $R$ in ohranimo oznaki $\oplus$ in $\otimes$ za operacije, ki jih operaciji na $R$ inducirata na $\widehat{R}$. Nevtralni element v $\widehat{R}$ je $[0]$, torej ekvivalenčni razred, ki pripada nevtralnemu elementu $0$ iz $R$. Podobno je enota v $\widehat{R}$ kar $[1]$, torej ekvivalenčni razred enote $1$ iz $R$. Ker aditivna enota $0$ v $(R, \oplus, \otimes)$ izniči $\otimes$, sledi da v $(\widehat{R}, \oplus, \otimes)$ razred $[0]$ izniči operacijo, ki jo inducira $\otimes$. Hitro vidimo, da je $(\widehat{R}, \oplus, \otimes)$ polkolobar. Poleg tega kanonična relacija šibke urejenosti $\leq$ inducira antisimetrično relacijo šibke urejenosti, torej delno urejenost. Sledi, da je $(\widehat{R}, \oplus, \otimes)$ dioid.
 \end{dokaz}
 \begin{opomba}
-	Dodatno lahko definiramo še eno strukturo, t.~i.~\pojem{polpolje}, kot polkolobar v katerem je vsak od $0$ različen element obrnljiv glede na $\otimes$ (\cite[poglavje 1, definicija 5.\,2.\,3.\,]{bib:Gondran}). Izkaže se, da so mnogi dioidi polpolja. Takšna sta na primer $(\R\cup\{+\infty\}, \min, +)$ in $(\R\cup\{-\infty\}, \max, +)$. To omenimo zgolj kot zanimivost, saj nas v nadaljevanju polpolja ne bodo kaj preveč zanimala.
+	V \cite[poglavje 1, definicija 5.\,2.\,3.\,]{bib:Gondran} vidimo, da lahko definiramo še strukturo, ki jo imenujemo \pojem{polpolje}, kot polkolobar v katerem je vsak od $0$ različen element obrnljiv glede na $\otimes$. Izkaže se, da so mnogi dioidi polpolja. Takšna sta na primer $(\R\cup\{+\infty\}, \min, +)$ in $(\R\cup\{-\infty\}, \max, +)$. To omenimo zgolj kot zanimivost, saj nas v nadaljevanju polpolja ne bodo kaj preveč zanimala.
 \end{opomba}
 
 \section{Polmoduli in moduloidi:}\label{sect:semimodule}
 Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Za začetek bomo navedli definicije teh struktur, nato bomo obravnavali vprašanje homomorfizmov in kvocientnih struktur, na koncu poglavja pa se bomo posvetili vprašanju baz. V večji meri se bomo pri tem sklicevali na vir \cite[poglavje 5.\,2.\,]{bib:Gondran}, kjer bo vir drug pa bo to tudi navedeno.
 \subsection{Definicije in elementarni primeri:} \label{subsect:semimoduledef}
-V tem podpoglavju bomo definirali strukture nad polkolobarji in dioidi.
+V tem podpoglavju bomo definirali stru\-kture nad polkolobarji in dioidi.
 
 \begin{definicija}\label{def:polmodul}
 	Naj bo $(R, \oplus, \otimes)$ polkolobar z nevtralnima elementoma $0$ in $1$.\newline\pojem{Levi $R$-polmodul}~ je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem je definirana zunanja operacija \map{\cdot}{R\times M}{M}, ki jo imenujemo množenje s skalarjem. Množenje s skalarjem zadošča naslednjim pogojem za vsaka $\lambda,\mu\in R$ in vsaka $m, n\in M$:
@@ -1276,6 +1256,8 @@ Enak postopek lahko uporabimo za poljubno $n\times n$ matriko $X\in M_n(R)$. Za�
 
 \geslo{base of a semimodule}{baza polmodula -- linearno neodvisna podmnožica v polmodulu, ki ga generira}
 \geslo{characteristic pipolynomial}{karakteristični pipolinom}
+\geslo{complete dioid}{poln dioid}
+\geslo{complete lattice}{polna mreža}
 \geslo{complete set}{polna množica}
 \geslo{dioid}{dioid}
 \geslo{eigenvalue}{lastna vrednost}
@@ -1304,8 +1286,7 @@ Enak postopek lahko uporabimo za poljubno $n\times n$ matriko $X\in M_n(R)$. Za�
 \geslo{semiring}{polkolobar}
 \geslo{supremum}{supremum}
 \geslo{the element $0 \in R$ is absorbing for $\otimes$}{element $0 \in R$ izniči operacijo $\otimes$, torej $\forall a \in R; a \otimes 0 = 0 \otimes a = 0$}
-\geslo{the greatest element}{zadnji element}
-\geslo{the least element}{prvi element}
+\geslo{top-element}{vrhnji element}
 \geslo{transition matrix}{prehodna matrika}
 \geslo{transposition}{transpozicija}
 \geslo{upper bound}{zgornja meja}
