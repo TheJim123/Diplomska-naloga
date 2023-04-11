@@ -411,12 +411,12 @@ $$\forall r, s\in R: r\mathcal{E}s \iff r\leq s ~\&~ s \leq r$$
 \end{opomba}
 
 \section{Polmoduli in moduloidi:}\label{sect:semimodule}
-Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Za začetek bomo navedli definicije teh struktur, nato bomo obravnavali vprašanje homomorfizmov in kvocientnih struktur, na koncu poglavja pa se bomo posvetili vprašanju baz. V večji meri se bomo pri tem sklicevali na vir \cite[poglavje 5.\,2.\,]{bib:Gondran}, kjer bo vir drug pa bo to tudi navedeno.
+Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Za začetek bomo navedli definicije teh struktur, nato bomo obravnavali vprašanje homomorfizmov in kvocientnih struktur, na koncu poglavja pa bomo pozornost posvetili vprašanju baz. V večji meri se bomo pri tem sklicevali na vir \cite[poglavje 5.\,2.\,]{bib:Gondran}, kjer bo vir drug pa bo to tudi navedeno.
 \subsection{Definicije in elementarni primeri:} \label{subsect:semimoduledef}
 V tem podpoglavju bomo definirali stru\-kture nad polkolobarji in dioidi.
 
 \begin{definicija}\label{def:polmodul}
-	Naj bo $(R, \oplus, \otimes)$ polkolobar z nevtralnima elementoma $0$ in $1$.\newline\pojem{Levi $R$-polmodul}~ je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem je definirana zunanja operacija \map{\cdot}{R\times M}{M}, ki jo imenujemo množenje s skalarjem. Množenje s skalarjem zadošča naslednjim pogojem za vsaka $\lambda,\mu\in R$ in vsaka $m, n\in M$:
+	Naj bo $(R, \oplus, \otimes)$ polkolobar z nevtralnim elementom $0$ in enoto $1$.\pojem{Levi $R$-polmodul}~ je komutativen monoid $(M, +)$ z aditivno identiteto $\theta$, na katerem je definirana zunanja operacija \map{\cdot}{R\times M}{M}, ki jo imenujemo množenje s skalarjem. Množenje s skalarjem za vsaka $\lambda,\mu\in R$ in vsaka $m, n\in M$ zadošča naslednjim pogojem:
 	\begin{enumerate}
 		\item[A1] $\lambda\cdot(m + n) = \lambda\cdot m + \lambda\cdot n$
 		\item[A2] $(\lambda \oplus \mu)\cdot m = \lambda\cdot m + \mu\cdot m$
@@ -425,14 +425,14 @@ V tem podpoglavju bomo definirali stru\-kture nad polkolobarji in dioidi.
 		\item[A5] $\lambda\cdot\theta = \theta = 0\cdot m$
 	\end{enumerate}
 
-Analogno definiramo desni R-polmodul. Elementom polmodula pravimo vektorji. Polmodule (leve, desne in obojestranske) bomo na kratko označevali z $(M, +, \cdot)$.
+Na enak način definiramo desni R-polmodul, le da tam množenje s skalarjem izvajamo z desne, torej \map{\cdot}{M\times R}{M}. Elementom polmodula pravimo vektorji. Polmodule (leve, desne in obojestranske) bomo na kratko označevali z $(M, +, \cdot)$.
 \end{definicija}
 
 	 Kadar je operacija $\otimes$ na polkolobarju $(R,\oplus, \otimes)$ komutativna, koncepta levega in desnega $R$-polmodula sovpadata. Drugače povedano, $(M, +, \cdot)$ nad $(R, \oplus, \otimes)$ je obojestranski $R$-polmodul, če je hkrati levi in desni $R$-polmodul. Analogi rezultatov, ki jih bomo dokazali za leve $R$-polmodule seveda veljajo  tudi za desne in obojestranske $R$-polmodule. Od zdaj naprej bomo pod imenom $R$-polmodul obravnavali leve $R$-polmodule nad polkolobarjem $R$.
 
 \begin{zgled}
 	\label{zgled:Rnpolmodul}
-	Naj bo $R$ levi polkolobar in poglejmo njegov $n$-kratni kartezični produkt $R^n = \{(a_1, a_2, \ldots, a_n)^{\top} |~ a_i \in R~\text{za}~i\in \{1, 2, \ldots, n\}\}$. Pri tem je $(a_1, a_2, \ldots, a_n)^{\top}$ transpozicija $(a_1, a_2, \ldots, a_n)$ in $n\geq 1$. Definiramo:
+	Naj bo $R$ polkolobar in poglejmo njegov $n$-kratni kartezični produkt $R^n = \{(a_1, a_2, \ldots, a_n)^{\top} |~ a_i \in R~\text{za}~i\in \{1, 2, \ldots, n\}\}$. Pri tem je $(a_1, a_2, \ldots, a_n)^{\top}$ transpozicija $(a_1, a_2, \ldots, a_n)$ in $n\geq 1$. Definiramo:
 	\begin{align*}
 		a + b = (a_1 \oplus b_1, a_2 \oplus b_2, \ldots, a_n \oplus b_n)^{\top}
 	\end{align*}
@@ -448,79 +448,79 @@ Analogno definiramo desni R-polmodul. Elementom polmodula pravimo vektorji. Polm
 \end{definicija}
 
 \begin{zgled}
-	Vrnimo se k zgledu \ref{zgled:Rnpolmodul} in dodatno predpostavimo, da je $(R, \oplus, \otimes)$ dioid. Potem je $(R^n, +)$ kanonično urejen, torej je (levi) moduloid.
-	Da se o tem prepričamo je dovolj, da preverimo lastnosti kanonične urejenosti $\leq_+$ na $(R^n, +)$. Naj bosta $a, b \in R^n$ in denimo, da je $a \leq_+ b$. To bo res natanko tedaj, ko bo obstajal tak $c\in R^n$, da je $b = a + c$~ oz. ko bo za vsak $i\in \{1, 2, \ldots, n\}$ veljalo $b_i = a_i \oplus c_i$ oziroma $a_i \leq_\oplus b_i$. Relacija $\leq_+$ podeduje antisimetričnost od $\leq_\oplus$.
+	Vrnimo se k zgledu \ref{zgled:Rnpolmodul} in dodatno predpostavimo, da je $(R, \oplus, \otimes)$ dioid. Želimo pokazati, da je $(R^n, +)$ kanonično urejen.
+	Da se o tem prepričamo je dovolj, da preverimo lastnosti kanonične urejenosti $\leq_+$ na $(R^n, +)$. Naj bosta $a, b \in R^n$ in denimo, da je $a \leq_+ b$. To bo res natanko tedaj, ko bo obstajal tak $c\in R^n$, da je $b = a + c$~ oz. ko bo za vsak $i\in \{1, 2, \ldots, n\}$ veljalo $b_i = a_i \oplus c_i$ oziroma $a_i \leq_\oplus b_i$. Relacija $\leq_+$ podeduje antisimetričnost od $\leq_\oplus$, torej je $(R^n, +)$ res kanonično urejen in od tod sledi, da je $(R^n, +, \cdot)$ (levi) moduloid.
 \end{zgled}
 
 \subsection{Homomorfizmi in kvocientne strukture:}\label{subsect:homomorphsemimodule}
 Tudi pri polmodulih nas bodo zanimale preslikave, ki ohranjajo algebraično strukturo. Pojavi se tudi vprašanje, ali lahko nad polmoduli tvorimo kvocientne strukture. Oboje bomo obravnavali v tem podpoglavju.
 
 \begin{definicija}
-	Naj bosta $M$ in $N$ dva (leva) polmodula, oba nad istim (levim) polkolobarjem $(R, \oplus, \otimes)$. Z $+$ in $\boxplus$ označimo notranji operaciji, z $\cdot$ in $\boxdot$ pa množenji s skalarjem. Preslikavi \map{\phi}{M}{N} pravimo \pojem{homomorfizem} levih polmodulov $M$ in $N$, če zadošča naslednjim pogojem: \begin{enumerate}
+	Naj bosta $(M, +, \cdot)$ in $(N, \boxplus, \boxdot)$ oba polmodula nad istim polkolobarjem $(R, \oplus, \otimes)$. Preslikavi \map{\phi}{M}{N} pravimo \pojem{homomorfizem} levih $R$-polmodulov $M$ in $N$, če zadošča naslednjim pogojem: \begin{enumerate}
 		\item[(i)] $\phi(x + y) = \phi(x)\boxplus\phi(y), \forall x, y\in M$
 		\item[(ii)] $\phi(\lambda\cdot x) = \lambda \boxdot \phi(x), \forall x\in M, \forall \lambda\in R$
 	\end{enumerate}
 Homomorfizmom, ki slikajo iz $M$ nazaj v $M$ pravimo \pojem{endomorfizmi}.
 
-Kadar je $(R, \oplus, \otimes)$ dioid in sta $M$ ter $N$ kanonično delno urejena, govorimo o homomorfizmih in endomorfizmih levih moduloidov.
+Kadar je $(R, \oplus, \otimes)$ dioid in sta $M$ ter $N$ kanonično delno urejena, govorimo o homomorfizmih in endomorfizmih $R$-moduloidov.
 \end{definicija}
 
 \begin{opomba}
-	Tako kot elementom $x$ $R$-polmodula $(R^n, +, \cdot)$, pravimo vektorji, pravimo homomorfizmom med polmoduli kar \pojem{linearne preslikave}.
+	Tako kot elementom $x$ $R$-polmodula $(R^n, +, \cdot)$, pravimo vektorji, pravimo homomorfizmom med $R$-polmoduli kar \pojem{linearne preslikave}.
 \end{opomba}
 
 Ker v algebri (tako linearni kot abstraktni) igrajo pomembno vlogo podstrukture in kvocientne strukture, bomo te definirali tudi za polmodule. Spodnji definiciji sta povzeti iz \cite{bib:Gondran}.
 
 \begin{definicija}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $\widehat{M}$ neprazna podmnožica v $M$. Pravimo, da je množica $\widehat{M}$ podpolmodul v $M$, če vsebuje enoto $\theta$ in je zaprta za podedovani operaciji.
+	Naj bo $(M, +, \cdot)$ $R$-polmodul in $\widehat{M}$ neprazna podmnožica v $M$. Pravimo, da je množica $\widehat{M}$ podpolmodul v $M$, če je tudi sama $R$-polmodul za podedovani operaciji.
 \end{definicija}
-
-Na enak način kot za podstrukture ostalih algebraičnih struktur, kot so grupe, kolobarji, vektorski prostori in moduli, lahko vidimo, da je presek družine $(N_i)_{i\in I}$ $R$-podpolmodulov $R$-polmodula $M$, torej $\cap_{i\in I}N_i$, tudi sam $R$-podpolmodul v $M$. Če definiramo vsoto $R$-podpolmodulov $N_1,N_2\subseteq M$ s predpisom $N_1 + N_2 =\{n_1 + n_2~|~n_1\in N_1~\land~n_2\in N_2\}$, je tudi ta $R$-podpolmodul v $R$-polmodulu $M$.
+Hitro se da preveriti, da je neprazna množica $\widehat{M}\subseteq M$ podpolmodul v $M$ čim vsebuje enoto $\theta\in M$ in je zaprta za podedovani operaciji.
+Na enak način kot za podstrukture ostalih algebraičnih struktur, kot so grupe, kolobarji, vektorski prostori in moduli, lahko vidimo, da je presek družine $(N_i)_{i\in I}$ $R$-podpolmodulov $R$-polmodula $M$, torej $\cap_{i\in I}N_i$, tudi sam $R$-podpolmodul v $M$. Če definiramo vsoto $R$-podpolmodulov $N_1,N_2\subseteq M$ s predpisom $N_1 + N_2 =\{n_1 + n_2~|~n_1\in N_1~\land~n_2\in N_2\}$, je tudi ta $R$-podpolmodul v $M$.
 
 \begin{definicija}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $(\widehat{M}, +, \cdot)$ (levi) podpolmodul v $M$. Z $M/ \widehat{M}$ označimo kvocientno množico $M$ glede na ekvivalenčno relacijo $\mathcal{E}$: $$x\mathcal{E}y \iff \exists u, v\in\widehat{M}: x + u = y + v$$ Množici $M/\widehat{M}$ pravimo kvocientni polmodul $R$-polmodula $M$ nad $\widehat{M}$.
+	Naj bo $(M, +, \cdot)$ $R$-polmodul in $(\widehat{M}, +, \cdot)$ podpolmodul v $M$. Z $M/ \widehat{M}$ označimo kvocientno množico $M$ glede na ekvivalenčno relacijo $\mathcal{E}$: $$x\mathcal{E}y \iff \exists u, v\in\widehat{M}: x + u = y + v$$ Množici $M/\widehat{M}$ pravimo kvocientni polmodul $R$-polmodula $M$ nad $\widehat{M}$.
 \end{definicija}
 
 Da se preveriti, da je $\mathcal{E}$ usklajena s $+$ in $\cdot$. Za poljubne elemente $x_1, x_2, y_1, y_2 \in M$ velja $x_1\mathcal{E}y_1$ in $x_2\mathcal{E}y_2$ natanko tedaj, ko obstajajo $u_1, u_2, v_1, v_2 \in \widehat{M}$, da je $x_1 + u_1 = y_1 + v_1$ in $ x_2 + u_2 = y_2 + v_2$. \\
 
 Potem pa velja tudi $(x_1 + x_2)\mathcal{E}(y_1 + y_2)$, saj je $x_1 + x_2 + u_1 + u_2 = y_1 + y_2 + v_1 + v_2$ in $(u_1 + u_2), (v_1 + v_2)\in \widehat{M}$. Dodatno, če je $x + u = y + v$ je tudi $\lambda\cdot (x + u) = \lambda\cdot (y + v)$ za vsak $\lambda\in R$ oz. $\lambda\cdot x + \lambda\cdot u = \lambda\cdot y + \lambda\cdot v$. Ker sta $(\lambda\cdot u), (\lambda\cdot v)\in \widehat{M}$, potem po definiciji $\mathcal{E}$ sledi $(\lambda\cdot x) \mathcal{E} (\lambda\cdot y)$.
 
-Posledično je kanonični epimorfizem $\varphi$, ki vsakemu elementu $x\in M$ priredi njegov ekvivalenčni razred v $M/\widehat{M}$, homomorfizem levih $R$- polmodulov.
+Posledično je kanonični epimorfizem $\varphi$, ki vsakemu elementu $x\in M$ priredi njegov ekvivalenčni razred v $M/\widehat{M}$, homomorfizem $R$- polmodulov.
 
 \subsection{Generatorji polmodulov in linearna neodvisnost:} \label{subsect:base}
-V tem podpoglavju bomo definirali generatorje, linearno (ne)odvisnost ter baze v kontekstu (levih) polmodulov. Poleg tega bomo pokazali tudi nekaj zanimivih rezultatov. Več rezultatov na temo baz (levih) polmodulov bomo obravnavali v poglavju o matrikah.
+V tem podpoglavju bomo definirali generatorje, linearno (ne)odvisnost in baze v kontekstu polmodulov ter pokazali nekaj zanimivih rezultatov v zvezi s temi koncepti. Več rezultatov na temo baz (levih) polmodulov bomo obravnavali v naslednjem poglavju v razdelku \ref{subsect:prehodmat}. Začnimo kar z definicijo generiranega polmodula.
 \begin{definicija}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in naj bo $X = (x_i)_{i\in I}$ poljubna neprazna družina elementov iz $M$. Najmanjši (levi) $R$-podpolmodul, ki vsebuje $X$, imenujemo (levi) $R$-podpolmodul generiran z $X$ in ga označimo z \Gen{X}. Če je $\Gen{X} = M$ pravimo, da $X$ generira $M$.
+	Naj bo $(M, +, \cdot)$ $R$-polmodul in naj bo $X = (x_i)_{i\in I}$ poljubna neprazna družina elementov iz $M$. Najmanjši $R$-podpolmodul, ki vsebuje $X$, imenujemo $R$-podpolmodul generiran z $X$ in ga označimo z \Gen{X}. Če je $\Gen{X} = M$ pravimo, da $X$ generira $M$.
 \end{definicija}
 
-	V definiciji dopuščamo, da je X končna ali pa neskončna družina. Če je $X$ končna, pravimo, da je $M$ \pojem{končno generiran}. Tudi v primeru polmodulov bi želeli definirati t.~i.\ dimenzijo polmodula. Pojem dimenzije, kot jo poznamo iz linearne algebre nad polji, ni ustrezen za polkolobarje, saj kardinalnost baze, kot bomo kasneje videli, ni enolično določena. Zato definiramo rang polmodula po \cite[str. 3--4]{bib:Tanbase}.
+	V definiciji dopuščamo, da je $X$ končna ali pa neskončna družina. Če je $X$ končna, pravimo, da je $M$ \pojem{končno generiran}. Tudi v primeru polmodulov bi želeli definirati t.~i.\ dimenzijo polmodula. Izkaže se, da pojem dimenzije, kot ga poznamo iz linearne algebre nad polji, ni ustrezen za polkolobarje, saj kardinalnost baze ni nujno enolično določena. Zato definiramo rang polmodula po \cite[str. 3--4]{bib:Tanbase}.
 
-\begin{definicija}
-	\pojem{Rang} $R$-polmodula $M$, označen z $r(M)$, je enak najmanjšemu številu $n$, za katerega obstaja množica $X$ velikosti $n$, ki generira $M$. Rang vedno obstaja za končno generirane polmodule. Rang polmodula je znan tudi pod imenom \pojem{šibka dimenzija polmodula}. Pod tem imenom je definiran kot minimalna kardinalnost šibko linearno odvisnih podmnožic, ki generirajo polmodul.
+\begin{definicija}\label{def:rang}
+	\pojem{Rang} $R$-polmodula $M$, označen z $r(M)$, je enak najmanjšemu številu $n$, za katerega obstaja množica $X$ velikosti $n$, ki generira $M$. Rang vedno obstaja za končno generirane polmodule.
 \end{definicija}
 
 Rang polmodula bo postal pomemben kasneje v podpoglavju \ref{subsect:prehodmat} o prehodnih matrikah.
 
-V nadaljevanju nam bo prišlo prav, če karakteriziramo podpolmodule generirane z $X\subseteq M$. Ravno to nam da naslednja trditev.
+V nadaljevanju nam bo prišlo prav, če karakteriziramo podpolmodule generirane z $X\subseteq M$.
 
 \begin{trditev}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i\in I}$ neka poljubna neprazna družina elementov iz M. Potem je $\Gen{X} = Y$, kjer je $Y$  množica tistih $y\in M$, ki so oblike: $$ y = \sum_{j\in J} \lambda_j \cdot x_j$$ Pri tem je $J\subset I$ končna podmnožica indeksov in za vsak $j\in J$ je $\lambda_j \in R$.
+	Naj bo $(M, +, \cdot)$ $R$-polmodul in $X = (x_i)_{i\in I}$ neka poljubna neprazna družina elementov iz M. Potem je $\Gen{X} = Y$, kjer je $Y$  množica tistih $y\in M$, ki so oblike: $$ y = \sum_{j\in J} \lambda_j \cdot x_j$$ Pri tem je $J\subset I$ končna podmnožica indeksov in za vsak $j\in J$ je $\lambda_j \in R$.
 \end{trditev}
 
 \begin{dokaz}
 	
-	Hitro vidimo, da je $X \subseteq Y$, saj lahko vsak $x_i\in X$ zapišemo kot $\sum_{j\in J}\lambda_j\cdot x_j$ za $J = \{i\}$ in $\lambda_i = 1$. Vidimo tudi, da je $\theta$ element $Y$ (vzamemo $J = {i}$ in $\lambda_i = 0$) ter da je $Y$ zaprt za $+$. Sledi torej, da je $Y$ levi $R$-podpolmodul v $M$, ki vsebuje $X$. Po definiciji je $\Gen{X}$ najmanjši podpolmodul, ki vsebuje $X$, torej sledi $\Gen{X} \subseteq Y$. 
+	Hitro vidimo, da je $X \subseteq Y$, saj lahko vsak $x_i\in X$ zapišemo kot $\sum_{j\in J}\lambda_j\cdot x_j$ za $J = \{i\}$ in $\lambda_i = 1$. Vidimo tudi, da je $\theta$ element $Y$ (vzamemo $J = {i}$ in $\lambda_i = 0$) ter da je $Y$ zaprt za $+$. Sledi torej, da je $Y$ $R$-podpolmodul v $M$, ki vsebuje $X$. Po definiciji je $\Gen{X}$ najmanjši podpolmodul, ki vsebuje $X$, torej sledi $\Gen{X} \subseteq Y$. 
 	
-	Po drugi strani pa vidimo še, da vsak levi $R$-podpolmodul v $M$, ki vsebuje $X$, vsebuje tudi vse linearne kombinacije elementov $x_i\in X$, torej vsebuje $Y$. V posebnem primeru velja to tudi za \Gen{X}, torej sledi $Y \subseteq \Gen{X}$. Od tod pa sledi $Y = \Gen{X}$. $Y$ je torej najmanjši levi $R$-podpolmodul, ki vsebuje $X$.
+	Po drugi strani pa vidimo še, da vsak $R$-podpolmodul v $M$, ki vsebuje $X$, vsebuje tudi vse linearne kombinacije elementov $x_i\in X$, torej vsebuje $Y$. V posebnem primeru velja to tudi za \Gen{X}, torej sledi $Y \subseteq \Gen{X}$. Od tod pa sledi $Y = \Gen{X}$. $Y$ je torej najmanjši $R$-podpolmodul, ki vsebuje $X$.
 \end{dokaz}
 
 Ta rezultat seveda ni presenetljiv, saj velja tudi za module in pa vektorske prostore. V slednjem nam je \Gen{X} znan pod imenom linearne ogrinjače množice vektorjev $X$.
 
-Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite[Poglavje 5, definicija 2.\,5.\,1.\,]{bib:Gondran}. Ta se glasi:
+Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v polmodulih. Uporabili bomo definicijo, ki sta jo navedla Minoux in Gondran v \cite[poglavje 5, definicija 2.\,5.\,1.\,]{bib:Gondran}. Ta se glasi:
 
 \begin{definicija}
 	\label{def:linneodv1}
-	Naj bo $(M, +, \cdot)$ levi $R$-polmodul in $X = (x_i)_{i \in I}$ neprazna (končna ali števno neskončna) družina elementov iz $M$. Za vsako podmnožico indeksov $J \subset I$ označimo z $X_J$ poddružino $X$, ki jo določajo indeksi $j\in J$. Z $\Gen{X_J}$ označimo $R$-podpolmodul, ki ga generira $X_J$.
+	Naj bo $(M, +, \cdot)$ $R$-polmodul in $X = (x_i)_{i \in I}$ neprazna (končna ali števno neskončna) družina elementov iz $M$. Za vsako podmnožico indeksov $J \subset I$ označimo z $X_J$ poddružino $X$, ki jo določajo indeksi $j\in J$. Z $\Gen{X_J}$ označimo $R$-podpolmodul, ki ga generira $X_J$.
 	
 	Pravimo, da je družina $X$ \pojem{linearno odvisna} natanko tedaj, ko obstajata dve končni disjunktni podmnožici indeksov $I_1\subset I$ in $I_2\subset I$, skupaj s skalarji $\lambda_i \in R\setminus\{0\}; i\in I_1\cup I_2$, da velja: \begin{align}
 		\sum_{i \in I_1}\lambda_i\cdot x_i = \sum_{i \in I_2}\lambda_i\cdot x_i 
@@ -533,16 +533,18 @@ Sedaj lahko definiramo koncept linearne odvisnosti oz. linearne neodvisnosti v p
 
 V \cite[definicija 2.\,3.\,]{bib:Tanbase} Tan definira linearno neodvisnost v polmodulih nad polkolobarji drugače. Da bo pojma, za katera se izkaže, da ne sovpadata, lažje razločevati, bomo linearno (ne)odvisnost po Tanu imenovali \pojem{šibka linearna (ne)odvisnost}. To poimenovanje črpamo iz \cite[definicija 2. 12.]{bib:AkianTropSemi}. Definicija se glasi takole:
 \begin{definicija}\label{def:linneodv2}
-	Naj bo $R$ (levi) polkolobar in $M$ polmodul nad $R$. Množica $X\subseteq M$ je \pojem{šibko linearno neodvisna} v $M$, če za njo velja
+	Naj bo $R$ polkolobar in $M$ polmodul nad $R$. Množica $X\subseteq M$ je \pojem{šibko linearno neodvisna} v $M$, če za njo velja
 \begin{align*}
 	\forall x\in X: x \notin \Gen{X\setminus\{x\}}
 \end{align*}
 \end{definicija}
-
+\begin{opomba}
+	 Rang polmodula, ki smo ga definirali v \ref{def:rang} je znan tudi pod imenom \pojem{šibka dimenzija polmodula}. Pod tem imenom je definiran kot minimalna kardinalnost šibko linearno neodvisnih podmnožic, ki generirajo polmodul.
+\end{opomba}
 Hitro lahko vidimo, da če je $X$ linearno neodvisna, bo tudi šibko linearno neodvisna. Naj bo $M$ polmodul nad komutativnim polkolobarjem $R$, naj bo $I$ končna ali števno neskončna indeksna množica ter naj bo $X = (x_i)_{i\in I}$ podmnožica v $M$. 
-Če je $X$ linearno neodvisna, potem pogledamo posebni primer $I_1 = \{i\}$ in $I_2 = I\setminus\{i\}$. Če za nek $x\in X$ velja $\Gen{\{x\}}\cap \Gen{X\setminus\{x\}} = \{\theta\}$, potem sledi $x\notin \Gen{X\setminus\{x\}}$. Za $\forall i \in I$ potem v posebnem primeru velja $x_i \notin \Gen{X\setminus\{x_i\}}$, kar pa je v resnici ravno pogoj iz definicije šibke linearne neodvisnosti. Vsaka linearno neodvisna družina $X$ je torej tudi šibko linearno neodvisna, pojem šibke linearne (ne)odvisnosti pa je posledično širši od pojma linearne (ne)odvisnosti po Gondranu in Minouxu. Nad kolobarji sta oba pojma ekvivalentna.
+Če je $X$ linearno neodvisna, potem pogledamo posebni primer $I_1 = \{i_0\}$ in $I_2 = I\setminus\{i_0\}$ za poljuben $i_0\in I$. Zaradi linearne neodvisnosti $X$ za vsak $i_0 \in I$ velja $\Gen{\{x_{i_0}\}}\cap \Gen{X\setminus\{x_{i_0}\}} = \{\theta\}$, od tod pa sledi $x_{i_0}\notin \Gen{X\setminus\{x_{i_0}\}}$. To je v resnici ravno pogoj iz definicije šibke linearne neodvisnosti. Vsaka linearno neodvisna družina $X$ je torej tudi šibko linearno neodvisna. Posleldično je pojem šibke linearne (ne)odvisnosti širši od pojma linearne (ne)odvisnosti. Nad kolobarji sta oba pojma ekvivalentna.
 
-Izkaže se, da implikacija v drugo smer ne velja. Primer, ki to pokaže, se najde v polmodulu $(\R\cup\{-\infty\})^3$ nad tropskim polkolobarjem $(\R\cup\{-\infty\}, \max, +)$, kot nam pokaže zgled iz \cite[zgled 2.\ 14.]{bib:AkianTropSemi}. Kot je v zgledu navedeno, je vsaka družina vektorjev oblike $[x_i, 0, -x_i]$~za $i = \{1, 2, \ldots, m\}$ šibko linearno neodvisna za poljuben $m$ in različne $x_i$. Po drugi strani pa lahko vidmo, da so vektorji $v_i = \begin{bmatrix}i & 0 & -i\end{bmatrix}^\top; i = 1, 2, 3, 4$ linearno odvisni, saj velja \begin{align*}0\cdot v_2 + (-1)\cdot v_4 &= \begin{bmatrix}\max\{2+0,4-1\} &\max\{0+0,0-1\}&\max\{0-2, -4-1\} \end{bmatrix}^\top \\ &= \begin{bmatrix}3 & 0 & -2\end{bmatrix}^\top\\ &= \begin{bmatrix}\max\{1-1, 3+0\}&\max\{0-1, 0+0\}&\max\{-1-1, 0-3\}\end{bmatrix}^\top \\ &= (-1)\cdot v_1 + 0\cdot v_3\end{align*}.
+Izkaže se, da ni vsaka šibko linearno neodvisna množica hkrati tudi linearno neodvisna. Primer, ki to pokaže, se najde v polmodulu $(\R\cup\{-\infty\})^3$ nad tropskim polkolobarjem $(\R\cup\{-\infty\}, \max, +)$, kar nam pokaže \cite[zgled 2.\ 14.]{bib:AkianTropSemi}. Kot je tam navedeno, je vsaka družina vektorjev oblike $[x_i, 0, -x_i]$~za $i = \{1, 2, \ldots, m\}$ šibko linearno neodvisna za poljuben $m$ in različne $x_i$. Po drugi strani pa lahko vidmo, da so vektorji $v_i = \begin{bmatrix}i & 0 & -i\end{bmatrix}^\top$ za $i = 1, 2, 3, 4$ linearno odvisni, saj velja \begin{align*}0\cdot v_2 + (-1)\cdot v_4 &= \begin{bmatrix}\max\{2+0,4-1\} &\max\{0+0,0-1\}&\max\{0-2, -4-1\} \end{bmatrix}^\top \\ &= \begin{bmatrix}3 & 0 & -2\end{bmatrix}^\top\\ &= \begin{bmatrix}\max\{1-1, 3+0\}&\max\{0-1, 0+0\}&\max\{-1-1, 0-3\}\end{bmatrix}^\top \\ &= (-1)\cdot v_1 + 0\cdot v_3\end{align*}.
 
 Sedaj s sklicem na \cite[Definicija 2.~4.]{bib:Tanbase} definiramo t.~i.~šibko bazo polmodula.
 
@@ -566,48 +568,48 @@ V \cite[definicija 2.~3.]{bib:Tanbase} je definiran tudi pojem proste množice i
 	Podmnožica $X$ $R$-polmodula $M$ je \pojem{prosta baza} (levega) $R$-polmodula $M$, če je prosta množica v $M$ in generira cel $M$. Polmodulu, ki premore kako prosto bazo, pravimo \pojem{prosti polmodul}.
 \end{definicija}
 
-Kratek premislek nam pove, da je vsaka prosta množica v $M$ hkrati tudi (šibko) linearno neodvisna. Da to vidimo, se skličemo na definicijo (šibke) linearne neodvisnosti \ref{def:linneodv2}, ki smo jo pravkar navedli.
+Kratek premislek nam pove, da je vsaka prosta množica v $M$ hkrati tudi šibko linearno neodvisna. Da to vidimo, se skličemo na definicijo šibke linearne neodvisnosti \ref{def:linneodv2}, ki smo jo pravkar navedli.
 
-Denimo, da je $X$ prosta množica v $R$-polmodulu $M$. Vsak element $x\in X$ lahko zapišemo kot linearno kombinacijo elementov iz $X$ kot $x = 1\cdot x$. Ker je $X$ prosta, je ta zapis enoličen. Če bi bil $x \in\Gen{X\setminus\{x\}}$ bi to pomenilo, da obstaja neka linearna kombinacija elementov iz $X\setminus\{x\}$, ki je enaka $x$ in v sebi ne vsebuje nobenega člena oblike $\lambda\cdot x$ za nek $\lambda\in R\setminus\{0\}$ (posebej ne vsebuje $1\cdot x$). Drugače povedano, v $M$ bi lahko $x$ zapisali kot linearno kombinacijo elementov iz $X$ na dva različna načina, kar pa je v protislovju s predpostavko, da je $X$ prosta množica. Sledi torej, da če je $X$ prosta množica v $R$-polmodulu $M$, je v $M$ tudi (šibko) linearno neodvisna.
-
-Opazimo tudi, da je linearna odvisnost družine $X$ nad polkolobarjem $R$ usklajena z linearno odvisnostjo množice vektorjev $(v_k)_{k\in K}$ nad poljem $F$.
-To, da so $v_k$ linearno odvisni pomeni, da obstaja neka končna poddružina $(v_l)_{l\in L}; L\subset K$ in skalarji $\mu_l\in F\setminus\{0\}$, da je $\sum_{l\in L}\mu_lv_l = 0$. Ker je $L$ končna indeksna množica, jo lahko zapišemo kot unijo dveh (končnih) disjunktnih podmnožic $L_1$ in $L_2$. Potem je $$ \sum_{l\in L_1\cup L_2} \mu_lv_l = \sum_{l\in L_1}\mu_lv_l + \sum_{l\in L_2}\mu_lv_l = 0$$ oz. $$\sum_{l\in L_1}\mu_lv_l = - \sum_{l\in L_2}\mu_lv_l = \sum_{l\in L_2} (-\mu_l)v_l = \sum_{l\in L_2}\acute{\mu}_lv_l $$
-To pa ravno ustreza definiciji linearne odvisnosti v polmodulih. 
-
-Torej, če je $(v_k)_{k\in K} \subset M$ linearno odvisna v smislu vektorskega prostora $M$ nad poljem $F$, je tudi linearno odvisna v smislu polmodula $M$ nad polkolobarjem $F$.
+Denimo, da je $X$ prosta množica v $R$-polmodulu $M$. Vsak element $x\in X$ lahko zapišemo kot linearno kombinacijo elementov iz $X$ kot $x = 1\cdot x$. Ker je $X$ prosta, je ta zapis enoličen. Če bi bil $x \in\Gen{X\setminus\{x\}}$ bi to pomenilo, da obstaja neka linearna kombinacija elementov iz $X\setminus\{x\}$, ki je enaka $x$ in v sebi ne vsebuje nobenega člena oblike $\lambda\cdot x$ za nek $\lambda\in R\setminus\{0\}$ (posebej ne vsebuje $1\cdot x$). Drugače povedano, v $M$ bi lahko $x$ zapisali kot linearno kombinacijo elementov iz $X$ na dva različna načina, kar pa je v protislovju s predpostavko, da je $X$ prosta množica. Sledi torej, da če je $X$ prosta množica v $R$-polmodulu $M$, je v $M$ tudi šibko linearno neodvisna.
 
 \begin{opomba}
-	Vsaka prosta baza je hkrati tudi šibka baza. Poleg tega ima vsak končno generiran levi polmodul kako končno (šibko) bazo.
+	Vsaka prosta baza je hkrati tudi šibka baza. Poleg tega ima vsak končno generiran polmodul kako končno šibko bazo.
 \end{opomba}
 
+Opazimo tudi, da je linearna odvisnost družine $X$ nad polkolobarjem $R$ usklajena z linearno odvisnostjo množice vektorjev $(v_k)_{k\in K}$ nad poljem $F$.
+To, da so vektorji $v_k$ linearno odvisni pomeni, da obstaja neka končna poddružina $(v_l)_{l\in L}; L\subset K$ in skalarji $\mu_l\in F\setminus\{0\}$, da je $\sum_{l\in L}\mu_lv_l = 0$. Ker je $L$ končna indeksna množica, jo lahko zapišemo kot unijo dveh (končnih) disjunktnih podmnožic $L_1$ in $L_2$. Potem je $$ \sum_{l\in L_1\cup L_2} \mu_lv_l = \sum_{l\in L_1}\mu_lv_l + \sum_{l\in L_2}\mu_lv_l = 0$$ oz. $$\sum_{l\in L_1}\mu_lv_l = - \sum_{l\in L_2}\mu_lv_l = \sum_{l\in L_2} (-\mu_l)v_l = \sum_{l\in L_2}\acute{\mu}_lv_l $$
+To pa ravno ustreza definiciji linearne odvisnosti v polmodulih. 
+
+Torej, če je $(v_k)_{k\in K} \subset M$ linearno odvisna v smislu vektorskega prostora $M$ nad poljem $F$, je tudi linearno odvisna v smislu polmodula $M$ nad polkolobarjem $F$ in če je linearno odvisna v smislu polmodula $M$ nad polkolobarjem $F$, je linearno odvisna tudi v smislu vektorskega prostora $M$ nad poljem $F$.
+
 \begin{zgled}
-	Vrnimo se k zgledu \ref{zgled:Rnpolmodul}. $R$-polmodul $(R^n, \oplus, \otimes)$ prepoznamo kot končno generiran prosti $R$-polmodul. Množica $E = \{e1, e2, \ldots, e_n\}$ tvori prosto bazo za $R^n$, kjer so $e_1 = (1, 0, 0, \ldots, 0)^\top, e_2 = (0, 1, 0, \ldots, 0)^\top, \ldots, e_n = (0, \ldots, 0, 1)^\top$. Razvidno je tudi, da je $r(R^n) = n$.
+	Vrnimo se k zgledu \ref{zgled:Rnpolmodul} in $R$-polmodul $(R^n, \oplus, \otimes)$ prepoznamo kot končno generiran prosti polmodul. Množica $E = \{e_1, e_2, \ldots, e_n\}$ tvori prosto bazo za $R^n$, kjer so $e_1 = (1, 0, 0, \ldots, 0)^\top, e_2 = (0, 1, 0, \ldots, 0)^\top, \ldots, e_n = (0, \ldots, 0, 1)^\top$. Razvidno je tudi, da je $r(R^n) = n$.
 \end{zgled}
 
-Sedaj se lahko lotimo klasifikacije baz polmodulov nad komutativnimi polkolobarji, pri čemer se bomo naslonili na izrek iz Tanovega članka \cite[izrek 3.\ 1.]{bib:Tanbase}.
+Sedaj se lahko lotimo klasifikacije baz polmodulov nad komutativnimi polkolobarji, pri čemer se bomo naslonili na \cite[izrek 3.\ 1.]{bib:Tanbase}.
 
 \begin{izrek}
-	Naj bo $R$ polkolobar in $M$ $R$-polmodul. Če premore $M$ kako neskončno šibko bazo, so vse njegove šibke baze neskončne.
+	Naj bo $R$ polkolobar in $M$ naj bo $R$-polmodul. Če premore $M$ kako neskončno šibko bazo, so vse njegove šibke baze neskončne.
 \end{izrek}
 \begin{dokaz}
-	Naj bo $X$ neskončna šibka baza za $M$. Če je $Y$ končna šibka baza za $M$, lahko vsak element iz $Y$ zapišemo kot linearno kombinacijo nekih elementov iz $X$. Za vsak $y\in Y$ izberemo reprezentacijo $y = \alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n$, kjer so $x_1, x_2, \ldots x_n \in X$ in $\alpha_1, \alpha_2, \ldots, \alpha_n \in R$. Z $y(X)$ označimo množico elementov iz $X$, s katerimi reprezentiramo $y$. Torej $y(X) = \{x_1, x_2, \ldots, x_n\}$. Z unijo po $y\in Y$ sestavimo novo šibko bazo: $\acute{Y} = \bigcup_{y\in Y}y(X)$. Velja $\acute{Y} \subseteq X$ in $\acute{Y}$ je končna, torej velja $X\setminus\acute{Y}\neq\emptyset$. Očitno lahko vsak element iz $Y$ izrazimo kot linearno kombinacijo elementov iz $\acute{Y}$. Ker lahko vsak element iz $X$ zapišemo kot linearno kombinacijo elementov iz $Y$ (saj je $Y$ tudi šibka baza), lahko vsak element iz $X$ zapišemo kot linearno kombinacijo elementov iz $\acute{Y}$. Potem pa obstaja $x\in X\setminus\acute{Y} \subseteq S$, da je $x\in \Gen{\acute{Y}}\subseteq\Gen{X\setminus\{x\}}$. Ta zadnji sklep je pa v protislovju s tem, da je $X$ šibko linearno neodvisna. Torej je vsaka druga šibka baza $M$ neskončna.
+	Naj bo $X$ neskončna šibka baza za $M$. Če je $Y$ končna šibka baza za $M$, lahko vsak element iz $Y$ zapišemo kot linearno kombinacijo nekih elementov iz $X$. Za vsak $y\in Y$ izberemo reprezentacijo $y = \alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n$, kjer so $x_1, x_2, \ldots x_n \in X$ in $\alpha_1, \alpha_2, \ldots, \alpha_n \in R$. Z $y(X)$ označimo množico elementov iz $X$, s katerimi reprezentiramo $y$. Torej $y(X) = \{x_1, x_2, \ldots, x_n\}$. Z unijo po $y\in Y$ sestavimo novo šibko bazo: $\acute{Y} = \bigcup_{y\in Y}y(X)$. Velja $\acute{Y} \subseteq X$ in $\acute{Y}$ je končna, torej velja $X\setminus\acute{Y}\neq\emptyset$. Očitno lahko vsak element iz $Y$ izrazimo kot linearno kombinacijo elementov iz $\acute{Y}$. Ker lahko vsak element iz $X$ zapišemo kot linearno kombinacijo elementov iz $Y$ (saj je $Y$ tudi šibka baza), lahko vsak element iz $X$ zapišemo kot linearno kombinacijo elementov iz $\acute{Y}$. Potem pa obstaja $x\in X\setminus\acute{Y} \subseteq X$, da je $x\in \Gen{\acute{Y}}\subseteq\Gen{X\setminus\{x\}}$. Ta zadnji sklep je pa v protislovju s tem, da je $X$ šibko linearno neodvisna. Torej je vsaka druga šibka baza $M$ neskončna.
 \end{dokaz}
 
-	Prejšnji izrek nam pove še to, da če ima $M$ končno šibko bazo, so vse njegove šibke baze končne. Ker vsi končno generirani $R$-polmoduli premorejo vsaj eno končno šibko bazo velja, da je vsaka šibka baza končno generiranega $R$-polmodula končna.
+	Prejšnji izrek nam pove še to, da če ima polmodul $M$ končno šibko bazo, so vse njegove šibke baze končne. Posledično je vsaka šibka baza končno generiranega polmodula končna, saj ta polmodul premore vsaj eno končno šibko bazo.
 
 V nadaljevanju tega podpoglavja se bomo posvetili bazam nad dioidi, kot sta to obravnavala Gondran in Minoux v \cite[poglavje 5.\,2.\,5.\,]{bib:Gondran}. Za to moramo najprej definirati t.~i.\  ">razcepnost"< vektorja.
 \begin{definicija}
-	Naj bo $(M, +,\cdot)$ levi polmodul nad polkolobarjem $(R, \oplus, \otimes)$ in denimo, da imamo dano neko množico vektorjev $V = (V_k)_{k\in K}$, kjer je $V_k\in M$ za vsak $k\in K$. Vektor $x$ je \pojem{razcepen} na \Gen{V} natanko tedaj, ko obstajata taka vektorja $y, z\in \Gen{V}$, ki sta oba različna od $x$, da velja $x = y + z$. V primeru ko $x$ ni razcepen, pravimo da je \pojem{nerazcepen}.
+	Naj bo $(M, +,\cdot)$ levi polmodul nad polkolobarjem $(R, \oplus, \otimes)$ in denimo, da imamo dano neko množico vektorjev $X = (x_k)_{k\in K}$, kjer je $x_k\in M$ za vsak $k\in K$. Vektor $x$ je \pojem{razcepen} na \Gen{X} natanko tedaj, ko obstajata taka vektorja $y, z\in \Gen{X}$, ki sta oba različna od $x$, da velja $x = y + z$. V primeru ko $x$ ni razcepen, pravimo da je \pojem{nerazcepen}.
 \end{definicija}
 
-Iz definicije hitro razberemo, da razcepnost implicira vsebovanost v \Gen{V}, od tod pa sledi naslednja trditev.
+Iz definicije hitro razberemo, da razcepnost na \Gen{X} implicira vsebovanost v \Gen{X}, od tod pa sledi naslednja trditev.
 	
 \begin{trditev}
 	\label{trd:nerazcep}
-	Če je $x$ nerazcepen na \Gen{V}, potem zanj velja natanko ena od naslednjih lastnosti:
+	Če je $x$ nerazcepen na \Gen{X}, potem zanj velja natanko ena od naslednjih lastnosti:
 	\begin{enumerate}[(i)] 
-		\item $x \notin \Gen{V}$
-		\item $x = y + z \text{~za~} y, z\in\Gen{V}\Rightarrow x = y \text{~ali~} x = z$
+		\item $x \notin \Gen{X}$
+		\item $x = y + z \text{~za~} y, z\in\Gen{X}\Rightarrow x = y \text{~ali~} x = z$
 	\end{enumerate}
 \end{trditev}
 
@@ -615,26 +617,26 @@ S pomočjo trditve \ref{trd:nerazcep} lahko zapišemo in dokažemo naslednjo trd
 
 \begin{trditev}
 	\label{trd:potrebzanerazcep}
-	Naj bo $(R, \oplus, \otimes)$ dioid in označimo z $0$ nevtralni element za $\oplus$ ter z $1$ nevtralni element za $\otimes$. Denimo dodatno, da velja: $r\oplus p = 1 \Rightarrow r = 1 \text{~ali~} p=1$. 
-	Naj bo $(M, +, \cdot)$ $R$-moduloid, ki je kanonično urejen glede na $+$. Z $\varpropto$ označimo kanonično delno urejenost na $M$. Dodatno predpostavimo, da za $x, y\in M$, ki zadoščata pogojem $x \neq y ~\&~ y\neq\theta$ in $\lambda\in R$ velja: $$y = \lambda\cdot y + x \Rightarrow \lambda = 1$$
+	Naj bo $(R, \oplus, \otimes)$ dioid in označimo z $0$ njegov nevtralni element ter z $1$ njegovo enoto. Denimo dodatno, da velja: $r\oplus p = 1 \Rightarrow r = 1 \text{~ali~} p=1$. 
+	Naj bo $(M, +, \cdot)$ $R$-moduloid, ki je kanonično urejen glede na $+$. Z $\varpropto$ označimo kanonično delno urejenost na $M$. Dodatno predpostavimo, da za $x, y\in M$, ki zadoščata pogojem $x \neq y ~\&~ y\neq\theta$ in poljuben $\lambda\in R$ velja: $$y = \lambda\cdot y + x \Rightarrow \lambda = 1$$
 	
-	Trdimo, da če veljajo omenjene predpostavke, za linearno neodvisno družino $X = (x_i)_{i\in I}$ elementov iz $M$ (kjer velja $x_i \neq \theta~\forall i\in I$) velja, da je za vsak indeks $j\in I$ element $x_j$ nerazcepen nad \Gen{X}.
+	Če veljajo omenjene predpostavke za linearno neodvisno družino $X = (x_i)_{i\in I}$ elementov iz $M$ (kjer velja $x_i \neq \theta~\forall i\in I$), je za vsak indeks $j\in I$ element $x_j\in X$ nerazcepen na \Gen{X}.
 \end{trditev}
 
 \begin{dokaz}
 	Očitno velja za vsak $j\in I$, da je $x_j\in\Gen{X}$. Denimo, da je $x_j = y + z$ za neka $y, z\in\Gen{X}$. To implicira $y\varpropto x_j$ in $z\varpropto x_j$. 
-	Ker je $y\in\Gen{X}$, sledi, da obstaja indeksna podmnožica $I_1 \subset I$ in skalarji $\lambda_i\in R\setminus\{0\}$, da je $y = \sum_{i \in I_1}\lambda_i\cdot x_i$. 
+	Ker je $y\in\Gen{X}$, sledi, da obstaja indeksna podmnožica $I_1 \subset I$ in obstajajo skalarji $\lambda_i\in R\setminus\{0\}$, da je $y = \sum_{i \in I_1}\lambda_i\cdot x_i$. 
 	
-	Podobno to, da je $z\in\Gen{X}$ implicira obstoj podmnožice indeksov $I_2\subset I$ in skalarjev $\mu_i\in R\setminus\{0\}$, da je $z = \sum_{i\in I_2}\mu_i\cdot x_i$. 
+	Podobno to, da je $z\in\Gen{X}$, implicira obstoj podmnožice indeksov $I_2\subset I$ in skalarjev $\mu_i\in R\setminus\{0\}$, da je $z = \sum_{i\in I_2}\mu_i\cdot x_i$. 
 	
 	Skalarje $\lambda_i$ in $\mu_i$ razširimo na $I_1\cup I_2$ tako, da določimo $\lambda_i = 0$ za vsak $i\in I_2\setminus I_1$ ter $\mu_i = 0$ za vsak indeks $i\in I_1\setminus I_2$. Potem lahko zapišemo naslednjo enakost: $$x_j = \sum_{i\in I_1\cup I_2}(\lambda_i \oplus\mu_i)\cdot x_i$$
 	
-	Opazimo, da mora biti $j\in I_1\cup I_2$, saj sicer pridemo v protislovje s predpostavko, da je $X$ linearno neodvisna. Posledično: $$ x_j = (\lambda_j\oplus\mu_j)\cdot x_j + \sum_{i\in (I_1\cup I_2)\setminus\{j\}}(\lambda_i\oplus\mu_i)\cdot x_i $$
-	kjer $\lambda_j\oplus\mu_j\neq 0$. Označimo $\lambda = \lambda_j\oplus\mu_j$ in $w = \sum_{i\in (I_1\cup I_2)\setminus\{j\}}(\lambda_i\oplus\mu_i)\cdot x_i$. Vidimo: $w\in\Gen{X\setminus\{x_j\}}$. Od tod dobimo enakost: $$x_j = \lambda\cdot x_j + w,\text{~za~} \lambda\in R\setminus\{0\}\text{~in~} w\in\Gen{X\setminus\{x_j\}} $$
+	Opazimo, da mora biti $j\in I_1\cup I_2$, saj sicer pridemo v protislovje s predpostavko, da je $X$ linearno neodvisna. Posledično velja enakost $$ x_j = (\lambda_j\oplus\mu_j)\cdot x_j + \sum_{i\in (I_1\cup I_2)\setminus\{j\}}(\lambda_i\oplus\mu_i)\cdot x_i $$
+	kjer je $\lambda_j\oplus\mu_j\neq 0$. Uvedemo oznaki $\lambda = \lambda_j\oplus\mu_j$ in $w = \sum_{i\in (I_1\cup I_2)\setminus\{j\}}(\lambda_i\oplus\mu_i)\cdot x_i$ ter vidimo, da je $w\in\Gen{X\setminus\{x_j\}}$. Od tod dobimo enakost $$x_j = \lambda\cdot x_j + w,\text{~za~} \lambda\in R\setminus\{0\}\text{~in~} w\in\Gen{X\setminus\{x_j\}} $$
 	
-	Vemo, da $x_j\neq \theta$ in zaradi linearne neodvisnosti $X$ vemo tudi, da $w\neq x_j$ in posledično $\lambda\neq 0$. Potem po predpostavki trditve velja, da je $\lambda = 1$ in ker je $\lambda = \lambda_j\oplus\mu_j$ sledi, $\lambda_j = 1$ ali $\mu_j = 1$. 
+	Vemo, da je $x_j\neq \theta$ in zaradi linearne neodvisnosti $X$ vemo tudi, da je $w\neq x_j$. Posledično velja, da je $\lambda\neq 0$. Potem po predpostavki trditve velja, da je $\lambda = 1$ in ker je $\lambda = \lambda_j\oplus\mu_j$ sledi, da je $\lambda_j = 1$ ali pa je $\mu_j = 1$. 
 	
-	Denimo, da je $\mu_j = 1$. Potem lahko $z$ zapišemo kot $z = x_j + \sum_{i\in I_2\setminus\{j\}}\mu_i\cdot x_i$. Od tod sledi $x_j\varpropto z$ in ker je $\varpropto$ relacija delne urejenosti, sledi, da je $z = x_j$. Podobno, če je $\lambda_i = 1$ pridemo do razultata $y = x_j$.
+	Denimo, da je $\mu_j = 1$. Potem lahko $z$ zapišemo kot $z = x_j + \sum_{i\in I_2\setminus\{j\}}\mu_i\cdot x_i$. Od tod sledi, da je $x_j\varpropto z$ in ko to združimo z dejstvom, da je $z \varpropto x_j$ in upoštevamo, da je $\varpropto$ relacija delne urejenosti, sledi, da je $z = x_j$. Podobno, če predpostavimo, da je $\lambda_i = 1$, pridemo do razultata $y = x_j$.
 	
 	Po drugi točki posledice \ref{trd:nerazcep} je potem $x_j$ nerazcepen.
 \end{dokaz}
@@ -643,20 +645,20 @@ Sedaj lahko s pomočjo dokazane trditve povemo, kdaj bo moduloid imel enolično 
 
 \begin{trditev}
 	\label{trd:enoličbaza}
-	Denimo, da veljajo vse predpostavke trditve \ref{trd:potrebzanerazcep} in naj poleg tega velja še $r, p\in R: r\otimes p = 1\Rightarrow r = 1$ in $p = 1$. Potem, če ima $(M, +, \otimes)$ bazo, je enolično določena.
+	Denimo, da veljajo vse predpostavke trditve \ref{trd:potrebzanerazcep} in naj poleg tega velja še sklep $r, p\in R: r\otimes p = 1\Rightarrow r = 1$ in $p = 1$. Potem, če ima $(M, +, \otimes)$ bazo, je enolično določena.
 \end{trditev}
 
 \begin{dokaz}
-	Denimo, da ima $M$ dve bazi $X=(x_i)_{i\in I}$ in $Y=(y_j)_{j \in J}$. 
+	Denimo, da ima $R$-moduloid $M$ dve bazi $X=(x_i)_{i\in I}$ in $Y=(y_j)_{j \in J}$. 
 	
-	To, da sta $X$ in $Y$ bazi nad $M$ implicira, da lahko zapišemo $$x_i = \sum_{j\in J}\mu_j^i\cdot y_j $$.
-	Po trditvi \ref{trd:potrebzanerazcep} so potem, ker sta $X$ in $Y$ linearno neodvisni, vsi $x_i$ in prav tako vsi $y_j$ nerazcepni elementi nad $M = \Gen{X} = \Gen{Y}$. Posledično obstaja tak indeks $j\in J$, da je $x_i = \mu_j^i \cdot y_j$ za nek $\mu_j^i \in R$ in $y_j\in Y$.
+	To, da sta $X$ in $Y$ bazi nad $M$ implicira, da lahko zapišemo $x_i = \sum_{j\in J}\mu_j^i\cdot y_j$ za neke skalarje $\mu_j^i \in R$.
+	Ker sta $X$ in $Y$ linearno neodvisni, po trditvi \ref{trd:potrebzanerazcep} sledi, da so vsi $x_i$ in prav tako vsi $y_j$ nerazcepni elementi na $M = \Gen{X} = \Gen{Y}$. Posledično obstaja tak indeks $j\in J$, da je $x_i = \mu_j^i \cdot y_j$ za nek $\mu_j^i \in R$ in $y_j\in Y$.
 	
 	Na enak način pokažemo, da obstaja indeks $k\in I$, da je $y_j = \nu_k^j \cdot x_k$, za nek $\nu_k^j \in R$ in $x_k \in X$.
 
-	Torej je $x_i = (\mu_j^i \otimes \nu_k^j) \cdot x_k$. Ker je $X$ linearno neodvisna družina, je nujno $i = k$. Po predpostavki iz trditve \ref{trd:potrebzanerazcep} je tudi $(\mu_j^i \otimes \nu_k^j) = 1$, iz predpostavke te trditve pa potem sledi $\mu_j^i = 1$ in $\nu_k^j = 1$ in posledično $x_i = y_j$.
+	Torej je $x_i = \mu_j^i \cdot (\nu_k^j \cdot x_k) = (\mu_j^i \otimes \nu_k^j) \cdot x_k$. Ker je $X$ linearno neodvisna družina, je nujno $i = k$. Po predpostavki iz trditve \ref{trd:potrebzanerazcep} je tudi $(\mu_j^i \otimes \nu_k^j) = 1$, iz predpostavke te trditve pa potem sledi $\mu_j^i = 1$ in $\nu_k^j = 1$ in posledično $x_i = y_j$.
 	
-	Torej za vsak $x_i\in X$ lahko najdemo $y_j\in Y$, da je $x_i = y_j$, od koder pa sledi $X = Y$.
+	Torej za vsak $x_i\in X$ lahko najdemo $y_j\in Y$, da je $x_i = y_j$, od tod pa sklepamo da je $X = Y$.
 \end{dokaz}
 
 \section{Matrike:}
@@ -1281,6 +1283,7 @@ Enak postopek lahko uporabimo za poljubno $n\times n$ matriko $X\in M_n(R)$. Za�
 \geslo{pideterminant}{pideterminanta}
 \geslo{positivity condition}{pogoj pozitivnosti -- struktura v kateri velja sklep, da če je t.i. vsota dveh elementov enaka nevtralnemu elementu oz. >>ničli<<, sta potem oba elemeneta enaka nevtralnemu elementu, zadošča pogoju pozitivnosti}
 \geslo{pre-semiring}{pred-polkolobar}
+\geslo{reducible vector}{razcepen vektor}
 \geslo{semifield}{polpolje}
 \geslo{semimodule}{polmodul}
 \geslo{semiring}{polkolobar}
@@ -1293,7 +1296,7 @@ Enak postopek lahko uporabimo za poljubno $n\times n$ matriko $X\in M_n(R)$. Za�
 \geslo{weak dimension of the $R$-semimodule $M$}{šibka dimenzija $R$-polmodula $M$ -- minimalna kardinalnost šibko linearno neodvisnih množic, ki generirajo $M$.}
 \geslo{weak linear independence}{šibka linearna neodvisnost}
 \geslo{weak base of a semimodule}{šibka baza polmodula}
-%\geslo{}{}
+
 %\geslo{}{}
 %\geslo{}{}
 
