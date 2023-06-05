@@ -101,7 +101,7 @@ Za matriko $A$, za katero veljalo pogoji iz prej omenjenega izreka, lahko rečem
 
 \section{Monoidi, polkolobarji in dioidi}\label{sect:basicstructures}
 V tem razdelku se bomo prvič srečali s pojmi, ki jih bomo obravnavali skozi celo nalogo. Snov za to bomo pretežno črpali iz \cite[poglavje 1]{bib:Gondran}, kadar bomo kaj povzeli iz drugega vira, pa bo to posebej navedeno. 
-\subsection{Monoidi:}\label{subsect:monoid}
+\subsection{Monoidi}\label{subsect:monoid}
 Za začetek bomo osvežili znanje o monoidih in dokazali nekaj relevantnih rezultatov, preden se lotimo obravnave novih konceptov. 
 \begin{definicija}
 	Neprazna množica $M$, opremljena z operacijo $\ast$, je \pojem{monoid}, če za operacijo $\ast$ na $M$ velja:
@@ -412,7 +412,7 @@ $$\forall r, s\in R: r\mathcal{E}s \iff r\leq s ~\&~ s \leq r$$
 
 \section{Polmoduli in moduloidi}\label{sect:semimodule}
 Tako kot lahko nad polji definiramo vektorske prostore in nad kolobarji module, lahko podobne strukture uvedemo tudi nad polkolobarji in dioidi. Kot bomo kmalu videli, se bodo strukture nad polkolobarji ravnale po intuiciji vektorskih prostorov in modulov. Za začetek bomo navedli definicije teh struktur, nato bomo obravnavali vprašanje homomorfizmov in kvocientnih struktur, na koncu poglavja pa bomo pozornost posvetili vprašanju baz. V večji meri se bomo pri tem sklicevali na vir \cite[poglavje 5.\,2.\,]{bib:Gondran}, kjer bo vir drug pa bo to tudi navedeno.
-\subsection{Definicije in elementarni primeri:} \label{subsect:semimoduledef}
+\subsection{Definicije in elementarni primeri} \label{subsect:semimoduledef}
 V tem podpoglavju bomo definirali stru\-kture nad polkolobarji in dioidi.
 
 \begin{definicija}\label{def:polmodul}
@@ -452,7 +452,7 @@ Na enak način definiramo desni R-polmodul, le da tam množenje s skalarjem izva
 	Da se o tem prepričamo je dovolj, da preverimo lastnosti kanonične urejenosti $\leq_+$ na $(R^n, +)$. Naj bosta $a, b \in R^n$ in denimo, da je $a \leq_+ b$. To bo res natanko tedaj, ko bo obstajal tak $c\in R^n$, da je $b = a + c$~ oz. ko bo za vsak $i\in \{1, 2, \ldots, n\}$ veljalo $b_i = a_i \oplus c_i$ oziroma $a_i \leq_\oplus b_i$. Relacija $\leq_+$ podeduje antisimetričnost od $\leq_\oplus$, torej je $(R^n, +)$ res kanonično urejen in od tod sledi, da je $(R^n, +, \cdot)$ (levi) moduloid.
 \end{zgled}
 
-\subsection{Homomorfizmi in kvocientne strukture:}\label{subsect:homomorphsemimodule}
+\subsection{Homomorfizmi in kvocientne strukture}\label{subsect:homomorphsemimodule}
 Tudi pri polmodulih nas bodo zanimale preslikave, ki ohranjajo algebraično strukturo. Pojavi se tudi vprašanje, ali lahko nad polmoduli tvorimo kvocientne strukture. Oboje bomo obravnavali v tem podpoglavju.
 
 \begin{definicija}
@@ -487,7 +487,7 @@ Potem pa velja tudi $(x_1 + x_2)\mathcal{E}(y_1 + y_2)$, saj je $x_1 + x_2 + u_1
 
 Posledično je kanonični epimorfizem $\map{\varphi}{M}{M/\widehat{M}}$, s predpisom $\varphi(x) = [x]$, ki vsakemu elementu $x\in M$ priredi njegov ekvivalenčni razred $[x]\in M/\widehat{M}$, homomorfizem $R$-polmodulov.
 
-\subsection{Generatorji polmodulov in linearna neodvisnost:} \label{subsect:base}
+\subsection{Generatorji polmodulov in linearna neodvisnost} \label{subsect:base}
 V tem podpoglavju bomo definirali generatorje, linearno (ne)odvisnost in baze v kontekstu polmodulov ter pokazali nekaj zanimivih rezultatov v zvezi s temi koncepti. Več rezultatov na temo baz (levih) polmodulov bomo obravnavali v naslednjem poglavju v razdelku \ref{subsect:prehodmat}. Začnimo kar z definicijo generiranega polmodula.
 \begin{definicija}
 	Naj bo $(M, +, \cdot)$ $R$-polmodul in naj bo $X = (x_i)_{i\in I}$ poljubna neprazna družina elementov iz $M$. Najmanjši $R$-podpolmodul, ki vsebuje $X$, imenujemo $R$-podpolmodul generiran z $X$ in ga označimo z \Gen{X}. Če je $\Gen{X} = M$ pravimo, da $X$ generira $M$.
@@ -962,7 +962,7 @@ Ko dodatno uvedemo oznako $v = (v_1, v_2, \ldots, v_n)^\top$, se zgornja enakost
 \section{Posplošeni Cayley-Hamiltonov izrek}\label{sect:CHT}
 Eden izmed pomembnih rezultatov linearne algebre nad polji je t.~i.~Cayley-Hamiltonov izrek. Izkaže se, da ta rezultat ni omejen samo na linearne strukture nad polji, temveč ga lahko, kot je to leta $1964$ pokazal Daniel Rutherford v \cite{bib:Rutherford}, dokažemo v posplošeni obliki tudi za matrike nad komutativnimi polkolobarji. Leta $2011$ je to nadgradil Radu Grosu v \cite{bib:Grosu}, kjer je razširil rezultat tudi na matrike nad nekomutativnimi polkolobarji. V tem odseku bo predstavljen Cayley-Hamiltonov izrek v tej, najbolj posplošeni obliki. Pri tem bomo snov črpali iz \cite{bib:Grosu}.
 
-\subsection{Permutacije:}\label{subsect:perm}
+\subsection{Permutacije}\label{subsect:perm}
 Za začetek osvežimo svoje znanje o permutacijah, saj bodo te igrale bistveno vlogo v nadaljevanju.
 \begin{definicija}
 	Naj bo $X=\{1, 2, \ldots, n\}$ neka končna množica. Bijekciji $\map{\pi}{X}{X}$ pravimo \pojem{permutacija}. Vsako permutacijo lahko zapišemo kot produkt disjunktnih ciklov. V tem zapisu po navadi ne pišemo ciklov dolžine $1$. Ciklu dolžine $2$ pravimo \pojem{transpozicija}. Vsak cikel lahko razbijemo na produkt transpozicij, torej lahko vsako permutacijo zapišemo kot produkt transpozicij. Če je $\pi$ sestavljena iz sodega število transpozicij pravimo, da je \pojem{soda permutacija}, če je iz lihega števila transpozicij pa pravimo, da je \pojem{liha permutacija}. Za parnost permutacije $\pi$ se tudi uporablja oznaka $sgn(\pi)$. Pri tem velja $sgn(\pi)=1$, če je $\pi$ soda in $sgn(\pi) = -1$, če je $\pi$ liha. S $P(n)$ označimo množico vseh permutacij $n$ elementov, s $P^{+}(n)$ označimo množico vseh sodih permutacij $n$ elementov, s $P^{-}(n)$ pa množico lihih permutacij $n$ elementov. 
@@ -999,7 +999,7 @@ $\pi = \begin{pmatrix}
 Vzemimo sedaj zaporedje $w = oprsš$. Potem je $\sigma(w) = poršs$ in $\pi(w) = pošrs$. Dodatno je $\sigma(\bar{\pi}) = (2, 1)(1, 2)(3, 5)(5, 4)(4, 3)$.
 \end{zgled}
 
-\subsection{Pideterminanta in karakteristični pipolinom:}\label{subsect:pidetinpipoly}
+\subsection{Pideterminanta in karakteristični pipolinom}\label{subsect:pidetinpipoly}
 V tem odseku bosta predstavljeni posplošitvi konceptov determinante in karakterističnega polinoma matrike, t.~i.~\pojem{pideterminanta} in \pojem{karakteristični pipolinom}.
 
 Najprej se spomnimo, da lahko vsaki kvadratni matriki $X\in M_n(F)$ nad poljem $F$ določimo asociiran usmerjen utežen graf $G(X) = (V, E, X)$, kjer je $V= \{1, 2, \ldots, n\}$ množica vozlišč, $E=\{(i, j)\in V^2;~x_{ij}\neq 0\}$ pa množica povezav z utežmi $X_{ij}$. Zaporedju povezav $p_1p_2\ldots p_n$ iz $E$ za katerega velja, da je za vsak $i\in \{1, 2, \ldots, n-1\}$ konec povezave $p_i$ hkrati tudi začetek povezave $p_{i+1}$ pravimo \pojem{sprehod}. Sprehodu pravimo \pojem{pot}, če je omejen in so vozlišča, ki jih obišče, različna, razen morda prvega in zadnjega. Utež poti je enaka produktu uteži povezav, ki jih pot vsebuje. Sklenjeni poti pravimo \pojem{cikel}. 
@@ -1075,7 +1075,7 @@ Sledi, da je karakteristični pipolinom matrike $A$ enak $$pp_A(\lambda)= (\lamb
 
 Opazimo, da je za matriko $X$ nad nekim poljem $F$ karakteristični polinom enak $$p_X(\lambda) = \frac{1}{n!}(pp_X^{+}(\lambda) \ominus pp_X^{-}(\lambda))$$ Sedaj lahko končno preidemo na obravnavo posplošenega Cayley-Hamiltonovega izreka, kar bomo storili v naslednjem poglavju.
 
-\subsection{Cayley-Hamiltonov izrek nad polkolobarji:} \label{subsect:CHTtheorem}
+\subsection{Cayley-Hamiltonov izrek nad polkolobarji} \label{subsect:CHTtheorem}
 V tem podpoglavju bomo navedli posplošeni Cayley-Hamiltonov izrek in demonstrirali veljavnost na $2\times 2$ kvadratnih matrikah. Dodatno bomo navedli idejo dokaza izreka, dokaz pa bo opuščen.
 
 \begin{izrek}[Cayley-Hamilton]
