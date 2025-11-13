@@ -105,12 +105,10 @@ Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obra
 \section{Osnovne Definicije:}
 
 \begin{definicija}
-	Neprazna množica $M$, opremljena z operacijo $\ast$, je \pojem{monoid}, če za operacijo $\ast$ na $M$ velja:
-	\begin{enumerate}
-		\item $a \ast (b \ast c) = (a\ast b) \ast c;\forall a, b, c \in M$
-		\item $\exists e\in M; a \ast e = e\ast a = a;\forall a\in M$
-	\end{enumerate}
-	Lastnost $1.$ se imenuje \pojem{asociativnost}, lastnost $2.$ pa \pojem{obstoj enote}. 
+	Neprazna množica $M$, opremljena z operacijo $\ast$, je \pojem{monoid}, če za operacijo $\ast$ na $M$ velja: \begin{enumerate}
+		\item $a \ast (b \ast c) = (a\ast b) \ast c;\forall a, b, c \in M$,
+		\item $\exists e\in M; a \ast e = e\ast a = a;\forall a\in M$.
+	\end{enumerate} Lastnost $1.$ se imenuje \pojem{asociativnost}, lastnost $2.$ pa \pojem{obstoj enote}. 
 \end{definicija}
 
 \begin{definicija}
@@ -123,20 +121,20 @@ Polkolobarji so algebraična struktura, s katero se srečamo, čim začnemo obra
 \end{definicija}
 %Preskoči definicije do sem - bi mogle itak biti očitne!
 \begin{definicija}
-	Monoid $(R, \ast)$ je \pojem{delno urejen}, če je na njem definirana relacija delne urejenosti $\leq$, ki zadošča pogoju: \\ 
-	$a \leq \acute{a} \Rightarrow ((a \ast \hat{a} \leq \acute{a} \ast \hat{a})~\&~(\hat{a} \ast a \leq \hat{a}\ast \acute{a}))$ za vse $a, \acute{a},\hat{a}\in R$.
+	Monoid $(R, \ast)$ je \pojem{delno urejen}, če je na njem definirana relacija delne urejenosti $\leq$, ki zadošča pogoju:  
+	$$a \leq \acute{a} \Rightarrow ((a \ast \hat{a} \leq \acute{a} \ast \hat{a})~\&~(\hat{a} \ast a \leq \hat{a}\ast \acute{a})) ~\text{za vse}~ a, \acute{a},\hat{a}\in R$$.
 \end{definicija}
 
 \begin{definicija}
-	Za neprazno množico $R$, ki je opremljena z notranjima binarnima operacijama $\oplus$ in $\otimes$ pravimo, da je \pojem{polkolobar}, če zanjo velja naslednje:
-	\begin{enumerate}
+	Za neprazno množico $R$, ki je opremljena z notranjima binarnima operacijama $\oplus$ in $\otimes$ pravimo, da je \pojem{polkolobar}, če zanjo velja naslednje:	\begin{enumerate}
 		\item $(R, \oplus)$ je komutativen monoid z nevtralnim elementom $0$,
 		\item $(R, \otimes)$ je monoid z enoto $1$,
 		\item $a\otimes(b \oplus c) = (a\otimes b) \oplus (a\otimes c)$ in $(b \oplus c)\otimes a = (b\otimes a) \oplus (c\otimes a);~\forall a, b, c\in R$,
 		\item $\forall a\in R; 0 \otimes a = a\otimes 0 = 0$.
-	\end{enumerate}
-	Oznaka: $(R, \oplus, \otimes)$. \\ Polkolobar $(R, \oplus, \otimes)$ je \textit{komutativen}, če je multiplikativna operacija $\otimes$ na njem komutativna.
+	\end{enumerate}	Oznaka: $(R, \oplus, \otimes)$. \\ Polkolobar $(R, \oplus, \otimes)$ je \textit{komutativen}, če je multiplikativna operacija $\otimes$ na njem komutativna.
 \end{definicija}
+
+
 
 \begin{opomba}
 	Če je $1 = 0$, potem je avtomatsko $R = \{0\}$. Ker nas ta trivialen primer ne zanima, predpostavimo $1 \neq 0$ od zdaj naprej.
